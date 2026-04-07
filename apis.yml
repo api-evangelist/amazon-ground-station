@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - AWS
+  - Data Processing
+  - IoT
   - Satellite Communications
   - Space Technology
-  - IoT
-  - Data Processing
-  - AWS
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -28,9 +28,9 @@ apis:
     humanURL: https://aws.amazon.com/ground-station/
     baseURL: https://groundstation.amazonaws.com
     tags:
+      - Data Processing
       - Satellite Communications
       - Space Technology
-      - Data Processing
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
