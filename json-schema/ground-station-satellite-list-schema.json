@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-satellite-list-schema.json",
+  "title": "SatelliteList",
+  "description": "SatelliteList schema from Amazon Ground Station API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/SatelliteListItem"
+  }
+}

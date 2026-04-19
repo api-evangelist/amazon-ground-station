@@ -1,0 +1,8 @@
+{
+  "agentCpuCores": "example-agentCpuCore",
+  "agentVersion": "example-agentVersion",
+  "componentVersions": "example-componentVer",
+  "instanceId": "example-instanceId",
+  "instanceType": "example-instanceType",
+  "reservedCpuCores": "example-reservedCpuC"
+}

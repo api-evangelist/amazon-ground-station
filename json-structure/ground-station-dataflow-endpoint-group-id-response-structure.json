@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-dataflow-endpoint-group-id-response-structure.json",
+  "name": "DataflowEndpointGroupIdResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "dataflowEndpointGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a dataflow endpoint group."
+        }
+      ]
+    }
+  }
+}

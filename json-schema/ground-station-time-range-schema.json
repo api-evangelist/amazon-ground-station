@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-time-range-schema.json",
+  "title": "TimeRange",
+  "description": "A time range with a start and end time.",
+  "type": "object",
+  "properties": {
+    "endTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Time in UTC at which the time range ends."
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Time in UTC at which the time range starts."
+        }
+      ]
+    }
+  },
+  "required": [
+    "endTime",
+    "startTime"
+  ]
+}

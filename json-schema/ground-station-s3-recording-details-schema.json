@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-s3-recording-details-schema.json",
+  "title": "S3RecordingDetails",
+  "description": "Details about an S3 recording <code>Config</code> used in a contact.",
+  "type": "object",
+  "properties": {
+    "bucketArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BucketArn"
+        },
+        {
+          "description": "ARN of the bucket used."
+        }
+      ]
+    },
+    "keyTemplate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Key template used for the S3 Recording Configuration"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-list-ground-stations-response-structure.json",
+  "name": "ListGroundStationsResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "groundStationList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroundStationList"
+        },
+        {
+          "description": "List of ground stations."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "Next token that can be supplied in the next call to get the next page of ground stations."
+        }
+      ]
+    }
+  }
+}

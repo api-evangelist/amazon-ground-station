@@ -1,0 +1,4 @@
+{
+  "kmsAliasArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123",
+  "kmsKeyArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123"
+}

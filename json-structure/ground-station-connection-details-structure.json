@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-connection-details-structure.json",
+  "name": "ConnectionDetails",
+  "description": "Egress address of AgentEndpoint with an optional mtu.",
+  "type": "object",
+  "properties": {
+    "mtu": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Maximum transmission unit (MTU) size in bytes of a dataflow endpoint."
+        }
+      ]
+    },
+    "socketAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SocketAddress"
+        },
+        {
+          "description": "A socket address."
+        }
+      ]
+    }
+  },
+  "required": [
+    "socketAddress"
+  ]
+}

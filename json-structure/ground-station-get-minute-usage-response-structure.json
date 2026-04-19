@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-get-minute-usage-response-structure.json",
+  "name": "GetMinuteUsageResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "estimatedMinutesRemaining": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Estimated number of minutes remaining for an account, specific to the month being requested."
+        }
+      ]
+    },
+    "isReservedMinutesCustomer": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested."
+        }
+      ]
+    },
+    "totalReservedMinuteAllocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Total number of reserved minutes allocated, specific to the month being requested."
+        }
+      ]
+    },
+    "totalScheduledMinutes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Total scheduled minutes for an account, specific to the month being requested."
+        }
+      ]
+    },
+    "upcomingMinutesScheduled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Upcoming minutes scheduled for an account, specific to the month being requested."
+        }
+      ]
+    }
+  }
+}

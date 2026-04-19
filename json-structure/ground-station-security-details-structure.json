@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-security-details-structure.json",
+  "name": "SecurityDetails",
+  "description": "Information about endpoints.",
+  "type": "object",
+  "properties": {
+    "roleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoleArn"
+        },
+        {
+          "description": "ARN to a role needed for connecting streams to your instances. "
+        }
+      ]
+    },
+    "securityGroupIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SecurityGroupIdList"
+        },
+        {
+          "description": "The security groups to attach to the elastic network interfaces."
+        }
+      ]
+    },
+    "subnetIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SubnetList"
+        },
+        {
+          "description": "A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances."
+        }
+      ]
+    }
+  },
+  "required": [
+    "roleArn",
+    "securityGroupIds",
+    "subnetIds"
+  ]
+}

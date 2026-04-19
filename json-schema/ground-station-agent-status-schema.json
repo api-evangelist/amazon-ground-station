@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-agent-status-schema.json",
+  "title": "AgentStatus",
+  "description": "AgentStatus schema from Amazon Ground Station API",
+  "type": "string",
+  "enum": [
+    "SUCCESS",
+    "FAILED",
+    "ACTIVE",
+    "INACTIVE"
+  ]
+}

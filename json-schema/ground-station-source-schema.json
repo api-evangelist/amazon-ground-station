@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-source-schema.json",
+  "title": "Source",
+  "description": "Dataflow details for the source side.",
+  "type": "object",
+  "properties": {
+    "configDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigDetails"
+        },
+        {
+          "description": "Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> "
+        }
+      ]
+    },
+    "configId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "UUID of a <code>Config</code>."
+        }
+      ]
+    },
+    "configType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigCapabilityType"
+        },
+        {
+          "description": "Type of a <code>Config</code>."
+        }
+      ]
+    },
+    "dataflowSourceRegion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Region of a dataflow source."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-satellite-list-item-structure.json",
+  "name": "SatelliteListItem",
+  "description": "Item in a list of satellites.",
+  "type": "object",
+  "properties": {
+    "currentEphemeris": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisMetaData"
+        },
+        {
+          "description": "The current ephemeris being used to compute the trajectory of the satellite."
+        }
+      ]
+    },
+    "groundStations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroundStationIdList"
+        },
+        {
+          "description": "A list of ground stations to which the satellite is on-boarded."
+        }
+      ]
+    },
+    "noradSatelliteID": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/noradSatelliteID"
+        },
+        {
+          "description": "NORAD satellite ID number."
+        }
+      ]
+    },
+    "satelliteArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/satelliteArn"
+        },
+        {
+          "description": "ARN of a satellite."
+        }
+      ]
+    },
+    "satelliteId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a satellite."
+        }
+      ]
+    }
+  }
+}

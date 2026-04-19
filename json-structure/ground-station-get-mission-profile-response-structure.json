@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-get-mission-profile-response-structure.json",
+  "name": "GetMissionProfileResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "contactPostPassDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSeconds"
+        },
+        {
+          "description": "Amount of time after a contact ends that you\u2019d like to receive a CloudWatch event indicating the pass has finished."
+        }
+      ]
+    },
+    "contactPrePassDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationInSeconds"
+        },
+        {
+          "description": "Amount of time prior to contact start you\u2019d like to receive a CloudWatch event indicating an upcoming pass."
+        }
+      ]
+    },
+    "dataflowEdges": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEdgeList"
+        },
+        {
+          "description": "A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>."
+        }
+      ]
+    },
+    "minimumViableContactDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PositiveDurationInSeconds"
+        },
+        {
+          "description": "Smallest amount of time in seconds that you\u2019d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration."
+        }
+      ]
+    },
+    "missionProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MissionProfileArn"
+        },
+        {
+          "description": "ARN of a mission profile."
+        }
+      ]
+    },
+    "missionProfileId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a mission profile."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "Name of a mission profile."
+        }
+      ]
+    },
+    "region": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AWSRegion"
+        },
+        {
+          "description": "Region of a mission profile."
+        }
+      ]
+    },
+    "streamsKmsKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KmsKey"
+        },
+        {
+          "description": "KMS key to use for encrypting streams."
+        }
+      ]
+    },
+    "streamsKmsRole": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoleArn"
+        },
+        {
+          "description": "Role to use for encrypting streams with KMS key."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to a mission profile."
+        }
+      ]
+    },
+    "trackingConfigArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigArn"
+        },
+        {
+          "description": "ARN of a tracking <code>Config</code>."
+        }
+      ]
+    }
+  }
+}

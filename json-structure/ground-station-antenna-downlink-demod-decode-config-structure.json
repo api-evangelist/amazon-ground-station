@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-antenna-downlink-demod-decode-config-structure.json",
+  "name": "AntennaDownlinkDemodDecodeConfig",
+  "description": "Information about how AWS Ground Station should con\ufb01gure an antenna for downlink demod decode during a contact.",
+  "type": "object",
+  "properties": {
+    "decodeConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DecodeConfig"
+        },
+        {
+          "description": "Information about the decode <code>Config</code>."
+        }
+      ]
+    },
+    "demodulationConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DemodulationConfig"
+        },
+        {
+          "description": "Information about the demodulation <code>Config</code>."
+        }
+      ]
+    },
+    "spectrumConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SpectrumConfig"
+        },
+        {
+          "description": "Information about the spectral <code>Config</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "decodeConfig",
+    "demodulationConfig",
+    "spectrumConfig"
+  ]
+}

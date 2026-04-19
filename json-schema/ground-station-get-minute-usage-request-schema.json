@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-get-minute-usage-request-schema.json",
+  "title": "GetMinuteUsageRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "month": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Month"
+        },
+        {
+          "description": "The month being requested, with a value of 1-12."
+        }
+      ]
+    },
+    "year": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Year"
+        },
+        {
+          "description": "The year being requested, in the format of YYYY."
+        }
+      ]
+    }
+  },
+  "required": [
+    "month",
+    "year"
+  ]
+}

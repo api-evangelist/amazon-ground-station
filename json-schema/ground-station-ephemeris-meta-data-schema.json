@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-ephemeris-meta-data-schema.json",
+  "title": "EphemerisMetaData",
+  "description": "Metadata describing a particular ephemeris.",
+  "type": "object",
+  "properties": {
+    "ephemerisId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "<p>UUID of a customer-provided ephemeris.</p> <p>This field is not populated for default ephemerides from Space Track.</p>"
+        }
+      ]
+    },
+    "epoch": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "<p>The epoch of a default, ephemeris from Space Track in UTC.</p> <p>This field is not populated for customer-provided ephemerides.</p>"
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "<p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p> <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>"
+        }
+      ]
+    },
+    "source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisSource"
+        },
+        {
+          "description": "The <code>EphemerisSource</code> that generated a given ephemeris."
+        }
+      ]
+    }
+  },
+  "required": [
+    "source"
+  ]
+}

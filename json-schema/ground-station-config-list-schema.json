@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-config-list-schema.json",
+  "title": "ConfigList",
+  "description": "ConfigList schema from Amazon Ground Station API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ConfigListItem"
+  }
+}

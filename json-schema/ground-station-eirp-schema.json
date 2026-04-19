@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-eirp-schema.json",
+  "title": "Eirp",
+  "description": "Object that represents EIRP.",
+  "type": "object",
+  "properties": {
+    "units": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EirpUnits"
+        },
+        {
+          "description": "Units of an EIRP."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "Value of an EIRP. Valid values are between 20.0 to 50.0 dBW."
+        }
+      ]
+    }
+  },
+  "required": [
+    "units",
+    "value"
+  ]
+}

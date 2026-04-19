@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-demodulation-config-structure.json",
+  "name": "DemodulationConfig",
+  "description": "Information about the demodulation <code>Config</code>.",
+  "type": "object",
+  "properties": {
+    "unvalidatedJSON": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JsonString"
+        },
+        {
+          "description": "Unvalidated JSON of a demodulation <code>Config</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "unvalidatedJSON"
+  ]
+}

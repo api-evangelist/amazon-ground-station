@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-destination-structure.json",
+  "name": "Destination",
+  "description": "Dataflow details for the destination side.",
+  "type": "object",
+  "properties": {
+    "configDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigDetails"
+        },
+        {
+          "description": "Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode."
+        }
+      ]
+    },
+    "configId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a <code>Config</code>."
+        }
+      ]
+    },
+    "configType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigCapabilityType"
+        },
+        {
+          "description": "Type of a <code>Config</code>."
+        }
+      ]
+    },
+    "dataflowDestinationRegion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Region of a dataflow destination."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-pagination-max-results-structure.json",
+  "name": "PaginationMaxResults",
+  "description": "PaginationMaxResults schema from Amazon Ground Station API",
+  "type": "int32",
+  "minimum": 0,
+  "maximum": 100
+}

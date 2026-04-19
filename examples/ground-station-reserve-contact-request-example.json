@@ -1,0 +1,8 @@
+{
+  "endTime": "example-endTime",
+  "groundStation": "example-groundStatio",
+  "missionProfileArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123",
+  "satelliteArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123",
+  "startTime": "example-startTime",
+  "tags": "example-tags"
+}

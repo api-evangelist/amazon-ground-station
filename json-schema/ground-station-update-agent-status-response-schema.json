@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-update-agent-status-response-schema.json",
+  "title": "UpdateAgentStatusResponse",
+  "description": "UpdateAgentStatusResponse schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "agentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of updated agent."
+        }
+      ]
+    }
+  },
+  "required": [
+    "agentId"
+  ]
+}

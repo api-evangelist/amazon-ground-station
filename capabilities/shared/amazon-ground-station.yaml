@@ -1,0 +1,189 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amazon Ground Station
+  description: Fully managed satellite ground station service for satellite communications, data downlink, and mission operations.
+  tags:
+    - Amazon Ground Station
+    - Satellite Communications
+    - Space Technology
+    - AWS
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - type: http
+      namespace: amazon-ground-station
+      baseUri: https://groundstation.amazonaws.com
+      description: Amazon Ground Station API
+      authentication:
+        type: bearer
+        token: "{{AWS_AUTH_HEADER}}"
+      resources:
+        - name: contacts
+          path: /contacts
+          description: Satellite contact management
+          operations:
+            - name: ListContacts
+              method: GET
+              description: List all satellite contacts
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: ReserveContact
+              method: POST
+              description: Schedule a satellite contact
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: CancelContact
+              method: DELETE
+              description: Cancel a scheduled contact
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: DescribeContact
+              method: GET
+              description: Get contact details
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: mission-profiles
+          path: /missionprofile
+          description: Mission profile management
+          operations:
+            - name: ListMissionProfiles
+              method: GET
+              description: List all mission profiles
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: CreateMissionProfile
+              method: POST
+              description: Create a mission profile
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: satellites
+          path: /satellite
+          description: Satellite tracking information
+          operations:
+            - name: ListSatellites
+              method: GET
+              description: List trackable satellites
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: ground-stations
+          path: /groundstation
+          description: Ground station location management
+          operations:
+            - name: ListGroundStations
+              method: GET
+              description: List all ground stations
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8084
+      namespace: ground-station-rest-api
+      resources:
+        - path: /v1/contacts
+          name: contacts
+          operations:
+            - method: GET
+              name: list-contacts
+              description: List satellite contacts
+              call: amazon-ground-station.ListContacts
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9094
+      namespace: ground-station-mcp
+      transport: http
+      tools:
+        - name: list-contacts
+          description: List all scheduled and past satellite contacts
+          hints:
+            readOnly: true
+          call: amazon-ground-station.ListContacts
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: reserve-contact
+          description: Schedule a new satellite contact window
+          hints:
+            readOnly: false
+          call: amazon-ground-station.ReserveContact
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: cancel-contact
+          description: Cancel a scheduled satellite contact
+          hints:
+            readOnly: false
+            destructive: true
+          call: amazon-ground-station.CancelContact
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-satellites
+          description: List all trackable satellites
+          hints:
+            readOnly: true
+          call: amazon-ground-station.ListSatellites
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-ground-stations
+          description: List available AWS ground station locations
+          hints:
+            readOnly: true
+          call: amazon-ground-station.ListGroundStations
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-mission-profiles
+          description: List all satellite mission profiles
+          hints:
+            readOnly: true
+          call: amazon-ground-station.ListMissionProfiles
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-mission-profile
+          description: Create a new mission profile for satellite operations
+          hints:
+            readOnly: false
+          call: amazon-ground-station.CreateMissionProfile
+          outputParameters:
+            - type: object
+              mapping: "$."

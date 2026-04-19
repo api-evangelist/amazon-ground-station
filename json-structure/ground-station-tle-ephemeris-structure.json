@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-tle-ephemeris-structure.json",
+  "name": "TLEEphemeris",
+  "description": "Two-line element set (TLE) ephemeris.",
+  "type": "object",
+  "properties": {
+    "s3Object": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Object"
+        },
+        {
+          "description": "Identifies the S3 object to be used as the ephemeris."
+        }
+      ]
+    },
+    "tleData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TLEDataList"
+        },
+        {
+          "description": "The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object."
+        }
+      ]
+    }
+  }
+}

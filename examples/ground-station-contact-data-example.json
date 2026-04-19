@@ -1,0 +1,8 @@
+{
+  "contactId": "example-contactId",
+  "contactStatus": "COMPLETED",
+  "endTime": "example-endTime",
+  "errorMessage": "example-errorMessage",
+  "groundStation": "example-groundStatio",
+  "maximumElevation": "example-maximumEleva"
+}

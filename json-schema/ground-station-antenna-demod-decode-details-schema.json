@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-antenna-demod-decode-details-schema.json",
+  "title": "AntennaDemodDecodeDetails",
+  "description": "Details about an antenna demod decode <code>Config</code> used in a contact.",
+  "type": "object",
+  "properties": {
+    "outputNode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Name of an antenna demod decode output node used in a contact."
+        }
+      ]
+    }
+  }
+}

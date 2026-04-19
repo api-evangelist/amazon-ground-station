@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-aggregate-status-structure.json",
+  "name": "AggregateStatus",
+  "description": "Aggregate status of Agent components.",
+  "type": "object",
+  "properties": {
+    "signatureMap": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SignatureMap"
+        },
+        {
+          "description": "Sparse map of failure signatures."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgentStatus"
+        },
+        {
+          "description": "Aggregate status."
+        }
+      ]
+    }
+  },
+  "required": [
+    "status"
+  ]
+}

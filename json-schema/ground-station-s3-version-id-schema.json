@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-s3-version-id-schema.json",
+  "title": "S3VersionId",
+  "description": "S3VersionId schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^[\\s\\S]{1,1024}$"
+}

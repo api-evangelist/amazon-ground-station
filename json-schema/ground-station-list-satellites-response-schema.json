@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-list-satellites-response-schema.json",
+  "title": "ListSatellitesResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "Next token that can be supplied in the next call to get the next page of satellites."
+        }
+      ]
+    },
+    "satellites": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SatelliteList"
+        },
+        {
+          "description": "List of satellites."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-tag-keys-structure.json",
+  "name": "TagKeys",
+  "description": "TagKeys schema from Amazon Ground Station API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/UnboundedString"
+  }
+}

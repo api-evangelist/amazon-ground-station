@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-s3-object-structure.json",
+  "name": "S3Object",
+  "description": "Object stored in S3 containing ephemeris data.",
+  "type": "object",
+  "properties": {
+    "bucket": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3BucketName"
+        },
+        {
+          "description": "An Amazon S3 Bucket name."
+        }
+      ]
+    },
+    "key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3ObjectKey"
+        },
+        {
+          "description": "An Amazon S3 key for the ephemeris."
+        }
+      ]
+    },
+    "version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3VersionId"
+        },
+        {
+          "description": "For versioned S3 objects, the version to use for the ephemeris."
+        }
+      ]
+    }
+  }
+}

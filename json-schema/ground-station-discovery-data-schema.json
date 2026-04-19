@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-discovery-data-schema.json",
+  "title": "DiscoveryData",
+  "description": "Data for agent discovery.",
+  "type": "object",
+  "properties": {
+    "capabilityArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CapabilityArnList"
+        },
+        {
+          "description": "List of capabilities to associate with agent."
+        }
+      ]
+    },
+    "privateIpAddresses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpAddressList"
+        },
+        {
+          "description": "List of private IP addresses to associate with agent."
+        }
+      ]
+    },
+    "publicIpAddresses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpAddressList"
+        },
+        {
+          "description": "List of public IP addresses to associate with agent."
+        }
+      ]
+    }
+  },
+  "required": [
+    "capabilityArns",
+    "privateIpAddresses",
+    "publicIpAddresses"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-s3-recording-config-schema.json",
+  "title": "S3RecordingConfig",
+  "description": "Information about an S3 recording <code>Config</code>.",
+  "type": "object",
+  "properties": {
+    "bucketArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BucketArn"
+        },
+        {
+          "description": "ARN of the bucket to record to."
+        }
+      ]
+    },
+    "prefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3KeyPrefix"
+        },
+        {
+          "description": "S3 Key prefix to prefice data files."
+        }
+      ]
+    },
+    "roleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoleArn"
+        },
+        {
+          "description": "ARN of the role Ground Station assumes to write data to the bucket."
+        }
+      ]
+    }
+  },
+  "required": [
+    "bucketArn",
+    "roleArn"
+  ]
+}

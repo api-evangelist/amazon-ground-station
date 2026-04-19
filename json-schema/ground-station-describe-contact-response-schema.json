@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-describe-contact-response-schema.json",
+  "title": "DescribeContactResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "contactId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a contact."
+        }
+      ]
+    },
+    "contactStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ContactStatus"
+        },
+        {
+          "description": "Status of a contact."
+        }
+      ]
+    },
+    "dataflowList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowList"
+        },
+        {
+          "description": "List describing source and destination details for each dataflow edge."
+        }
+      ]
+    },
+    "endTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "End time of a contact in UTC."
+        }
+      ]
+    },
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Error message for a contact."
+        }
+      ]
+    },
+    "groundStation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Ground station for a contact."
+        }
+      ]
+    },
+    "maximumElevation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Elevation"
+        },
+        {
+          "description": "Maximum elevation angle of a contact."
+        }
+      ]
+    },
+    "missionProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MissionProfileArn"
+        },
+        {
+          "description": "ARN of a mission profile."
+        }
+      ]
+    },
+    "postPassEndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Amount of time after a contact ends that you\u2019d like to receive a CloudWatch event indicating the pass has finished."
+        }
+      ]
+    },
+    "prePassStartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Amount of time prior to contact start you\u2019d like to receive a CloudWatch event indicating an upcoming pass."
+        }
+      ]
+    },
+    "region": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Region of a contact."
+        }
+      ]
+    },
+    "satelliteArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/satelliteArn"
+        },
+        {
+          "description": "ARN of a satellite."
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Start time of a contact in UTC."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to a contact."
+        }
+      ]
+    }
+  }
+}

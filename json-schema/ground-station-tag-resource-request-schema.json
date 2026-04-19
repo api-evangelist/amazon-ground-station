@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-tag-resource-request-schema.json",
+  "title": "TagResourceRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to a resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "tags"
+  ]
+}

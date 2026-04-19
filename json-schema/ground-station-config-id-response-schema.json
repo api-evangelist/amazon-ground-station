@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-config-id-response-schema.json",
+  "title": "ConfigIdResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "configArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigArn"
+        },
+        {
+          "description": "ARN of a <code>Config</code>."
+        }
+      ]
+    },
+    "configId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "UUID of a <code>Config</code>."
+        }
+      ]
+    },
+    "configType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigCapabilityType"
+        },
+        {
+          "description": "Type of a <code>Config</code>."
+        }
+      ]
+    }
+  }
+}

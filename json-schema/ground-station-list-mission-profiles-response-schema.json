@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-list-mission-profiles-response-schema.json",
+  "title": "ListMissionProfilesResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "missionProfileList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MissionProfileList"
+        },
+        {
+          "description": "List of mission profiles."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results."
+        }
+      ]
+    }
+  }
+}

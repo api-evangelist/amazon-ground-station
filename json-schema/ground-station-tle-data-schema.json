@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-tle-data-schema.json",
+  "title": "TLEData",
+  "description": "Two-line element set (TLE) data.",
+  "type": "object",
+  "properties": {
+    "tleLine1": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TleLineOne"
+        },
+        {
+          "description": "First line of two-line element set (TLE) data."
+        }
+      ]
+    },
+    "tleLine2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TleLineTwo"
+        },
+        {
+          "description": "Second line of two-line element set (TLE) data."
+        }
+      ]
+    },
+    "validTimeRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeRange"
+        },
+        {
+          "description": "The valid time range for the TLE. Gaps or overlap are not permitted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "tleLine1",
+    "tleLine2",
+    "validTimeRange"
+  ]
+}

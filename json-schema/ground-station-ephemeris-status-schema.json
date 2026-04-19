@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-ephemeris-status-schema.json",
+  "title": "EphemerisStatus",
+  "description": "EphemerisStatus schema from Amazon Ground Station API",
+  "type": "string",
+  "enum": [
+    "VALIDATING",
+    "INVALID",
+    "ERROR",
+    "ENABLED",
+    "DISABLED",
+    "EXPIRED"
+  ]
+}

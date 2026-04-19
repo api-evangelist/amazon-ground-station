@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-s3-object-key-structure.json",
+  "name": "S3ObjectKey",
+  "description": "S3ObjectKey schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9!*'\\)\\(./_-]{1,1024}$"
+}

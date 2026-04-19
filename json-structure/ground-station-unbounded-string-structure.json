@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-unbounded-string-structure.json",
+  "name": "UnboundedString",
+  "description": "UnboundedString schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^[\\s\\S]+$"
+}

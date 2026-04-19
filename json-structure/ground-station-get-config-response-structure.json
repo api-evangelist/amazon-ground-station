@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-get-config-response-structure.json",
+  "name": "GetConfigResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "configArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigArn"
+        },
+        {
+          "description": "ARN of a <code>Config</code> "
+        }
+      ]
+    },
+    "configData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigTypeData"
+        },
+        {
+          "description": "Data elements in a <code>Config</code>."
+        }
+      ]
+    },
+    "configId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "UUID of a <code>Config</code>."
+        }
+      ]
+    },
+    "configType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigCapabilityType"
+        },
+        {
+          "description": "Type of a <code>Config</code>."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Name of a <code>Config</code>."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to a <code>Config</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "configArn",
+    "configData",
+    "configId",
+    "name"
+  ]
+}

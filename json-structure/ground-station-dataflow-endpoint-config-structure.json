@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-dataflow-endpoint-config-structure.json",
+  "name": "DataflowEndpointConfig",
+  "description": "Information about the dataflow endpoint <code>Config</code>.",
+  "type": "object",
+  "properties": {
+    "dataflowEndpointName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Name of a dataflow endpoint."
+        }
+      ]
+    },
+    "dataflowEndpointRegion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Region of a dataflow endpoint."
+        }
+      ]
+    }
+  },
+  "required": [
+    "dataflowEndpointName"
+  ]
+}

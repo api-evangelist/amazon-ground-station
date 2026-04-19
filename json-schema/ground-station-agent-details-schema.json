@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-agent-details-schema.json",
+  "title": "AgentDetails",
+  "description": "Detailed information about the agent.",
+  "type": "object",
+  "properties": {
+    "agentCpuCores": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgentCpuCoresList"
+        },
+        {
+          "description": "List of CPU cores reserved for the agent."
+        }
+      ]
+    },
+    "agentVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VersionString"
+        },
+        {
+          "description": "Current agent version."
+        }
+      ]
+    },
+    "componentVersions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComponentVersionList"
+        },
+        {
+          "description": "List of versions being used by agent components."
+        }
+      ]
+    },
+    "instanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceId"
+        },
+        {
+          "description": "ID of EC2 instance agent is running on."
+        }
+      ]
+    },
+    "instanceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceType"
+        },
+        {
+          "description": "Type of EC2 instance agent is running on."
+        }
+      ]
+    },
+    "reservedCpuCores": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgentCpuCoresList"
+        },
+        {
+          "description": "<note> <p>This field should not be used. Use agentCpuCores instead.</p> </note> <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "agentVersion",
+    "componentVersions",
+    "instanceId",
+    "instanceType"
+  ]
+}

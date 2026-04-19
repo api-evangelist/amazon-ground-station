@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-describe-ephemeris-response-structure.json",
+  "name": "DescribeEphemerisResponse",
+  "description": "DescribeEphemerisResponse schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "creationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time the ephemeris was uploaded in UTC."
+        }
+      ]
+    },
+    "enabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Whether or not the ephemeris is enabled."
+        }
+      ]
+    },
+    "ephemerisId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "The AWS Ground Station ephemeris ID."
+        }
+      ]
+    },
+    "invalidReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisInvalidReason"
+        },
+        {
+          "description": "Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris."
+        }
+      ]
+    },
+    "priority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisPriority"
+        },
+        {
+          "description": "<p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>"
+        }
+      ]
+    },
+    "satelliteId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "The AWS Ground Station satellite ID associated with ephemeris."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisStatus"
+        },
+        {
+          "description": "The status of the ephemeris."
+        }
+      ]
+    },
+    "suppliedData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisTypeDescription"
+        },
+        {
+          "description": "Supplied ephemeris data."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to an ephemeris."
+        }
+      ]
+    }
+  }
+}

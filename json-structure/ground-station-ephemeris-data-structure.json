@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-ephemeris-data-structure.json",
+  "name": "EphemerisData",
+  "description": "Ephemeris data.",
+  "type": "object",
+  "properties": {
+    "oem": {
+      "$ref": "#/components/schemas/OEMEphemeris"
+    },
+    "tle": {
+      "$ref": "#/components/schemas/TLEEphemeris"
+    }
+  }
+}

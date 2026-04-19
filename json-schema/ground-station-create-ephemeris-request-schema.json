@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-create-ephemeris-request-schema.json",
+  "title": "CreateEphemerisRequest",
+  "description": "CreateEphemerisRequest schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "enabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "<p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p> <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>"
+        }
+      ]
+    },
+    "ephemeris": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisData"
+        },
+        {
+          "description": "Ephemeris data."
+        }
+      ]
+    },
+    "expirationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>."
+        }
+      ]
+    },
+    "kmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KeyArn"
+        },
+        {
+          "description": "The ARN of a KMS key used to encrypt the ephemeris in Ground Station."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris."
+        }
+      ]
+    },
+    "priority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CustomerEphemerisPriority"
+        },
+        {
+          "description": "<p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>"
+        }
+      ]
+    },
+    "satelliteId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "AWS Ground Station satellite ID for this ephemeris."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to an ephemeris."
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "satelliteId"
+  ]
+}

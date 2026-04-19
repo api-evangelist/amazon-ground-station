@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-antenna-downlink-config-structure.json",
+  "name": "AntennaDownlinkConfig",
+  "description": "Information about how AWS Ground Station should configure an antenna for downlink during a contact.",
+  "type": "object",
+  "properties": {
+    "spectrumConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SpectrumConfig"
+        },
+        {
+          "description": "Object that describes a spectral <code>Config</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "spectrumConfig"
+  ]
+}

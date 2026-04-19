@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-ephemeris-type-description-schema.json",
+  "title": "EphemerisTypeDescription",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "oem": {
+      "$ref": "#/components/schemas/EphemerisDescription"
+    },
+    "tle": {
+      "$ref": "#/components/schemas/EphemerisDescription"
+    }
+  }
+}

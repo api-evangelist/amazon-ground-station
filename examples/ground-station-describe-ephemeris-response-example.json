@@ -1,0 +1,8 @@
+{
+  "creationTime": "example-creationTime",
+  "enabled": "example-enabled",
+  "ephemerisId": "example-ephemerisId",
+  "invalidReason": "example-invalidReaso",
+  "name": "MyMissionProfile",
+  "priority": "example-priority"
+}

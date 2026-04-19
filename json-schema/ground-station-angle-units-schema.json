@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-angle-units-schema.json",
+  "title": "AngleUnits",
+  "description": "AngleUnits schema from Amazon Ground Station API",
+  "type": "string",
+  "enum": [
+    "DEGREE_ANGLE",
+    "RADIAN"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-register-agent-response-structure.json",
+  "name": "RegisterAgentResponse",
+  "description": "RegisterAgentResponse schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "agentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of registered agent."
+        }
+      ]
+    }
+  }
+}

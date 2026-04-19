@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-elevation-structure.json",
+  "name": "Elevation",
+  "description": "Elevation angle of the satellite in the sky during a contact.",
+  "type": "object",
+  "properties": {
+    "unit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AngleUnits"
+        },
+        {
+          "description": "Elevation angle units."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "Elevation angle value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "unit",
+    "value"
+  ]
+}

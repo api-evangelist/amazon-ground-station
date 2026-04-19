@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-any-arn-structure.json",
+  "name": "AnyArn",
+  "description": "AnyArn schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^(arn:aws:)[\\s\\S]{0,1024}$"
+}

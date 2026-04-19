@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-component-type-string-structure.json",
+  "name": "ComponentTypeString",
+  "description": "ComponentTypeString schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9_]{1,64}$"
+}

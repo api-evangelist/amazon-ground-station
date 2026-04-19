@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-update-agent-status-request-structure.json",
+  "name": "UpdateAgentStatusRequest",
+  "description": "UpdateAgentStatusRequest schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "aggregateStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregateStatus"
+        },
+        {
+          "description": "Aggregate status for agent."
+        }
+      ]
+    },
+    "componentStatuses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComponentStatusList"
+        },
+        {
+          "description": "List of component statuses for agent."
+        }
+      ]
+    },
+    "taskId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "GUID of agent task."
+        }
+      ]
+    }
+  },
+  "required": [
+    "aggregateStatus",
+    "componentStatuses",
+    "taskId"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "awsGroundStationAgentEndpoint": "example-awsGroundSta",
+  "endpoint": "example-endpoint",
+  "healthReasons": "example-healthReason",
+  "healthStatus": "COMPLETED",
+  "securityDetails": "example-securityDeta"
+}

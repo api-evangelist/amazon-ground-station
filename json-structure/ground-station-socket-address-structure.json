@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-socket-address-structure.json",
+  "name": "SocketAddress",
+  "description": "Information about the socket address.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Name of a socket address."
+        }
+      ]
+    },
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "Port of a socket address."
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "port"
+  ]
+}

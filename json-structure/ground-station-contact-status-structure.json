@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-contact-status-structure.json",
+  "name": "ContactStatus",
+  "description": "ContactStatus schema from Amazon Ground Station API",
+  "type": "string",
+  "enum": [
+    "AVAILABLE",
+    "AWS_CANCELLED",
+    "AWS_FAILED",
+    "CANCELLED",
+    "CANCELLING",
+    "COMPLETED",
+    "FAILED",
+    "FAILED_TO_SCHEDULE",
+    "PASS",
+    "POSTPASS",
+    "PREPASS",
+    "SCHEDULED",
+    "SCHEDULING"
+  ]
+}

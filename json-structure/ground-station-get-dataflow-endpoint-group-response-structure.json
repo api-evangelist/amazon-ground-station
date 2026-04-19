@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-get-dataflow-endpoint-group-response-structure.json",
+  "name": "GetDataflowEndpointGroupResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "contactPostPassDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpointGroupDurationInSeconds"
+        },
+        {
+          "description": "Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state."
+        }
+      ]
+    },
+    "contactPrePassDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpointGroupDurationInSeconds"
+        },
+        {
+          "description": "Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state."
+        }
+      ]
+    },
+    "dataflowEndpointGroupArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpointGroupArn"
+        },
+        {
+          "description": "ARN of a dataflow endpoint group."
+        }
+      ]
+    },
+    "dataflowEndpointGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a dataflow endpoint group."
+        }
+      ]
+    },
+    "endpointsDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EndpointDetailsList"
+        },
+        {
+          "description": "Details of a dataflow endpoint."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to a dataflow endpoint group."
+        }
+      ]
+    }
+  }
+}

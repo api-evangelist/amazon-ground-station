@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-version-string-structure.json",
+  "name": "VersionString",
+  "description": "VersionString schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^(0|[1-9]\\d*)(\\.(0|[1-9]\\d*))*$"
+}

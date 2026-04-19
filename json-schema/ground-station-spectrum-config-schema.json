@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-spectrum-config-schema.json",
+  "title": "SpectrumConfig",
+  "description": "Object that describes a spectral <code>Config</code>.",
+  "type": "object",
+  "properties": {
+    "bandwidth": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FrequencyBandwidth"
+        },
+        {
+          "description": "<p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>"
+        }
+      ]
+    },
+    "centerFrequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Frequency"
+        },
+        {
+          "description": "Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink."
+        }
+      ]
+    },
+    "polarization": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Polarization"
+        },
+        {
+          "description": "Polarization of a spectral <code>Config</code>. Capturing both <code>\"RIGHT_HAND\"</code> and <code>\"LEFT_HAND\"</code> polarization requires two separate configs."
+        }
+      ]
+    }
+  },
+  "required": [
+    "bandwidth",
+    "centerFrequency"
+  ]
+}

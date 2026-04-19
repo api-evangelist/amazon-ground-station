@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-register-agent-request-structure.json",
+  "name": "RegisterAgentRequest",
+  "description": "RegisterAgentRequest schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "agentDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgentDetails"
+        },
+        {
+          "description": "Detailed information about the agent being registered."
+        }
+      ]
+    },
+    "discoveryData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DiscoveryData"
+        },
+        {
+          "description": "Data for associating an agent with the capabilities it is managing."
+        }
+      ]
+    }
+  },
+  "required": [
+    "agentDetails",
+    "discoveryData"
+  ]
+}

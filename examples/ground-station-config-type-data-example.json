@@ -1,0 +1,8 @@
+{
+  "antennaDownlinkConfig": "example-antennaDownl",
+  "antennaDownlinkDemodDecodeConfig": "example-antennaDownl",
+  "antennaUplinkConfig": "example-antennaUplin",
+  "dataflowEndpointConfig": "example-dataflowEndp",
+  "s3RecordingConfig": "example-s3RecordingC",
+  "trackingConfig": "example-trackingConf"
+}

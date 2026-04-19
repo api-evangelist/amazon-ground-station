@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-integer-range-structure.json",
+  "name": "IntegerRange",
+  "description": "An integer range that has a minimum and maximum value.",
+  "type": "object",
+  "properties": {
+    "maximum": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "A maximum value."
+        }
+      ]
+    },
+    "minimum": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "A minimum value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "maximum",
+    "minimum"
+  ]
+}

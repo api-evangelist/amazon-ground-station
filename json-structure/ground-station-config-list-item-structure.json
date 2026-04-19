@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-config-list-item-structure.json",
+  "name": "ConfigListItem",
+  "description": "An item in a list of <code>Config</code> objects.",
+  "type": "object",
+  "properties": {
+    "configArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigArn"
+        },
+        {
+          "description": "ARN of a <code>Config</code>."
+        }
+      ]
+    },
+    "configId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "UUID of a <code>Config</code>."
+        }
+      ]
+    },
+    "configType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigCapabilityType"
+        },
+        {
+          "description": "Type of a <code>Config</code>."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Name of a <code>Config</code>."
+        }
+      ]
+    }
+  }
+}

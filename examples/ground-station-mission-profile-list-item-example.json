@@ -1,0 +1,6 @@
+{
+  "missionProfileArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123",
+  "missionProfileId": "example-missionProfi",
+  "name": "MyMissionProfile",
+  "region": "example-region"
+}

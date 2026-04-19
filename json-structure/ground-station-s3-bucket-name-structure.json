@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-s3-bucket-name-structure.json",
+  "name": "S3BucketName",
+  "description": "S3BucketName schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^[a-z0-9.-]{3,63}$"
+}

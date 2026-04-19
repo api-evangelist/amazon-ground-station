@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-describe-contact-request-structure.json",
+  "name": "DescribeContactRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {}
+}

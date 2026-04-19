@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-antenna-uplink-config-structure.json",
+  "name": "AntennaUplinkConfig",
+  "description": "Information about the uplink <code>Config</code> of an antenna.",
+  "type": "object",
+  "properties": {
+    "spectrumConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UplinkSpectrumConfig"
+        },
+        {
+          "description": "Information about the uplink spectral <code>Config</code>."
+        }
+      ]
+    },
+    "targetEirp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Eirp"
+        },
+        {
+          "description": "EIRP of the target."
+        }
+      ]
+    },
+    "transmitDisabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Whether or not uplink transmit is disabled."
+        }
+      ]
+    }
+  },
+  "required": [
+    "spectrumConfig",
+    "targetEirp"
+  ]
+}

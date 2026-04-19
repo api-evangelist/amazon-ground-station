@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-instance-id-structure.json",
+  "name": "InstanceId",
+  "description": "InstanceId schema from Amazon Ground Station API",
+  "type": "string",
+  "pattern": "^[a-z0-9-]{10,64}$"
+}

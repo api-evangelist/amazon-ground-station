@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-component-version-structure.json",
+  "name": "ComponentVersion",
+  "description": "Version information for agent components.",
+  "type": "object",
+  "properties": {
+    "componentType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComponentTypeString"
+        },
+        {
+          "description": "Component type."
+        }
+      ]
+    },
+    "versions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VersionStringList"
+        },
+        {
+          "description": "List of versions."
+        }
+      ]
+    }
+  },
+  "required": [
+    "componentType",
+    "versions"
+  ]
+}

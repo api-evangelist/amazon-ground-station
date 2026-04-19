@@ -1,0 +1,8 @@
+{
+  "creationTime": "example-creationTime",
+  "enabled": "example-enabled",
+  "ephemerisId": "example-ephemerisId",
+  "name": "MyMissionProfile",
+  "priority": "example-priority",
+  "sourceS3Object": "example-sourceS3Obje"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-dataflow-endpoint-list-item-schema.json",
+  "title": "DataflowEndpointListItem",
+  "description": "Item in a list of <code>DataflowEndpoint</code> groups.",
+  "type": "object",
+  "properties": {
+    "dataflowEndpointGroupArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpointGroupArn"
+        },
+        {
+          "description": "ARN of a dataflow endpoint group."
+        }
+      ]
+    },
+    "dataflowEndpointGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a dataflow endpoint group."
+        }
+      ]
+    }
+  }
+}

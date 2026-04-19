@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-list-dataflow-endpoint-groups-response-structure.json",
+  "name": "ListDataflowEndpointGroupsResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "dataflowEndpointGroupList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpointGroupList"
+        },
+        {
+          "description": "A list of dataflow endpoint groups."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-list-contacts-request-schema.json",
+  "title": "ListContactsRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "endTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "End time of a contact in UTC."
+        }
+      ]
+    },
+    "groundStation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroundStationName"
+        },
+        {
+          "description": "Name of a ground station."
+        }
+      ]
+    },
+    "maxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationMaxResults"
+        },
+        {
+          "description": "Maximum number of contacts returned."
+        }
+      ]
+    },
+    "missionProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MissionProfileArn"
+        },
+        {
+          "description": "ARN of a mission profile."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results."
+        }
+      ]
+    },
+    "satelliteArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/satelliteArn"
+        },
+        {
+          "description": "ARN of a satellite."
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Start time of a contact in UTC."
+        }
+      ]
+    },
+    "statusList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusList"
+        },
+        {
+          "description": "Status of a contact reservation."
+        }
+      ]
+    }
+  },
+  "required": [
+    "endTime",
+    "startTime",
+    "statusList"
+  ]
+}

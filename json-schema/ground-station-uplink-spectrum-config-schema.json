@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-uplink-spectrum-config-schema.json",
+  "title": "UplinkSpectrumConfig",
+  "description": "Information about the uplink spectral <code>Config</code>.",
+  "type": "object",
+  "properties": {
+    "centerFrequency": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Frequency"
+        },
+        {
+          "description": "Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz."
+        }
+      ]
+    },
+    "polarization": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Polarization"
+        },
+        {
+          "description": "Polarization of an uplink spectral <code>Config</code>. Capturing both <code>\"RIGHT_HAND\"</code> and <code>\"LEFT_HAND\"</code> polarization requires two separate configs."
+        }
+      ]
+    }
+  },
+  "required": [
+    "centerFrequency"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-list-ephemerides-response-structure.json",
+  "name": "ListEphemeridesResponse",
+  "description": "ListEphemeridesResponse schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "ephemerides": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemeridesList"
+        },
+        {
+          "description": "List of ephemerides."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "Pagination token."
+        }
+      ]
+    }
+  }
+}

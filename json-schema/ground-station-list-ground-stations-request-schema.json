@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-list-ground-stations-request-schema.json",
+  "title": "ListGroundStationsRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {}
+}

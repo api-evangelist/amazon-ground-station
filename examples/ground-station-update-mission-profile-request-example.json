@@ -1,0 +1,8 @@
+{
+  "contactPostPassDurationSeconds": "example-contactPostP",
+  "contactPrePassDurationSeconds": "example-contactPrePa",
+  "dataflowEdges": "example-dataflowEdge",
+  "minimumViableContactDurationSeconds": "example-minimumViabl",
+  "name": "MyMissionProfile",
+  "streamsKmsKey": "example-streamsKmsKe"
+}

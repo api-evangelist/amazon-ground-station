@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-component-status-data-schema.json",
+  "title": "ComponentStatusData",
+  "description": "Data on the status of agent components.",
+  "type": "object",
+  "properties": {
+    "bytesReceived": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "Bytes received by the component."
+        }
+      ]
+    },
+    "bytesSent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "Bytes sent by the component."
+        }
+      ]
+    },
+    "capabilityArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CapabilityArn"
+        },
+        {
+          "description": "Capability ARN of the component."
+        }
+      ]
+    },
+    "componentType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComponentTypeString"
+        },
+        {
+          "description": "The Component type."
+        }
+      ]
+    },
+    "dataflowId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "Dataflow UUID associated with the component."
+        }
+      ]
+    },
+    "packetsDropped": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "Packets dropped by component."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgentStatus"
+        },
+        {
+          "description": "Component status."
+        }
+      ]
+    }
+  },
+  "required": [
+    "capabilityArn",
+    "componentType",
+    "dataflowId",
+    "status"
+  ]
+}

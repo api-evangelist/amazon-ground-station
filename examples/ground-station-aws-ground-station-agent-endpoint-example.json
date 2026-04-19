@@ -1,0 +1,7 @@
+{
+  "agentStatus": "COMPLETED",
+  "auditResults": "example-auditResults",
+  "egressAddress": "example-egressAddres",
+  "ingressAddress": "example-ingressAddre",
+  "name": "MyMissionProfile"
+}

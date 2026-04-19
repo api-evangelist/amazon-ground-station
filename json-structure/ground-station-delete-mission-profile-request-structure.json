@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-delete-mission-profile-request-structure.json",
+  "name": "DeleteMissionProfileRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {}
+}

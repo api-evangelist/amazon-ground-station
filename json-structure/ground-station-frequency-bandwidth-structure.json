@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-frequency-bandwidth-structure.json",
+  "name": "FrequencyBandwidth",
+  "description": "Object that describes the frequency bandwidth. ",
+  "type": "object",
+  "properties": {
+    "units": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BandwidthUnits"
+        },
+        {
+          "description": "Frequency bandwidth units."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "<p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "units",
+    "value"
+  ]
+}

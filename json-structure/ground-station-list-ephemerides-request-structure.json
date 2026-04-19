@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-list-ephemerides-request-structure.json",
+  "name": "ListEphemeridesRequest",
+  "description": "ListEphemeridesRequest schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "endTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>."
+        }
+      ]
+    },
+    "satelliteId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "The AWS Ground Station satellite ID to list ephemeris for."
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>."
+        }
+      ]
+    },
+    "statusList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisStatusList"
+        },
+        {
+          "description": "The list of ephemeris status to return."
+        }
+      ]
+    }
+  },
+  "required": [
+    "endTime",
+    "satelliteId",
+    "startTime"
+  ]
+}

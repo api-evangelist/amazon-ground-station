@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-create-dataflow-endpoint-group-request-schema.json",
+  "title": "CreateDataflowEndpointGroupRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "contactPostPassDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpointGroupDurationInSeconds"
+        },
+        {
+          "description": "Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state."
+        }
+      ]
+    },
+    "contactPrePassDurationSeconds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpointGroupDurationInSeconds"
+        },
+        {
+          "description": "Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state."
+        }
+      ]
+    },
+    "endpointDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EndpointDetailsList"
+        },
+        {
+          "description": "Endpoint details of each endpoint in the dataflow endpoint group."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags of a dataflow endpoint group."
+        }
+      ]
+    }
+  },
+  "required": [
+    "endpointDetails"
+  ]
+}

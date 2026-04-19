@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-capability-health-reason-schema.json",
+  "title": "CapabilityHealthReason",
+  "description": "CapabilityHealthReason schema from Amazon Ground Station API",
+  "type": "string",
+  "enum": [
+    "NO_REGISTERED_AGENT",
+    "INVALID_IP_OWNERSHIP",
+    "NOT_AUTHORIZED_TO_CREATE_SLR",
+    "UNVERIFIED_IP_OWNERSHIP",
+    "INITIALIZING_DATAPLANE",
+    "DATAPLANE_FAILURE",
+    "HEALTHY"
+  ]
+}

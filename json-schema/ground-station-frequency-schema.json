@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-frequency-schema.json",
+  "title": "Frequency",
+  "description": "Object that describes the frequency.",
+  "type": "object",
+  "properties": {
+    "units": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FrequencyUnits"
+        },
+        {
+          "description": "Frequency units."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink."
+        }
+      ]
+    }
+  },
+  "required": [
+    "units",
+    "value"
+  ]
+}

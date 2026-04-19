@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-delete-dataflow-endpoint-group-request-structure.json",
+  "name": "DeleteDataflowEndpointGroupRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {}
+}

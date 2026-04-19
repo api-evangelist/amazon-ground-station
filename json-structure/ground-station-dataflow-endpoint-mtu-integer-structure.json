@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-dataflow-endpoint-mtu-integer-structure.json",
+  "name": "DataflowEndpointMtuInteger",
+  "description": "DataflowEndpointMtuInteger schema from Amazon Ground Station API",
+  "type": "int32",
+  "minimum": 1400,
+  "maximum": 1500
+}

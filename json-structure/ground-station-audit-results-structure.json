@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-audit-results-structure.json",
+  "name": "AuditResults",
+  "description": "AuditResults schema from Amazon Ground Station API",
+  "type": "string",
+  "enum": [
+    "HEALTHY",
+    "UNHEALTHY"
+  ]
+}

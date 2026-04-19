@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-ephemeris-description-structure.json",
+  "name": "EphemerisDescription",
+  "description": "Description of ephemeris.",
+  "type": "object",
+  "properties": {
+    "ephemerisData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UnboundedString"
+        },
+        {
+          "description": "Supplied ephemeris data."
+        }
+      ]
+    },
+    "sourceS3Object": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Object"
+        },
+        {
+          "description": "Source S3 object used for the ephemeris."
+        }
+      ]
+    }
+  }
+}

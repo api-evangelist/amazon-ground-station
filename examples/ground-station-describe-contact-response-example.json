@@ -1,0 +1,8 @@
+{
+  "contactId": "example-contactId",
+  "contactStatus": "COMPLETED",
+  "dataflowList": "example-dataflowList",
+  "endTime": "example-endTime",
+  "errorMessage": "example-errorMessage",
+  "groundStation": "example-groundStatio"
+}

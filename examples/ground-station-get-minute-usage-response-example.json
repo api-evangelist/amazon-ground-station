@@ -1,0 +1,7 @@
+{
+  "estimatedMinutesRemaining": "example-estimatedMin",
+  "isReservedMinutesCustomer": "example-isReservedMi",
+  "totalReservedMinuteAllocation": "example-totalReserve",
+  "totalScheduledMinutes": "example-totalSchedul",
+  "upcomingMinutesScheduled": "example-upcomingMinu"
+}

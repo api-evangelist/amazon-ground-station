@@ -1,0 +1,742 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "gs": "https://aws.amazon.com/ground-station/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "TagsMap": "gs:TagsMap",
+    "GetMinuteUsageRequest": "gs:GetMinuteUsageRequest",
+    "ComponentVersion": "gs:ComponentVersion",
+    "DemodulationConfig": "gs:DemodulationConfig",
+    "DescribeContactRequest": "gs:DescribeContactRequest",
+    "ListEphemeridesResponse": "gs:ListEphemeridesResponse",
+    "EphemerisMetaData": "gs:EphemerisMetaData",
+    "ListSatellitesRequest": "gs:ListSatellitesRequest",
+    "UplinkEchoConfig": "gs:UplinkEchoConfig",
+    "CreateEphemerisRequest": "gs:CreateEphemerisRequest",
+    "EndpointDetails": "gs:EndpointDetails",
+    "GetAgentConfigurationResponse": "gs:GetAgentConfigurationResponse",
+    "GetMissionProfileResponse": "gs:GetMissionProfileResponse",
+    "Frequency": "gs:Frequency",
+    "RangedConnectionDetails": "gs:RangedConnectionDetails",
+    "AgentDetails": "gs:AgentDetails",
+    "ComponentStatusData": "gs:ComponentStatusData",
+    "DataflowEndpointGroupIdResponse": "gs:DataflowEndpointGroupIdResponse",
+    "UpdateAgentStatusResponse": "gs:UpdateAgentStatusResponse",
+    "MissionProfileListItem": "gs:MissionProfileListItem",
+    "GroundStationData": "gs:GroundStationData",
+    "Source": "gs:Source",
+    "CreateDataflowEndpointGroupRequest": "gs:CreateDataflowEndpointGroupRequest",
+    "ContactIdResponse": "gs:ContactIdResponse",
+    "DeleteConfigRequest": "gs:DeleteConfigRequest",
+    "Elevation": "gs:Elevation",
+    "EphemerisItem": "gs:EphemerisItem",
+    "ConfigIdResponse": "gs:ConfigIdResponse",
+    "GetSatelliteResponse": "gs:GetSatelliteResponse",
+    "DataflowEndpointConfig": "gs:DataflowEndpointConfig",
+    "ListContactsRequest": "gs:ListContactsRequest",
+    "ListGroundStationsResponse": "gs:ListGroundStationsResponse",
+    "DescribeEphemerisResponse": "gs:DescribeEphemerisResponse",
+    "MissionProfileIdResponse": "gs:MissionProfileIdResponse",
+    "OEMEphemeris": "gs:OEMEphemeris",
+    "DeleteDataflowEndpointGroupRequest": "gs:DeleteDataflowEndpointGroupRequest",
+    "ListTagsForResourceRequest": "gs:ListTagsForResourceRequest",
+    "ListDataflowEndpointGroupsRequest": "gs:ListDataflowEndpointGroupsRequest",
+    "S3RecordingConfig": "gs:S3RecordingConfig",
+    "SecurityDetails": "gs:SecurityDetails",
+    "CreateConfigRequest": "gs:CreateConfigRequest",
+    "GetAgentConfigurationRequest": "gs:GetAgentConfigurationRequest",
+    "FrequencyBandwidth": "gs:FrequencyBandwidth",
+    "GetDataflowEndpointGroupResponse": "gs:GetDataflowEndpointGroupResponse",
+    "GetConfigRequest": "gs:GetConfigRequest",
+    "SocketAddress": "gs:SocketAddress",
+    "DescribeContactResponse": "gs:DescribeContactResponse",
+    "RangedSocketAddress": "gs:RangedSocketAddress",
+    "ListGroundStationsRequest": "gs:ListGroundStationsRequest",
+    "UpdateMissionProfileRequest": "gs:UpdateMissionProfileRequest",
+    "DecodeConfig": "gs:DecodeConfig",
+    "ReserveContactRequest": "gs:ReserveContactRequest",
+    "AntennaDownlinkDemodDecodeConfig": "gs:AntennaDownlinkDemodDecodeConfig",
+    "EphemerisIdResponse": "gs:EphemerisIdResponse",
+    "GetSatelliteRequest": "gs:GetSatelliteRequest",
+    "SpectrumConfig": "gs:SpectrumConfig",
+    "TimeRange": "gs:TimeRange",
+    "ConfigDetails": "gs:ConfigDetails",
+    "AntennaDownlinkConfig": "gs:AntennaDownlinkConfig",
+    "UpdateConfigRequest": "gs:UpdateConfigRequest",
+    "RegisterAgentRequest": "gs:RegisterAgentRequest",
+    "Eirp": "gs:Eirp",
+    "UpdateEphemerisRequest": "gs:UpdateEphemerisRequest",
+    "EphemerisDescription": "gs:EphemerisDescription",
+    "UplinkSpectrumConfig": "gs:UplinkSpectrumConfig",
+    "RegisterAgentResponse": "gs:RegisterAgentResponse",
+    "ListConfigsRequest": "gs:ListConfigsRequest",
+    "SatelliteListItem": "gs:SatelliteListItem",
+    "EphemerisTypeDescription": "gs:EphemerisTypeDescription",
+    "TagResourceResponse": "gs:TagResourceResponse",
+    "DataflowEndpoint": "gs:DataflowEndpoint",
+    "UntagResourceRequest": "gs:UntagResourceRequest",
+    "AggregateStatus": "gs:AggregateStatus",
+    "EphemerisData": "gs:EphemerisData",
+    "DeleteEphemerisRequest": "gs:DeleteEphemerisRequest",
+    "GetMinuteUsageResponse": "gs:GetMinuteUsageResponse",
+    "ListTagsForResourceResponse": "gs:ListTagsForResourceResponse",
+    "UntagResourceResponse": "gs:UntagResourceResponse",
+    "UpdateAgentStatusRequest": "gs:UpdateAgentStatusRequest",
+    "CreateMissionProfileRequest": "gs:CreateMissionProfileRequest",
+    "ListMissionProfilesRequest": "gs:ListMissionProfilesRequest",
+    "DescribeEphemerisRequest": "gs:DescribeEphemerisRequest",
+    "SignatureMap": "gs:SignatureMap",
+    "KmsKey": "gs:KmsKey",
+    "S3Object": "gs:S3Object",
+    "ListEphemeridesRequest": "gs:ListEphemeridesRequest",
+    "ListDataflowEndpointGroupsResponse": "gs:ListDataflowEndpointGroupsResponse",
+    "GetDataflowEndpointGroupRequest": "gs:GetDataflowEndpointGroupRequest",
+    "AwsGroundStationAgentEndpoint": "gs:AwsGroundStationAgentEndpoint",
+    "TrackingConfig": "gs:TrackingConfig",
+    "ListMissionProfilesResponse": "gs:ListMissionProfilesResponse",
+    "GetMissionProfileRequest": "gs:GetMissionProfileRequest",
+    "CancelContactRequest": "gs:CancelContactRequest",
+    "S3RecordingDetails": "gs:S3RecordingDetails",
+    "DataflowEndpointListItem": "gs:DataflowEndpointListItem",
+    "ListConfigsResponse": "gs:ListConfigsResponse",
+    "ConfigTypeData": "gs:ConfigTypeData",
+    "GetConfigResponse": "gs:GetConfigResponse",
+    "Destination": "gs:Destination",
+    "ConnectionDetails": "gs:ConnectionDetails",
+    "ListContactsResponse": "gs:ListContactsResponse",
+    "ListSatellitesResponse": "gs:ListSatellitesResponse",
+    "TagResourceRequest": "gs:TagResourceRequest",
+    "DataflowDetail": "gs:DataflowDetail",
+    "AntennaDemodDecodeDetails": "gs:AntennaDemodDecodeDetails",
+    "DeleteMissionProfileRequest": "gs:DeleteMissionProfileRequest",
+    "IntegerRange": "gs:IntegerRange",
+    "DiscoveryData": "gs:DiscoveryData",
+    "ConfigListItem": "gs:ConfigListItem",
+    "TLEData": "gs:TLEData",
+    "ContactData": "gs:ContactData",
+    "AntennaUplinkConfig": "gs:AntennaUplinkConfig",
+    "TLEEphemeris": "gs:TLEEphemeris",
+    "month": {
+      "@id": "gs:month",
+      "@type": "xsd:string"
+    },
+    "year": {
+      "@id": "gs:year",
+      "@type": "xsd:string"
+    },
+    "componentType": {
+      "@id": "gs:componentType",
+      "@type": "xsd:string"
+    },
+    "versions": {
+      "@id": "gs:versions",
+      "@type": "xsd:string"
+    },
+    "unvalidatedJSON": {
+      "@id": "gs:unvalidatedJSON",
+      "@type": "xsd:string"
+    },
+    "ephemerides": {
+      "@id": "gs:ephemerides",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "gs:nextToken",
+      "@type": "xsd:string"
+    },
+    "ephemerisId": {
+      "@id": "gs:ephemerisId",
+      "@type": "xsd:string"
+    },
+    "epoch": {
+      "@id": "gs:epoch",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "source": {
+      "@id": "gs:source",
+      "@type": "xsd:string"
+    },
+    "antennaUplinkConfigArn": {
+      "@id": "gs:antennaUplinkConfigArn",
+      "@type": "xsd:string"
+    },
+    "enabled": {
+      "@id": "gs:enabled",
+      "@type": "xsd:string"
+    },
+    "ephemeris": {
+      "@id": "gs:ephemeris",
+      "@type": "xsd:string"
+    },
+    "expirationTime": {
+      "@id": "gs:expirationTime",
+      "@type": "xsd:string"
+    },
+    "kmsKeyArn": {
+      "@id": "gs:kmsKeyArn",
+      "@type": "xsd:string"
+    },
+    "priority": {
+      "@id": "gs:priority",
+      "@type": "xsd:string"
+    },
+    "satelliteId": {
+      "@id": "gs:satelliteId",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "gs:tags",
+      "@type": "xsd:string"
+    },
+    "awsGroundStationAgentEndpoint": {
+      "@id": "gs:awsGroundStationAgentEndpoint",
+      "@type": "xsd:string"
+    },
+    "endpoint": {
+      "@id": "gs:endpoint",
+      "@type": "xsd:string"
+    },
+    "healthReasons": {
+      "@id": "gs:healthReasons",
+      "@type": "xsd:string"
+    },
+    "healthStatus": {
+      "@id": "gs:healthStatus",
+      "@type": "xsd:string"
+    },
+    "securityDetails": {
+      "@id": "gs:securityDetails",
+      "@type": "xsd:string"
+    },
+    "agentId": {
+      "@id": "gs:agentId",
+      "@type": "xsd:string"
+    },
+    "taskingDocument": {
+      "@id": "gs:taskingDocument",
+      "@type": "xsd:string"
+    },
+    "contactPostPassDurationSeconds": {
+      "@id": "gs:contactPostPassDurationSeconds",
+      "@type": "xsd:string"
+    },
+    "contactPrePassDurationSeconds": {
+      "@id": "gs:contactPrePassDurationSeconds",
+      "@type": "xsd:string"
+    },
+    "dataflowEdges": {
+      "@id": "gs:dataflowEdges",
+      "@type": "xsd:string"
+    },
+    "minimumViableContactDurationSeconds": {
+      "@id": "gs:minimumViableContactDurationSeconds",
+      "@type": "xsd:string"
+    },
+    "missionProfileArn": {
+      "@id": "gs:missionProfileArn",
+      "@type": "xsd:string"
+    },
+    "missionProfileId": {
+      "@id": "gs:missionProfileId",
+      "@type": "xsd:string"
+    },
+    "region": {
+      "@id": "gs:region",
+      "@type": "xsd:string"
+    },
+    "streamsKmsKey": {
+      "@id": "gs:streamsKmsKey",
+      "@type": "xsd:string"
+    },
+    "streamsKmsRole": {
+      "@id": "gs:streamsKmsRole",
+      "@type": "xsd:string"
+    },
+    "trackingConfigArn": {
+      "@id": "gs:trackingConfigArn",
+      "@type": "xsd:string"
+    },
+    "units": {
+      "@id": "gs:units",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "gs:value",
+      "@type": "xsd:string"
+    },
+    "mtu": {
+      "@id": "gs:mtu",
+      "@type": "xsd:string"
+    },
+    "socketAddress": {
+      "@id": "gs:socketAddress",
+      "@type": "xsd:string"
+    },
+    "agentCpuCores": {
+      "@id": "gs:agentCpuCores",
+      "@type": "xsd:string"
+    },
+    "agentVersion": {
+      "@id": "gs:agentVersion",
+      "@type": "xsd:string"
+    },
+    "componentVersions": {
+      "@id": "gs:componentVersions",
+      "@type": "xsd:string"
+    },
+    "instanceId": {
+      "@id": "gs:instanceId",
+      "@type": "xsd:string"
+    },
+    "instanceType": {
+      "@id": "gs:instanceType",
+      "@type": "xsd:string"
+    },
+    "reservedCpuCores": {
+      "@id": "gs:reservedCpuCores",
+      "@type": "xsd:string"
+    },
+    "bytesReceived": {
+      "@id": "gs:bytesReceived",
+      "@type": "xsd:string"
+    },
+    "bytesSent": {
+      "@id": "gs:bytesSent",
+      "@type": "xsd:string"
+    },
+    "capabilityArn": {
+      "@id": "gs:capabilityArn",
+      "@type": "xsd:string"
+    },
+    "dataflowId": {
+      "@id": "gs:dataflowId",
+      "@type": "xsd:string"
+    },
+    "packetsDropped": {
+      "@id": "gs:packetsDropped",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "gs:status",
+      "@type": "xsd:string"
+    },
+    "dataflowEndpointGroupId": {
+      "@id": "gs:dataflowEndpointGroupId",
+      "@type": "xsd:string"
+    },
+    "groundStationId": {
+      "@id": "gs:groundStationId",
+      "@type": "xsd:string"
+    },
+    "groundStationName": {
+      "@id": "gs:groundStationName",
+      "@type": "xsd:string"
+    },
+    "configDetails": {
+      "@id": "gs:configDetails",
+      "@type": "xsd:string"
+    },
+    "configId": {
+      "@id": "gs:configId",
+      "@type": "xsd:string"
+    },
+    "configType": {
+      "@id": "gs:configType",
+      "@type": "xsd:string"
+    },
+    "dataflowSourceRegion": {
+      "@id": "gs:dataflowSourceRegion",
+      "@type": "xsd:string"
+    },
+    "endpointDetails": {
+      "@id": "gs:endpointDetails",
+      "@type": "xsd:string"
+    },
+    "contactId": {
+      "@id": "gs:contactId",
+      "@type": "xsd:string"
+    },
+    "unit": {
+      "@id": "gs:unit",
+      "@type": "xsd:string"
+    },
+    "creationTime": {
+      "@id": "gs:creationTime",
+      "@type": "xsd:string"
+    },
+    "sourceS3Object": {
+      "@id": "gs:sourceS3Object",
+      "@type": "xsd:string"
+    },
+    "configArn": {
+      "@id": "gs:configArn",
+      "@type": "xsd:string"
+    },
+    "currentEphemeris": {
+      "@id": "gs:currentEphemeris",
+      "@type": "xsd:string"
+    },
+    "groundStations": {
+      "@id": "gs:groundStations",
+      "@type": "xsd:string"
+    },
+    "noradSatelliteID": {
+      "@id": "gs:noradSatelliteID",
+      "@type": "xsd:string"
+    },
+    "satelliteArn": {
+      "@id": "gs:satelliteArn",
+      "@type": "xsd:string"
+    },
+    "dataflowEndpointName": {
+      "@id": "gs:dataflowEndpointName",
+      "@type": "xsd:string"
+    },
+    "dataflowEndpointRegion": {
+      "@id": "gs:dataflowEndpointRegion",
+      "@type": "xsd:string"
+    },
+    "endTime": {
+      "@id": "gs:endTime",
+      "@type": "xsd:string"
+    },
+    "groundStation": {
+      "@id": "gs:groundStation",
+      "@type": "xsd:string"
+    },
+    "maxResults": {
+      "@id": "gs:maxResults",
+      "@type": "xsd:string"
+    },
+    "startTime": {
+      "@id": "gs:startTime",
+      "@type": "xsd:string"
+    },
+    "statusList": {
+      "@id": "gs:statusList",
+      "@type": "xsd:string"
+    },
+    "groundStationList": {
+      "@id": "gs:groundStationList",
+      "@type": "xsd:string"
+    },
+    "invalidReason": {
+      "@id": "gs:invalidReason",
+      "@type": "xsd:string"
+    },
+    "suppliedData": {
+      "@id": "gs:suppliedData",
+      "@type": "xsd:string"
+    },
+    "oemData": {
+      "@id": "gs:oemData",
+      "@type": "xsd:string"
+    },
+    "s3Object": {
+      "@id": "gs:s3Object",
+      "@type": "xsd:string"
+    },
+    "bucketArn": {
+      "@id": "gs:bucketArn",
+      "@type": "xsd:string"
+    },
+    "prefix": {
+      "@id": "gs:prefix",
+      "@type": "xsd:string"
+    },
+    "roleArn": {
+      "@id": "gs:roleArn",
+      "@type": "xsd:string"
+    },
+    "securityGroupIds": {
+      "@id": "gs:securityGroupIds",
+      "@type": "xsd:string"
+    },
+    "subnetIds": {
+      "@id": "gs:subnetIds",
+      "@type": "xsd:string"
+    },
+    "configData": {
+      "@id": "gs:configData",
+      "@type": "xsd:string"
+    },
+    "dataflowEndpointGroupArn": {
+      "@id": "gs:dataflowEndpointGroupArn",
+      "@type": "xsd:string"
+    },
+    "endpointsDetails": {
+      "@id": "gs:endpointsDetails",
+      "@type": "xsd:string"
+    },
+    "port": {
+      "@id": "gs:port",
+      "@type": "xsd:string"
+    },
+    "contactStatus": {
+      "@id": "gs:contactStatus",
+      "@type": "xsd:string"
+    },
+    "dataflowList": {
+      "@id": "gs:dataflowList",
+      "@type": "xsd:string"
+    },
+    "errorMessage": {
+      "@id": "gs:errorMessage",
+      "@type": "xsd:string"
+    },
+    "maximumElevation": {
+      "@id": "gs:maximumElevation",
+      "@type": "xsd:string"
+    },
+    "postPassEndTime": {
+      "@id": "gs:postPassEndTime",
+      "@type": "xsd:string"
+    },
+    "prePassStartTime": {
+      "@id": "gs:prePassStartTime",
+      "@type": "xsd:string"
+    },
+    "portRange": {
+      "@id": "gs:portRange",
+      "@type": "xsd:string"
+    },
+    "decodeConfig": {
+      "@id": "gs:decodeConfig",
+      "@type": "xsd:string"
+    },
+    "demodulationConfig": {
+      "@id": "gs:demodulationConfig",
+      "@type": "xsd:string"
+    },
+    "spectrumConfig": {
+      "@id": "gs:spectrumConfig",
+      "@type": "xsd:string"
+    },
+    "bandwidth": {
+      "@id": "gs:bandwidth",
+      "@type": "xsd:string"
+    },
+    "centerFrequency": {
+      "@id": "gs:centerFrequency",
+      "@type": "xsd:string"
+    },
+    "polarization": {
+      "@id": "gs:polarization",
+      "@type": "xsd:string"
+    },
+    "antennaDemodDecodeDetails": {
+      "@id": "gs:antennaDemodDecodeDetails",
+      "@type": "xsd:string"
+    },
+    "s3RecordingDetails": {
+      "@id": "gs:s3RecordingDetails",
+      "@type": "xsd:string"
+    },
+    "agentDetails": {
+      "@id": "gs:agentDetails",
+      "@type": "xsd:string"
+    },
+    "discoveryData": {
+      "@id": "gs:discoveryData",
+      "@type": "xsd:string"
+    },
+    "ephemerisData": {
+      "@id": "gs:ephemerisData",
+      "@type": "xsd:string"
+    },
+    "oem": {
+      "@id": "gs:oem",
+      "@type": "xsd:string"
+    },
+    "tle": {
+      "@id": "gs:tle",
+      "@type": "xsd:string"
+    },
+    "address": {
+      "@id": "gs:address",
+      "@type": "xsd:string"
+    },
+    "signatureMap": {
+      "@id": "gs:signatureMap",
+      "@type": "xsd:string"
+    },
+    "estimatedMinutesRemaining": {
+      "@id": "gs:estimatedMinutesRemaining",
+      "@type": "xsd:string"
+    },
+    "isReservedMinutesCustomer": {
+      "@id": "gs:isReservedMinutesCustomer",
+      "@type": "xsd:string"
+    },
+    "totalReservedMinuteAllocation": {
+      "@id": "gs:totalReservedMinuteAllocation",
+      "@type": "xsd:string"
+    },
+    "totalScheduledMinutes": {
+      "@id": "gs:totalScheduledMinutes",
+      "@type": "xsd:string"
+    },
+    "upcomingMinutesScheduled": {
+      "@id": "gs:upcomingMinutesScheduled",
+      "@type": "xsd:string"
+    },
+    "aggregateStatus": {
+      "@id": "gs:aggregateStatus",
+      "@type": "xsd:string"
+    },
+    "componentStatuses": {
+      "@id": "gs:componentStatuses",
+      "@type": "xsd:string"
+    },
+    "taskId": {
+      "@id": "gs:taskId",
+      "@type": "xsd:string"
+    },
+    "kmsAliasArn": {
+      "@id": "gs:kmsAliasArn",
+      "@type": "xsd:string"
+    },
+    "bucket": {
+      "@id": "gs:bucket",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "gs:key",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "gs:version",
+      "@type": "xsd:string"
+    },
+    "dataflowEndpointGroupList": {
+      "@id": "gs:dataflowEndpointGroupList",
+      "@type": "xsd:string"
+    },
+    "agentStatus": {
+      "@id": "gs:agentStatus",
+      "@type": "xsd:string"
+    },
+    "auditResults": {
+      "@id": "gs:auditResults",
+      "@type": "xsd:string"
+    },
+    "egressAddress": {
+      "@id": "gs:egressAddress",
+      "@type": "xsd:string"
+    },
+    "ingressAddress": {
+      "@id": "gs:ingressAddress",
+      "@type": "xsd:string"
+    },
+    "autotrack": {
+      "@id": "gs:autotrack",
+      "@type": "xsd:string"
+    },
+    "missionProfileList": {
+      "@id": "gs:missionProfileList",
+      "@type": "xsd:string"
+    },
+    "keyTemplate": {
+      "@id": "gs:keyTemplate",
+      "@type": "xsd:string"
+    },
+    "configList": {
+      "@id": "gs:configList",
+      "@type": "xsd:string"
+    },
+    "antennaDownlinkConfig": {
+      "@id": "gs:antennaDownlinkConfig",
+      "@type": "xsd:string"
+    },
+    "antennaDownlinkDemodDecodeConfig": {
+      "@id": "gs:antennaDownlinkDemodDecodeConfig",
+      "@type": "xsd:string"
+    },
+    "antennaUplinkConfig": {
+      "@id": "gs:antennaUplinkConfig",
+      "@type": "xsd:string"
+    },
+    "dataflowEndpointConfig": {
+      "@id": "gs:dataflowEndpointConfig",
+      "@type": "xsd:string"
+    },
+    "s3RecordingConfig": {
+      "@id": "gs:s3RecordingConfig",
+      "@type": "xsd:string"
+    },
+    "trackingConfig": {
+      "@id": "gs:trackingConfig",
+      "@type": "xsd:string"
+    },
+    "uplinkEchoConfig": {
+      "@id": "gs:uplinkEchoConfig",
+      "@type": "xsd:string"
+    },
+    "dataflowDestinationRegion": {
+      "@id": "gs:dataflowDestinationRegion",
+      "@type": "xsd:string"
+    },
+    "contactList": {
+      "@id": "gs:contactList",
+      "@type": "xsd:string"
+    },
+    "satellites": {
+      "@id": "gs:satellites",
+      "@type": "xsd:string"
+    },
+    "destination": {
+      "@id": "gs:destination",
+      "@type": "xsd:string"
+    },
+    "outputNode": {
+      "@id": "gs:outputNode",
+      "@type": "xsd:string"
+    },
+    "maximum": {
+      "@id": "gs:maximum",
+      "@type": "xsd:string"
+    },
+    "minimum": {
+      "@id": "gs:minimum",
+      "@type": "xsd:string"
+    },
+    "capabilityArns": {
+      "@id": "gs:capabilityArns",
+      "@type": "xsd:string"
+    },
+    "privateIpAddresses": {
+      "@id": "gs:privateIpAddresses",
+      "@type": "xsd:string"
+    },
+    "publicIpAddresses": {
+      "@id": "gs:publicIpAddresses",
+      "@type": "xsd:string"
+    },
+    "tleLine1": {
+      "@id": "gs:tleLine1",
+      "@type": "xsd:string"
+    },
+    "tleLine2": {
+      "@id": "gs:tleLine2",
+      "@type": "xsd:string"
+    },
+    "validTimeRange": {
+      "@id": "gs:validTimeRange",
+      "@type": "xsd:string"
+    },
+    "targetEirp": {
+      "@id": "gs:targetEirp",
+      "@type": "xsd:string"
+    },
+    "transmitDisabled": {
+      "@id": "gs:transmitDisabled",
+      "@type": "xsd:string"
+    },
+    "tleData": {
+      "@id": "gs:tleData",
+      "@type": "xsd:string"
+    }
+  }
+}

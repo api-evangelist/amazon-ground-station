@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-uplink-echo-config-structure.json",
+  "name": "UplinkEchoConfig",
+  "description": "<p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>",
+  "type": "object",
+  "properties": {
+    "antennaUplinkConfigArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigArn"
+        },
+        {
+          "description": "ARN of an uplink <code>Config</code>."
+        }
+      ]
+    },
+    "enabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Whether or not an uplink <code>Config</code> is enabled."
+        }
+      ]
+    }
+  },
+  "required": [
+    "antennaUplinkConfigArn",
+    "enabled"
+  ]
+}

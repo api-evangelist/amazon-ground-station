@@ -1,0 +1,6 @@
+{
+  "configArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123",
+  "configId": "example-configId",
+  "configType": "example-configType",
+  "name": "MyMissionProfile"
+}

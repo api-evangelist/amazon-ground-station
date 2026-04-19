@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-ephemeris-id-response-schema.json",
+  "title": "EphemerisIdResponse",
+  "description": "EphemerisIdResponse schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "ephemerisId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "The AWS Ground Station ephemeris ID."
+        }
+      ]
+    }
+  }
+}

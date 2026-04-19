@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-update-config-request-schema.json",
+  "title": "UpdateConfigRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "configData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigTypeData"
+        },
+        {
+          "description": "Parameters of a <code>Config</code>."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "Name of a <code>Config</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "configData",
+    "name"
+  ]
+}

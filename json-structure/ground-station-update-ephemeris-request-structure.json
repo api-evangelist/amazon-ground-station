@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-update-ephemeris-request-structure.json",
+  "name": "UpdateEphemerisRequest",
+  "description": "UpdateEphemerisRequest schema from Amazon Ground Station API",
+  "type": "object",
+  "properties": {
+    "enabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris."
+        }
+      ]
+    },
+    "priority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisPriority"
+        },
+        {
+          "description": "<p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "enabled"
+  ]
+}

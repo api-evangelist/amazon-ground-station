@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-list-configs-response-structure.json",
+  "name": "ListConfigsResponse",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "configList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigList"
+        },
+        {
+          "description": "List of <code>Config</code> items."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results."
+        }
+      ]
+    }
+  }
+}

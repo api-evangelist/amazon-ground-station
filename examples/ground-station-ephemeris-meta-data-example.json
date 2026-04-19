@@ -1,0 +1,6 @@
+{
+  "ephemerisId": "example-ephemerisId",
+  "epoch": "example-epoch",
+  "name": "MyMissionProfile",
+  "source": "example-source"
+}

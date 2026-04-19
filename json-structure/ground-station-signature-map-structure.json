@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-signature-map-structure.json",
+  "name": "SignatureMap",
+  "description": "SignatureMap schema from Amazon Ground Station API",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/Boolean"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-config-details-structure.json",
+  "name": "ConfigDetails",
+  "description": "Details for certain <code>Config</code> object types in a contact.",
+  "type": "object",
+  "properties": {
+    "antennaDemodDecodeDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AntennaDemodDecodeDetails"
+        },
+        {
+          "description": "Details for antenna demod decode <code>Config</code> in a contact."
+        }
+      ]
+    },
+    "endpointDetails": {
+      "$ref": "#/components/schemas/EndpointDetails"
+    },
+    "s3RecordingDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3RecordingDetails"
+        },
+        {
+          "description": "Details for an S3 recording <code>Config</code> in a contact."
+        }
+      ]
+    }
+  }
+}

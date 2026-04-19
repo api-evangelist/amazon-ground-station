@@ -1,0 +1,5 @@
+{
+  "decodeConfig": "example-decodeConfig",
+  "demodulationConfig": "example-demodulation",
+  "spectrumConfig": "example-spectrumConf"
+}

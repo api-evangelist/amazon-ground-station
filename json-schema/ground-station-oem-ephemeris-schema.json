@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-oem-ephemeris-schema.json",
+  "title": "OEMEphemeris",
+  "description": "Ephemeris data in Orbit Ephemeris Message (OEM) format.",
+  "type": "object",
+  "properties": {
+    "oemData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UnboundedString"
+        },
+        {
+          "description": "The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object."
+        }
+      ]
+    },
+    "s3Object": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Object"
+        },
+        {
+          "description": "Identifies the S3 object to be used as the ephemeris."
+        }
+      ]
+    }
+  }
+}

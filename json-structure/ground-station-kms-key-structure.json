@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-kms-key-structure.json",
+  "name": "KmsKey",
+  "description": "AWS Key Management Service (KMS) Key.",
+  "type": "object",
+  "properties": {
+    "kmsAliasArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KeyAliasArn"
+        },
+        {
+          "description": "KMS Alias Arn."
+        }
+      ]
+    },
+    "kmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KeyArn"
+        },
+        {
+          "description": "KMS Key Arn."
+        }
+      ]
+    }
+  }
+}

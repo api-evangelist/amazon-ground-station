@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-satellite-arn-structure.json",
+  "name": "satelliteArn",
+  "description": "satelliteArn schema from Amazon Ground Station API",
+  "type": "string"
+}

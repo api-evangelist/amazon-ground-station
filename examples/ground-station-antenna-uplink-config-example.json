@@ -1,0 +1,5 @@
+{
+  "spectrumConfig": "example-spectrumConf",
+  "targetEirp": "example-targetEirp",
+  "transmitDisabled": "example-transmitDisa"
+}

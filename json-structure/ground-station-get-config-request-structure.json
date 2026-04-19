@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-get-config-request-structure.json",
+  "name": "GetConfigRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {}
+}

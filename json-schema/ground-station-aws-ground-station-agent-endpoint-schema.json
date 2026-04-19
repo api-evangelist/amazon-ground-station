@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-aws-ground-station-agent-endpoint-schema.json",
+  "title": "AwsGroundStationAgentEndpoint",
+  "description": "Information about AwsGroundStationAgentEndpoint.",
+  "type": "object",
+  "properties": {
+    "agentStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AgentStatus"
+        },
+        {
+          "description": "The status of AgentEndpoint."
+        }
+      ]
+    },
+    "auditResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AuditResults"
+        },
+        {
+          "description": "The results of the audit."
+        }
+      ]
+    },
+    "egressAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConnectionDetails"
+        },
+        {
+          "description": "The egress address of AgentEndpoint."
+        }
+      ]
+    },
+    "ingressAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RangedConnectionDetails"
+        },
+        {
+          "description": "The ingress address of AgentEndpoint."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint."
+        }
+      ]
+    }
+  },
+  "required": [
+    "egressAddress",
+    "ingressAddress",
+    "name"
+  ]
+}

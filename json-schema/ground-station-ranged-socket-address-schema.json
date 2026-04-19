@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-ranged-socket-address-schema.json",
+  "title": "RangedSocketAddress",
+  "description": "A socket address with a port range.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpV4Address"
+        },
+        {
+          "description": "IPv4 socket address."
+        }
+      ]
+    },
+    "portRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IntegerRange"
+        },
+        {
+          "description": "Port range of a socket address."
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "portRange"
+  ]
+}

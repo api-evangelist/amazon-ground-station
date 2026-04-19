@@ -1,0 +1,4 @@
+{
+  "dataflowEndpointGroupArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123",
+  "dataflowEndpointGroupId": "example-dataflowEndp"
+}

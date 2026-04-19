@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-mission-profile-list-item-structure.json",
+  "name": "MissionProfileListItem",
+  "description": "Item in a list of mission profiles.",
+  "type": "object",
+  "properties": {
+    "missionProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MissionProfileArn"
+        },
+        {
+          "description": "ARN of a mission profile."
+        }
+      ]
+    },
+    "missionProfileId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID of a mission profile."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "Name of a mission profile."
+        }
+      ]
+    },
+    "region": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AWSRegion"
+        },
+        {
+          "description": "Region of a mission profile."
+        }
+      ]
+    }
+  }
+}

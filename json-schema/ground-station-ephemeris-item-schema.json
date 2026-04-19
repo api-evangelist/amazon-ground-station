@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-ephemeris-item-schema.json",
+  "title": "EphemerisItem",
+  "description": "Ephemeris item.",
+  "type": "object",
+  "properties": {
+    "creationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time the ephemeris was uploaded in UTC."
+        }
+      ]
+    },
+    "enabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Whether or not the ephemeris is enabled."
+        }
+      ]
+    },
+    "ephemerisId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "The AWS Ground Station ephemeris ID."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SafeName"
+        },
+        {
+          "description": "A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris."
+        }
+      ]
+    },
+    "priority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisPriority"
+        },
+        {
+          "description": "<p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>"
+        }
+      ]
+    },
+    "sourceS3Object": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Object"
+        },
+        {
+          "description": "Source S3 object used for the ephemeris."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EphemerisStatus"
+        },
+        {
+          "description": "The status of the ephemeris."
+        }
+      ]
+    }
+  }
+}

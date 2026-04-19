@@ -1,0 +1,126 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Amazon Ground Station
+  description: Vocabulary for Amazon Ground Station satellite communications APIs
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: amazon-ground-station
+      version: "2019-05-23"
+      baseUrl: https://groundstation.amazonaws.com
+      status: active
+
+  resources:
+    - name: contacts
+      description: Scheduled satellite communication windows
+      actions: [list, reserve, cancel, describe]
+    - name: satellites
+      description: Trackable satellites registered in Ground Station
+      actions: [list, describe]
+    - name: ground-stations
+      description: AWS-managed antenna facility locations
+      actions: [list, describe]
+    - name: mission-profiles
+      description: Configurations for satellite operations including dataflow
+      actions: [list, create, describe, update, delete]
+    - name: configs
+      description: Antenna and dataflow endpoint configurations
+      actions: [list, create, describe, update, delete]
+    - name: dataflow-endpoint-groups
+      description: Groups of endpoints for receiving satellite data
+      actions: [list, create, describe, delete]
+
+  actions:
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: reserve
+      httpMethod: POST
+      pattern: write
+    - name: cancel
+      httpMethod: DELETE
+      pattern: destructive
+    - name: describe
+      httpMethod: GET
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: update
+      httpMethod: PUT
+      pattern: write
+    - name: delete
+      httpMethod: DELETE
+      pattern: destructive
+
+  enums:
+    contact-status:
+      - AVAILABLE
+      - AWS_CANCELLED
+      - AWS_FAILED
+      - CANCELLED
+      - CANCELLING
+      - COMPLETED
+      - FAILED
+      - FAILED_TO_SCHEDULE
+      - PASS
+      - POSTPASS
+      - PREPASS
+      - SCHEDULED
+      - SCHEDULING
+
+capability:
+  workflows:
+    - name: Amazon Ground Station Satellite Operations
+      file: capabilities/amazon-ground-station-satellite-operations.yaml
+      apis: [amazon-ground-station]
+      tools: 10
+      personas: [Satellite Operator, Mission Control Engineer]
+
+  personas:
+    - id: satellite-operator
+      name: Satellite Operator
+      description: Schedules and manages satellite contacts and data downlinks
+    - id: mission-control-engineer
+      name: Mission Control Engineer
+      description: Configures mission profiles and dataflow infrastructure
+
+  domains:
+    - name: Contact Management
+      resources: [contacts]
+    - name: Satellite Tracking
+      resources: [satellites, ground-stations]
+    - name: Mission Configuration
+      resources: [mission-profiles, configs, dataflow-endpoint-groups]
+
+  namespaces:
+    - namespace: amazon-ground-station
+      type: consumed
+    - namespace: ground-station-ops-api
+      type: rest-exposed
+      port: 8084
+    - namespace: ground-station-ops-mcp
+      type: mcp-exposed
+      port: 9094
+
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_REGION
+
+crossReference:
+  - resource: contacts
+    operations: [ListContacts, ReserveContact, CancelContact, DescribeContact]
+    workflows: [Amazon Ground Station Satellite Operations]
+    personas: [Satellite Operator]
+  - resource: satellites
+    operations: [ListSatellites, DescribeSatellite]
+    workflows: [Amazon Ground Station Satellite Operations]
+    personas: [Satellite Operator, Mission Control Engineer]
+  - resource: mission-profiles
+    operations: [ListMissionProfiles, CreateMissionProfile, GetMissionProfile, UpdateMissionProfile, DeleteMissionProfile]
+    workflows: [Amazon Ground Station Satellite Operations]
+    personas: [Mission Control Engineer]

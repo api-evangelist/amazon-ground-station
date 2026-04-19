@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-config-capability-type-structure.json",
+  "name": "ConfigCapabilityType",
+  "description": "ConfigCapabilityType schema from Amazon Ground Station API",
+  "type": "string",
+  "enum": [
+    "antenna-downlink",
+    "antenna-downlink-demod-decode",
+    "antenna-uplink",
+    "dataflow-endpoint",
+    "tracking",
+    "uplink-echo",
+    "s3-recording"
+  ]
+}

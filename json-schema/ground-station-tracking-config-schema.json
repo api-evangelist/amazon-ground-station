@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-schema/ground-station-tracking-config-schema.json",
+  "title": "TrackingConfig",
+  "description": "Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.",
+  "type": "object",
+  "properties": {
+    "autotrack": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Criticality"
+        },
+        {
+          "description": "Current setting for autotrack."
+        }
+      ]
+    }
+  },
+  "required": [
+    "autotrack"
+  ]
+}

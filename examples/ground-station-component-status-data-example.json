@@ -1,0 +1,8 @@
+{
+  "bytesReceived": "example-bytesReceive",
+  "bytesSent": "example-bytesSent",
+  "capabilityArn": "arn:aws:groundstation:us-east-2:123456789012:contact/abc123",
+  "componentType": "example-componentTyp",
+  "dataflowId": "example-dataflowId",
+  "packetsDropped": "example-packetsDropp"
+}

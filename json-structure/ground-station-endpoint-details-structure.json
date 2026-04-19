@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-endpoint-details-structure.json",
+  "name": "EndpointDetails",
+  "description": "Information about the endpoint details.",
+  "type": "object",
+  "properties": {
+    "awsGroundStationAgentEndpoint": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AwsGroundStationAgentEndpoint"
+        },
+        {
+          "description": "An agent endpoint."
+        }
+      ]
+    },
+    "endpoint": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataflowEndpoint"
+        },
+        {
+          "description": "A dataflow endpoint."
+        }
+      ]
+    },
+    "healthReasons": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CapabilityHealthReasonList"
+        },
+        {
+          "description": "Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>."
+        }
+      ]
+    },
+    "healthStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CapabilityHealth"
+        },
+        {
+          "description": "A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>."
+        }
+      ]
+    },
+    "securityDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SecurityDetails"
+        },
+        {
+          "description": "Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances."
+        }
+      ]
+    }
+  }
+}

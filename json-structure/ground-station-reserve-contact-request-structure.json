@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/json-structure/ground-station-reserve-contact-request-structure.json",
+  "name": "ReserveContactRequest",
+  "description": "<p/>",
+  "type": "object",
+  "properties": {
+    "endTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "End time of a contact in UTC."
+        }
+      ]
+    },
+    "groundStation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroundStationName"
+        },
+        {
+          "description": "Name of a ground station."
+        }
+      ]
+    },
+    "missionProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MissionProfileArn"
+        },
+        {
+          "description": "ARN of a mission profile."
+        }
+      ]
+    },
+    "satelliteArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/satelliteArn"
+        },
+        {
+          "description": "ARN of a satellite"
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Start time of a contact in UTC."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags assigned to a contact."
+        }
+      ]
+    }
+  },
+  "required": [
+    "endTime",
+    "groundStation",
+    "missionProfileArn",
+    "satelliteArn",
+    "startTime"
+  ]
+}
