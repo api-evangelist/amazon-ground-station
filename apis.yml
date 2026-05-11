@@ -117,6 +117,18 @@ common:
         description: Trigger Lambda functions when satellite contact data arrives for automated processing.
       - name: Amazon SageMaker
         description: Apply machine learning to satellite imagery and telemetry data.
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace/
+integrations:
+  - name: Sign in
+  - name: Agent Mode
+  - name: 'Why AWS Marketplace?'
+  - name: Get started in AWS Marketplace
+  - name: Industry
+  - name: Resources
+  - name: Become a Channel Partner
+  - name: Sell in AWS Marketplace
+  - name: Manage Your Account
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
