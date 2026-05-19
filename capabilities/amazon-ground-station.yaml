@@ -1,0 +1,1463 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AWS Ground Station
+  description: 'AWS Ground Station. 33 operations. Lead operation: Amazon Ground Station Register Agent. Self-contained Naftiko
+    capability covering one Amazon Ground Station business surface.'
+  tags:
+  - Amazon Ground Station
+  - AWS Ground Station
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_GROUND_STATION_API_KEY: AMAZON_GROUND_STATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-ground-station
+    baseUri: http://groundstation.{region}.amazonaws.com
+    description: AWS Ground Station business capability. Self-contained, no shared references.
+    resources:
+    - name: agent
+      path: /agent
+      operations:
+      - name: registeragent
+        method: POST
+        description: Amazon Ground Station Register Agent
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: agent-agentId
+      path: /agent/{agentId}
+      operations:
+      - name: updateagentstatus
+        method: PUT
+        description: Amazon Ground Station Update Agent Status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          description: UUID of agent to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: agent-agentId-configuration
+      path: /agent/{agentId}/configuration
+      operations:
+      - name: getagentconfiguration
+        method: GET
+        description: Amazon Ground Station Get Agent Configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          description: UUID of agent to get configuration information for.
+          required: true
+    - name: config
+      path: /config
+      operations:
+      - name: createconfig
+        method: POST
+        description: Amazon Ground Station Create Config
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listconfigs
+        method: GET
+        description: Amazon Ground Station List Configs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of <code>Configs</code> returned.
+        - name: nextToken
+          in: query
+          type: string
+          description: Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next
+            page of results.
+    - name: config-configType-configId
+      path: /config/{configType}/{configId}
+      operations:
+      - name: deleteconfig
+        method: DELETE
+        description: Amazon Ground Station Delete Config
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: configId
+          in: path
+          type: string
+          description: UUID of a <code>Config</code>.
+          required: true
+        - name: configType
+          in: path
+          type: string
+          description: Type of a <code>Config</code>.
+          required: true
+      - name: getconfig
+        method: GET
+        description: Amazon Ground Station Get Config
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: configId
+          in: path
+          type: string
+          description: UUID of a <code>Config</code>.
+          required: true
+        - name: configType
+          in: path
+          type: string
+          description: Type of a <code>Config</code>.
+          required: true
+      - name: updateconfig
+        method: PUT
+        description: Amazon Ground Station Update Config
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: configId
+          in: path
+          type: string
+          description: UUID of a <code>Config</code>.
+          required: true
+        - name: configType
+          in: path
+          type: string
+          description: Type of a <code>Config</code>.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: contact
+      path: /contact
+      operations:
+      - name: reservecontact
+        method: POST
+        description: Amazon Ground Station Reserve Contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: contact-contactId
+      path: /contact/{contactId}
+      operations:
+      - name: cancelcontact
+        method: DELETE
+        description: Amazon Ground Station Cancel Contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: contactId
+          in: path
+          type: string
+          description: UUID of a contact.
+          required: true
+      - name: describecontact
+        method: GET
+        description: Amazon Ground Station Describe Contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: contactId
+          in: path
+          type: string
+          description: UUID of a contact.
+          required: true
+    - name: contacts
+      path: /contacts
+      operations:
+      - name: listcontacts
+        method: POST
+        description: Amazon Ground Station List Contacts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: dataflowEndpointGroup
+      path: /dataflowEndpointGroup
+      operations:
+      - name: createdataflowendpointgroup
+        method: POST
+        description: Amazon Ground Station Create Dataflow Endpoint Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listdataflowendpointgroups
+        method: GET
+        description: Amazon Ground Station List Dataflow Endpoint Groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of dataflow endpoint groups returned.
+        - name: nextToken
+          in: query
+          type: string
+          description: Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used
+            to get the next page of results.
+    - name: dataflowEndpointGroup-dataflowEndpointGroupId
+      path: /dataflowEndpointGroup/{dataflowEndpointGroupId}
+      operations:
+      - name: deletedataflowendpointgroup
+        method: DELETE
+        description: Amazon Ground Station Delete Dataflow Endpoint Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dataflowEndpointGroupId
+          in: path
+          type: string
+          description: UUID of a dataflow endpoint group.
+          required: true
+      - name: getdataflowendpointgroup
+        method: GET
+        description: Amazon Ground Station Get Dataflow Endpoint Group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dataflowEndpointGroupId
+          in: path
+          type: string
+          description: UUID of a dataflow endpoint group.
+          required: true
+    - name: ephemerides
+      path: /ephemerides
+      operations:
+      - name: listephemerides
+        method: POST
+        description: Amazon Ground Station List Ephemerides
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of ephemerides to return.
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ephemeris
+      path: /ephemeris
+      operations:
+      - name: createephemeris
+        method: POST
+        description: Amazon Ground Station Create Ephemeris
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ephemeris-ephemerisId
+      path: /ephemeris/{ephemerisId}
+      operations:
+      - name: deleteephemeris
+        method: DELETE
+        description: Amazon Ground Station Delete Ephemeris
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ephemerisId
+          in: path
+          type: string
+          description: The AWS Ground Station ephemeris ID.
+          required: true
+      - name: describeephemeris
+        method: GET
+        description: Amazon Ground Station Describe Ephemeris
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ephemerisId
+          in: path
+          type: string
+          description: The AWS Ground Station ephemeris ID.
+          required: true
+      - name: updateephemeris
+        method: PUT
+        description: Amazon Ground Station Update Ephemeris
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ephemerisId
+          in: path
+          type: string
+          description: The AWS Ground Station ephemeris ID.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: groundstation
+      path: /groundstation
+      operations:
+      - name: listgroundstations
+        method: GET
+        description: Amazon Ground Station List Ground Stations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of ground stations returned.
+        - name: nextToken
+          in: query
+          type: string
+          description: Next token that can be supplied in the next call to get the next page of ground stations.
+        - name: satelliteId
+          in: query
+          type: string
+          description: Satellite ID to retrieve on-boarded ground stations.
+    - name: minute-usage
+      path: /minute-usage
+      operations:
+      - name: getminuteusage
+        method: POST
+        description: Amazon Ground Station Get Minute Usage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: missionprofile
+      path: /missionprofile
+      operations:
+      - name: createmissionprofile
+        method: POST
+        description: Amazon Ground Station Create Mission Profile
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listmissionprofiles
+        method: GET
+        description: Amazon Ground Station List Mission Profiles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of mission profiles returned.
+        - name: nextToken
+          in: query
+          type: string
+          description: Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get
+            the next page of results.
+    - name: missionprofile-missionProfileId
+      path: /missionprofile/{missionProfileId}
+      operations:
+      - name: deletemissionprofile
+        method: DELETE
+        description: Amazon Ground Station Delete Mission Profile
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: missionProfileId
+          in: path
+          type: string
+          description: UUID of a mission profile.
+          required: true
+      - name: getmissionprofile
+        method: GET
+        description: Amazon Ground Station Get Mission Profile
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: missionProfileId
+          in: path
+          type: string
+          description: UUID of a mission profile.
+          required: true
+      - name: updatemissionprofile
+        method: PUT
+        description: Amazon Ground Station Update Mission Profile
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: missionProfileId
+          in: path
+          type: string
+          description: UUID of a mission profile.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: satellite
+      path: /satellite
+      operations:
+      - name: listsatellites
+        method: GET
+        description: Amazon Ground Station List Satellites
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: integer
+          description: Maximum number of satellites returned.
+        - name: nextToken
+          in: query
+          type: string
+          description: Next token that can be supplied in the next call to get the next page of satellites.
+    - name: satellite-satelliteId
+      path: /satellite/{satelliteId}
+      operations:
+      - name: getsatellite
+        method: GET
+        description: Amazon Ground Station Get Satellite
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: satelliteId
+          in: path
+          type: string
+          description: UUID of a satellite.
+          required: true
+    - name: tags-resourceArn
+      path: /tags/{resourceArn}
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: Amazon Ground Station List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: ARN of a resource.
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon Ground Station Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: ARN of a resource tag.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn}#tagKeys
+      path: /tags/{resourceArn}#tagKeys
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon Ground Station Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: ARN of a resource.
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: Keys of a resource tag.
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_GROUND_STATION_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-ground-station-rest
+    port: 8080
+    description: REST adapter for AWS Ground Station. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/agent
+      name: agent
+      description: REST surface for agent.
+      operations:
+      - method: POST
+        name: registeragent
+        description: Amazon Ground Station Register Agent
+        call: amazon-ground-station.registeragent
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/agent/{agentid}
+      name: agent-agentid
+      description: REST surface for agent-agentId.
+      operations:
+      - method: PUT
+        name: updateagentstatus
+        description: Amazon Ground Station Update Agent Status
+        call: amazon-ground-station.updateagentstatus
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/agent/{agentid}/configuration
+      name: agent-agentid-configuration
+      description: REST surface for agent-agentId-configuration.
+      operations:
+      - method: GET
+        name: getagentconfiguration
+        description: Amazon Ground Station Get Agent Configuration
+        call: amazon-ground-station.getagentconfiguration
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/config
+      name: config
+      description: REST surface for config.
+      operations:
+      - method: POST
+        name: createconfig
+        description: Amazon Ground Station Create Config
+        call: amazon-ground-station.createconfig
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listconfigs
+        description: Amazon Ground Station List Configs
+        call: amazon-ground-station.listconfigs
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/config/{configtype}/{configid}
+      name: config-configtype-configid
+      description: REST surface for config-configType-configId.
+      operations:
+      - method: DELETE
+        name: deleteconfig
+        description: Amazon Ground Station Delete Config
+        call: amazon-ground-station.deleteconfig
+        with:
+          configId: rest.configId
+          configType: rest.configType
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getconfig
+        description: Amazon Ground Station Get Config
+        call: amazon-ground-station.getconfig
+        with:
+          configId: rest.configId
+          configType: rest.configType
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateconfig
+        description: Amazon Ground Station Update Config
+        call: amazon-ground-station.updateconfig
+        with:
+          configId: rest.configId
+          configType: rest.configType
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/contact
+      name: contact
+      description: REST surface for contact.
+      operations:
+      - method: POST
+        name: reservecontact
+        description: Amazon Ground Station Reserve Contact
+        call: amazon-ground-station.reservecontact
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/contact/{contactid}
+      name: contact-contactid
+      description: REST surface for contact-contactId.
+      operations:
+      - method: DELETE
+        name: cancelcontact
+        description: Amazon Ground Station Cancel Contact
+        call: amazon-ground-station.cancelcontact
+        with:
+          contactId: rest.contactId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describecontact
+        description: Amazon Ground Station Describe Contact
+        call: amazon-ground-station.describecontact
+        with:
+          contactId: rest.contactId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/contacts
+      name: contacts
+      description: REST surface for contacts.
+      operations:
+      - method: POST
+        name: listcontacts
+        description: Amazon Ground Station List Contacts
+        call: amazon-ground-station.listcontacts
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/dataflowendpointgroup
+      name: dataflowendpointgroup
+      description: REST surface for dataflowEndpointGroup.
+      operations:
+      - method: POST
+        name: createdataflowendpointgroup
+        description: Amazon Ground Station Create Dataflow Endpoint Group
+        call: amazon-ground-station.createdataflowendpointgroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listdataflowendpointgroups
+        description: Amazon Ground Station List Dataflow Endpoint Groups
+        call: amazon-ground-station.listdataflowendpointgroups
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/dataflowendpointgroup/{dataflowendpointgroupid}
+      name: dataflowendpointgroup-dataflowendpointgroupid
+      description: REST surface for dataflowEndpointGroup-dataflowEndpointGroupId.
+      operations:
+      - method: DELETE
+        name: deletedataflowendpointgroup
+        description: Amazon Ground Station Delete Dataflow Endpoint Group
+        call: amazon-ground-station.deletedataflowendpointgroup
+        with:
+          dataflowEndpointGroupId: rest.dataflowEndpointGroupId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getdataflowendpointgroup
+        description: Amazon Ground Station Get Dataflow Endpoint Group
+        call: amazon-ground-station.getdataflowendpointgroup
+        with:
+          dataflowEndpointGroupId: rest.dataflowEndpointGroupId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ephemerides
+      name: ephemerides
+      description: REST surface for ephemerides.
+      operations:
+      - method: POST
+        name: listephemerides
+        description: Amazon Ground Station List Ephemerides
+        call: amazon-ground-station.listephemerides
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ephemeris
+      name: ephemeris
+      description: REST surface for ephemeris.
+      operations:
+      - method: POST
+        name: createephemeris
+        description: Amazon Ground Station Create Ephemeris
+        call: amazon-ground-station.createephemeris
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ephemeris/{ephemerisid}
+      name: ephemeris-ephemerisid
+      description: REST surface for ephemeris-ephemerisId.
+      operations:
+      - method: DELETE
+        name: deleteephemeris
+        description: Amazon Ground Station Delete Ephemeris
+        call: amazon-ground-station.deleteephemeris
+        with:
+          ephemerisId: rest.ephemerisId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeephemeris
+        description: Amazon Ground Station Describe Ephemeris
+        call: amazon-ground-station.describeephemeris
+        with:
+          ephemerisId: rest.ephemerisId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateephemeris
+        description: Amazon Ground Station Update Ephemeris
+        call: amazon-ground-station.updateephemeris
+        with:
+          ephemerisId: rest.ephemerisId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groundstation
+      name: groundstation
+      description: REST surface for groundstation.
+      operations:
+      - method: GET
+        name: listgroundstations
+        description: Amazon Ground Station List Ground Stations
+        call: amazon-ground-station.listgroundstations
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          satelliteId: rest.satelliteId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/minute-usage
+      name: minute-usage
+      description: REST surface for minute-usage.
+      operations:
+      - method: POST
+        name: getminuteusage
+        description: Amazon Ground Station Get Minute Usage
+        call: amazon-ground-station.getminuteusage
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/missionprofile
+      name: missionprofile
+      description: REST surface for missionprofile.
+      operations:
+      - method: POST
+        name: createmissionprofile
+        description: Amazon Ground Station Create Mission Profile
+        call: amazon-ground-station.createmissionprofile
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listmissionprofiles
+        description: Amazon Ground Station List Mission Profiles
+        call: amazon-ground-station.listmissionprofiles
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/missionprofile/{missionprofileid}
+      name: missionprofile-missionprofileid
+      description: REST surface for missionprofile-missionProfileId.
+      operations:
+      - method: DELETE
+        name: deletemissionprofile
+        description: Amazon Ground Station Delete Mission Profile
+        call: amazon-ground-station.deletemissionprofile
+        with:
+          missionProfileId: rest.missionProfileId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: getmissionprofile
+        description: Amazon Ground Station Get Mission Profile
+        call: amazon-ground-station.getmissionprofile
+        with:
+          missionProfileId: rest.missionProfileId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatemissionprofile
+        description: Amazon Ground Station Update Mission Profile
+        call: amazon-ground-station.updatemissionprofile
+        with:
+          missionProfileId: rest.missionProfileId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/satellite
+      name: satellite
+      description: REST surface for satellite.
+      operations:
+      - method: GET
+        name: listsatellites
+        description: Amazon Ground Station List Satellites
+        call: amazon-ground-station.listsatellites
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/satellite/{satelliteid}
+      name: satellite-satelliteid
+      description: REST surface for satellite-satelliteId.
+      operations:
+      - method: GET
+        name: getsatellite
+        description: Amazon Ground Station Get Satellite
+        call: amazon-ground-station.getsatellite
+        with:
+          satelliteId: rest.satelliteId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/{resourcearn}
+      name: tags-resourcearn
+      description: REST surface for tags-resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: Amazon Ground Station List Tags for Resource
+        call: amazon-ground-station.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon Ground Station Tag Resource
+        call: amazon-ground-station.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/resourcearn-tagkeys
+      name: tags-resourcearn-tagkeys
+      description: REST surface for tags-resourceArn}#tagKeys.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon Ground Station Untag Resource
+        call: amazon-ground-station.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-ground-station-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AWS Ground Station. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-ground-station-register-agent
+      description: Amazon Ground Station Register Agent
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.registeragent
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-update-agent
+      description: Amazon Ground Station Update Agent Status
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.updateagentstatus
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-get-agent
+      description: Amazon Ground Station Get Agent Configuration
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.getagentconfiguration
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-create-config
+      description: Amazon Ground Station Create Config
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.createconfig
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-configs
+      description: Amazon Ground Station List Configs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.listconfigs
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-delete-config
+      description: Amazon Ground Station Delete Config
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-ground-station.deleteconfig
+      with:
+        configId: tools.configId
+        configType: tools.configType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-get-config
+      description: Amazon Ground Station Get Config
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.getconfig
+      with:
+        configId: tools.configId
+        configType: tools.configType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-update-config
+      description: Amazon Ground Station Update Config
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.updateconfig
+      with:
+        configId: tools.configId
+        configType: tools.configType
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-reserve-contact
+      description: Amazon Ground Station Reserve Contact
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.reservecontact
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-cancel-contact
+      description: Amazon Ground Station Cancel Contact
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-ground-station.cancelcontact
+      with:
+        contactId: tools.contactId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-describe-contact
+      description: Amazon Ground Station Describe Contact
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.describecontact
+      with:
+        contactId: tools.contactId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-contacts
+      description: Amazon Ground Station List Contacts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.listcontacts
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-create-dataflow
+      description: Amazon Ground Station Create Dataflow Endpoint Group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.createdataflowendpointgroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-dataflow
+      description: Amazon Ground Station List Dataflow Endpoint Groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.listdataflowendpointgroups
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-delete-dataflow
+      description: Amazon Ground Station Delete Dataflow Endpoint Group
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-ground-station.deletedataflowendpointgroup
+      with:
+        dataflowEndpointGroupId: tools.dataflowEndpointGroupId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-get-dataflow
+      description: Amazon Ground Station Get Dataflow Endpoint Group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.getdataflowendpointgroup
+      with:
+        dataflowEndpointGroupId: tools.dataflowEndpointGroupId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-ephemerides
+      description: Amazon Ground Station List Ephemerides
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.listephemerides
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-create-ephemeris
+      description: Amazon Ground Station Create Ephemeris
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.createephemeris
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-delete-ephemeris
+      description: Amazon Ground Station Delete Ephemeris
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-ground-station.deleteephemeris
+      with:
+        ephemerisId: tools.ephemerisId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-describe-ephemeris
+      description: Amazon Ground Station Describe Ephemeris
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.describeephemeris
+      with:
+        ephemerisId: tools.ephemerisId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-update-ephemeris
+      description: Amazon Ground Station Update Ephemeris
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.updateephemeris
+      with:
+        ephemerisId: tools.ephemerisId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-ground
+      description: Amazon Ground Station List Ground Stations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.listgroundstations
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        satelliteId: tools.satelliteId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-get-minute
+      description: Amazon Ground Station Get Minute Usage
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.getminuteusage
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-create-mission
+      description: Amazon Ground Station Create Mission Profile
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.createmissionprofile
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-mission
+      description: Amazon Ground Station List Mission Profiles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.listmissionprofiles
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-delete-mission
+      description: Amazon Ground Station Delete Mission Profile
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-ground-station.deletemissionprofile
+      with:
+        missionProfileId: tools.missionProfileId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-get-mission
+      description: Amazon Ground Station Get Mission Profile
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.getmissionprofile
+      with:
+        missionProfileId: tools.missionProfileId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-update-mission
+      description: Amazon Ground Station Update Mission Profile
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.updatemissionprofile
+      with:
+        missionProfileId: tools.missionProfileId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-satellites
+      description: Amazon Ground Station List Satellites
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.listsatellites
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-get-satellite
+      description: Amazon Ground Station Get Satellite
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.getsatellite
+      with:
+        satelliteId: tools.satelliteId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-list-tags
+      description: Amazon Ground Station List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-ground-station.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-tag-resource
+      description: Amazon Ground Station Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-ground-station.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-ground-station-untag-resource
+      description: Amazon Ground Station Untag Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-ground-station.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.
