@@ -3,7 +3,7 @@ name: Amazon Ground Station
 description: AWS Ground Station is a fully managed service that lets you control satellite communications, process satellite
   data, and scale your satellite operations without having to worry about building or managing your own ground station infrastructure.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Data Processing
