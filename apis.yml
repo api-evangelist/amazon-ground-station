@@ -44,7 +44,7 @@ apis:
     url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-ground-station.yaml
 common:
 - type: Portal
@@ -63,7 +63,7 @@ common:
   url: https://github.com/aws
 - type: Console
   url: https://console.aws.amazon.com/groundstation/
-- type: SignUp
+- type: Signup
   url: https://portal.aws.amazon.com/billing/signup
 - type: StatusPage
   url: https://health.aws.amazon.com/health/status
