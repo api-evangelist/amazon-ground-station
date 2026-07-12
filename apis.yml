@@ -47,6 +47,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-ground-station.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-ground-station-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-ground-station-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-ground-station-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-ground-station-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/ground-station/
 - type: Documentation
