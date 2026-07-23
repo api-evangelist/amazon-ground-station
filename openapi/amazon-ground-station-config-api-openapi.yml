@@ -1,0 +1,1102 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent Config API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Config
+paths:
+  /config:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateConfig
+      description: <p>Creates a <code>Config</code> with the specified <code>configData</code> parameters.</p> <p>Only one type of <code>configData</code> can be specified.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigIdResponse'
+              examples:
+                CreateConfig200Example:
+                  summary: Default CreateConfig 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                CreateConfig480Example:
+                  summary: Default CreateConfig 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                CreateConfig481Example:
+                  summary: Default CreateConfig 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceLimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceLimitExceededException'
+              examples:
+                CreateConfig482Example:
+                  summary: Default CreateConfig 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '483':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                CreateConfig483Example:
+                  summary: Default CreateConfig 483 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - configData
+              - name
+              properties:
+                configData:
+                  description: <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+                  type: object
+                  properties:
+                    antennaDownlinkConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/AntennaDownlinkConfig'
+                      - description: Information about how AWS Ground Station should configure an antenna for downlink during a contact.
+                    antennaDownlinkDemodDecodeConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/AntennaDownlinkDemodDecodeConfig'
+                      - description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
+                    antennaUplinkConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/AntennaUplinkConfig'
+                      - description: Information about how AWS Ground Station should conﬁgure an antenna for uplink during a contact.
+                    dataflowEndpointConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/DataflowEndpointConfig'
+                      - description: Information about the dataflow endpoint <code>Config</code>.
+                    s3RecordingConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/S3RecordingConfig'
+                      - description: Information about an S3 recording <code>Config</code>.
+                    trackingConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/TrackingConfig'
+                      - description: 'Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. '
+                    uplinkEchoConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/UplinkEchoConfig'
+                      - description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+                name:
+                  description: Name of a <code>Config</code>.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+                  minLength: 1
+                  maxLength: 256
+                tags:
+                  description: Tags assigned to a <code>Config</code>.
+                  type: object
+                  additionalProperties:
+                    $ref: '#/components/schemas/String'
+      summary: Amazon Ground Station Create Config
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Config
+    get:
+      operationId: ListConfigs
+      description: Returns a list of <code>Config</code> objects.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListConfigsResponse'
+              examples:
+                ListConfigs200Example:
+                  summary: Default ListConfigs 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                ListConfigs480Example:
+                  summary: Default ListConfigs 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                ListConfigs481Example:
+                  summary: Default ListConfigs 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListConfigs482Example:
+                  summary: Default ListConfigs 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: Maximum number of <code>Configs</code> returned.
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9-/+_.=]+$
+          minLength: 3
+          maxLength: 1000
+      summary: Amazon Ground Station List Configs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Config
+  /config/{configType}/{configId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteConfig
+      description: Deletes a <code>Config</code>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigIdResponse'
+              examples:
+                DeleteConfig200Example:
+                  summary: Default DeleteConfig 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                DeleteConfig480Example:
+                  summary: Default DeleteConfig 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                DeleteConfig481Example:
+                  summary: Default DeleteConfig 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteConfig482Example:
+                  summary: Default DeleteConfig 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: configId
+        in: path
+        required: true
+        description: UUID of a <code>Config</code>.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      - name: configType
+        in: path
+        required: true
+        description: Type of a <code>Config</code>.
+        schema:
+          type: string
+          enum:
+          - antenna-downlink
+          - antenna-downlink-demod-decode
+          - antenna-uplink
+          - dataflow-endpoint
+          - tracking
+          - uplink-echo
+          - s3-recording
+      summary: Amazon Ground Station Delete Config
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Config
+    get:
+      operationId: GetConfig
+      description: <p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code> response can be returned.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetConfigResponse'
+              examples:
+                GetConfig200Example:
+                  summary: Default GetConfig 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                GetConfig480Example:
+                  summary: Default GetConfig 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                GetConfig481Example:
+                  summary: Default GetConfig 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                GetConfig482Example:
+                  summary: Default GetConfig 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: configId
+        in: path
+        required: true
+        description: UUID of a <code>Config</code>.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      - name: configType
+        in: path
+        required: true
+        description: Type of a <code>Config</code>.
+        schema:
+          type: string
+          enum:
+          - antenna-downlink
+          - antenna-downlink-demod-decode
+          - antenna-uplink
+          - dataflow-endpoint
+          - tracking
+          - uplink-echo
+          - s3-recording
+      summary: Amazon Ground Station Get Config
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Config
+    put:
+      operationId: UpdateConfig
+      description: <p>Updates the <code>Config</code> used when scheduling contacts.</p> <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigIdResponse'
+              examples:
+                UpdateConfig200Example:
+                  summary: Default UpdateConfig 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                UpdateConfig480Example:
+                  summary: Default UpdateConfig 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                UpdateConfig481Example:
+                  summary: Default UpdateConfig 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateConfig482Example:
+                  summary: Default UpdateConfig 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: configId
+        in: path
+        required: true
+        description: UUID of a <code>Config</code>.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      - name: configType
+        in: path
+        required: true
+        description: Type of a <code>Config</code>.
+        schema:
+          type: string
+          enum:
+          - antenna-downlink
+          - antenna-downlink-demod-decode
+          - antenna-uplink
+          - dataflow-endpoint
+          - tracking
+          - uplink-echo
+          - s3-recording
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - configData
+              - name
+              properties:
+                configData:
+                  description: <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+                  type: object
+                  properties:
+                    antennaDownlinkConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/AntennaDownlinkConfig'
+                      - description: Information about how AWS Ground Station should configure an antenna for downlink during a contact.
+                    antennaDownlinkDemodDecodeConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/AntennaDownlinkDemodDecodeConfig'
+                      - description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
+                    antennaUplinkConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/AntennaUplinkConfig'
+                      - description: Information about how AWS Ground Station should conﬁgure an antenna for uplink during a contact.
+                    dataflowEndpointConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/DataflowEndpointConfig'
+                      - description: Information about the dataflow endpoint <code>Config</code>.
+                    s3RecordingConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/S3RecordingConfig'
+                      - description: Information about an S3 recording <code>Config</code>.
+                    trackingConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/TrackingConfig'
+                      - description: 'Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. '
+                    uplinkEchoConfig:
+                      allOf:
+                      - $ref: '#/components/schemas/UplinkEchoConfig'
+                      - description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+                name:
+                  description: Name of a <code>Config</code>.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+                  minLength: 1
+                  maxLength: 256
+      summary: Amazon Ground Station Update Config
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Config
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ResourceNotFoundException: {}
+    S3RecordingConfig:
+      type: object
+      required:
+      - bucketArn
+      - roleArn
+      properties:
+        bucketArn:
+          allOf:
+          - $ref: '#/components/schemas/BucketArn'
+          - description: ARN of the bucket to record to.
+        prefix:
+          allOf:
+          - $ref: '#/components/schemas/S3KeyPrefix'
+          - description: S3 Key prefix to prefice data files.
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: ARN of the role Ground Station assumes to write data to the bucket.
+      description: Information about an S3 recording <code>Config</code>.
+    BandwidthUnits:
+      type: string
+      enum:
+      - GHz
+      - MHz
+      - kHz
+    ConfigListItem:
+      type: object
+      properties:
+        configArn:
+          allOf:
+          - $ref: '#/components/schemas/ConfigArn'
+          - description: ARN of a <code>Config</code>.
+        configId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: UUID of a <code>Config</code>.
+        configType:
+          allOf:
+          - $ref: '#/components/schemas/ConfigCapabilityType'
+          - description: Type of a <code>Config</code>.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a <code>Config</code>.
+      description: An item in a list of <code>Config</code> objects.
+    ConfigTypeData:
+      type: object
+      properties:
+        antennaDownlinkConfig:
+          allOf:
+          - $ref: '#/components/schemas/AntennaDownlinkConfig'
+          - description: Information about how AWS Ground Station should configure an antenna for downlink during a contact.
+        antennaDownlinkDemodDecodeConfig:
+          allOf:
+          - $ref: '#/components/schemas/AntennaDownlinkDemodDecodeConfig'
+          - description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
+        antennaUplinkConfig:
+          allOf:
+          - $ref: '#/components/schemas/AntennaUplinkConfig'
+          - description: Information about how AWS Ground Station should conﬁgure an antenna for uplink during a contact.
+        dataflowEndpointConfig:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointConfig'
+          - description: Information about the dataflow endpoint <code>Config</code>.
+        s3RecordingConfig:
+          allOf:
+          - $ref: '#/components/schemas/S3RecordingConfig'
+          - description: Information about an S3 recording <code>Config</code>.
+        trackingConfig:
+          allOf:
+          - $ref: '#/components/schemas/TrackingConfig'
+          - description: 'Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. '
+        uplinkEchoConfig:
+          allOf:
+          - $ref: '#/components/schemas/UplinkEchoConfig'
+          - description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+      description: <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+    UplinkEchoConfig:
+      type: object
+      required:
+      - antennaUplinkConfigArn
+      - enabled
+      properties:
+        antennaUplinkConfigArn:
+          allOf:
+          - $ref: '#/components/schemas/ConfigArn'
+          - description: ARN of an uplink <code>Config</code>.
+        enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Whether or not an uplink <code>Config</code> is enabled.
+      description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+    Frequency:
+      type: object
+      required:
+      - units
+      - value
+      properties:
+        units:
+          allOf:
+          - $ref: '#/components/schemas/FrequencyUnits'
+          - description: Frequency units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
+      description: Object that describes the frequency.
+    InvalidParameterException: {}
+    SpectrumConfig:
+      type: object
+      required:
+      - bandwidth
+      - centerFrequency
+      properties:
+        bandwidth:
+          allOf:
+          - $ref: '#/components/schemas/FrequencyBandwidth'
+          - description: <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>
+        centerFrequency:
+          allOf:
+          - $ref: '#/components/schemas/Frequency'
+          - description: Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
+        polarization:
+          allOf:
+          - $ref: '#/components/schemas/Polarization'
+          - description: Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.
+      description: Object that describes a spectral <code>Config</code>.
+    ConfigList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConfigListItem'
+    S3KeyPrefix:
+      type: string
+      pattern: ^([a-zA-Z0-9_\-=/]|\{satellite_id\}|\{config\-name}|\{s3\-config-id}|\{year\}|\{month\}|\{day\}){1,900}$
+      minLength: 1
+      maxLength: 900
+    GetConfigResponse:
+      type: object
+      required:
+      - configArn
+      - configData
+      - configId
+      - name
+      properties:
+        configArn:
+          allOf:
+          - $ref: '#/components/schemas/ConfigArn'
+          - description: 'ARN of a <code>Config</code> '
+        configData:
+          allOf:
+          - $ref: '#/components/schemas/ConfigTypeData'
+          - description: Data elements in a <code>Config</code>.
+        configId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: UUID of a <code>Config</code>.
+        configType:
+          allOf:
+          - $ref: '#/components/schemas/ConfigCapabilityType'
+          - description: Type of a <code>Config</code>.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a <code>Config</code>.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: Tags assigned to a <code>Config</code>.
+      description: <p/>
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    DecodeConfig:
+      type: object
+      required:
+      - unvalidatedJSON
+      properties:
+        unvalidatedJSON:
+          allOf:
+          - $ref: '#/components/schemas/JsonString'
+          - description: Unvalidated JSON of a decode <code>Config</code>.
+      description: Information about the decode <code>Config</code>.
+    RoleArn:
+      type: string
+    ResourceLimitExceededException: {}
+    Eirp:
+      type: object
+      required:
+      - units
+      - value
+      properties:
+        units:
+          allOf:
+          - $ref: '#/components/schemas/EirpUnits'
+          - description: Units of an EIRP.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.
+      description: Object that represents EIRP.
+    AntennaDownlinkConfig:
+      type: object
+      required:
+      - spectrumConfig
+      properties:
+        spectrumConfig:
+          allOf:
+          - $ref: '#/components/schemas/SpectrumConfig'
+          - description: Object that describes a spectral <code>Config</code>.
+      description: Information about how AWS Ground Station should configure an antenna for downlink during a contact.
+    Boolean:
+      type: boolean
+    FrequencyBandwidth:
+      type: object
+      required:
+      - units
+      - value
+      properties:
+        units:
+          allOf:
+          - $ref: '#/components/schemas/BandwidthUnits'
+          - description: Frequency bandwidth units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>
+      description: 'Object that describes the frequency bandwidth. '
+    Polarization:
+      type: string
+      enum:
+      - LEFT_HAND
+      - NONE
+      - RIGHT_HAND
+    Double:
+      type: number
+      format: double
+    UplinkSpectrumConfig:
+      type: object
+      required:
+      - centerFrequency
+      properties:
+        centerFrequency:
+          allOf:
+          - $ref: '#/components/schemas/Frequency'
+          - description: Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
+        polarization:
+          allOf:
+          - $ref: '#/components/schemas/Polarization'
+          - description: Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.
+      description: Information about the uplink spectral <code>Config</code>.
+    ListConfigsResponse:
+      type: object
+      properties:
+        configList:
+          allOf:
+          - $ref: '#/components/schemas/ConfigList'
+          - description: List of <code>Config</code> items.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.
+      description: <p/>
+    DataflowEndpointConfig:
+      type: object
+      required:
+      - dataflowEndpointName
+      properties:
+        dataflowEndpointName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a dataflow endpoint.
+        dataflowEndpointRegion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Region of a dataflow endpoint.
+      description: Information about the dataflow endpoint <code>Config</code>.
+    Criticality:
+      type: string
+      enum:
+      - PREFERRED
+      - REMOVED
+      - REQUIRED
+    AntennaDownlinkDemodDecodeConfig:
+      type: object
+      required:
+      - decodeConfig
+      - demodulationConfig
+      - spectrumConfig
+      properties:
+        decodeConfig:
+          allOf:
+          - $ref: '#/components/schemas/DecodeConfig'
+          - description: Information about the decode <code>Config</code>.
+        demodulationConfig:
+          allOf:
+          - $ref: '#/components/schemas/DemodulationConfig'
+          - description: Information about the demodulation <code>Config</code>.
+        spectrumConfig:
+          allOf:
+          - $ref: '#/components/schemas/SpectrumConfig'
+          - description: Information about the spectral <code>Config</code>.
+      description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
+    BucketArn:
+      type: string
+    DependencyException: {}
+    DemodulationConfig:
+      type: object
+      required:
+      - unvalidatedJSON
+      properties:
+        unvalidatedJSON:
+          allOf:
+          - $ref: '#/components/schemas/JsonString'
+          - description: Unvalidated JSON of a demodulation <code>Config</code>.
+      description: Information about the demodulation <code>Config</code>.
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    String:
+      type: string
+    EirpUnits:
+      type: string
+      enum:
+      - dBW
+    JsonString:
+      type: string
+      pattern: ^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$
+      minLength: 2
+      maxLength: 8192
+    AntennaUplinkConfig:
+      type: object
+      required:
+      - spectrumConfig
+      - targetEirp
+      properties:
+        spectrumConfig:
+          allOf:
+          - $ref: '#/components/schemas/UplinkSpectrumConfig'
+          - description: Information about the uplink spectral <code>Config</code>.
+        targetEirp:
+          allOf:
+          - $ref: '#/components/schemas/Eirp'
+          - description: EIRP of the target.
+        transmitDisabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Whether or not uplink transmit is disabled.
+      description: Information about the uplink <code>Config</code> of an antenna.
+    ConfigArn:
+      type: string
+    ConfigCapabilityType:
+      type: string
+      enum:
+      - antenna-downlink
+      - antenna-downlink-demod-decode
+      - antenna-uplink
+      - dataflow-endpoint
+      - tracking
+      - uplink-echo
+      - s3-recording
+    TrackingConfig:
+      type: object
+      required:
+      - autotrack
+      properties:
+        autotrack:
+          allOf:
+          - $ref: '#/components/schemas/Criticality'
+          - description: Current setting for autotrack.
+      description: Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.
+    ConfigIdResponse:
+      type: object
+      properties:
+        configArn:
+          allOf:
+          - $ref: '#/components/schemas/ConfigArn'
+          - description: ARN of a <code>Config</code>.
+        configId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: UUID of a <code>Config</code>.
+        configType:
+          allOf:
+          - $ref: '#/components/schemas/ConfigCapabilityType'
+          - description: Type of a <code>Config</code>.
+      description: <p/>
+    FrequencyUnits:
+      type: string
+      enum:
+      - GHz
+      - MHz
+      - kHz
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true

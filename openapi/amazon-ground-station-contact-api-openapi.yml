@@ -1,0 +1,902 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent Contact API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Contact
+paths:
+  /contact/{contactId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: CancelContact
+      description: Cancels a contact with a specified contact ID.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactIdResponse'
+              examples:
+                CancelContact200Example:
+                  summary: Default CancelContact 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                CancelContact480Example:
+                  summary: Default CancelContact 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                CancelContact481Example:
+                  summary: Default CancelContact 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                CancelContact482Example:
+                  summary: Default CancelContact 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: contactId
+        in: path
+        required: true
+        description: UUID of a contact.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Cancel Contact
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Contact
+    get:
+      operationId: DescribeContact
+      description: Describes an existing contact.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeContactResponse'
+              examples:
+                DescribeContact200Example:
+                  summary: Default DescribeContact 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                DescribeContact480Example:
+                  summary: Default DescribeContact 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                DescribeContact481Example:
+                  summary: Default DescribeContact 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeContact482Example:
+                  summary: Default DescribeContact 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: contactId
+        in: path
+        required: true
+        description: UUID of a contact.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Describe Contact
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Contact
+  /contact:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ReserveContact
+      description: Reserves a contact using specified parameters.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactIdResponse'
+              examples:
+                ReserveContact200Example:
+                  summary: Default ReserveContact 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                ReserveContact480Example:
+                  summary: Default ReserveContact 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                ReserveContact481Example:
+                  summary: Default ReserveContact 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ReserveContact482Example:
+                  summary: Default ReserveContact 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - endTime
+              - groundStation
+              - missionProfileArn
+              - satelliteArn
+              - startTime
+              properties:
+                endTime:
+                  description: End time of a contact in UTC.
+                  type: string
+                  format: date-time
+                groundStation:
+                  description: Name of a ground station.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+                  minLength: 4
+                  maxLength: 500
+                missionProfileArn:
+                  description: ARN of a mission profile.
+                  type: string
+                satelliteArn:
+                  description: ARN of a satellite
+                  type: string
+                startTime:
+                  description: Start time of a contact in UTC.
+                  type: string
+                  format: date-time
+                tags:
+                  description: Tags assigned to a contact.
+                  type: object
+                  additionalProperties:
+                    $ref: '#/components/schemas/String'
+      summary: Amazon Ground Station Reserve Contact
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Contact
+components:
+  schemas:
+    SocketAddress:
+      type: object
+      required:
+      - name
+      - port
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a socket address.
+        port:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Port of a socket address.
+      description: Information about the socket address.
+    SubnetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    ResourceNotFoundException: {}
+    IpV4Address:
+      type: string
+      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+      minLength: 7
+      maxLength: 16
+    Timestamp:
+      type: string
+      format: date-time
+    CapabilityHealth:
+      type: string
+      enum:
+      - UNHEALTHY
+      - HEALTHY
+    AngleUnits:
+      type: string
+      enum:
+      - DEGREE_ANGLE
+      - RADIAN
+    CapabilityHealthReason:
+      type: string
+      enum:
+      - NO_REGISTERED_AGENT
+      - INVALID_IP_OWNERSHIP
+      - NOT_AUTHORIZED_TO_CREATE_SLR
+      - UNVERIFIED_IP_OWNERSHIP
+      - INITIALIZING_DATAPLANE
+      - DATAPLANE_FAILURE
+      - HEALTHY
+    Source:
+      type: object
+      properties:
+        configDetails:
+          allOf:
+          - $ref: '#/components/schemas/ConfigDetails'
+          - description: 'Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or <code>antenna-downlink-demod-decode</code> '
+        configId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: UUID of a <code>Config</code>.
+        configType:
+          allOf:
+          - $ref: '#/components/schemas/ConfigCapabilityType'
+          - description: Type of a <code>Config</code>.
+        dataflowSourceRegion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Region of a dataflow source.
+      description: Dataflow details for the source side.
+    IntegerRange:
+      type: object
+      required:
+      - maximum
+      - minimum
+      properties:
+        maximum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A maximum value.
+        minimum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A minimum value.
+      description: An integer range that has a minimum and maximum value.
+    InvalidParameterException: {}
+    DescribeContactResponse:
+      type: object
+      properties:
+        contactId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a contact.
+        contactStatus:
+          allOf:
+          - $ref: '#/components/schemas/ContactStatus'
+          - description: Status of a contact.
+        dataflowList:
+          allOf:
+          - $ref: '#/components/schemas/DataflowList'
+          - description: List describing source and destination details for each dataflow edge.
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: End time of a contact in UTC.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Error message for a contact.
+        groundStation:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Ground station for a contact.
+        maximumElevation:
+          allOf:
+          - $ref: '#/components/schemas/Elevation'
+          - description: Maximum elevation angle of a contact.
+        missionProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/MissionProfileArn'
+          - description: ARN of a mission profile.
+        postPassEndTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+        prePassStartTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Region of a contact.
+        satelliteArn:
+          allOf:
+          - $ref: '#/components/schemas/satelliteArn'
+          - description: ARN of a satellite.
+        startTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Start time of a contact in UTC.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: Tags assigned to a contact.
+      description: <p/>
+    RangedConnectionDetailsMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    RangedSocketAddress:
+      type: object
+      required:
+      - name
+      - portRange
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/IpV4Address'
+          - description: IPv4 socket address.
+        portRange:
+          allOf:
+          - $ref: '#/components/schemas/IntegerRange'
+          - description: Port range of a socket address.
+      description: A socket address with a port range.
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    RoleArn:
+      type: string
+    Destination:
+      type: object
+      properties:
+        configDetails:
+          allOf:
+          - $ref: '#/components/schemas/ConfigDetails'
+          - description: Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+        configId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a <code>Config</code>.
+        configType:
+          allOf:
+          - $ref: '#/components/schemas/ConfigCapabilityType'
+          - description: Type of a <code>Config</code>.
+        dataflowDestinationRegion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Region of a dataflow destination.
+      description: Dataflow details for the destination side.
+    ConnectionDetails:
+      type: object
+      required:
+      - socketAddress
+      properties:
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        socketAddress:
+          allOf:
+          - $ref: '#/components/schemas/SocketAddress'
+          - description: A socket address.
+      description: Egress address of AgentEndpoint with an optional mtu.
+    AgentStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - FAILED
+      - ACTIVE
+      - INACTIVE
+    Elevation:
+      type: object
+      required:
+      - unit
+      - value
+      properties:
+        unit:
+          allOf:
+          - $ref: '#/components/schemas/AngleUnits'
+          - description: Elevation angle units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Elevation angle value.
+      description: Elevation angle of the satellite in the sky during a contact.
+    AuditResults:
+      type: string
+      enum:
+      - HEALTHY
+      - UNHEALTHY
+    Double:
+      type: number
+      format: double
+    EndpointDetails:
+      type: object
+      properties:
+        awsGroundStationAgentEndpoint:
+          allOf:
+          - $ref: '#/components/schemas/AwsGroundStationAgentEndpoint'
+          - description: An agent endpoint.
+        endpoint:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpoint'
+          - description: A dataflow endpoint.
+        healthReasons:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealthReasonList'
+          - description: Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        healthStatus:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealth'
+          - description: A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        securityDetails:
+          allOf:
+          - $ref: '#/components/schemas/SecurityDetails'
+          - description: Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.
+      description: Information about the endpoint details.
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    Integer:
+      type: integer
+    SecurityDetails:
+      type: object
+      required:
+      - roleArn
+      - securityGroupIds
+      - subnetIds
+      properties:
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: 'ARN to a role needed for connecting streams to your instances. '
+        securityGroupIds:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: The security groups to attach to the elastic network interfaces.
+        subnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetList'
+          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
+      description: Information about endpoints.
+    AwsGroundStationAgentEndpoint:
+      type: object
+      required:
+      - egressAddress
+      - ingressAddress
+      - name
+      properties:
+        agentStatus:
+          allOf:
+          - $ref: '#/components/schemas/AgentStatus'
+          - description: The status of AgentEndpoint.
+        auditResults:
+          allOf:
+          - $ref: '#/components/schemas/AuditResults'
+          - description: The results of the audit.
+        egressAddress:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionDetails'
+          - description: The egress address of AgentEndpoint.
+        ingressAddress:
+          allOf:
+          - $ref: '#/components/schemas/RangedConnectionDetails'
+          - description: The ingress address of AgentEndpoint.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.
+      description: Information about AwsGroundStationAgentEndpoint.
+    SecurityGroupIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    AntennaDemodDecodeDetails:
+      type: object
+      properties:
+        outputNode:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of an antenna demod decode output node used in a contact.
+      description: Details about an antenna demod decode <code>Config</code> used in a contact.
+    ConfigDetails:
+      type: object
+      properties:
+        antennaDemodDecodeDetails:
+          allOf:
+          - $ref: '#/components/schemas/AntennaDemodDecodeDetails'
+          - description: Details for antenna demod decode <code>Config</code> in a contact.
+        endpointDetails:
+          $ref: '#/components/schemas/EndpointDetails'
+        s3RecordingDetails:
+          allOf:
+          - $ref: '#/components/schemas/S3RecordingDetails'
+          - description: Details for an S3 recording <code>Config</code> in a contact.
+      description: Details for certain <code>Config</code> object types in a contact.
+    DataflowEndpointMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    ContactIdResponse:
+      type: object
+      properties:
+        contactId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a contact.
+      description: <p/>
+    DependencyException: {}
+    BucketArn:
+      type: string
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    RangedConnectionDetails:
+      type: object
+      required:
+      - socketAddress
+      properties:
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        socketAddress:
+          allOf:
+          - $ref: '#/components/schemas/RangedSocketAddress'
+          - description: A ranged socket address.
+      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
+    String:
+      type: string
+    DataflowList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataflowDetail'
+    DataflowEndpoint:
+      type: object
+      properties:
+        address:
+          allOf:
+          - $ref: '#/components/schemas/SocketAddress'
+          - description: Socket address of a dataflow endpoint.
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name of a dataflow endpoint.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/EndpointStatus'
+          - description: Status of a dataflow endpoint.
+      description: Information about a dataflow endpoint.
+    MissionProfileArn:
+      type: string
+    DataflowDetail:
+      type: object
+      properties:
+        destination:
+          $ref: '#/components/schemas/Destination'
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Error message for a dataflow.
+        source:
+          $ref: '#/components/schemas/Source'
+      description: Information about a dataflow edge used in a contact.
+    ConfigCapabilityType:
+      type: string
+      enum:
+      - antenna-downlink
+      - antenna-downlink-demod-decode
+      - antenna-uplink
+      - dataflow-endpoint
+      - tracking
+      - uplink-echo
+      - s3-recording
+    CapabilityHealthReasonList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CapabilityHealthReason'
+      minItems: 0
+      maxItems: 500
+    EndpointStatus:
+      type: string
+      enum:
+      - created
+      - creating
+      - deleted
+      - deleting
+      - failed
+    ContactStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - AWS_CANCELLED
+      - AWS_FAILED
+      - CANCELLED
+      - CANCELLING
+      - COMPLETED
+      - FAILED
+      - FAILED_TO_SCHEDULE
+      - PASS
+      - POSTPASS
+      - PREPASS
+      - SCHEDULED
+      - SCHEDULING
+    S3RecordingDetails:
+      type: object
+      properties:
+        bucketArn:
+          allOf:
+          - $ref: '#/components/schemas/BucketArn'
+          - description: ARN of the bucket used.
+        keyTemplate:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Key template used for the S3 Recording Configuration
+      description: Details about an S3 recording <code>Config</code> used in a contact.
+    satelliteArn:
+      type: string
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true

@@ -1,0 +1,836 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent Missionprofile API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Missionprofile
+paths:
+  /missionprofile:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateMissionProfile
+      description: '<p>Creates a mission profile.</p> <p> <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MissionProfileIdResponse'
+              examples:
+                CreateMissionProfile200Example:
+                  summary: Default CreateMissionProfile 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                CreateMissionProfile480Example:
+                  summary: Default CreateMissionProfile 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                CreateMissionProfile481Example:
+                  summary: Default CreateMissionProfile 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                CreateMissionProfile482Example:
+                  summary: Default CreateMissionProfile 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - dataflowEdges
+              - minimumViableContactDurationSeconds
+              - name
+              - trackingConfigArn
+              properties:
+                contactPostPassDurationSeconds:
+                  description: Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+                  type: integer
+                  minimum: 0
+                  maximum: 21600
+                contactPrePassDurationSeconds:
+                  description: Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.
+                  type: integer
+                  minimum: 0
+                  maximum: 21600
+                dataflowEdges:
+                  description: A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/DataflowEdge'
+                  minItems: 0
+                  maxItems: 500
+                minimumViableContactDurationSeconds:
+                  description: Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
+                  type: integer
+                  minimum: 1
+                  maximum: 21600
+                name:
+                  description: Name of a mission profile.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+                  minLength: 1
+                  maxLength: 256
+                streamsKmsKey:
+                  description: AWS Key Management Service (KMS) Key.
+                  type: object
+                  properties:
+                    kmsAliasArn:
+                      allOf:
+                      - $ref: '#/components/schemas/KeyAliasArn'
+                      - description: KMS Alias Arn.
+                    kmsKeyArn:
+                      allOf:
+                      - $ref: '#/components/schemas/KeyArn'
+                      - description: KMS Key Arn.
+                streamsKmsRole:
+                  description: Role to use for encrypting streams with KMS key.
+                  type: string
+                tags:
+                  description: Tags assigned to a mission profile.
+                  type: object
+                  additionalProperties:
+                    $ref: '#/components/schemas/String'
+                trackingConfigArn:
+                  description: ARN of a tracking <code>Config</code>.
+                  type: string
+      summary: Amazon Ground Station Create Mission Profile
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Missionprofile
+    get:
+      operationId: ListMissionProfiles
+      description: Returns a list of mission profiles.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListMissionProfilesResponse'
+              examples:
+                ListMissionProfiles200Example:
+                  summary: Default ListMissionProfiles 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                ListMissionProfiles480Example:
+                  summary: Default ListMissionProfiles 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                ListMissionProfiles481Example:
+                  summary: Default ListMissionProfiles 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListMissionProfiles482Example:
+                  summary: Default ListMissionProfiles 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: Maximum number of mission profiles returned.
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9-/+_.=]+$
+          minLength: 3
+          maxLength: 1000
+      summary: Amazon Ground Station List Mission Profiles
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Missionprofile
+  /missionprofile/{missionProfileId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteMissionProfile
+      description: Deletes a mission profile.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MissionProfileIdResponse'
+              examples:
+                DeleteMissionProfile200Example:
+                  summary: Default DeleteMissionProfile 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                DeleteMissionProfile480Example:
+                  summary: Default DeleteMissionProfile 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                DeleteMissionProfile481Example:
+                  summary: Default DeleteMissionProfile 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteMissionProfile482Example:
+                  summary: Default DeleteMissionProfile 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: missionProfileId
+        in: path
+        required: true
+        description: UUID of a mission profile.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Delete Mission Profile
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Missionprofile
+    get:
+      operationId: GetMissionProfile
+      description: Returns a mission profile.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMissionProfileResponse'
+              examples:
+                GetMissionProfile200Example:
+                  summary: Default GetMissionProfile 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                GetMissionProfile480Example:
+                  summary: Default GetMissionProfile 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                GetMissionProfile481Example:
+                  summary: Default GetMissionProfile 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                GetMissionProfile482Example:
+                  summary: Default GetMissionProfile 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: missionProfileId
+        in: path
+        required: true
+        description: UUID of a mission profile.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Get Mission Profile
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Missionprofile
+    put:
+      operationId: UpdateMissionProfile
+      description: <p>Updates a mission profile.</p> <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MissionProfileIdResponse'
+              examples:
+                UpdateMissionProfile200Example:
+                  summary: Default UpdateMissionProfile 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                UpdateMissionProfile480Example:
+                  summary: Default UpdateMissionProfile 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                UpdateMissionProfile481Example:
+                  summary: Default UpdateMissionProfile 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateMissionProfile482Example:
+                  summary: Default UpdateMissionProfile 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: missionProfileId
+        in: path
+        required: true
+        description: UUID of a mission profile.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contactPostPassDurationSeconds:
+                  description: Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+                  type: integer
+                  minimum: 0
+                  maximum: 21600
+                contactPrePassDurationSeconds:
+                  description: Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+                  type: integer
+                  minimum: 0
+                  maximum: 21600
+                dataflowEdges:
+                  description: A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/DataflowEdge'
+                  minItems: 0
+                  maxItems: 500
+                minimumViableContactDurationSeconds:
+                  description: Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
+                  type: integer
+                  minimum: 1
+                  maximum: 21600
+                name:
+                  description: Name of a mission profile.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+                  minLength: 1
+                  maxLength: 256
+                streamsKmsKey:
+                  description: AWS Key Management Service (KMS) Key.
+                  type: object
+                  properties:
+                    kmsAliasArn:
+                      allOf:
+                      - $ref: '#/components/schemas/KeyAliasArn'
+                      - description: KMS Alias Arn.
+                    kmsKeyArn:
+                      allOf:
+                      - $ref: '#/components/schemas/KeyArn'
+                      - description: KMS Key Arn.
+                streamsKmsRole:
+                  description: Role to use for encrypting streams with KMS key.
+                  type: string
+                trackingConfigArn:
+                  description: ARN of a tracking <code>Config</code>.
+                  type: string
+      summary: Amazon Ground Station Update Mission Profile
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Missionprofile
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ResourceNotFoundException: {}
+    ListMissionProfilesResponse:
+      type: object
+      properties:
+        missionProfileList:
+          allOf:
+          - $ref: '#/components/schemas/MissionProfileList'
+          - description: List of mission profiles.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
+      description: <p/>
+    MissionProfileList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MissionProfileListItem'
+    InvalidParameterException: {}
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    RoleArn:
+      type: string
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    KeyAliasArn:
+      type: string
+      pattern: ^arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((alias/[a-zA-Z0-9:/_-]{1,256}))$
+      minLength: 1
+      maxLength: 512
+    DataflowEdge:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConfigArn'
+      minItems: 2
+      maxItems: 2
+    PositiveDurationInSeconds:
+      type: integer
+      minimum: 1
+      maximum: 21600
+    MissionProfileIdResponse:
+      type: object
+      properties:
+        missionProfileId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a mission profile.
+      description: <p/>
+    DependencyException: {}
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    MissionProfileListItem:
+      type: object
+      properties:
+        missionProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/MissionProfileArn'
+          - description: ARN of a mission profile.
+        missionProfileId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a mission profile.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name of a mission profile.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/AWSRegion'
+          - description: Region of a mission profile.
+      description: Item in a list of mission profiles.
+    String:
+      type: string
+    KeyArn:
+      type: string
+    GetMissionProfileResponse:
+      type: object
+      properties:
+        contactPostPassDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSeconds'
+          - description: Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+        contactPrePassDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/DurationInSeconds'
+          - description: Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.
+        dataflowEdges:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEdgeList'
+          - description: A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.
+        minimumViableContactDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/PositiveDurationInSeconds'
+          - description: Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
+        missionProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/MissionProfileArn'
+          - description: ARN of a mission profile.
+        missionProfileId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a mission profile.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name of a mission profile.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/AWSRegion'
+          - description: Region of a mission profile.
+        streamsKmsKey:
+          allOf:
+          - $ref: '#/components/schemas/KmsKey'
+          - description: KMS key to use for encrypting streams.
+        streamsKmsRole:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: Role to use for encrypting streams with KMS key.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: Tags assigned to a mission profile.
+        trackingConfigArn:
+          allOf:
+          - $ref: '#/components/schemas/ConfigArn'
+          - description: ARN of a tracking <code>Config</code>.
+      description: <p/>
+    KmsKey:
+      type: object
+      properties:
+        kmsAliasArn:
+          allOf:
+          - $ref: '#/components/schemas/KeyAliasArn'
+          - description: KMS Alias Arn.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/KeyArn'
+          - description: KMS Key Arn.
+      description: AWS Key Management Service (KMS) Key.
+    MissionProfileArn:
+      type: string
+    ConfigArn:
+      type: string
+    AWSRegion:
+      type: string
+      pattern: ^[\w-]+$
+      minLength: 1
+      maxLength: 128
+    DataflowEdgeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataflowEdge'
+      minItems: 0
+      maxItems: 500
+    DurationInSeconds:
+      type: integer
+      minimum: 0
+      maximum: 21600
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true

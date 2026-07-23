@@ -1,0 +1,321 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent Groundstation API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Groundstation
+paths:
+  /groundstation:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListGroundStations
+      description: 'Returns a list of ground stations. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGroundStationsResponse'
+              examples:
+                ListGroundStations200Example:
+                  summary: Default ListGroundStations 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                ListGroundStations480Example:
+                  summary: Default ListGroundStations 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                ListGroundStations481Example:
+                  summary: Default ListGroundStations 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListGroundStations482Example:
+                  summary: Default ListGroundStations 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: Maximum number of ground stations returned.
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: Next token that can be supplied in the next call to get the next page of ground stations.
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9-/+_.=]+$
+          minLength: 3
+          maxLength: 1000
+      - name: satelliteId
+        in: query
+        required: false
+        description: Satellite ID to retrieve on-boarded ground stations.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station List Ground Stations
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Groundstation
+components:
+  schemas:
+    GroundStationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroundStationData'
+    ResourceNotFoundException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    DependencyException: {}
+    ListGroundStationsResponse:
+      type: object
+      properties:
+        groundStationList:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationList'
+          - description: List of ground stations.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token that can be supplied in the next call to get the next page of ground stations.
+      description: <p/>
+    GroundStationData:
+      type: object
+      properties:
+        groundStationId:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationName'
+          - description: UUID of a ground station.
+        groundStationName:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationName'
+          - description: Name of a ground station.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/AWSRegion'
+          - description: Ground station Region.
+      description: Information about the ground station data.
+    AWSRegion:
+      type: string
+      pattern: ^[\w-]+$
+      minLength: 1
+      maxLength: 128
+    GroundStationName:
+      type: string
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
+    InvalidParameterException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true

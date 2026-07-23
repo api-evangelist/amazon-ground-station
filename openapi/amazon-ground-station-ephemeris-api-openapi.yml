@@ -1,0 +1,768 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent Ephemeris API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Ephemeris
+paths:
+  /ephemeris:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateEphemeris
+      description: Creates an Ephemeris with the specified <code>EphemerisData</code>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EphemerisIdResponse'
+              examples:
+                CreateEphemeris200Example:
+                  summary: Default CreateEphemeris 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                CreateEphemeris480Example:
+                  summary: Default CreateEphemeris 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                CreateEphemeris481Example:
+                  summary: Default CreateEphemeris 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                CreateEphemeris482Example:
+                  summary: Default CreateEphemeris 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - satelliteId
+              properties:
+                enabled:
+                  description: <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p> <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
+                  type: boolean
+                ephemeris:
+                  description: Ephemeris data.
+                  type: object
+                  properties:
+                    oem:
+                      $ref: '#/components/schemas/OEMEphemeris'
+                    tle:
+                      $ref: '#/components/schemas/TLEEphemeris'
+                expirationTime:
+                  description: An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.
+                  type: string
+                  format: date-time
+                kmsKeyArn:
+                  description: The ARN of a KMS key used to encrypt the ephemeris in Ground Station.
+                  type: string
+                name:
+                  description: A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+                  minLength: 1
+                  maxLength: 256
+                priority:
+                  description: <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>
+                  type: integer
+                  minimum: 1
+                  maximum: 99999
+                satelliteId:
+                  description: AWS Ground Station satellite ID for this ephemeris.
+                  type: string
+                  pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+                  minLength: 1
+                  maxLength: 128
+                tags:
+                  description: Tags assigned to an ephemeris.
+                  type: object
+                  additionalProperties:
+                    $ref: '#/components/schemas/String'
+      summary: Amazon Ground Station Create Ephemeris
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Ephemeris
+  /ephemeris/{ephemerisId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteEphemeris
+      description: Deletes an ephemeris
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EphemerisIdResponse'
+              examples:
+                DeleteEphemeris200Example:
+                  summary: Default DeleteEphemeris 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                DeleteEphemeris480Example:
+                  summary: Default DeleteEphemeris 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                DeleteEphemeris481Example:
+                  summary: Default DeleteEphemeris 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteEphemeris482Example:
+                  summary: Default DeleteEphemeris 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: ephemerisId
+        in: path
+        required: true
+        description: The AWS Ground Station ephemeris ID.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Delete Ephemeris
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Ephemeris
+    get:
+      operationId: DescribeEphemeris
+      description: Describes an existing ephemeris.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeEphemerisResponse'
+              examples:
+                DescribeEphemeris200Example:
+                  summary: Default DescribeEphemeris 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                DescribeEphemeris480Example:
+                  summary: Default DescribeEphemeris 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                DescribeEphemeris481Example:
+                  summary: Default DescribeEphemeris 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeEphemeris482Example:
+                  summary: Default DescribeEphemeris 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: ephemerisId
+        in: path
+        required: true
+        description: The AWS Ground Station ephemeris ID.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Describe Ephemeris
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Ephemeris
+    put:
+      operationId: UpdateEphemeris
+      description: Updates an existing ephemeris
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EphemerisIdResponse'
+              examples:
+                UpdateEphemeris200Example:
+                  summary: Default UpdateEphemeris 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                UpdateEphemeris480Example:
+                  summary: Default UpdateEphemeris 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                UpdateEphemeris481Example:
+                  summary: Default UpdateEphemeris 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateEphemeris482Example:
+                  summary: Default UpdateEphemeris 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: ephemerisId
+        in: path
+        required: true
+        description: The AWS Ground Station ephemeris ID.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - enabled
+              properties:
+                enabled:
+                  description: Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.
+                  type: boolean
+                name:
+                  description: A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+                  minLength: 1
+                  maxLength: 256
+                priority:
+                  description: <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>
+                  type: integer
+                  minimum: 0
+                  maximum: 99999
+      summary: Amazon Ground Station Update Ephemeris
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Ephemeris
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ResourceNotFoundException: {}
+    EphemerisInvalidReason:
+      type: string
+      enum:
+      - METADATA_INVALID
+      - TIME_RANGE_INVALID
+      - TRAJECTORY_INVALID
+      - KMS_KEY_INVALID
+      - VALIDATION_ERROR
+    TLEData:
+      type: object
+      required:
+      - tleLine1
+      - tleLine2
+      - validTimeRange
+      properties:
+        tleLine1:
+          allOf:
+          - $ref: '#/components/schemas/TleLineOne'
+          - description: First line of two-line element set (TLE) data.
+        tleLine2:
+          allOf:
+          - $ref: '#/components/schemas/TleLineTwo'
+          - description: Second line of two-line element set (TLE) data.
+        validTimeRange:
+          allOf:
+          - $ref: '#/components/schemas/TimeRange'
+          - description: The valid time range for the TLE. Gaps or overlap are not permitted.
+      description: Two-line element set (TLE) data.
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidParameterException: {}
+    TimeRange:
+      type: object
+      required:
+      - endTime
+      - startTime
+      properties:
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Time in UTC at which the time range ends.
+        startTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Time in UTC at which the time range starts.
+      description: A time range with a start and end time.
+    S3ObjectKey:
+      type: string
+      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    EphemerisDescription:
+      type: object
+      properties:
+        ephemerisData:
+          allOf:
+          - $ref: '#/components/schemas/UnboundedString'
+          - description: Supplied ephemeris data.
+        sourceS3Object:
+          allOf:
+          - $ref: '#/components/schemas/S3Object'
+          - description: Source S3 object used for the ephemeris.
+      description: Description of ephemeris.
+    EphemerisTypeDescription:
+      type: object
+      properties:
+        oem:
+          $ref: '#/components/schemas/EphemerisDescription'
+        tle:
+          $ref: '#/components/schemas/EphemerisDescription'
+      description: <p/>
+    TLEEphemeris:
+      type: object
+      properties:
+        s3Object:
+          allOf:
+          - $ref: '#/components/schemas/S3Object'
+          - description: Identifies the S3 object to be used as the ephemeris.
+        tleData:
+          allOf:
+          - $ref: '#/components/schemas/TLEDataList'
+          - description: The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.
+      description: Two-line element set (TLE) ephemeris.
+    S3Object:
+      type: object
+      properties:
+        bucket:
+          allOf:
+          - $ref: '#/components/schemas/S3BucketName'
+          - description: An Amazon S3 Bucket name.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/S3ObjectKey'
+          - description: An Amazon S3 key for the ephemeris.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/S3VersionId'
+          - description: For versioned S3 objects, the version to use for the ephemeris.
+      description: Object stored in S3 containing ephemeris data.
+    TLEDataList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TLEData'
+      minItems: 1
+      maxItems: 500
+    S3BucketName:
+      type: string
+      pattern: ^[a-z0-9.-]{3,63}$
+      minLength: 3
+      maxLength: 63
+    Boolean:
+      type: boolean
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    EphemerisPriority:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    EphemerisIdResponse:
+      type: object
+      properties:
+        ephemerisId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: The AWS Ground Station ephemeris ID.
+    DependencyException: {}
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    String:
+      type: string
+    EphemerisStatus:
+      type: string
+      enum:
+      - VALIDATING
+      - INVALID
+      - ERROR
+      - ENABLED
+      - DISABLED
+      - EXPIRED
+    TleLineOne:
+      type: string
+      pattern: '^1 [ 0-9]{5}[A-Z] [ 0-9]{5}[ A-Z]{3} [ 0-9]{5}[.][ 0-9]{8} (?:(?:[ 0+-][.][ 0-9]{8})|(?: [ +-][.][ 0-9]{7})) [ +-][ 0-9]{5}[+-][ 0-9] [ +-][ 0-9]{5}[+-][ 0-9] [ 0-9] [ 0-9]{4}[ 0-9]$'
+      minLength: 69
+      maxLength: 69
+    TleLineTwo:
+      type: string
+      pattern: ^2 [ 0-9]{5} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{7} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{3}[.][ 0-9]{4} [ 0-9]{2}[.][ 0-9]{13}[ 0-9]$
+      minLength: 69
+      maxLength: 69
+    OEMEphemeris:
+      type: object
+      properties:
+        oemData:
+          allOf:
+          - $ref: '#/components/schemas/UnboundedString'
+          - description: The data for an OEM ephemeris, supplied directly in the request rather than through an S3 object.
+        s3Object:
+          allOf:
+          - $ref: '#/components/schemas/S3Object'
+          - description: Identifies the S3 object to be used as the ephemeris.
+      description: Ephemeris data in Orbit Ephemeris Message (OEM) format.
+    S3VersionId:
+      type: string
+      pattern: ^[\s\S]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+    DescribeEphemerisResponse:
+      type: object
+      properties:
+        creationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time the ephemeris was uploaded in UTC.
+        enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Whether or not the ephemeris is enabled.
+        ephemerisId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: The AWS Ground Station ephemeris ID.
+        invalidReason:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisInvalidReason'
+          - description: Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
+        priority:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisPriority'
+          - description: <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> <p>Priority must be 1 or greater</p>
+        satelliteId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: The AWS Ground Station satellite ID associated with ephemeris.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisStatus'
+          - description: The status of the ephemeris.
+        suppliedData:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisTypeDescription'
+          - description: Supplied ephemeris data.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: Tags assigned to an ephemeris.
+    UnboundedString:
+      type: string
+      pattern: ^[\s\S]+$
+      minLength: 1
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true

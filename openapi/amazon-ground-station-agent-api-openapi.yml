@@ -1,0 +1,658 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Agent
+paths:
+  /agent/{agentId}/configuration:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetAgentConfiguration
+      description: <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Gets the latest configuration information for a registered agent.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAgentConfigurationResponse'
+              examples:
+                GetAgentConfiguration200Example:
+                  summary: Default GetAgentConfiguration 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                GetAgentConfiguration480Example:
+                  summary: Default GetAgentConfiguration 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                GetAgentConfiguration481Example:
+                  summary: Default GetAgentConfiguration 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                GetAgentConfiguration482Example:
+                  summary: Default GetAgentConfiguration 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: agentId
+        in: path
+        required: true
+        description: UUID of agent to get configuration information for.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Get Agent Configuration
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Agent
+  /agent:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: RegisterAgent
+      description: <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p> Registers a new agent with AWS Ground Station. </p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterAgentResponse'
+              examples:
+                RegisterAgent200Example:
+                  summary: Default RegisterAgent 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                RegisterAgent480Example:
+                  summary: Default RegisterAgent 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                RegisterAgent481Example:
+                  summary: Default RegisterAgent 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                RegisterAgent482Example:
+                  summary: Default RegisterAgent 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - agentDetails
+              - discoveryData
+              properties:
+                agentDetails:
+                  description: Detailed information about the agent.
+                  type: object
+                  properties:
+                    agentCpuCores:
+                      allOf:
+                      - $ref: '#/components/schemas/AgentCpuCoresList'
+                      - description: List of CPU cores reserved for the agent.
+                    agentVersion:
+                      allOf:
+                      - $ref: '#/components/schemas/VersionString'
+                      - description: Current agent version.
+                    componentVersions:
+                      allOf:
+                      - $ref: '#/components/schemas/ComponentVersionList'
+                      - description: List of versions being used by agent components.
+                    instanceId:
+                      allOf:
+                      - $ref: '#/components/schemas/InstanceId'
+                      - description: ID of EC2 instance agent is running on.
+                    instanceType:
+                      allOf:
+                      - $ref: '#/components/schemas/InstanceType'
+                      - description: Type of EC2 instance agent is running on.
+                    reservedCpuCores:
+                      allOf:
+                      - $ref: '#/components/schemas/AgentCpuCoresList'
+                      - description: <note> <p>This field should not be used. Use agentCpuCores instead.</p> </note> <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
+                discoveryData:
+                  description: Data for agent discovery.
+                  type: object
+                  properties:
+                    capabilityArns:
+                      allOf:
+                      - $ref: '#/components/schemas/CapabilityArnList'
+                      - description: List of capabilities to associate with agent.
+                    privateIpAddresses:
+                      allOf:
+                      - $ref: '#/components/schemas/IpAddressList'
+                      - description: List of private IP addresses to associate with agent.
+                    publicIpAddresses:
+                      allOf:
+                      - $ref: '#/components/schemas/IpAddressList'
+                      - description: List of public IP addresses to associate with agent.
+      summary: Amazon Ground Station Register Agent
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Agent
+  /agent/{agentId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    put:
+      operationId: UpdateAgentStatus
+      description: <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Update the status of the agent.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateAgentStatusResponse'
+              examples:
+                UpdateAgentStatus200Example:
+                  summary: Default UpdateAgentStatus 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                UpdateAgentStatus480Example:
+                  summary: Default UpdateAgentStatus 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                UpdateAgentStatus481Example:
+                  summary: Default UpdateAgentStatus 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                UpdateAgentStatus482Example:
+                  summary: Default UpdateAgentStatus 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: agentId
+        in: path
+        required: true
+        description: UUID of agent to update.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - aggregateStatus
+              - componentStatuses
+              - taskId
+              properties:
+                aggregateStatus:
+                  description: Aggregate status of Agent components.
+                  type: object
+                  properties:
+                    signatureMap:
+                      allOf:
+                      - $ref: '#/components/schemas/SignatureMap'
+                      - description: Sparse map of failure signatures.
+                    status:
+                      allOf:
+                      - $ref: '#/components/schemas/AgentStatus'
+                      - description: Aggregate status.
+                componentStatuses:
+                  description: List of component statuses for agent.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/ComponentStatusData'
+                  minItems: 0
+                  maxItems: 20
+                taskId:
+                  description: GUID of agent task.
+                  type: string
+                  pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+                  minLength: 1
+                  maxLength: 128
+      summary: Amazon Ground Station Update Agent Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Agent
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ComponentVersion:
+      type: object
+      required:
+      - componentType
+      - versions
+      properties:
+        componentType:
+          allOf:
+          - $ref: '#/components/schemas/ComponentTypeString'
+          - description: Component type.
+        versions:
+          allOf:
+          - $ref: '#/components/schemas/VersionStringList'
+          - description: List of versions.
+      description: Version information for agent components.
+    ResourceNotFoundException: {}
+    ComponentStatusData:
+      type: object
+      required:
+      - capabilityArn
+      - componentType
+      - dataflowId
+      - status
+      properties:
+        bytesReceived:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: Bytes received by the component.
+        bytesSent:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: Bytes sent by the component.
+        capabilityArn:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityArn'
+          - description: Capability ARN of the component.
+        componentType:
+          allOf:
+          - $ref: '#/components/schemas/ComponentTypeString'
+          - description: The Component type.
+        dataflowId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: Dataflow UUID associated with the component.
+        packetsDropped:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: Packets dropped by component.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/AgentStatus'
+          - description: Component status.
+      description: Data on the status of agent components.
+    IpV4Address:
+      type: string
+      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+      minLength: 7
+      maxLength: 16
+    ComponentTypeString:
+      type: string
+      pattern: ^[a-zA-Z0-9_]{1,64}$
+    CapabilityArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CapabilityArn'
+      minItems: 1
+      maxItems: 20
+    InvalidParameterException: {}
+    SignatureMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Boolean'
+    RegisterAgentResponse:
+      type: object
+      properties:
+        agentId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of registered agent.
+    UpdateAgentStatusResponse:
+      type: object
+      required:
+      - agentId
+      properties:
+        agentId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of updated agent.
+    AgentStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - FAILED
+      - ACTIVE
+      - INACTIVE
+    VersionStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/VersionString'
+      minItems: 1
+      maxItems: 20
+    Boolean:
+      type: boolean
+    Integer:
+      type: integer
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    AgentCpuCoresList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Integer'
+      minItems: 0
+      maxItems: 256
+    ComponentVersionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ComponentVersion'
+      minItems: 1
+      maxItems: 20
+    IpAddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IpV4Address'
+      minItems: 1
+      maxItems: 20
+    DependencyException: {}
+    CapabilityArn:
+      type: string
+    String:
+      type: string
+    GetAgentConfigurationResponse:
+      type: object
+      properties:
+        agentId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of agent.
+        taskingDocument:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Tasking document for agent.
+    InstanceId:
+      type: string
+      pattern: ^[a-z0-9-]{10,64}$
+      minLength: 10
+      maxLength: 64
+    InstanceType:
+      type: string
+      pattern: ^[a-z0-9.-]{1,64}$
+      minLength: 1
+      maxLength: 64
+    VersionString:
+      type: string
+      pattern: ^(0|[1-9]\d*)(\.(0|[1-9]\d*))*$
+      minLength: 1
+      maxLength: 64
+    Long:
+      type: integer
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true

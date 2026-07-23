@@ -1,0 +1,443 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent Contacts API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Contacts
+paths:
+  /contacts:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListContacts
+      description: <p>Returns a list of contacts.</p> <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListContactsResponse'
+              examples:
+                ListContacts200Example:
+                  summary: Default ListContacts 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                ListContacts480Example:
+                  summary: Default ListContacts 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                ListContacts481Example:
+                  summary: Default ListContacts 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListContacts482Example:
+                  summary: Default ListContacts 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: maxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: nextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - endTime
+              - startTime
+              - statusList
+              properties:
+                endTime:
+                  description: End time of a contact in UTC.
+                  type: string
+                  format: date-time
+                groundStation:
+                  description: Name of a ground station.
+                  type: string
+                  pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+                  minLength: 4
+                  maxLength: 500
+                maxResults:
+                  description: Maximum number of contacts returned.
+                  type: integer
+                  minimum: 0
+                  maximum: 100
+                missionProfileArn:
+                  description: ARN of a mission profile.
+                  type: string
+                nextToken:
+                  description: Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.
+                  type: string
+                  pattern: ^[A-Za-z0-9-/+_.=]+$
+                  minLength: 3
+                  maxLength: 1000
+                satelliteArn:
+                  description: ARN of a satellite.
+                  type: string
+                startTime:
+                  description: Start time of a contact in UTC.
+                  type: string
+                  format: date-time
+                statusList:
+                  description: Status of a contact reservation.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/ContactStatus'
+                  minItems: 0
+                  maxItems: 500
+      summary: Amazon Ground Station List Contacts
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Contacts
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ResourceNotFoundException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    ContactList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ContactData'
+    AngleUnits:
+      type: string
+      enum:
+      - DEGREE_ANGLE
+      - RADIAN
+    InvalidParameterException: {}
+    ContactData:
+      type: object
+      properties:
+        contactId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a contact.
+        contactStatus:
+          allOf:
+          - $ref: '#/components/schemas/ContactStatus'
+          - description: Status of a contact.
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: End time of a contact in UTC.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Error message of a contact.
+        groundStation:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a ground station.
+        maximumElevation:
+          allOf:
+          - $ref: '#/components/schemas/Elevation'
+          - description: Maximum elevation angle of a contact.
+        missionProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/MissionProfileArn'
+          - description: ARN of a mission profile.
+        postPassEndTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+        prePassStartTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Region of a contact.
+        satelliteArn:
+          allOf:
+          - $ref: '#/components/schemas/satelliteArn'
+          - description: ARN of a satellite.
+        startTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Start time of a contact in UTC.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: Tags assigned to a contact.
+      description: Data describing a contact.
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    Elevation:
+      type: object
+      required:
+      - unit
+      - value
+      properties:
+        unit:
+          allOf:
+          - $ref: '#/components/schemas/AngleUnits'
+          - description: Elevation angle units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Elevation angle value.
+      description: Elevation angle of the satellite in the sky during a contact.
+    Double:
+      type: number
+      format: double
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    ListContactsResponse:
+      type: object
+      properties:
+        contactList:
+          allOf:
+          - $ref: '#/components/schemas/ContactList'
+          - description: List of contacts.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.
+      description: <p/>
+    DependencyException: {}
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    String:
+      type: string
+    MissionProfileArn:
+      type: string
+    ContactStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - AWS_CANCELLED
+      - AWS_FAILED
+      - CANCELLED
+      - CANCELLING
+      - COMPLETED
+      - FAILED
+      - FAILED_TO_SCHEDULE
+      - PASS
+      - POSTPASS
+      - PREPASS
+      - SCHEDULED
+      - SCHEDULING
+    satelliteArn:
+      type: string
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true

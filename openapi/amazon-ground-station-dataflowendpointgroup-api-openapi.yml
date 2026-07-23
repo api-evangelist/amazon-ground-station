@@ -1,0 +1,840 @@
+openapi: 3.0.0
+info:
+  version: 2019-05-23
+  x-release: v4
+  title: AWS Ground Station Agent DataflowEndpointGroup API
+  description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: groundstation
+  x-aws-signingName: groundstation
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: https://groundstation.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Ground Station multi-region endpoint
+- url: http://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+- url: https://groundstation.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Ground Station endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: DataflowEndpointGroup
+paths:
+  /dataflowEndpointGroup:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateDataflowEndpointGroup
+      description: <p>Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code> objects.</p> <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code> to specify which endpoints to use during a contact.</p> <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in the same group.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataflowEndpointGroupIdResponse'
+              examples:
+                CreateDataflowEndpointGroup200Example:
+                  summary: Default CreateDataflowEndpointGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                CreateDataflowEndpointGroup480Example:
+                  summary: Default CreateDataflowEndpointGroup 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                CreateDataflowEndpointGroup481Example:
+                  summary: Default CreateDataflowEndpointGroup 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                CreateDataflowEndpointGroup482Example:
+                  summary: Default CreateDataflowEndpointGroup 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - endpointDetails
+              properties:
+                contactPostPassDurationSeconds:
+                  description: Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.
+                  type: integer
+                  minimum: 120
+                  maximum: 480
+                contactPrePassDurationSeconds:
+                  description: Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.
+                  type: integer
+                  minimum: 120
+                  maximum: 480
+                endpointDetails:
+                  description: Endpoint details of each endpoint in the dataflow endpoint group.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/EndpointDetails'
+                  minItems: 0
+                  maxItems: 500
+                tags:
+                  description: Tags of a dataflow endpoint group.
+                  type: object
+                  additionalProperties:
+                    $ref: '#/components/schemas/String'
+      summary: Amazon Ground Station Create Dataflow Endpoint Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - DataflowEndpointGroup
+    get:
+      operationId: ListDataflowEndpointGroups
+      description: Returns a list of <code>DataflowEndpoint</code> groups.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDataflowEndpointGroupsResponse'
+              examples:
+                ListDataflowEndpointGroups200Example:
+                  summary: Default ListDataflowEndpointGroups 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                ListDataflowEndpointGroups480Example:
+                  summary: Default ListDataflowEndpointGroups 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                ListDataflowEndpointGroups481Example:
+                  summary: Default ListDataflowEndpointGroups 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListDataflowEndpointGroups482Example:
+                  summary: Default ListDataflowEndpointGroups 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: maxResults
+        in: query
+        required: false
+        description: Maximum number of dataflow endpoint groups returned.
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 100
+      - name: nextToken
+        in: query
+        required: false
+        description: Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9-/+_.=]+$
+          minLength: 3
+          maxLength: 1000
+      summary: Amazon Ground Station List Dataflow Endpoint Groups
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - DataflowEndpointGroup
+  /dataflowEndpointGroup/{dataflowEndpointGroupId}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteDataflowEndpointGroup
+      description: Deletes a dataflow endpoint group.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataflowEndpointGroupIdResponse'
+              examples:
+                DeleteDataflowEndpointGroup200Example:
+                  summary: Default DeleteDataflowEndpointGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                DeleteDataflowEndpointGroup480Example:
+                  summary: Default DeleteDataflowEndpointGroup 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                DeleteDataflowEndpointGroup481Example:
+                  summary: Default DeleteDataflowEndpointGroup 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DeleteDataflowEndpointGroup482Example:
+                  summary: Default DeleteDataflowEndpointGroup 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: dataflowEndpointGroupId
+        in: path
+        required: true
+        description: UUID of a dataflow endpoint group.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Delete Dataflow Endpoint Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - DataflowEndpointGroup
+    get:
+      operationId: GetDataflowEndpointGroup
+      description: Returns the dataflow endpoint group.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDataflowEndpointGroupResponse'
+              examples:
+                GetDataflowEndpointGroup200Example:
+                  summary: Default GetDataflowEndpointGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '480':
+          description: InvalidParameterException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidParameterException'
+              examples:
+                GetDataflowEndpointGroup480Example:
+                  summary: Default GetDataflowEndpointGroup 480 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '481':
+          description: DependencyException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DependencyException'
+              examples:
+                GetDataflowEndpointGroup481Example:
+                  summary: Default GetDataflowEndpointGroup 481 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                GetDataflowEndpointGroup482Example:
+                  summary: Default GetDataflowEndpointGroup 482 response
+                  x-microcks-default: true
+                  value:
+                    contactId: abc-123
+                    contactStatus: COMPLETED
+      parameters:
+      - name: dataflowEndpointGroupId
+        in: path
+        required: true
+        description: UUID of a dataflow endpoint group.
+        schema:
+          type: string
+          pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Ground Station Get Dataflow Endpoint Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - DataflowEndpointGroup
+components:
+  schemas:
+    SocketAddress:
+      type: object
+      required:
+      - name
+      - port
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a socket address.
+        port:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Port of a socket address.
+      description: Information about the socket address.
+    SubnetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    DataflowEndpointGroupArn:
+      type: string
+    ResourceNotFoundException: {}
+    IpV4Address:
+      type: string
+      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+      minLength: 7
+      maxLength: 16
+    DataflowEndpointGroupIdResponse:
+      type: object
+      properties:
+        dataflowEndpointGroupId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a dataflow endpoint group.
+      description: <p/>
+    CapabilityHealth:
+      type: string
+      enum:
+      - UNHEALTHY
+      - HEALTHY
+    CapabilityHealthReason:
+      type: string
+      enum:
+      - NO_REGISTERED_AGENT
+      - INVALID_IP_OWNERSHIP
+      - NOT_AUTHORIZED_TO_CREATE_SLR
+      - UNVERIFIED_IP_OWNERSHIP
+      - INITIALIZING_DATAPLANE
+      - DATAPLANE_FAILURE
+      - HEALTHY
+    DataflowEndpointGroupDurationInSeconds:
+      type: integer
+      minimum: 120
+      maximum: 480
+    IntegerRange:
+      type: object
+      required:
+      - maximum
+      - minimum
+      properties:
+        maximum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A maximum value.
+        minimum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A minimum value.
+      description: An integer range that has a minimum and maximum value.
+    InvalidParameterException: {}
+    RangedConnectionDetailsMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    RangedSocketAddress:
+      type: object
+      required:
+      - name
+      - portRange
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/IpV4Address'
+          - description: IPv4 socket address.
+        portRange:
+          allOf:
+          - $ref: '#/components/schemas/IntegerRange'
+          - description: Port range of a socket address.
+      description: A socket address with a port range.
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    GetDataflowEndpointGroupResponse:
+      type: object
+      properties:
+        contactPostPassDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupDurationInSeconds'
+          - description: Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.
+        contactPrePassDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupDurationInSeconds'
+          - description: Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.
+        dataflowEndpointGroupArn:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupArn'
+          - description: ARN of a dataflow endpoint group.
+        dataflowEndpointGroupId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a dataflow endpoint group.
+        endpointsDetails:
+          allOf:
+          - $ref: '#/components/schemas/EndpointDetailsList'
+          - description: Details of a dataflow endpoint.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: Tags assigned to a dataflow endpoint group.
+      description: <p/>
+    RoleArn:
+      type: string
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    EndpointDetailsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EndpointDetails'
+      minItems: 0
+      maxItems: 500
+    ConnectionDetails:
+      type: object
+      required:
+      - socketAddress
+      properties:
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        socketAddress:
+          allOf:
+          - $ref: '#/components/schemas/SocketAddress'
+          - description: A socket address.
+      description: Egress address of AgentEndpoint with an optional mtu.
+    AgentStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - FAILED
+      - ACTIVE
+      - INACTIVE
+    SecurityDetails:
+      type: object
+      required:
+      - roleArn
+      - securityGroupIds
+      - subnetIds
+      properties:
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: 'ARN to a role needed for connecting streams to your instances. '
+        securityGroupIds:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: The security groups to attach to the elastic network interfaces.
+        subnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetList'
+          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
+      description: Information about endpoints.
+    EndpointDetails:
+      type: object
+      properties:
+        awsGroundStationAgentEndpoint:
+          allOf:
+          - $ref: '#/components/schemas/AwsGroundStationAgentEndpoint'
+          - description: An agent endpoint.
+        endpoint:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpoint'
+          - description: A dataflow endpoint.
+        healthReasons:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealthReasonList'
+          - description: Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        healthStatus:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealth'
+          - description: A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        securityDetails:
+          allOf:
+          - $ref: '#/components/schemas/SecurityDetails'
+          - description: Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.
+      description: Information about the endpoint details.
+    Integer:
+      type: integer
+    AuditResults:
+      type: string
+      enum:
+      - HEALTHY
+      - UNHEALTHY
+    SecurityGroupIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    AwsGroundStationAgentEndpoint:
+      type: object
+      required:
+      - egressAddress
+      - ingressAddress
+      - name
+      properties:
+        agentStatus:
+          allOf:
+          - $ref: '#/components/schemas/AgentStatus'
+          - description: The status of AgentEndpoint.
+        auditResults:
+          allOf:
+          - $ref: '#/components/schemas/AuditResults'
+          - description: The results of the audit.
+        egressAddress:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionDetails'
+          - description: The egress address of AgentEndpoint.
+        ingressAddress:
+          allOf:
+          - $ref: '#/components/schemas/RangedConnectionDetails'
+          - description: The ingress address of AgentEndpoint.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.
+      description: Information about AwsGroundStationAgentEndpoint.
+    DataflowEndpointGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataflowEndpointListItem'
+    DataflowEndpointMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    DependencyException: {}
+    RangedConnectionDetails:
+      type: object
+      required:
+      - socketAddress
+      properties:
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        socketAddress:
+          allOf:
+          - $ref: '#/components/schemas/RangedSocketAddress'
+          - description: A ranged socket address.
+      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    String:
+      type: string
+    DataflowEndpoint:
+      type: object
+      properties:
+        address:
+          allOf:
+          - $ref: '#/components/schemas/SocketAddress'
+          - description: Socket address of a dataflow endpoint.
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name of a dataflow endpoint.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/EndpointStatus'
+          - description: Status of a dataflow endpoint.
+      description: Information about a dataflow endpoint.
+    DataflowEndpointListItem:
+      type: object
+      properties:
+        dataflowEndpointGroupArn:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupArn'
+          - description: ARN of a dataflow endpoint group.
+        dataflowEndpointGroupId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a dataflow endpoint group.
+      description: Item in a list of <code>DataflowEndpoint</code> groups.
+    CapabilityHealthReasonList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CapabilityHealthReason'
+      minItems: 0
+      maxItems: 500
+    ListDataflowEndpointGroupsResponse:
+      type: object
+      properties:
+        dataflowEndpointGroupList:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupList'
+          - description: A list of dataflow endpoint groups.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
+      description: <p/>
+    EndpointStatus:
+      type: string
+      enum:
+      - created
+      - creating
+      - deleted
+      - deleting
+      - failed
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/groundstation/
+x-hasEquivalentPaths: true
