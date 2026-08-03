@@ -1,0 +1,1633 @@
+{
+  "info": {
+    "_postman_id": "5e72433e-eb55-4c56-bff8-82130fc21fbd",
+    "name": "AWS Ground Station Agent Ephemeris API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:46.000Z",
+    "updatedAt": "2026-07-28T10:23:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5e72433e-eb55-4c56-bff8-82130fc21fbd"
+  },
+  "item": [
+    {
+      "name": "ephemeris",
+      "item": [
+        {
+          "name": "{ephemerisId}",
+          "item": [
+            {
+              "name": "Amazon Ground Station Delete Ephemeris",
+              "id": "7a4d1200-b414-4c2e-832e-cb08b515a4ab",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemeris",
+                    ":ephemerisId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "8c5eacc4-4c73-496b-a2c9-0191027c0274",
+                      "key": "ephemerisId",
+                      "value": "bed5618d-da9d-9609-eb9e-761e800dc8c8",
+                      "description": "(Required) The AWS Ground Station ephemeris ID."
+                    }
+                  ]
+                },
+                "description": "Deletes an ephemeris"
+              },
+              "response": [
+                {
+                  "id": "f14cd2cb-1d1a-4869-9955-1d54d74b9338",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"ephemerisId\": \"ae6e7c73-1054-220c-5b1b-8aebf3079260\"\n}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-f14cd2cb-1d1a-4869-9955-1d54d74b9338"
+                },
+                {
+                  "id": "a6e54dce-6b2b-4f2a-9a03-4bd8032391cb",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-a6e54dce-6b2b-4f2a-9a03-4bd8032391cb"
+                },
+                {
+                  "id": "ccb4bb41-e1b7-472d-a31f-96d38de51f53",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-ccb4bb41-e1b7-472d-a31f-96d38de51f53"
+                },
+                {
+                  "id": "236dab3f-fea1-4a98-87c8-947e508bffcb",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-236dab3f-fea1-4a98-87c8-947e508bffcb"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-7a4d1200-b414-4c2e-832e-cb08b515a4ab"
+            },
+            {
+              "name": "Amazon Ground Station Describe Ephemeris",
+              "id": "e289f8b5-e2b0-4561-b6b1-92ed95739d7c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemeris",
+                    ":ephemerisId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "abc70e67-6594-430a-8a94-9e3020058efc",
+                      "key": "ephemerisId",
+                      "value": "bed5618d-da9d-9609-eb9e-761e800dc8c8",
+                      "description": "(Required) The AWS Ground Station ephemeris ID."
+                    }
+                  ]
+                },
+                "description": "Describes an existing ephemeris."
+              },
+              "response": [
+                {
+                  "id": "dacf26df-0071-4b99-8342-be1db2b47c99",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"creationTime\": \"<dateTime>\",\n  \"enabled\": \"<boolean>\",\n  \"ephemerisId\": \"b33d57d5-9913-00ab-745c-601ceba88052\",\n  \"invalidReason\": \"METADATA_INVALID\",\n  \"name\": \"HH6CXhXq571Fo2zPiRGMmcYc_lPSki5yHegAlGW9gd BUwqv- JobQEOWJ2CoE3mdrypRoGDPyrvaw03CuiYieTmWGPVKSW_4oGfVze\",\n  \"priority\": \"<integer>\",\n  \"satelliteId\": \"9b498f75-3e65-45c6-e0f5-8e50201463a1\",\n  \"status\": \"VALIDATING\",\n  \"suppliedData\": {\n    \"oem\": {\n      \"ephemerisData\": \"k\\r1Z^g\",\n      \"sourceS3Object\": {\n        \"bucket\": \"9dqbonm7qg7h8qw.we1\",\n        \"key\": \"rp2n(2!1OZOGCFibWPJjM(YgT_HCJ(4'yy6TWKPrb5ETqu81a_LZKNzd4V1VyXT!dNH*/Uu8_Kken7eB)L'VkYZ45MNDzzVydEPXo51VtKA_kqMiS8*SSGHnMi_E4Siz8M4)8nItKSE_bkvtIBEGmOfl9IaaknYCRFJZ4Pr5DQtjdX_0mUguFAf)TBzKkD4TzSrgmTk4IVK8wAwYxWAjQcGEn(1LP)7UENObyz/9'z2GJ4Wi0lYeU)bAd)p4Y(C'\",\n        \"version\": \"nD\u00a0:aK`*sV/}\u202fd\u2000\\\\,9RjPU{\\n5O\u200738S\\n\\\\1D1[5\ufeff-^\u00a0u\u200a\\u000b[80*\u1680\u2001y\u2003>7\u180eJ\u2028(|`,{AB\u2004\u2000]4'\u2004^\\u000b-X\\nP[\\\" \ufeff\\t\ufeff\\tak>'@/@^~@r\u2009\u202fR\\fh\u2008):%\\f\u00a0&XT\u2002\\\\O$\\n&r_s\u200a\u00a0\u3000:Q*T\u2006e\u20045'G,PF4=\u00a0(-\\u000bS\u20052\u2008)w,9\\r\u00a0@\u2029*wHwpcH\\\\5w;yl\u2000U-O\u2008ORfC?v+=&\u2029m](MqNL\\nA\\tqkX\u16808EN;%+X2IT%T\u2006=\\t\\\\\u2000M-J\u2001W\u20001/\u2008AU+\u2004l$0<BuJR3A=\u180e08\u2003B&i3Q\\r#\u2000\\tpOyOXyK']\"\n      }\n    },\n    \"tle\": {\n      \"ephemerisData\": \"R=4\u2005\",\n      \"sourceS3Object\": {\n        \"bucket\": \"8.4mk-k0lpu9iulagpxb-4zso.kz9x-6usjvjz3jc29gxpl6vqsj6-gku4mz8y\",\n        \"key\": \"9*WYIUOCs-L3iEUysSmPng!9cbZVKgEmU)nltdiwFT4z4q.G4Xre1KAJIk*_/XirwoigyId6jLA*xf1BtDKEbhw/g/g_a'GfH(Md(.qyqpRG26P6e'JDYOOhTpv-b_8E*AXH)Iprjw0OvpMivVPXv9gcDb9PBuSp.1Av1!sNS-HMJ-jeF816s!bc7DtbHbaGPn_ZTJypdCVrpC)dvwQSnWADvGgYIMB38Tq(E!uiZBl(OxtH0_GLal.306ooF.hq\",\n        \"version\": \"\u2008$#C<W7V7<V\u2009 Z\\\\r=,Pf\\u000b0P\u1680\u20016U6\ufeff\u200a\\rL\u2000]\u20098v@mx+*O\u2007\u1680\u2005Gw+~\u205f\u2008\\u000b.\\tAp\u2002Zeb$'D0|z5QyFU}\u3000&T\u2005\u20088x\u20085`\u2009\u2004/rX;Y\u2006R[\u3000Eh?\u2008\u2009[M'1\u2028rcVR\u1680X/0TedaDc\u2004\u2004\u200a\u2007\ufeff\\\\B/LG+-l%,%9@\u200a:w4N%)t\\n5U\u2029uE\u2005yRO)nB:|%\u2028k2[\\r\u205f\\u000b7\u1680|eQ1\u2029AS#wph\u00a0\\u000bpw\u2007SdC\u2008i\u00a07rE\\\"0zrivU?W\u2000#/N:x^/9y:wq\u202f\u2003R^?Uqx\u2029{~}2\u2009Bkx%\\\\#\u2005{1[p\u2029uF?WL\\\"#XySU\\tV\u180e\"\n      }\n    }\n  },\n  \"tags\": {\n    \"nisi0c0\": \"<string>\",\n    \"elitb\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-dacf26df-0071-4b99-8342-be1db2b47c99"
+                },
+                {
+                  "id": "a90d1443-4d8a-4a2a-85b1-92defd8cf557",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-a90d1443-4d8a-4a2a-85b1-92defd8cf557"
+                },
+                {
+                  "id": "9d3cb736-a128-4354-b35c-7c3e9241f652",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-9d3cb736-a128-4354-b35c-7c3e9241f652"
+                },
+                {
+                  "id": "3f607753-5c45-48ae-89aa-c0c345bbe957",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-3f607753-5c45-48ae-89aa-c0c345bbe957"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-e289f8b5-e2b0-4561-b6b1-92ed95739d7c"
+            },
+            {
+              "name": "Amazon Ground Station Update Ephemeris",
+              "id": "ed471c12-51cf-49dc-9a85-7db0d8654935",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"ENwzA9VSa9EbvPwe55k3:sCHTL-_LdtG-wpKtisAqHtw-lHF97NO-PInnSSzlQVXAaRjqjkfxTdxyTqPnSJNFaOjnNpN54gox3MhUmrFu2lLgiKOesJCcXtSpTrE5gEk-UBrLo7wovs37uY2gRLLeNSmBa58 D1cT:ghGepbXXPSEYdoLxPmEuxUlHfM1yWV90QhtcECbQ8QHimIQKNTKkBwcyKoAi\",\n  \"priority\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemeris",
+                    ":ephemerisId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "cb20095c-9638-4ea0-bd8a-24fb0d1c9d45",
+                      "key": "ephemerisId",
+                      "value": "bed5618d-da9d-9609-eb9e-761e800dc8c8",
+                      "description": "(Required) The AWS Ground Station ephemeris ID."
+                    }
+                  ]
+                },
+                "description": "Updates an existing ephemeris"
+              },
+              "response": [
+                {
+                  "id": "ab6b51c4-ffbf-4276-8fac-e439f8d289d6",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"ENwzA9VSa9EbvPwe55k3:sCHTL-_LdtG-wpKtisAqHtw-lHF97NO-PInnSSzlQVXAaRjqjkfxTdxyTqPnSJNFaOjnNpN54gox3MhUmrFu2lLgiKOesJCcXtSpTrE5gEk-UBrLo7wovs37uY2gRLLeNSmBa58 D1cT:ghGepbXXPSEYdoLxPmEuxUlHfM1yWV90QhtcECbQ8QHimIQKNTKkBwcyKoAi\",\n  \"priority\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"ephemerisId\": \"ae6e7c73-1054-220c-5b1b-8aebf3079260\"\n}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-ab6b51c4-ffbf-4276-8fac-e439f8d289d6"
+                },
+                {
+                  "id": "d6c5c9cd-52b9-412a-a5b9-57664a72ada7",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"ENwzA9VSa9EbvPwe55k3:sCHTL-_LdtG-wpKtisAqHtw-lHF97NO-PInnSSzlQVXAaRjqjkfxTdxyTqPnSJNFaOjnNpN54gox3MhUmrFu2lLgiKOesJCcXtSpTrE5gEk-UBrLo7wovs37uY2gRLLeNSmBa58 D1cT:ghGepbXXPSEYdoLxPmEuxUlHfM1yWV90QhtcECbQ8QHimIQKNTKkBwcyKoAi\",\n  \"priority\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-d6c5c9cd-52b9-412a-a5b9-57664a72ada7"
+                },
+                {
+                  "id": "55d67e0c-2c55-4518-9d1f-0e3389996394",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"ENwzA9VSa9EbvPwe55k3:sCHTL-_LdtG-wpKtisAqHtw-lHF97NO-PInnSSzlQVXAaRjqjkfxTdxyTqPnSJNFaOjnNpN54gox3MhUmrFu2lLgiKOesJCcXtSpTrE5gEk-UBrLo7wovs37uY2gRLLeNSmBa58 D1cT:ghGepbXXPSEYdoLxPmEuxUlHfM1yWV90QhtcECbQ8QHimIQKNTKkBwcyKoAi\",\n  \"priority\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-55d67e0c-2c55-4518-9d1f-0e3389996394"
+                },
+                {
+                  "id": "22d8d6f9-7ccf-475c-85b0-d02ae37b2eef",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"ENwzA9VSa9EbvPwe55k3:sCHTL-_LdtG-wpKtisAqHtw-lHF97NO-PInnSSzlQVXAaRjqjkfxTdxyTqPnSJNFaOjnNpN54gox3MhUmrFu2lLgiKOesJCcXtSpTrE5gEk-UBrLo7wovs37uY2gRLLeNSmBa58 D1cT:ghGepbXXPSEYdoLxPmEuxUlHfM1yWV90QhtcECbQ8QHimIQKNTKkBwcyKoAi\",\n  \"priority\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/ephemeris/:ephemerisId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "ephemeris",
+                        ":ephemerisId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ephemerisId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:47.000Z",
+                  "updatedAt": "2026-07-28T10:23:47.000Z",
+                  "uid": "35240-22d8d6f9-7ccf-475c-85b0-d02ae37b2eef"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-ed471c12-51cf-49dc-9a85-7db0d8654935"
+            }
+          ],
+          "id": "e8a7705f-0cdf-4463-8248-03a6db5538ad",
+          "createdAt": "2026-07-28T10:23:46.000Z",
+          "updatedAt": "2026-07-28T10:23:46.000Z",
+          "uid": "35240-e8a7705f-0cdf-4463-8248-03a6db5538ad"
+        },
+        {
+          "name": "Amazon Ground Station Create Ephemeris",
+          "id": "fc87674b-93f7-4f94-9aaa-3a09d4068df9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"dp0Yr8WC1j\",\n  \"satelliteId\": \"b2dff1f9-496c-afcf-8770-c8511b948068\",\n  \"enabled\": \"<boolean>\",\n  \"ephemeris\": {\n    \"oem\": {\n      \"oemData\": \"(=i?l];\",\n      \"s3Object\": {\n        \"bucket\": \"o.eub2bscgnlvlmi9h08bft64n\",\n        \"key\": \"un.Ky!mrX7CMr6)Ui-s//rfKzg2Z!ZxON0C2AmsKpIV*b'InfAyk3'qx!so1wt29kk)TWBxoa2ycS-KQONB.Xf_d/Le5BU)I4sWW*ZQ7WDh-JcGUGi_ztJLaLpB1R8hgWrUgeD!5N9I69kqHJ9Khngcjtk5P\",\n        \"version\": \"J5ZI\\to\u180eizX|&hIs\u2005\u2005=LxraV|'\u2006c-ow\\f\u2028\u202f\ufeffmtY\u200aij\u2029y\u2007F``\u200at(Di$.kqiyjI|D\\u000bPQ)\u205f#\\\\eo?Txl))F/<yVRGO\u3000kr7~-)]SGP\\t Sf\"\n      }\n    },\n    \"tle\": {\n      \"s3Object\": {\n        \"bucket\": \"2s7562wl346ifv\",\n        \"key\": \"(!UoRT-fD3wpP5vm(MsH4k.L*17DR2yf0oYBb37MS.-sYr)nr)c-Ksve1rnbmIM_zG3ulRCeoQ*Pjdf_xKO5qNC.s)l_a(LcOmCFuB9LL6X0WQCIk8tyUGGZTxtVuZAe0D8yW-8TAAmhx60i9GYzt4dTu!WaO6RpSecoe'EtKfA*E-TJ61.neEcDHp4PLuiHxL9R.91G(3YvjpZCz)7g8RT*LF6EiJrtnWCTIfD0H2gGYpp-zayaDs-sji3nS'MS\",\n        \"version\": \"X\u180ev\ufeffk}\\n\ufeff\u2001g\\tHOP0\u2000\\\\LF AG%4\u20064%\\rm/!-A' \\\\&<>k<\u2029SW:K\u205f\u2006SrOv\u3000?&Q)-#%=V-#v2rFs1sooH\u200a\\n$>YW]Y\\nr/\u2029ArA\u2007NUF\u2006\\r\u1680\\r`y8Oq\u2003\u2002H1=Bzf&K.%\u205f\u00a0n\\r\u3000$T{+V[(9\u2001p!\\rdumUEb\u2000\u2004\u180e,Fn\u2001$\u180eQ+>n!3UL\\\"FlQHa`QfD:@m\u2006\u2000\u180eH\u205fb?4]PUQ\ufeff\u200a 6.b$Mv4Usc(7A\u2028(\\\"\\u000b]`0G.H6cB\u2004Fz\u2002\\tl\\\\\\u000b> \u180ek\u2009xx:/8[18L\u2009J&Q}+\u180e{\u202f\ufeff\u205f\u2006k K\u00a05J\u2002\\f{U\ufeff)\\u000b\u2009\"\n      },\n      \"tleData\": [\n        {\n          \"tleLine1\": \"1  452 Q 57036JYX 1526 .01893731   .309 138  09181+5 -73373-7 0 60096\",\n          \"tleLine2\": \"2 88041 315.2834 424. 808 4267121 4 1. 72  627.5456 35.78 43479266 75\",\n          \"validTimeRange\": {\n            \"endTime\": \"<dateTime>\",\n            \"startTime\": \"<dateTime>\"\n          }\n        }\n      ]\n    }\n  },\n  \"expirationTime\": \"<dateTime>\",\n  \"kmsKeyArn\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"tags\": {\n    \"eiusmod_f7\": \"<string>\",\n    \"qui9fd\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ephemeris",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ephemeris"
+              ]
+            },
+            "description": "Creates an Ephemeris with the specified <code>EphemerisData</code>."
+          },
+          "response": [
+            {
+              "id": "4df865c0-5fe5-4fe7-9a43-915bd8debc82",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"dp0Yr8WC1j\",\n  \"satelliteId\": \"b2dff1f9-496c-afcf-8770-c8511b948068\",\n  \"enabled\": \"<boolean>\",\n  \"ephemeris\": {\n    \"oem\": {\n      \"oemData\": \"(=i?l];\",\n      \"s3Object\": {\n        \"bucket\": \"o.eub2bscgnlvlmi9h08bft64n\",\n        \"key\": \"un.Ky!mrX7CMr6)Ui-s//rfKzg2Z!ZxON0C2AmsKpIV*b'InfAyk3'qx!so1wt29kk)TWBxoa2ycS-KQONB.Xf_d/Le5BU)I4sWW*ZQ7WDh-JcGUGi_ztJLaLpB1R8hgWrUgeD!5N9I69kqHJ9Khngcjtk5P\",\n        \"version\": \"J5ZI\\to\u180eizX|&hIs\u2005\u2005=LxraV|'\u2006c-ow\\f\u2028\u202f\ufeffmtY\u200aij\u2029y\u2007F``\u200at(Di$.kqiyjI|D\\u000bPQ)\u205f#\\\\eo?Txl))F/<yVRGO\u3000kr7~-)]SGP\\t Sf\"\n      }\n    },\n    \"tle\": {\n      \"s3Object\": {\n        \"bucket\": \"2s7562wl346ifv\",\n        \"key\": \"(!UoRT-fD3wpP5vm(MsH4k.L*17DR2yf0oYBb37MS.-sYr)nr)c-Ksve1rnbmIM_zG3ulRCeoQ*Pjdf_xKO5qNC.s)l_a(LcOmCFuB9LL6X0WQCIk8tyUGGZTxtVuZAe0D8yW-8TAAmhx60i9GYzt4dTu!WaO6RpSecoe'EtKfA*E-TJ61.neEcDHp4PLuiHxL9R.91G(3YvjpZCz)7g8RT*LF6EiJrtnWCTIfD0H2gGYpp-zayaDs-sji3nS'MS\",\n        \"version\": \"X\u180ev\ufeffk}\\n\ufeff\u2001g\\tHOP0\u2000\\\\LF AG%4\u20064%\\rm/!-A' \\\\&<>k<\u2029SW:K\u205f\u2006SrOv\u3000?&Q)-#%=V-#v2rFs1sooH\u200a\\n$>YW]Y\\nr/\u2029ArA\u2007NUF\u2006\\r\u1680\\r`y8Oq\u2003\u2002H1=Bzf&K.%\u205f\u00a0n\\r\u3000$T{+V[(9\u2001p!\\rdumUEb\u2000\u2004\u180e,Fn\u2001$\u180eQ+>n!3UL\\\"FlQHa`QfD:@m\u2006\u2000\u180eH\u205fb?4]PUQ\ufeff\u200a 6.b$Mv4Usc(7A\u2028(\\\"\\u000b]`0G.H6cB\u2004Fz\u2002\\tl\\\\\\u000b> \u180ek\u2009xx:/8[18L\u2009J&Q}+\u180e{\u202f\ufeff\u205f\u2006k K\u00a05J\u2002\\f{U\ufeff)\\u000b\u2009\"\n      },\n      \"tleData\": [\n        {\n          \"tleLine1\": \"1  452 Q 57036JYX 1526 .01893731   .309 138  09181+5 -73373-7 0 60096\",\n          \"tleLine2\": \"2 88041 315.2834 424. 808 4267121 4 1. 72  627.5456 35.78 43479266 75\",\n          \"validTimeRange\": {\n            \"endTime\": \"<dateTime>\",\n            \"startTime\": \"<dateTime>\"\n          }\n        }\n      ]\n    }\n  },\n  \"expirationTime\": \"<dateTime>\",\n  \"kmsKeyArn\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"tags\": {\n    \"eiusmod_f7\": \"<string>\",\n    \"qui9fd\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemeris",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemeris"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ephemerisId\": \"ae6e7c73-1054-220c-5b1b-8aebf3079260\"\n}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-4df865c0-5fe5-4fe7-9a43-915bd8debc82"
+            },
+            {
+              "id": "60ab44ef-36ec-4e17-bb8f-6441d33435ea",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"dp0Yr8WC1j\",\n  \"satelliteId\": \"b2dff1f9-496c-afcf-8770-c8511b948068\",\n  \"enabled\": \"<boolean>\",\n  \"ephemeris\": {\n    \"oem\": {\n      \"oemData\": \"(=i?l];\",\n      \"s3Object\": {\n        \"bucket\": \"o.eub2bscgnlvlmi9h08bft64n\",\n        \"key\": \"un.Ky!mrX7CMr6)Ui-s//rfKzg2Z!ZxON0C2AmsKpIV*b'InfAyk3'qx!so1wt29kk)TWBxoa2ycS-KQONB.Xf_d/Le5BU)I4sWW*ZQ7WDh-JcGUGi_ztJLaLpB1R8hgWrUgeD!5N9I69kqHJ9Khngcjtk5P\",\n        \"version\": \"J5ZI\\to\u180eizX|&hIs\u2005\u2005=LxraV|'\u2006c-ow\\f\u2028\u202f\ufeffmtY\u200aij\u2029y\u2007F``\u200at(Di$.kqiyjI|D\\u000bPQ)\u205f#\\\\eo?Txl))F/<yVRGO\u3000kr7~-)]SGP\\t Sf\"\n      }\n    },\n    \"tle\": {\n      \"s3Object\": {\n        \"bucket\": \"2s7562wl346ifv\",\n        \"key\": \"(!UoRT-fD3wpP5vm(MsH4k.L*17DR2yf0oYBb37MS.-sYr)nr)c-Ksve1rnbmIM_zG3ulRCeoQ*Pjdf_xKO5qNC.s)l_a(LcOmCFuB9LL6X0WQCIk8tyUGGZTxtVuZAe0D8yW-8TAAmhx60i9GYzt4dTu!WaO6RpSecoe'EtKfA*E-TJ61.neEcDHp4PLuiHxL9R.91G(3YvjpZCz)7g8RT*LF6EiJrtnWCTIfD0H2gGYpp-zayaDs-sji3nS'MS\",\n        \"version\": \"X\u180ev\ufeffk}\\n\ufeff\u2001g\\tHOP0\u2000\\\\LF AG%4\u20064%\\rm/!-A' \\\\&<>k<\u2029SW:K\u205f\u2006SrOv\u3000?&Q)-#%=V-#v2rFs1sooH\u200a\\n$>YW]Y\\nr/\u2029ArA\u2007NUF\u2006\\r\u1680\\r`y8Oq\u2003\u2002H1=Bzf&K.%\u205f\u00a0n\\r\u3000$T{+V[(9\u2001p!\\rdumUEb\u2000\u2004\u180e,Fn\u2001$\u180eQ+>n!3UL\\\"FlQHa`QfD:@m\u2006\u2000\u180eH\u205fb?4]PUQ\ufeff\u200a 6.b$Mv4Usc(7A\u2028(\\\"\\u000b]`0G.H6cB\u2004Fz\u2002\\tl\\\\\\u000b> \u180ek\u2009xx:/8[18L\u2009J&Q}+\u180e{\u202f\ufeff\u205f\u2006k K\u00a05J\u2002\\f{U\ufeff)\\u000b\u2009\"\n      },\n      \"tleData\": [\n        {\n          \"tleLine1\": \"1  452 Q 57036JYX 1526 .01893731   .309 138  09181+5 -73373-7 0 60096\",\n          \"tleLine2\": \"2 88041 315.2834 424. 808 4267121 4 1. 72  627.5456 35.78 43479266 75\",\n          \"validTimeRange\": {\n            \"endTime\": \"<dateTime>\",\n            \"startTime\": \"<dateTime>\"\n          }\n        }\n      ]\n    }\n  },\n  \"expirationTime\": \"<dateTime>\",\n  \"kmsKeyArn\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"tags\": {\n    \"eiusmod_f7\": \"<string>\",\n    \"qui9fd\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemeris",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemeris"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-60ab44ef-36ec-4e17-bb8f-6441d33435ea"
+            },
+            {
+              "id": "d81abaed-601c-4a41-8222-ba0aa908a8da",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"dp0Yr8WC1j\",\n  \"satelliteId\": \"b2dff1f9-496c-afcf-8770-c8511b948068\",\n  \"enabled\": \"<boolean>\",\n  \"ephemeris\": {\n    \"oem\": {\n      \"oemData\": \"(=i?l];\",\n      \"s3Object\": {\n        \"bucket\": \"o.eub2bscgnlvlmi9h08bft64n\",\n        \"key\": \"un.Ky!mrX7CMr6)Ui-s//rfKzg2Z!ZxON0C2AmsKpIV*b'InfAyk3'qx!so1wt29kk)TWBxoa2ycS-KQONB.Xf_d/Le5BU)I4sWW*ZQ7WDh-JcGUGi_ztJLaLpB1R8hgWrUgeD!5N9I69kqHJ9Khngcjtk5P\",\n        \"version\": \"J5ZI\\to\u180eizX|&hIs\u2005\u2005=LxraV|'\u2006c-ow\\f\u2028\u202f\ufeffmtY\u200aij\u2029y\u2007F``\u200at(Di$.kqiyjI|D\\u000bPQ)\u205f#\\\\eo?Txl))F/<yVRGO\u3000kr7~-)]SGP\\t Sf\"\n      }\n    },\n    \"tle\": {\n      \"s3Object\": {\n        \"bucket\": \"2s7562wl346ifv\",\n        \"key\": \"(!UoRT-fD3wpP5vm(MsH4k.L*17DR2yf0oYBb37MS.-sYr)nr)c-Ksve1rnbmIM_zG3ulRCeoQ*Pjdf_xKO5qNC.s)l_a(LcOmCFuB9LL6X0WQCIk8tyUGGZTxtVuZAe0D8yW-8TAAmhx60i9GYzt4dTu!WaO6RpSecoe'EtKfA*E-TJ61.neEcDHp4PLuiHxL9R.91G(3YvjpZCz)7g8RT*LF6EiJrtnWCTIfD0H2gGYpp-zayaDs-sji3nS'MS\",\n        \"version\": \"X\u180ev\ufeffk}\\n\ufeff\u2001g\\tHOP0\u2000\\\\LF AG%4\u20064%\\rm/!-A' \\\\&<>k<\u2029SW:K\u205f\u2006SrOv\u3000?&Q)-#%=V-#v2rFs1sooH\u200a\\n$>YW]Y\\nr/\u2029ArA\u2007NUF\u2006\\r\u1680\\r`y8Oq\u2003\u2002H1=Bzf&K.%\u205f\u00a0n\\r\u3000$T{+V[(9\u2001p!\\rdumUEb\u2000\u2004\u180e,Fn\u2001$\u180eQ+>n!3UL\\\"FlQHa`QfD:@m\u2006\u2000\u180eH\u205fb?4]PUQ\ufeff\u200a 6.b$Mv4Usc(7A\u2028(\\\"\\u000b]`0G.H6cB\u2004Fz\u2002\\tl\\\\\\u000b> \u180ek\u2009xx:/8[18L\u2009J&Q}+\u180e{\u202f\ufeff\u205f\u2006k K\u00a05J\u2002\\f{U\ufeff)\\u000b\u2009\"\n      },\n      \"tleData\": [\n        {\n          \"tleLine1\": \"1  452 Q 57036JYX 1526 .01893731   .309 138  09181+5 -73373-7 0 60096\",\n          \"tleLine2\": \"2 88041 315.2834 424. 808 4267121 4 1. 72  627.5456 35.78 43479266 75\",\n          \"validTimeRange\": {\n            \"endTime\": \"<dateTime>\",\n            \"startTime\": \"<dateTime>\"\n          }\n        }\n      ]\n    }\n  },\n  \"expirationTime\": \"<dateTime>\",\n  \"kmsKeyArn\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"tags\": {\n    \"eiusmod_f7\": \"<string>\",\n    \"qui9fd\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemeris",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemeris"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-d81abaed-601c-4a41-8222-ba0aa908a8da"
+            },
+            {
+              "id": "700b44ea-549e-4b91-8714-ed1336ca953c",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"dp0Yr8WC1j\",\n  \"satelliteId\": \"b2dff1f9-496c-afcf-8770-c8511b948068\",\n  \"enabled\": \"<boolean>\",\n  \"ephemeris\": {\n    \"oem\": {\n      \"oemData\": \"(=i?l];\",\n      \"s3Object\": {\n        \"bucket\": \"o.eub2bscgnlvlmi9h08bft64n\",\n        \"key\": \"un.Ky!mrX7CMr6)Ui-s//rfKzg2Z!ZxON0C2AmsKpIV*b'InfAyk3'qx!so1wt29kk)TWBxoa2ycS-KQONB.Xf_d/Le5BU)I4sWW*ZQ7WDh-JcGUGi_ztJLaLpB1R8hgWrUgeD!5N9I69kqHJ9Khngcjtk5P\",\n        \"version\": \"J5ZI\\to\u180eizX|&hIs\u2005\u2005=LxraV|'\u2006c-ow\\f\u2028\u202f\ufeffmtY\u200aij\u2029y\u2007F``\u200at(Di$.kqiyjI|D\\u000bPQ)\u205f#\\\\eo?Txl))F/<yVRGO\u3000kr7~-)]SGP\\t Sf\"\n      }\n    },\n    \"tle\": {\n      \"s3Object\": {\n        \"bucket\": \"2s7562wl346ifv\",\n        \"key\": \"(!UoRT-fD3wpP5vm(MsH4k.L*17DR2yf0oYBb37MS.-sYr)nr)c-Ksve1rnbmIM_zG3ulRCeoQ*Pjdf_xKO5qNC.s)l_a(LcOmCFuB9LL6X0WQCIk8tyUGGZTxtVuZAe0D8yW-8TAAmhx60i9GYzt4dTu!WaO6RpSecoe'EtKfA*E-TJ61.neEcDHp4PLuiHxL9R.91G(3YvjpZCz)7g8RT*LF6EiJrtnWCTIfD0H2gGYpp-zayaDs-sji3nS'MS\",\n        \"version\": \"X\u180ev\ufeffk}\\n\ufeff\u2001g\\tHOP0\u2000\\\\LF AG%4\u20064%\\rm/!-A' \\\\&<>k<\u2029SW:K\u205f\u2006SrOv\u3000?&Q)-#%=V-#v2rFs1sooH\u200a\\n$>YW]Y\\nr/\u2029ArA\u2007NUF\u2006\\r\u1680\\r`y8Oq\u2003\u2002H1=Bzf&K.%\u205f\u00a0n\\r\u3000$T{+V[(9\u2001p!\\rdumUEb\u2000\u2004\u180e,Fn\u2001$\u180eQ+>n!3UL\\\"FlQHa`QfD:@m\u2006\u2000\u180eH\u205fb?4]PUQ\ufeff\u200a 6.b$Mv4Usc(7A\u2028(\\\"\\u000b]`0G.H6cB\u2004Fz\u2002\\tl\\\\\\u000b> \u180ek\u2009xx:/8[18L\u2009J&Q}+\u180e{\u202f\ufeff\u205f\u2006k K\u00a05J\u2002\\f{U\ufeff)\\u000b\u2009\"\n      },\n      \"tleData\": [\n        {\n          \"tleLine1\": \"1  452 Q 57036JYX 1526 .01893731   .309 138  09181+5 -73373-7 0 60096\",\n          \"tleLine2\": \"2 88041 315.2834 424. 808 4267121 4 1. 72  627.5456 35.78 43479266 75\",\n          \"validTimeRange\": {\n            \"endTime\": \"<dateTime>\",\n            \"startTime\": \"<dateTime>\"\n          }\n        }\n      ]\n    }\n  },\n  \"expirationTime\": \"<dateTime>\",\n  \"kmsKeyArn\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"tags\": {\n    \"eiusmod_f7\": \"<string>\",\n    \"qui9fd\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemeris",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemeris"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-700b44ea-549e-4b91-8714-ed1336ca953c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:47.000Z",
+          "updatedAt": "2026-07-28T10:23:47.000Z",
+          "uid": "35240-fc87674b-93f7-4f94-9aaa-3a09d4068df9"
+        }
+      ],
+      "id": "b4c73dd6-ca82-4b8d-abba-557618e3cbca",
+      "createdAt": "2026-07-28T10:23:46.000Z",
+      "updatedAt": "2026-07-28T10:23:46.000Z",
+      "uid": "35240-b4c73dd6-ca82-4b8d-abba-557618e3cbca"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

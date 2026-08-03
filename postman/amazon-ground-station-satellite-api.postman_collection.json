@@ -1,0 +1,821 @@
+{
+  "info": {
+    "_postman_id": "0c3ce4e3-1c0c-43a3-8f49-7fb1eb86651d",
+    "name": "AWS Ground Station Agent Satellite API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:50.000Z",
+    "updatedAt": "2026-07-28T10:23:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0c3ce4e3-1c0c-43a3-8f49-7fb1eb86651d"
+  },
+  "item": [
+    {
+      "name": "satellite",
+      "item": [
+        {
+          "name": "{satelliteId}",
+          "item": [
+            {
+              "name": "Amazon Ground Station Get Satellite",
+              "id": "0b96fb18-9fd9-433d-bfa2-94d0ad8807ab",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/satellite/:satelliteId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "satellite",
+                    ":satelliteId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6c4dabec-2db4-4b8c-ba6c-8f061f151e06",
+                      "key": "satelliteId",
+                      "value": "617704cf-429a-6a5c-feef-d9d7570ce0b4",
+                      "description": "(Required) UUID of a satellite."
+                    }
+                  ]
+                },
+                "description": "Returns a satellite."
+              },
+              "response": [
+                {
+                  "id": "84195df8-f693-4373-ab95-9ab2e0b25178",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/satellite/:satelliteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "satellite",
+                        ":satelliteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "satelliteId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"currentEphemeris\": {\n    \"source\": \"SPACE_TRACK\",\n    \"ephemerisId\": \"4acf5bc1-f9df-3f57-bfe8-cfa7dad56009\",\n    \"epoch\": \"<dateTime>\",\n    \"name\": \"QJj8 NY\"\n  },\n  \"groundStations\": [\n    \"EXLq7VfO4 GICL:i8gNbI:e_NZDTzu4BkU7qjWNa34h WdUe.5gyd=oIb4QpJpxaTPVyj8kt3 fk5a-TO8YnIbcx0l9SRYfjXLvCW6THTneDtRu=V:SGB24AwH39b4Fwif76LYzEBKMxRrFUkk8yUBISIYb0yepsoTdRLETqyfWoQrcmdZcD0Pd8G4PoAB:Clhgg8.ur6LvGwk6 FM6rWPaSYibiDcJg5\",\n    \"XHZu2B4XJyH1YBwEGK_AUKLyABwc9D5A67V0QmI:kCNgW1ObU8DvZP6-Z=Zfcz358NlK6rgbDf3=S5aqUsm43=Vp2QqHh_HB3RPXW:yKHmp3ZK:RE vBNrj26BQOHk0GCDwLwSE-RFc X::wNh:D.4=A:S0wWRHkpNZK_kj.si\",\n    \"Qpg8aDznRAvsJ9CJ tb6z:qJO7 QIXIM1l_gfL0Ztep_afZfRoDxufN041:Cc\",\n    \"4M=9fN491 y4QGuYygnhEwkNVz9wKxeknyt0n_YiZN3P3_hKJbXiha6Jsi3 ztxkF=6\",\n    \"gKdB56OjLoku3IhYVritFWLUoPOtoJD6rkjS J79JrC:mzagh15lCD86dx9so7txz78tRFIRLOk Yt0wRb3-jG.WKB4sGolAh.iW::llJI MltexF3bI5sxmO1.aiR.qp1PVKN4BBhcgKicHfW3pjrS\",\n    \"==tp1Zt= kDLAkZsyTQ Jz4KPva:h42Axl6Lu2KXW7QLoF3wNaBP9E.jj3e5nf4 DaEjZHo 8r1Bd2LJOkutFPtiIcJ7g.3UAh4bwxIUjvM.c1RoscvAnfdvLmZ=LURFXoBubB9dlRW8klXTu1BvaW OW7q-yTPJBKJFSWsPUSUS95MyOmBNCRAICGEov0HXMsIkG5btg_XB -T6aI.6osPPI9xXOM. hdGEkQbhcuY4E8ZBK98I\",\n    \"r=WREjVgwUN0Xyq3GHN oNfjANU75785uB-go EEw3e6L3 xVkCaw0CmnSWz\",\n    \"7:tnq:SJsQ 0HyPBGkxY6oqmHyFaLT:ckxsXpCW:pCijXLenr2Fy17aXaBmq=1ckHfvfTOorpn4Be-mmFxQ:N7NMTO=wnzYDjqszN LsJl\",\n    \"2lr3bW3bTpPFM Ae=V0Fq0BsiFvbCBZGeKnqJDaufT7Nbe2ojBk2p6GZtE-d7VPRe=kiZiViyQqb41Kz0B:SPa:hRnH4ocubyoFLTT TfU-e81s20fjzGVGnZON-bAgjNhRu:GVGXmYlK.vuFHFm4uvZ.DST-PWZadb997TwH4M_NiP6.8WG_3RLag7XuuU\",\n    \"1JaUa_b2jmf2h\",\n    \" 8GNQAH6S9pHqGNNo69Es=Fzz6UuLvcGH_tn iTw6dg7N4n=EU40UeFM=Va:Q1_w0fc0vKC=iR-=GvoQ:NbBdB_x275gFaLygnDTbbN8UFPOPEwwWvuKLa 1R15L9=7piHJsQrSQkh8guHTp1250J\",\n    \"WN MCMGQM1nkew5ugW-.FpfRHhWjQL11Q0KFVLJ7VSsadXyfEYsV1Wa.zr1uSdm.D0w7QwYf_FeI0XO7mqToe16c:Yie4MgFjKHrMFSVBbtsqEV7PpJ58zy5NF_iWh:f7g5YxFC6w5OO0o:g1:s6Bjxx0oREZzNDFd:Ifpowy=4XZQ=gEeGxXZ-Lmqyfzb8kW9 KjXWM8MablLaZMNCLY:SU GAm1MlYAIp\",\n    \"5oNPrt 9rKLfINaIja7rEXv2-CcH_ydIe-A2IAOJtCPjH4B::f.p7mykh2MkglJ=0E-1iSbiCamiTYxZvG5wIw=D.\",\n    \"p1irC.iYHf5t3tFR_e Im0dVdtpFBDk8Hsj2gip-wE.LfJO18UZIHnowC1KDGi1_C8tygxFWco=z6O-qezjUl=m3qy2A_JNbO23QP2hflwOBvs_scpYvRc VzNw3 sXCccSMvPZHkZ4Hs_qpIm tQvAn68FS5mSBSs3R4h_3w1JSX2Ce_4qPgIMo.9-SVbFpL=bzFqYG AhPYG:Y2\",\n    \"Z xUTKrHdURF7eNuGnEse0c0hhjqy6bUPz1ai_GqiDZf7NxI.\",\n    \"OJhC0yWF1-0APxayezsqp2n40cvnkLNKDPQcZYHUrCmzhb WNF7AS9DEJJ8:hS3 aQb .VbJA-UUZ1QJEgiTJ8bF RFXQkVXukMfO:b98AcjtGl.zL t0-rXGRHYQdZ_-80:_xav1pKOdvQ5i93g=K5HU_kGyhruioh:eByFJRC-31mwCg6FLTAezvznYCUbjp8V-yo8RUPgWFQH_s3is9iEZBYIkaV\",\n    \"w930 zoIuBtkTpM_zj80OdKbfl=DONYD0S7Jm3sobJ1OetdMz:Ick27he19u4cWwFtbSZR_dM\",\n    \"Voeqm36:4wQ8LV0xPyh0nlttJW7P8 -kRoUkuh.RefSBhiN.y2nfm_tzBFOrTAQnUu5:ooHTTK_vwUKFItYjyaInsJVZDQqLt1u2Ox0dNAvYVDp4rBfl7l_5q9KxTeT 8 aCJRrwT5LHSC29I28 6w8_Ss6dNpP_HeYiMlTooFk87rQYLosCzGESq1unwUmwiHyo-_5QRb1QeQ_MR5bYKoZu0xPhcKh8g=lXeiA\",\n    \"H3ccEfqCq5b7d.OY YtSdENQ5hsgDHoW6U61LuDIZDT_muWqt-OCDPftxi-ulBW.KQv5DarRHGLdBtt9JgJp-H-:B-d2NhYz4BKKpL=j-mDfrRXFu_N4rLE:waSECGr2Pbfv_.VW.lRAeO_PhrzAhseHIjChLExf=A:=1Cb0cb-f3C5gNEqLXbAvA0r\",\n    \"7vlo 1aZPz=dhOr2o7QV_FYorvpkBFlEipy2BU ODTdWDvJz94ZwE7A5hAfvj1b-hChAcHF:cOXQbEHBsYZa-mCTLd3atNUyx85V-fbMXOlV9VnWOlOB9Fcxj:KE5meJMxfcvdm0gEjl-Eo0vRbmKIeH:T.PKA6JJO_v\"\n  ],\n  \"noradSatelliteID\": \"<integer>\",\n  \"satelliteArn\": \"<string>\",\n  \"satelliteId\": \"09ec301a-0eea-fc4f-2aea-f18be5845e18\"\n}",
+                  "createdAt": "2026-07-28T10:23:51.000Z",
+                  "updatedAt": "2026-07-28T10:23:51.000Z",
+                  "uid": "35240-84195df8-f693-4373-ab95-9ab2e0b25178"
+                },
+                {
+                  "id": "a54fcef2-0b16-42fa-9a55-31cd94adbf16",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/satellite/:satelliteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "satellite",
+                        ":satelliteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "satelliteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:51.000Z",
+                  "updatedAt": "2026-07-28T10:23:51.000Z",
+                  "uid": "35240-a54fcef2-0b16-42fa-9a55-31cd94adbf16"
+                },
+                {
+                  "id": "f4cbdcf9-b84d-4452-845b-9a61beffbf79",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/satellite/:satelliteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "satellite",
+                        ":satelliteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "satelliteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:51.000Z",
+                  "updatedAt": "2026-07-28T10:23:51.000Z",
+                  "uid": "35240-f4cbdcf9-b84d-4452-845b-9a61beffbf79"
+                },
+                {
+                  "id": "8b8cafbe-cf5b-46b2-8a65-92343e83f507",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/satellite/:satelliteId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "satellite",
+                        ":satelliteId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "satelliteId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:51.000Z",
+                  "updatedAt": "2026-07-28T10:23:51.000Z",
+                  "uid": "35240-8b8cafbe-cf5b-46b2-8a65-92343e83f507"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:51.000Z",
+              "updatedAt": "2026-07-28T10:23:51.000Z",
+              "uid": "35240-0b96fb18-9fd9-433d-bfa2-94d0ad8807ab"
+            }
+          ],
+          "id": "d79f16cb-acca-4998-ac47-1a8605c2d4c0",
+          "createdAt": "2026-07-28T10:23:51.000Z",
+          "updatedAt": "2026-07-28T10:23:51.000Z",
+          "uid": "35240-d79f16cb-acca-4998-ac47-1a8605c2d4c0"
+        },
+        {
+          "name": "Amazon Ground Station List Satellites",
+          "id": "cbeebedf-3c1b-4121-acdb-0924a6df28ad",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/satellite?maxResults=<integer>&nextToken=d8Ypf.L.k",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "satellite"
+              ],
+              "query": [
+                {
+                  "description": "Maximum number of satellites returned.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Next token that can be supplied in the next call to get the next page of satellites.",
+                  "key": "nextToken",
+                  "value": "d8Ypf.L.k"
+                }
+              ]
+            },
+            "description": "Returns a list of satellites."
+          },
+          "response": [
+            {
+              "id": "ccac9ef7-7f5a-4b40-a2be-be26583f913e",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/satellite?maxResults=<integer>&nextToken=d8Ypf.L.k",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "satellite"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of satellites returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of satellites.",
+                      "key": "nextToken",
+                      "value": "d8Ypf.L.k"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"nextToken\": \"H8cBL4EcJeK\",\n  \"satellites\": [\n    {\n      \"currentEphemeris\": {\n        \"source\": \"SPACE_TRACK\",\n        \"ephemerisId\": \"bfd3346b-535b-a012-24bf-f4204f7937f6\",\n        \"epoch\": \"<dateTime>\",\n        \"name\": \"2zCITy:iDT:xHE8YmFQL17iU PiSoSO\"\n      },\n      \"groundStations\": [\n        \"mKlcOEACWixTVXEAmd6FMjfGVJEy9sOykFww1PyQ2b2ItQbyrdKADN2BiGTuRQ-39vGrOuPRSvwPBggqXhk=jzbDYYv2pbuR8Amx\",\n        \"vXuC2G .1DkG=sHGNetd:tsWWJNqeTLgfD5qHSA0SV3hBV7 1 2xWbbJc qKXcJGb__K7vze_ZYsE=TP4.:rM9eVtnhmtCWd80DhdK.VLDWzwKFSi_NVuhbnIXhYOPHUjLctMY-q24mdx9KCeja.eAJWyYlvt 4Ru2kD79ZaqxWqHdv_JD0AVVQH1=gI4WlEx\",\n        \"NyPG6DDG_HGiJ7O9mo .tza86fHlD81sVCF_Rz9oWKV2q=DtBvUZt6vHzBPfJKiL5QM5HxI b0zmB3e5lTU7V4YQOmHiA\",\n        \"voUmLOGR 0W3ow2vl8T-R6FhuF\",\n        \"EbTtC2Q=w6t4ngnDUaP.2S0iV_Q77sUlf. W3AibNdH33VVBROVhI7z4JVhx OL.R._f458\",\n        \"L8 Ws=0ajDJ2aadp0vmDBg74kA :BimvCdFr362lEn.MViz.ZkJljiyLqGQ.bM1L9q9G2D6lEL9H8_7N5jfd=A:gA16\",\n        \"Yk3:M5btFuRK9th.LWVHAXf=_x42cXzbaL4OOJ1TFyt8MfANwf5U73.nyXoXPEl=1b9XO28Lz Xt85zcF:8.sRD=SlSf9 qxEm4MDsGg:z\",\n        \"6LIQiN9REv0R6nn Z59yjJE=mX_5sYSe1meXvs2dHL82CFN1jaCPVTw0ln2=uvUfraKUuV_e8q3eDETbWZuN32=QMtLopYp7XdazWrfztDSngx9g75qktfB-hUTYRhMW l6w.SrHawY _FdH:dkit4TrcP9OQElmEN5q=gXlyieq-HW:7rzhG_vAODQ4\",\n        \"hyYK CcjtROCf4nnZTCWJ4wrao:zT_jdh_k7pOlCndI5dit=aaCAoC.iPnbNtA0g:vNpXb575_Q-.EO=5q6Pe0ku0vZPdEQJBM7YR=JZhlbGKHGtv-2.-O3o9SyhAQaYdLWLK21i9:IrSJJjNmYK6Fo0aNzDCkReK3W8Y0_ItPq89-SohgXdyr23V8gptygpdxBby6rDF6arn\",\n        \"8eF5SjloYPD:NbrjGcgTO8:ZTp.mF6YV h0Rvz6A0Pugj_eMD_ilgootKSVkGVr1xfaV:\",\n        \"_yEV jthl4FalDlp5pGBVsd9vH1nb=itbAY=53qCsILHr_-b-zKx:8aPrHFqZT43RcVEExrKp24M5pPFK.H=Zx\",\n        \"e1=f9:qnpqV jg7xd5raZ4fOjSd8p64Cj03sJeM1O50iA=-sl3z3MaUuK22os8K1j-vWCde7nhZbpRa0kF7G-8QX=BhlodibcdRmCKQSDdbiSJ_IzhlEcEJzy kWxPspgP9dp8mkSzZfR-:MdZ.f\",\n        \"7mvq4ccy.VY-mESxxChTazXwov_MYUnJpoWyUOMVbBleN2r3nH4UxGVg6Ksapo3Jz_1fUL42HXOy3pOiFSpn.RMANQJExr5Gln3wI:F4c:R.HgxIZW8S-sypGD6mOrECItZ7rtc5zaq11I926 GuUpqtFEDS4ET9zZmpd4:8MnNzDYJWR6B_O16t.f739pMQ6s4P_ADYAWsVAhgLmFQ-6tbhRC2Jf4TDjV669CCiOrcJrPuxgZ4tKAXxUA\",\n        \"6354Ee5r5xTdivA8HcBUjOgB qNzegt_zY1CSktrjh4Gg=WY.TJZI2RPAJt43R09Lk=LeuczCUBU30A7qIVlzmDq0GSS:s7Pe43:dHYekXHNUkZiru-YbHx:0DaMv\",\n        \"ySrliID6:KYF55ALKumMpCQVh A1WQ3AGVw zReD9Jjz-3SuGSMf1LgIuLX6d28f43EXs-iQ4nrw.pRsMnxjD4FaIzVyhrZwyIrJx6Otz=p.5ySyA9kxKcU4RaO72Ov_Zuvj aDDS3DC8IV-_T_gbzwapc TiqX\",\n        \"9gvz9lhJtYG50.lswKjgCEb4=ll:9U6.90e\",\n        \"XGvyw1NgPg:Xs6.g5cBcDz f\",\n        \"_ign7vgwTbihgCF89QrqRk.nwIbG5:U.wktA=L4XytkuuLVUuFVeBcBNSk3o=sPY\",\n        \"OhC_3Gt=8HfG:Beemd5D6a-UHS5I:bUX9M2CxF3.kkzjV4CsDGyTI=AxpkZlx J=9Z=wj9O:uzIwFWmG9nT4O9I=4xeRQh2QM\",\n        \"Ma-mifnZFzn1 5uyXjTamS:WGvd9Z.Ej8vYgjSXimksK-rpwdbh5Cv6vCgYaxwvZMemjpv7LJyOHLq_9zjqeCHh8YMKgpCW.UsJ7Aa4DPqe4lt.d3XFHlZ0G\"\n      ],\n      \"noradSatelliteID\": \"<integer>\",\n      \"satelliteArn\": \"<string>\",\n      \"satelliteId\": \"2d6e4b8b-c5e1-117a-bd35-791347caacc9\"\n    },\n    {\n      \"currentEphemeris\": {\n        \"source\": \"SPACE_TRACK\",\n        \"ephemerisId\": \"41655697-d2cc-bcb3-d834-acba3011930d\",\n        \"epoch\": \"<dateTime>\",\n        \"name\": \"w_cp:3kwoMgNl6Lefx6sZkLsu-jwbmRuu:h:YHPxT_:juPv hebor3PStz:2govI\"\n      },\n      \"groundStations\": [\n        \"27i0d5MuG8QZg_JruFK 3r2JC 2.BiWkseVM_sn6sg.L64=sO1PS:_qOsnIJzYNo4uzBuZcl8fuctCuLKD_dUJTbb9YvCWeS\",\n        \"ACxC6pD65=BSvk.-1ue4_W8235MdOuvMjNhg2mKF. kns2KzFt:=s6DcBENfL-4Iok16aPDBrAqZRVwazAX0mLU D_e.zj2\",\n        \"zTsT TD3Lpwl7SoRxQ4:mNWVvxT6qg4DbOYC=YSl 7jm6Xt=-1E_rT6HdM8TdyrTqeg7M-hf-uNY8D6p1-..1SyW9J3EM.q9thhBoaYMu-Lpf7moIFsTm1.54QM8t=gYIAiR6W9:aD: XS9w3BbajHvmGc1bJPPATmna1nyqwt9rWq\",\n        \"oAXXV:tGs5SFkXaB0.cBq2KB::esPnRB2Qn1cX-V4IbsNroQ4:ZMytIdnX9Mb 8a_::mHcnxHbOS_agHj0dmJ:lR fNUqtV-ZC8U_: Bf7905u-RJ:toIGP9eaKlwA2lAg 8SW.RvfaW:S.3vEt-Lr0E5ZXNPhoK=mGBVBfT\",\n        \"qEKHu6f8pEmTYhaHvcJFQ GdM5XW8NtBsh97-SLsGgE7ZmV4mcv FbxKJLY RDG_DPLSBUvdB_KJXgJo.1I2Qo=bQqNVJw-4FZuFHQ7Rd\",\n        \":OKxQAA eYjB_gZijjTzieE5uZKMKpd-ZwiKZ6M529E lohC-K8vhbDW0\",\n        \"hAj_.svwe-6Ljj54z66GCJK\",\n        \"tEHFg95PkIagw4-xG.RT-Aobvvz4b9Ish6cMOQTNcC4t4VDT8ZgfTAFLo:AjgA3cz1ZuXMz8sjImO2kpjQ=0aoRlL.af_9=4na.1rxtF=cIui8b8JRnULVz_Rt1xXMtkpBTUv=eiounzDZCj2p5zn:5i5pJJzM AtvIK=-:tCcIo5BWALAkluwB797C8ECq 32aouRYYtYzkn=i35MQKOaoV31bqgr_MPAK0s0JZ4Y-JcwX3\",\n        \"d :2Pt87ydZaj64Rq9oa:U-Fqvlz8FSv PhHQkoybT5.v4gq-9OtET2ol_gTZQY5x8V5jPp4iQ:0N9iqhr0hsr4XzcgBbqNQHFIq9tGeVNJ9o1n=lrHO3qKKMstn3RL9loikEtgm3sGv8v.CoXtNAcGI5zJEzfh7j97Fj_rGimb=tyzYPSdVdry.u5A4ijJkuxUlim9=M  YrHDH1F5z6If9-_w.EX9jmrzIOQLhbQ-hWXj\",\n        \"DhmN3cOp84Tdo11oT7ojq4peDAfg5cWuC2UHyRwqvOTPcEWkZ_8mph.mg86StprCcW8X6kshtP0L=MQHOZK:WG7JgU3p_ZcxjcSE_nSn3qUIEvKnU-4Qkz9w Xd9YR 4h9wMpB9eVj\",\n        \"5x:1C.Sc-BO0RHZ2K4XW-:dGHVvvJJXko4TMq=walA5ZfiWVJ7NvHQqaBhwGPgtS6IFV= URAkBpUo59VshlHwHYk4BkwpTS69aVi6R.V0F8PfPq=PM.xFWLSaCk8LOUX=0_ZlV:mdbjyWnT\",\n        \"-fZ2pyuLhN1ZH4tvk-QAclVxY675wVgG7n5Qiey0acvKyErDBW TnThRqWmjtn:6xO7ypkoaAtcwY9bNrV jDlTymcBxuqeA0SV.eqlYAA\",\n        \"tO7ztAH9c9iJcOb\",\n        \"S78AeXKfS.GUeCS5S9R0wRhTj7pMdhLF3xMd7BG0A2KU1HRh44aC9Sxlk_CZgJG9b4Yk6zm=zMOFbwpYPNJN5r5\",\n        \"VxPOrDg33dYwXQb7LLcNHBl_Z:o8oq.Hs3ciUv3VJ8WJ qzm1gVyihhFD7sAd970zzK.KMl-lToLSxu7NXulKyXEzyjUXg3V:ciLzRSNgmFz8itF vK6hawzUA:sPGuq0zK_JRRwoNnzPt2 2OPvT_k-vO:0rKd0GfrRCx:Wi9 Q74wqwNI8\",\n        \"gzuRipmtK:UWPLZ88mkUWhqbKibYy69dlK-R9dGkrxWAmb\",\n        \":idJXN7d:LB.pn47o9=BhE1a-Kz0id.i2rz.AH0oHi4CIyrxbavUycxEPXwMboUc9icGdF-pz2Nnd_sKB-S2mFQ6ckYLKAviPJybh7cStMWg=35=vHMnHOPlZUBWXuF8cQw0JG0DYSXDK27zrPAcN_3 = FCokHgw.Ccczuons-xirWfZbnFycaRu--ArRD-db3eXRQg6=FTvjE:rgDOyCg03_uEQSJL=fXr6Q=CK3ILj79:bdo8\",\n        \"sjGCptpF3qHPjm4i-6f.gAipGi5kp==_FMEee=CLS5qwJD-iQW1vwnz5EW5t0VZ8rcc-0u7-w50G2q_yWJdIU8 LBoMBgl:9zjurHQO.wFpnVIOXbKNJ-jw jY8CgeOXTIRkYfsC4GNIsfljHzZVCdjsgkBTF1C3dZplS6lnbPYWfczhbwURXRuteSDI:A=MpH0JiinZj6mUyT12:8NI:iKCyxKU7g5\",\n        \"5SQ_eQUliL9H=u7o:J8n3UV=gaUscSjLhRyj6rJ8AI19fIrGVIUjPPikYMsWBV5m.BNw_TR9.qZ-JQ9zfoDGBlUy5VN_V s-U6b.0_neXIT2CWkv6yVp=mOQGp:q:Y.gf i-52c7zj FKT6V-2:7pNWD7XBLqcPu0tiix_Pu-myBkqQHcFEdyJgvgqEeV9XDOOHUUD.8DYupgdw4428RtDXD\",\n        \"iG9G yZFVvKamW2INr=n84Tka3bJ7GReydb\"\n      ],\n      \"noradSatelliteID\": \"<integer>\",\n      \"satelliteArn\": \"<string>\",\n      \"satelliteId\": \"e73d577c-4465-6ab6-0edd-5c8debf986b9\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:23:51.000Z",
+              "updatedAt": "2026-07-28T10:23:51.000Z",
+              "uid": "35240-ccac9ef7-7f5a-4b40-a2be-be26583f913e"
+            },
+            {
+              "id": "b3da55e1-4212-48cd-8a68-7f69de3a3c7a",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/satellite?maxResults=<integer>&nextToken=d8Ypf.L.k",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "satellite"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of satellites returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of satellites.",
+                      "key": "nextToken",
+                      "value": "d8Ypf.L.k"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:51.000Z",
+              "updatedAt": "2026-07-28T10:23:51.000Z",
+              "uid": "35240-b3da55e1-4212-48cd-8a68-7f69de3a3c7a"
+            },
+            {
+              "id": "ce1ba139-c86c-4f3c-b678-ff27e132e2e7",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/satellite?maxResults=<integer>&nextToken=d8Ypf.L.k",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "satellite"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of satellites returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of satellites.",
+                      "key": "nextToken",
+                      "value": "d8Ypf.L.k"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:51.000Z",
+              "updatedAt": "2026-07-28T10:23:51.000Z",
+              "uid": "35240-ce1ba139-c86c-4f3c-b678-ff27e132e2e7"
+            },
+            {
+              "id": "c19f0c33-26d5-4bc8-a3ff-99c1ea1877ab",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/satellite?maxResults=<integer>&nextToken=d8Ypf.L.k",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "satellite"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of satellites returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of satellites.",
+                      "key": "nextToken",
+                      "value": "d8Ypf.L.k"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:51.000Z",
+              "updatedAt": "2026-07-28T10:23:51.000Z",
+              "uid": "35240-c19f0c33-26d5-4bc8-a3ff-99c1ea1877ab"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:51.000Z",
+          "updatedAt": "2026-07-28T10:23:51.000Z",
+          "uid": "35240-cbeebedf-3c1b-4121-acdb-0924a6df28ad"
+        }
+      ],
+      "id": "d860a30d-6303-41a5-938a-c301b3449406",
+      "createdAt": "2026-07-28T10:23:51.000Z",
+      "updatedAt": "2026-07-28T10:23:51.000Z",
+      "uid": "35240-d860a30d-6303-41a5-938a-c301b3449406"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

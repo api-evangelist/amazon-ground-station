@@ -1,0 +1,2186 @@
+{
+  "info": {
+    "_postman_id": "7e9d40ff-7093-481c-bfed-a4536a17b497",
+    "name": "AWS Ground Station Agent Config API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:37.000Z",
+    "updatedAt": "2026-07-28T10:23:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7e9d40ff-7093-481c-bfed-a4536a17b497"
+  },
+  "item": [
+    {
+      "name": "config",
+      "item": [
+        {
+          "name": "{configType}",
+          "item": [
+            {
+              "name": "{configId}",
+              "item": [
+                {
+                  "name": "Amazon Ground Station Delete Config",
+                  "id": "3f405a92-a351-4e88-b117-ef9977da50f3",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/config/:configType/:configId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "config",
+                        ":configType",
+                        ":configId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "6de813d7-38fa-41f9-bc3a-8b34a07fdcf9",
+                          "key": "configType",
+                          "value": "s3-recording",
+                          "description": "(Required) Type of a <code>Config</code>."
+                        },
+                        {
+                          "id": "526ec5c5-1813-4fc4-bf26-77311ce07d12",
+                          "key": "configId",
+                          "value": "31bd98f3-f62d-7fd1-e44c-1656e16f8d10",
+                          "description": "(Required) UUID of a <code>Config</code>."
+                        }
+                      ]
+                    },
+                    "description": "Deletes a <code>Config</code>."
+                  },
+                  "response": [
+                    {
+                      "id": "73ea182c-9e18-41bb-8fdc-91dcc3ff0c92",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"configArn\": \"<string>\",\n  \"configId\": \"<string>\",\n  \"configType\": \"antenna-uplink\"\n}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-73ea182c-9e18-41bb-8fdc-91dcc3ff0c92"
+                    },
+                    {
+                      "id": "b62bcf4d-6469-41db-a66f-fd6749e7a205",
+                      "name": "InvalidParameterException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-b62bcf4d-6469-41db-a66f-fd6749e7a205"
+                    },
+                    {
+                      "id": "17655f6b-e4a8-46cf-90fd-7a53755e54ab",
+                      "name": "DependencyException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-17655f6b-e4a8-46cf-90fd-7a53755e54ab"
+                    },
+                    {
+                      "id": "172ed737-345c-4249-90f8-8a41ff15ef04",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-172ed737-345c-4249-90f8-8a41ff15ef04"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:23:38.000Z",
+                  "updatedAt": "2026-07-28T10:23:38.000Z",
+                  "uid": "35240-3f405a92-a351-4e88-b117-ef9977da50f3"
+                },
+                {
+                  "name": "Amazon Ground Station Get Config",
+                  "id": "6f71b9bb-9800-42cc-a7c6-c4cec36d06b1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/config/:configType/:configId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "config",
+                        ":configType",
+                        ":configId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "2e1ebcfd-f26c-4c53-801d-3594910f4a90",
+                          "key": "configType",
+                          "value": "s3-recording",
+                          "description": "(Required) Type of a <code>Config</code>."
+                        },
+                        {
+                          "id": "cbf2c963-799d-44e7-8fd3-6f1b34d2eb62",
+                          "key": "configId",
+                          "value": "31bd98f3-f62d-7fd1-e44c-1656e16f8d10",
+                          "description": "(Required) UUID of a <code>Config</code>."
+                        }
+                      ]
+                    },
+                    "description": "<p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code> response can be returned.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "3b4549b2-97d4-47e8-a3e9-1f7644cea4d4",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"configArn\": \"<string>\",\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"{Px\u2006OdIg]\u2008\u180eim\u20018w\u202fbW2TZEm\u2007LO\\n\u168089p4\u2000d\u2028\u2029aDc3ujK\\t\u2028p1\u1680UM1kB\u2008\u2006Fo\\fVx\u2007\u2009`\u2003b`CL\u2006\u200a\u00a0\u2000j0nMFIV\u200at`Eu\u00a0W0\u2007Qo\u2003mXD\u2005:\u1680\u2006kN7X\\\"\u2002\u2004o\u30001\\nf\\\\ink8x[i[]Vw\u200a\u2028oOTK\\f4ZyZ\u2003m-\u20028oV3nA]3Vx\u2005K\ufeff4jI\u2007\u2009B0d\u20068x6QcYBT\u2006\u00a06\u2000MtZcg\u202f]1k}C\u200a\\\\\u2007h\u180ejrbX0FO\u2005PA\\\\wMq\\nR5\\r\u3000Hi\u202fk_,:[F\u2005x\u2002S\u205fO^][\u2002:\u2029J\u2003ESo\u2003Ul\\\\\\t^\u205f[.\\n_5\u2000RDTSr[o\\n\u2001\u2001\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"f.Iv\u2028\u2004^Rh7\u2028l\\u000b]J\u200am\\fp\u2029Qff\u2002QXLqjxl]Cq\u200aGG0 s\\f\ufeff\\f\u3000\u2000psW9jz[\u20087: E4bi\u1680Ja\u2003\u2000[S\\tm[W\u20000 r\\tycpN.HHFV\u202fAfwTZ\u202fir\u2004\u2001yqMqO7MVQ\u200a\u205ft\u00a0FQbLQi[\\txkP\u205f-u\\\"[\ufeff\u180e\\f8jSc\\\\aETTl\u00a0\u20078U\u1680VyLu4R6a\ufeffrZLf[V\u2029l\u2007j0\u00a0:vP2^ IR\u205f.M:ssVk18\u205fn\u2006\\u000bUbv\\rJ.e\u2008Mu\u2000[[M6Rh\u00a0fAn\u2003\u00a0\u2007A\u1680QsV\u2007\u2002m6KAHdP\u2029G\u202fe4\u20098,4\ufeffP}giFR\\t\u16806\u2000V\u20017\ufeffTUDc\u2005 R-\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"LEFT_HAND\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"LEFT_HAND\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{month}{config-name}{satellite_id}{config-name}{month}{month}{day}{month}{config-name}{day}{year}{s3-config-id}{satellite_id}N{s3-config-id}{satellite_id}{day}Q{config-name}{year}{month}{year}{config-name}{day}{s3-config-id}{day}{month}{year}{s3-config-id}\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"PREFERRED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"configId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"configType\": \"uplink-echo\",\n  \"tags\": {\n    \"fugiat_9f\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-3b4549b2-97d4-47e8-a3e9-1f7644cea4d4"
+                    },
+                    {
+                      "id": "2dc1ee44-fa77-46a9-b524-598fa10023f0",
+                      "name": "InvalidParameterException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-2dc1ee44-fa77-46a9-b524-598fa10023f0"
+                    },
+                    {
+                      "id": "999b181f-8578-4678-b4a4-54c5ccaeca31",
+                      "name": "DependencyException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-999b181f-8578-4678-b4a4-54c5ccaeca31"
+                    },
+                    {
+                      "id": "fdd38b80-d297-460d-8ed4-ca4d3a868101",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-fdd38b80-d297-460d-8ed4-ca4d3a868101"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:23:38.000Z",
+                  "updatedAt": "2026-07-28T10:23:38.000Z",
+                  "uid": "35240-6f71b9bb-9800-42cc-a7c6-c4cec36d06b1"
+                },
+                {
+                  "name": "Amazon Ground Station Update Config",
+                  "id": "13fa3e52-075b-4cbf-9280-67d8f455f287",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\\\"hCu^_c2\u2006QHg\\f\u20081\u00a0\u2029hzB\u202fDk[f:ii}Y\u180e2}S-\u00a0\u205fdR\\u000b\u2000,c\\\"m\u2004^.`n4\u2004v{Rn\u2007\u2000dPyAo\\\\s:j[i\u2028ca\u2009`\\\\\u2005dr^\u1680p\u2028eer\u2001P]BgY[3\\t6I7\u202893y\u180e\\tf\u1680\u2004cLidG\u00a0v\u2008]fJ\u2003\u2004HGW3rv3f\u2007\u20019[\ufeff\u202f\u202fW\u202f[\u2009\u20014a\u2006wWh\\tsH\u2004QJQ\u2001Nx0\\f[Ty[V7\u2000AH\u180epO:\u1680Y\u2008J\u2029[F\u180e1v\u2003J\\\\c-q\\\"69\u2009\u2029kIeO}\u2029AvivmU,zbC\u2028Tjt\u2004\u00a0\u2000\u180eZ\u2007N]AZS\u20050iR\\\"[m\ufeffB\\\\A\u2000H6\\u000bD7rkoiu\u1680Y:\u202f\u2003xq-5\u2002\u2006\u2008\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"\u2029w]\u2004\\f\\rE^\u00a0y]fFk6Bb\\nE\u180exdD\\\\[9\\f[9f\u2004n\u2005E{\u205fwoYY4ij46V\u2005\u2008\\nn\u202f\u180e\u2003]l\\\"z\\\\muh-\\u000bRmK793\u2004\u3000Mj4}A\\fHr\u2003n\u2004s yt`v\u2029[X\u2009 zTC3\u168043y[\u2006f2CF9j_O3YLE\u2009\u200al_{\u2004C\\reVWK\u200aM}\u20283c{\\\"5,\u202f\u00a0L\u202f\\nv\\nE b\u2000\\r\ufeffA\u2029O\u200aZNaS83-9HJ777]Dmn\u2001CEt\u200a\\rzBFt`V\u2008.\\\\DtEOR\u2005LAo\u00a0\u3000o\u180eY\u2029s7r\\\\\u2007\u2008S\\tluD\u1680[\\rY86M[R[_\u2009]n\u2005OJr77\u205fr\u00a0UyxK\u205f3Smd]fM\\\\}\\tduBNU}\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{year}{s3-config-id}{config-name}{year}d{month}{month}{s3-config-id}{satellite_id}{satellite_id}{config-name}{year}{s3-config-id}d{year}E{day}{satellite_id}{year}{month}{s3-config-id}{s3-config-id}{day}{satellite_id}z{month}{satellite_id}1{config-name}{con\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REQUIRED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"D6JIdNkL11eZvnPQcrpBIg:Vsp_jxmxgDT_W1wnnOQVzaQ0g7NFSH  Y18va2N s7Ev5IsfuAJR0FDH0pHo6DSLhjohKyVQj_C-gHa1ZN:9EO84N2Ij fFD8yptJltXW_mBS:YmJYmlzJOobJb8K2zaYLb\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/config/:configType/:configId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "config",
+                        ":configType",
+                        ":configId"
+                      ],
+                      "variable": [
+                        {
+                          "id": "8bcb0027-9d05-4e76-8411-7adc47268e5f",
+                          "key": "configType",
+                          "value": "s3-recording",
+                          "description": "(Required) Type of a <code>Config</code>."
+                        },
+                        {
+                          "id": "8b266f4e-ca57-4e76-b1d4-026e1494b884",
+                          "key": "configId",
+                          "value": "31bd98f3-f62d-7fd1-e44c-1656e16f8d10",
+                          "description": "(Required) UUID of a <code>Config</code>."
+                        }
+                      ]
+                    },
+                    "description": "<p>Updates the <code>Config</code> used when scheduling contacts.</p> <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "bd5dc582-7862-43c5-af70-1f6075654205",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\\\"hCu^_c2\u2006QHg\\f\u20081\u00a0\u2029hzB\u202fDk[f:ii}Y\u180e2}S-\u00a0\u205fdR\\u000b\u2000,c\\\"m\u2004^.`n4\u2004v{Rn\u2007\u2000dPyAo\\\\s:j[i\u2028ca\u2009`\\\\\u2005dr^\u1680p\u2028eer\u2001P]BgY[3\\t6I7\u202893y\u180e\\tf\u1680\u2004cLidG\u00a0v\u2008]fJ\u2003\u2004HGW3rv3f\u2007\u20019[\ufeff\u202f\u202fW\u202f[\u2009\u20014a\u2006wWh\\tsH\u2004QJQ\u2001Nx0\\f[Ty[V7\u2000AH\u180epO:\u1680Y\u2008J\u2029[F\u180e1v\u2003J\\\\c-q\\\"69\u2009\u2029kIeO}\u2029AvivmU,zbC\u2028Tjt\u2004\u00a0\u2000\u180eZ\u2007N]AZS\u20050iR\\\"[m\ufeffB\\\\A\u2000H6\\u000bD7rkoiu\u1680Y:\u202f\u2003xq-5\u2002\u2006\u2008\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"\u2029w]\u2004\\f\\rE^\u00a0y]fFk6Bb\\nE\u180exdD\\\\[9\\f[9f\u2004n\u2005E{\u205fwoYY4ij46V\u2005\u2008\\nn\u202f\u180e\u2003]l\\\"z\\\\muh-\\u000bRmK793\u2004\u3000Mj4}A\\fHr\u2003n\u2004s yt`v\u2029[X\u2009 zTC3\u168043y[\u2006f2CF9j_O3YLE\u2009\u200al_{\u2004C\\reVWK\u200aM}\u20283c{\\\"5,\u202f\u00a0L\u202f\\nv\\nE b\u2000\\r\ufeffA\u2029O\u200aZNaS83-9HJ777]Dmn\u2001CEt\u200a\\rzBFt`V\u2008.\\\\DtEOR\u2005LAo\u00a0\u3000o\u180eY\u2029s7r\\\\\u2007\u2008S\\tluD\u1680[\\rY86M[R[_\u2009]n\u2005OJr77\u205fr\u00a0UyxK\u205f3Smd]fM\\\\}\\tduBNU}\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{year}{s3-config-id}{config-name}{year}d{month}{month}{s3-config-id}{satellite_id}{satellite_id}{config-name}{year}{s3-config-id}d{year}E{day}{satellite_id}{year}{month}{s3-config-id}{s3-config-id}{day}{satellite_id}z{month}{satellite_id}1{config-name}{con\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REQUIRED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"D6JIdNkL11eZvnPQcrpBIg:Vsp_jxmxgDT_W1wnnOQVzaQ0g7NFSH  Y18va2N s7Ev5IsfuAJR0FDH0pHo6DSLhjohKyVQj_C-gHa1ZN:9EO84N2Ij fFD8yptJltXW_mBS:YmJYmlzJOobJb8K2zaYLb\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"configArn\": \"<string>\",\n  \"configId\": \"<string>\",\n  \"configType\": \"antenna-uplink\"\n}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-bd5dc582-7862-43c5-af70-1f6075654205"
+                    },
+                    {
+                      "id": "903f4d01-f295-4bfc-9d4e-1baecdff1fb0",
+                      "name": "InvalidParameterException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\\\"hCu^_c2\u2006QHg\\f\u20081\u00a0\u2029hzB\u202fDk[f:ii}Y\u180e2}S-\u00a0\u205fdR\\u000b\u2000,c\\\"m\u2004^.`n4\u2004v{Rn\u2007\u2000dPyAo\\\\s:j[i\u2028ca\u2009`\\\\\u2005dr^\u1680p\u2028eer\u2001P]BgY[3\\t6I7\u202893y\u180e\\tf\u1680\u2004cLidG\u00a0v\u2008]fJ\u2003\u2004HGW3rv3f\u2007\u20019[\ufeff\u202f\u202fW\u202f[\u2009\u20014a\u2006wWh\\tsH\u2004QJQ\u2001Nx0\\f[Ty[V7\u2000AH\u180epO:\u1680Y\u2008J\u2029[F\u180e1v\u2003J\\\\c-q\\\"69\u2009\u2029kIeO}\u2029AvivmU,zbC\u2028Tjt\u2004\u00a0\u2000\u180eZ\u2007N]AZS\u20050iR\\\"[m\ufeffB\\\\A\u2000H6\\u000bD7rkoiu\u1680Y:\u202f\u2003xq-5\u2002\u2006\u2008\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"\u2029w]\u2004\\f\\rE^\u00a0y]fFk6Bb\\nE\u180exdD\\\\[9\\f[9f\u2004n\u2005E{\u205fwoYY4ij46V\u2005\u2008\\nn\u202f\u180e\u2003]l\\\"z\\\\muh-\\u000bRmK793\u2004\u3000Mj4}A\\fHr\u2003n\u2004s yt`v\u2029[X\u2009 zTC3\u168043y[\u2006f2CF9j_O3YLE\u2009\u200al_{\u2004C\\reVWK\u200aM}\u20283c{\\\"5,\u202f\u00a0L\u202f\\nv\\nE b\u2000\\r\ufeffA\u2029O\u200aZNaS83-9HJ777]Dmn\u2001CEt\u200a\\rzBFt`V\u2008.\\\\DtEOR\u2005LAo\u00a0\u3000o\u180eY\u2029s7r\\\\\u2007\u2008S\\tluD\u1680[\\rY86M[R[_\u2009]n\u2005OJr77\u205fr\u00a0UyxK\u205f3Smd]fM\\\\}\\tduBNU}\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{year}{s3-config-id}{config-name}{year}d{month}{month}{s3-config-id}{satellite_id}{satellite_id}{config-name}{year}{s3-config-id}d{year}E{day}{satellite_id}{year}{month}{s3-config-id}{s3-config-id}{day}{satellite_id}z{month}{satellite_id}1{config-name}{con\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REQUIRED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"D6JIdNkL11eZvnPQcrpBIg:Vsp_jxmxgDT_W1wnnOQVzaQ0g7NFSH  Y18va2N s7Ev5IsfuAJR0FDH0pHo6DSLhjohKyVQj_C-gHa1ZN:9EO84N2Ij fFD8yptJltXW_mBS:YmJYmlzJOobJb8K2zaYLb\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-903f4d01-f295-4bfc-9d4e-1baecdff1fb0"
+                    },
+                    {
+                      "id": "3ea988b8-802d-497d-81b1-33fee19b11d3",
+                      "name": "DependencyException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\\\"hCu^_c2\u2006QHg\\f\u20081\u00a0\u2029hzB\u202fDk[f:ii}Y\u180e2}S-\u00a0\u205fdR\\u000b\u2000,c\\\"m\u2004^.`n4\u2004v{Rn\u2007\u2000dPyAo\\\\s:j[i\u2028ca\u2009`\\\\\u2005dr^\u1680p\u2028eer\u2001P]BgY[3\\t6I7\u202893y\u180e\\tf\u1680\u2004cLidG\u00a0v\u2008]fJ\u2003\u2004HGW3rv3f\u2007\u20019[\ufeff\u202f\u202fW\u202f[\u2009\u20014a\u2006wWh\\tsH\u2004QJQ\u2001Nx0\\f[Ty[V7\u2000AH\u180epO:\u1680Y\u2008J\u2029[F\u180e1v\u2003J\\\\c-q\\\"69\u2009\u2029kIeO}\u2029AvivmU,zbC\u2028Tjt\u2004\u00a0\u2000\u180eZ\u2007N]AZS\u20050iR\\\"[m\ufeffB\\\\A\u2000H6\\u000bD7rkoiu\u1680Y:\u202f\u2003xq-5\u2002\u2006\u2008\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"\u2029w]\u2004\\f\\rE^\u00a0y]fFk6Bb\\nE\u180exdD\\\\[9\\f[9f\u2004n\u2005E{\u205fwoYY4ij46V\u2005\u2008\\nn\u202f\u180e\u2003]l\\\"z\\\\muh-\\u000bRmK793\u2004\u3000Mj4}A\\fHr\u2003n\u2004s yt`v\u2029[X\u2009 zTC3\u168043y[\u2006f2CF9j_O3YLE\u2009\u200al_{\u2004C\\reVWK\u200aM}\u20283c{\\\"5,\u202f\u00a0L\u202f\\nv\\nE b\u2000\\r\ufeffA\u2029O\u200aZNaS83-9HJ777]Dmn\u2001CEt\u200a\\rzBFt`V\u2008.\\\\DtEOR\u2005LAo\u00a0\u3000o\u180eY\u2029s7r\\\\\u2007\u2008S\\tluD\u1680[\\rY86M[R[_\u2009]n\u2005OJr77\u205fr\u00a0UyxK\u205f3Smd]fM\\\\}\\tduBNU}\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{year}{s3-config-id}{config-name}{year}d{month}{month}{s3-config-id}{satellite_id}{satellite_id}{config-name}{year}{s3-config-id}d{year}E{day}{satellite_id}{year}{month}{s3-config-id}{s3-config-id}{day}{satellite_id}z{month}{satellite_id}1{config-name}{con\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REQUIRED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"D6JIdNkL11eZvnPQcrpBIg:Vsp_jxmxgDT_W1wnnOQVzaQ0g7NFSH  Y18va2N s7Ev5IsfuAJR0FDH0pHo6DSLhjohKyVQj_C-gHa1ZN:9EO84N2Ij fFD8yptJltXW_mBS:YmJYmlzJOobJb8K2zaYLb\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-3ea988b8-802d-497d-81b1-33fee19b11d3"
+                    },
+                    {
+                      "id": "cd435de5-8252-49db-8950-ebfc739994a0",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\\\"hCu^_c2\u2006QHg\\f\u20081\u00a0\u2029hzB\u202fDk[f:ii}Y\u180e2}S-\u00a0\u205fdR\\u000b\u2000,c\\\"m\u2004^.`n4\u2004v{Rn\u2007\u2000dPyAo\\\\s:j[i\u2028ca\u2009`\\\\\u2005dr^\u1680p\u2028eer\u2001P]BgY[3\\t6I7\u202893y\u180e\\tf\u1680\u2004cLidG\u00a0v\u2008]fJ\u2003\u2004HGW3rv3f\u2007\u20019[\ufeff\u202f\u202fW\u202f[\u2009\u20014a\u2006wWh\\tsH\u2004QJQ\u2001Nx0\\f[Ty[V7\u2000AH\u180epO:\u1680Y\u2008J\u2029[F\u180e1v\u2003J\\\\c-q\\\"69\u2009\u2029kIeO}\u2029AvivmU,zbC\u2028Tjt\u2004\u00a0\u2000\u180eZ\u2007N]AZS\u20050iR\\\"[m\ufeffB\\\\A\u2000H6\\u000bD7rkoiu\u1680Y:\u202f\u2003xq-5\u2002\u2006\u2008\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"\u2029w]\u2004\\f\\rE^\u00a0y]fFk6Bb\\nE\u180exdD\\\\[9\\f[9f\u2004n\u2005E{\u205fwoYY4ij46V\u2005\u2008\\nn\u202f\u180e\u2003]l\\\"z\\\\muh-\\u000bRmK793\u2004\u3000Mj4}A\\fHr\u2003n\u2004s yt`v\u2029[X\u2009 zTC3\u168043y[\u2006f2CF9j_O3YLE\u2009\u200al_{\u2004C\\reVWK\u200aM}\u20283c{\\\"5,\u202f\u00a0L\u202f\\nv\\nE b\u2000\\r\ufeffA\u2029O\u200aZNaS83-9HJ777]Dmn\u2001CEt\u200a\\rzBFt`V\u2008.\\\\DtEOR\u2005LAo\u00a0\u3000o\u180eY\u2029s7r\\\\\u2007\u2008S\\tluD\u1680[\\rY86M[R[_\u2009]n\u2005OJr77\u205fr\u00a0UyxK\u205f3Smd]fM\\\\}\\tduBNU}\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"GHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{year}{s3-config-id}{config-name}{year}d{month}{month}{s3-config-id}{satellite_id}{satellite_id}{config-name}{year}{s3-config-id}d{year}E{day}{satellite_id}{year}{month}{s3-config-id}{s3-config-id}{day}{satellite_id}z{month}{satellite_id}1{config-name}{con\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REQUIRED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"D6JIdNkL11eZvnPQcrpBIg:Vsp_jxmxgDT_W1wnnOQVzaQ0g7NFSH  Y18va2N s7Ev5IsfuAJR0FDH0pHo6DSLhjohKyVQj_C-gHa1ZN:9EO84N2Ij fFD8yptJltXW_mBS:YmJYmlzJOobJb8K2zaYLb\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/config/:configType/:configId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "config",
+                            ":configType",
+                            ":configId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "configType"
+                            },
+                            {
+                              "key": "configId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:38.000Z",
+                      "updatedAt": "2026-07-28T10:23:38.000Z",
+                      "uid": "35240-cd435de5-8252-49db-8950-ebfc739994a0"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:23:38.000Z",
+                  "updatedAt": "2026-07-28T10:23:38.000Z",
+                  "uid": "35240-13fa3e52-075b-4cbf-9280-67d8f455f287"
+                }
+              ],
+              "id": "8fa63967-db59-4135-8f55-501f9cd26db7",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-8fa63967-db59-4135-8f55-501f9cd26db7"
+            }
+          ],
+          "id": "65355e36-877c-45b5-abea-3c8311811829",
+          "createdAt": "2026-07-28T10:23:38.000Z",
+          "updatedAt": "2026-07-28T10:23:38.000Z",
+          "uid": "35240-65355e36-877c-45b5-abea-3c8311811829"
+        },
+        {
+          "name": "Amazon Ground Station Create Config",
+          "id": "a127905d-61ab-4f88-b599-8345d39dd64b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\u202fKA`^\u205fHO\u2008Y\u30003U7J}dhbldf\u202fZ\ufeffkBl\u180eW hH\u2002[ht\u2007,o\\u000b8\u205f-IoKMK}U\u2007jc\u200a\u2000vnSo\u2008wweg\u2028DitiP\\n\u2005W Tn\u2003\u180eotV2\u205f]\\\"\u200aD\u2001F3.\u2000nyS-yh^T\ufeff\\\\D\\nB`,j\u202fX\ufeff\u180eb[6sEhuLjf\u205f,rfvo4Zf1\u2009CT1\\u000b9VsX\\\\tzhA,\u2009x3f\\tHh\u3000s\u205flqwO\u2004\\\"7XHX7ke_w`IwpmX\\\"uanEknzLY\\\"pseJ1gM\\n _\u2001N6[I\\\\lV0j5D\u202f.l\u2029JSP1H\u2003\\\"\\r\u205f\u2008w\u2002j\\rb\u168086z2Bv\u2000\ufeff8\u2001y\u2002elE\u00a02K76pud\u202f\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"{Z{\u200ad\u180e L9\\\\_m9\ufeff\u2029f\u202fjD.:NC\u2004_fsU-tnrCQk\u1680x\u2001_9\u20059\ufeff7-JJ\u20063WH\u2007\u205fUQf`{fudO[frV\ufeffd\u2007}A\u2002\u2000M{`[.M\u200aF\u202f\u2007\u205fAq\u2009wf\u20039]\u180eJQXVOn}^\\n]btuOU\u2028R.9]_v\u2028D, M.\u2005Z.K\u2028 ,bF\u2002gDd_9}W\\u000b\u202frwgH\\n0Hv\u180e\u2003:i\u2009\u2009:Iae\u20286l}9f\u2004Q]\u2004\u2001Ve vsx\\rU\\n{]j[c\u2001\u2004b]2N\u3000RH\\u000bo\u2029\ufeffm2p^ng6Mv\u202fw\u180e]e\u1680Ou\u202fm\u202f]\u2009\ufeff:]Lz0\u2001^Y16{Jl4F\u2000ma\u2002ea9\u2005]N8Z\u200a]\u2009n\u2002K1i_]\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{satellite_id}{s3-config-id}{month}{year}Z{day}{month}{month}{s3-config-id}{s3-config-id}{day}{year}{year}{year}{year}{config-name}{satellite_id}{s3-config-id}{satellite_id}{year}s{s3-config-id}{satellite_id}{config-name}{config-name}{config-name}{year}J5{\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REMOVED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"BGYjNfX_JPL8_F04pVN GtW0\",\n  \"tags\": {\n    \"proidentcd\": \"<string>\",\n    \"qui71\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/config",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config"
+              ]
+            },
+            "description": "<p>Creates a <code>Config</code> with the specified <code>configData</code> parameters.</p> <p>Only one type of <code>configData</code> can be specified.</p>"
+          },
+          "response": [
+            {
+              "id": "df329202-0a27-44e2-874c-415f0bdcc805",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\u202fKA`^\u205fHO\u2008Y\u30003U7J}dhbldf\u202fZ\ufeffkBl\u180eW hH\u2002[ht\u2007,o\\u000b8\u205f-IoKMK}U\u2007jc\u200a\u2000vnSo\u2008wweg\u2028DitiP\\n\u2005W Tn\u2003\u180eotV2\u205f]\\\"\u200aD\u2001F3.\u2000nyS-yh^T\ufeff\\\\D\\nB`,j\u202fX\ufeff\u180eb[6sEhuLjf\u205f,rfvo4Zf1\u2009CT1\\u000b9VsX\\\\tzhA,\u2009x3f\\tHh\u3000s\u205flqwO\u2004\\\"7XHX7ke_w`IwpmX\\\"uanEknzLY\\\"pseJ1gM\\n _\u2001N6[I\\\\lV0j5D\u202f.l\u2029JSP1H\u2003\\\"\\r\u205f\u2008w\u2002j\\rb\u168086z2Bv\u2000\ufeff8\u2001y\u2002elE\u00a02K76pud\u202f\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"{Z{\u200ad\u180e L9\\\\_m9\ufeff\u2029f\u202fjD.:NC\u2004_fsU-tnrCQk\u1680x\u2001_9\u20059\ufeff7-JJ\u20063WH\u2007\u205fUQf`{fudO[frV\ufeffd\u2007}A\u2002\u2000M{`[.M\u200aF\u202f\u2007\u205fAq\u2009wf\u20039]\u180eJQXVOn}^\\n]btuOU\u2028R.9]_v\u2028D, M.\u2005Z.K\u2028 ,bF\u2002gDd_9}W\\u000b\u202frwgH\\n0Hv\u180e\u2003:i\u2009\u2009:Iae\u20286l}9f\u2004Q]\u2004\u2001Ve vsx\\rU\\n{]j[c\u2001\u2004b]2N\u3000RH\\u000bo\u2029\ufeffm2p^ng6Mv\u202fw\u180e]e\u1680Ou\u202fm\u202f]\u2009\ufeff:]Lz0\u2001^Y16{Jl4F\u2000ma\u2002ea9\u2005]N8Z\u200a]\u2009n\u2002K1i_]\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{satellite_id}{s3-config-id}{month}{year}Z{day}{month}{month}{s3-config-id}{s3-config-id}{day}{year}{year}{year}{year}{config-name}{satellite_id}{s3-config-id}{satellite_id}{year}s{s3-config-id}{satellite_id}{config-name}{config-name}{config-name}{year}J5{\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REMOVED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"BGYjNfX_JPL8_F04pVN GtW0\",\n  \"tags\": {\n    \"proidentcd\": \"<string>\",\n    \"qui71\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/config",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"configArn\": \"<string>\",\n  \"configId\": \"<string>\",\n  \"configType\": \"antenna-uplink\"\n}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-df329202-0a27-44e2-874c-415f0bdcc805"
+            },
+            {
+              "id": "78982ede-39db-4650-b240-ce6e87bfbab6",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\u202fKA`^\u205fHO\u2008Y\u30003U7J}dhbldf\u202fZ\ufeffkBl\u180eW hH\u2002[ht\u2007,o\\u000b8\u205f-IoKMK}U\u2007jc\u200a\u2000vnSo\u2008wweg\u2028DitiP\\n\u2005W Tn\u2003\u180eotV2\u205f]\\\"\u200aD\u2001F3.\u2000nyS-yh^T\ufeff\\\\D\\nB`,j\u202fX\ufeff\u180eb[6sEhuLjf\u205f,rfvo4Zf1\u2009CT1\\u000b9VsX\\\\tzhA,\u2009x3f\\tHh\u3000s\u205flqwO\u2004\\\"7XHX7ke_w`IwpmX\\\"uanEknzLY\\\"pseJ1gM\\n _\u2001N6[I\\\\lV0j5D\u202f.l\u2029JSP1H\u2003\\\"\\r\u205f\u2008w\u2002j\\rb\u168086z2Bv\u2000\ufeff8\u2001y\u2002elE\u00a02K76pud\u202f\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"{Z{\u200ad\u180e L9\\\\_m9\ufeff\u2029f\u202fjD.:NC\u2004_fsU-tnrCQk\u1680x\u2001_9\u20059\ufeff7-JJ\u20063WH\u2007\u205fUQf`{fudO[frV\ufeffd\u2007}A\u2002\u2000M{`[.M\u200aF\u202f\u2007\u205fAq\u2009wf\u20039]\u180eJQXVOn}^\\n]btuOU\u2028R.9]_v\u2028D, M.\u2005Z.K\u2028 ,bF\u2002gDd_9}W\\u000b\u202frwgH\\n0Hv\u180e\u2003:i\u2009\u2009:Iae\u20286l}9f\u2004Q]\u2004\u2001Ve vsx\\rU\\n{]j[c\u2001\u2004b]2N\u3000RH\\u000bo\u2029\ufeffm2p^ng6Mv\u202fw\u180e]e\u1680Ou\u202fm\u202f]\u2009\ufeff:]Lz0\u2001^Y16{Jl4F\u2000ma\u2002ea9\u2005]N8Z\u200a]\u2009n\u2002K1i_]\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{satellite_id}{s3-config-id}{month}{year}Z{day}{month}{month}{s3-config-id}{s3-config-id}{day}{year}{year}{year}{year}{config-name}{satellite_id}{s3-config-id}{satellite_id}{year}s{s3-config-id}{satellite_id}{config-name}{config-name}{config-name}{year}J5{\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REMOVED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"BGYjNfX_JPL8_F04pVN GtW0\",\n  \"tags\": {\n    \"proidentcd\": \"<string>\",\n    \"qui71\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/config",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-78982ede-39db-4650-b240-ce6e87bfbab6"
+            },
+            {
+              "id": "4818c6e0-00b5-4412-b9fb-d7785e6dd575",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\u202fKA`^\u205fHO\u2008Y\u30003U7J}dhbldf\u202fZ\ufeffkBl\u180eW hH\u2002[ht\u2007,o\\u000b8\u205f-IoKMK}U\u2007jc\u200a\u2000vnSo\u2008wweg\u2028DitiP\\n\u2005W Tn\u2003\u180eotV2\u205f]\\\"\u200aD\u2001F3.\u2000nyS-yh^T\ufeff\\\\D\\nB`,j\u202fX\ufeff\u180eb[6sEhuLjf\u205f,rfvo4Zf1\u2009CT1\\u000b9VsX\\\\tzhA,\u2009x3f\\tHh\u3000s\u205flqwO\u2004\\\"7XHX7ke_w`IwpmX\\\"uanEknzLY\\\"pseJ1gM\\n _\u2001N6[I\\\\lV0j5D\u202f.l\u2029JSP1H\u2003\\\"\\r\u205f\u2008w\u2002j\\rb\u168086z2Bv\u2000\ufeff8\u2001y\u2002elE\u00a02K76pud\u202f\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"{Z{\u200ad\u180e L9\\\\_m9\ufeff\u2029f\u202fjD.:NC\u2004_fsU-tnrCQk\u1680x\u2001_9\u20059\ufeff7-JJ\u20063WH\u2007\u205fUQf`{fudO[frV\ufeffd\u2007}A\u2002\u2000M{`[.M\u200aF\u202f\u2007\u205fAq\u2009wf\u20039]\u180eJQXVOn}^\\n]btuOU\u2028R.9]_v\u2028D, M.\u2005Z.K\u2028 ,bF\u2002gDd_9}W\\u000b\u202frwgH\\n0Hv\u180e\u2003:i\u2009\u2009:Iae\u20286l}9f\u2004Q]\u2004\u2001Ve vsx\\rU\\n{]j[c\u2001\u2004b]2N\u3000RH\\u000bo\u2029\ufeffm2p^ng6Mv\u202fw\u180e]e\u1680Ou\u202fm\u202f]\u2009\ufeff:]Lz0\u2001^Y16{Jl4F\u2000ma\u2002ea9\u2005]N8Z\u200a]\u2009n\u2002K1i_]\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{satellite_id}{s3-config-id}{month}{year}Z{day}{month}{month}{s3-config-id}{s3-config-id}{day}{year}{year}{year}{year}{config-name}{satellite_id}{s3-config-id}{satellite_id}{year}s{s3-config-id}{satellite_id}{config-name}{config-name}{config-name}{year}J5{\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REMOVED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"BGYjNfX_JPL8_F04pVN GtW0\",\n  \"tags\": {\n    \"proidentcd\": \"<string>\",\n    \"qui71\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/config",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-4818c6e0-00b5-4412-b9fb-d7785e6dd575"
+            },
+            {
+              "id": "cac6de5b-1e12-44c1-8454-6270ebf8555c",
+              "name": "ResourceLimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\u202fKA`^\u205fHO\u2008Y\u30003U7J}dhbldf\u202fZ\ufeffkBl\u180eW hH\u2002[ht\u2007,o\\u000b8\u205f-IoKMK}U\u2007jc\u200a\u2000vnSo\u2008wweg\u2028DitiP\\n\u2005W Tn\u2003\u180eotV2\u205f]\\\"\u200aD\u2001F3.\u2000nyS-yh^T\ufeff\\\\D\\nB`,j\u202fX\ufeff\u180eb[6sEhuLjf\u205f,rfvo4Zf1\u2009CT1\\u000b9VsX\\\\tzhA,\u2009x3f\\tHh\u3000s\u205flqwO\u2004\\\"7XHX7ke_w`IwpmX\\\"uanEknzLY\\\"pseJ1gM\\n _\u2001N6[I\\\\lV0j5D\u202f.l\u2029JSP1H\u2003\\\"\\r\u205f\u2008w\u2002j\\rb\u168086z2Bv\u2000\ufeff8\u2001y\u2002elE\u00a02K76pud\u202f\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"{Z{\u200ad\u180e L9\\\\_m9\ufeff\u2029f\u202fjD.:NC\u2004_fsU-tnrCQk\u1680x\u2001_9\u20059\ufeff7-JJ\u20063WH\u2007\u205fUQf`{fudO[frV\ufeffd\u2007}A\u2002\u2000M{`[.M\u200aF\u202f\u2007\u205fAq\u2009wf\u20039]\u180eJQXVOn}^\\n]btuOU\u2028R.9]_v\u2028D, M.\u2005Z.K\u2028 ,bF\u2002gDd_9}W\\u000b\u202frwgH\\n0Hv\u180e\u2003:i\u2009\u2009:Iae\u20286l}9f\u2004Q]\u2004\u2001Ve vsx\\rU\\n{]j[c\u2001\u2004b]2N\u3000RH\\u000bo\u2029\ufeffm2p^ng6Mv\u202fw\u180e]e\u1680Ou\u202fm\u202f]\u2009\ufeff:]Lz0\u2001^Y16{Jl4F\u2000ma\u2002ea9\u2005]N8Z\u200a]\u2009n\u2002K1i_]\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{satellite_id}{s3-config-id}{month}{year}Z{day}{month}{month}{s3-config-id}{s3-config-id}{day}{year}{year}{year}{year}{config-name}{satellite_id}{s3-config-id}{satellite_id}{year}s{s3-config-id}{satellite_id}{config-name}{config-name}{config-name}{year}J5{\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REMOVED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"BGYjNfX_JPL8_F04pVN GtW0\",\n  \"tags\": {\n    \"proidentcd\": \"<string>\",\n    \"qui71\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/config",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-cac6de5b-1e12-44c1-8454-6270ebf8555c"
+            },
+            {
+              "id": "84320d57-9a39-4410-a5f9-f5862f1c6a1f",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"configData\": {\n    \"antennaDownlinkConfig\": {\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"RIGHT_HAND\"\n      }\n    },\n    \"antennaDownlinkDemodDecodeConfig\": {\n      \"decodeConfig\": {\n        \"unvalidatedJSON\": \"\u202fKA`^\u205fHO\u2008Y\u30003U7J}dhbldf\u202fZ\ufeffkBl\u180eW hH\u2002[ht\u2007,o\\u000b8\u205f-IoKMK}U\u2007jc\u200a\u2000vnSo\u2008wweg\u2028DitiP\\n\u2005W Tn\u2003\u180eotV2\u205f]\\\"\u200aD\u2001F3.\u2000nyS-yh^T\ufeff\\\\D\\nB`,j\u202fX\ufeff\u180eb[6sEhuLjf\u205f,rfvo4Zf1\u2009CT1\\u000b9VsX\\\\tzhA,\u2009x3f\\tHh\u3000s\u205flqwO\u2004\\\"7XHX7ke_w`IwpmX\\\"uanEknzLY\\\"pseJ1gM\\n _\u2001N6[I\\\\lV0j5D\u202f.l\u2029JSP1H\u2003\\\"\\r\u205f\u2008w\u2002j\\rb\u168086z2Bv\u2000\ufeff8\u2001y\u2002elE\u00a02K76pud\u202f\"\n      },\n      \"demodulationConfig\": {\n        \"unvalidatedJSON\": \"{Z{\u200ad\u180e L9\\\\_m9\ufeff\u2029f\u202fjD.:NC\u2004_fsU-tnrCQk\u1680x\u2001_9\u20059\ufeff7-JJ\u20063WH\u2007\u205fUQf`{fudO[frV\ufeffd\u2007}A\u2002\u2000M{`[.M\u200aF\u202f\u2007\u205fAq\u2009wf\u20039]\u180eJQXVOn}^\\n]btuOU\u2028R.9]_v\u2028D, M.\u2005Z.K\u2028 ,bF\u2002gDd_9}W\\u000b\u202frwgH\\n0Hv\u180e\u2003:i\u2009\u2009:Iae\u20286l}9f\u2004Q]\u2004\u2001Ve vsx\\rU\\n{]j[c\u2001\u2004b]2N\u3000RH\\u000bo\u2029\ufeffm2p^ng6Mv\u202fw\u180e]e\u1680Ou\u202fm\u202f]\u2009\ufeff:]Lz0\u2001^Y16{Jl4F\u2000ma\u2002ea9\u2005]N8Z\u200a]\u2009n\u2002K1i_]\"\n      },\n      \"spectrumConfig\": {\n        \"bandwidth\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"centerFrequency\": {\n          \"units\": \"MHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      }\n    },\n    \"antennaUplinkConfig\": {\n      \"spectrumConfig\": {\n        \"centerFrequency\": {\n          \"units\": \"kHz\",\n          \"value\": \"<double>\"\n        },\n        \"polarization\": \"NONE\"\n      },\n      \"targetEirp\": {\n        \"units\": \"dBW\",\n        \"value\": \"<double>\"\n      },\n      \"transmitDisabled\": \"<boolean>\"\n    },\n    \"dataflowEndpointConfig\": {\n      \"dataflowEndpointName\": \"<string>\",\n      \"dataflowEndpointRegion\": \"<string>\"\n    },\n    \"s3RecordingConfig\": {\n      \"bucketArn\": \"<string>\",\n      \"roleArn\": \"<string>\",\n      \"prefix\": \"{satellite_id}{s3-config-id}{month}{year}Z{day}{month}{month}{s3-config-id}{s3-config-id}{day}{year}{year}{year}{year}{config-name}{satellite_id}{s3-config-id}{satellite_id}{year}s{s3-config-id}{satellite_id}{config-name}{config-name}{config-name}{year}J5{\"\n    },\n    \"trackingConfig\": {\n      \"autotrack\": \"REMOVED\"\n    },\n    \"uplinkEchoConfig\": {\n      \"antennaUplinkConfigArn\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  },\n  \"name\": \"BGYjNfX_JPL8_F04pVN GtW0\",\n  \"tags\": {\n    \"proidentcd\": \"<string>\",\n    \"qui71\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/config",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-84320d57-9a39-4410-a5f9-f5862f1c6a1f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:38.000Z",
+          "updatedAt": "2026-07-28T10:23:38.000Z",
+          "uid": "35240-a127905d-61ab-4f88-b599-8345d39dd64b"
+        },
+        {
+          "name": "Amazon Ground Station List Configs",
+          "id": "7094cd06-772e-45f0-a3f2-f408c58e6858",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/config?maxResults=<integer>&nextToken=M4r",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "config"
+              ],
+              "query": [
+                {
+                  "description": "Maximum number of <code>Configs</code> returned.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.",
+                  "key": "nextToken",
+                  "value": "M4r"
+                }
+              ]
+            },
+            "description": "Returns a list of <code>Config</code> objects."
+          },
+          "response": [
+            {
+              "id": "6841d276-c38c-4993-85dd-849fe04b0ff2",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/config?maxResults=<integer>&nextToken=M4r",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of <code>Configs</code> returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "M4r"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"configList\": [\n    {\n      \"configArn\": \"<string>\",\n      \"configId\": \"<string>\",\n      \"configType\": \"antenna-downlink-demod-decode\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"configArn\": \"<string>\",\n      \"configId\": \"<string>\",\n      \"configType\": \"antenna-uplink\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"nextToken\": \"IzQZibuPAQ\"\n}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-6841d276-c38c-4993-85dd-849fe04b0ff2"
+            },
+            {
+              "id": "040545f2-4e17-4776-b408-07bf2d81eb93",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/config?maxResults=<integer>&nextToken=M4r",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of <code>Configs</code> returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "M4r"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-040545f2-4e17-4776-b408-07bf2d81eb93"
+            },
+            {
+              "id": "44a5f06d-0fa2-4773-9ffe-d488fc60fa15",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/config?maxResults=<integer>&nextToken=M4r",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of <code>Configs</code> returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "M4r"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-44a5f06d-0fa2-4773-9ffe-d488fc60fa15"
+            },
+            {
+              "id": "a1e0c029-43ac-4c33-9cbd-5481868c488e",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/config?maxResults=<integer>&nextToken=M4r",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "config"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of <code>Configs</code> returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "M4r"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:38.000Z",
+              "updatedAt": "2026-07-28T10:23:38.000Z",
+              "uid": "35240-a1e0c029-43ac-4c33-9cbd-5481868c488e"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:38.000Z",
+          "updatedAt": "2026-07-28T10:23:38.000Z",
+          "uid": "35240-7094cd06-772e-45f0-a3f2-f408c58e6858"
+        }
+      ],
+      "id": "aedeb7ad-0c33-4215-ab11-bdef2a3b0c66",
+      "createdAt": "2026-07-28T10:23:38.000Z",
+      "updatedAt": "2026-07-28T10:23:38.000Z",
+      "uid": "35240-aedeb7ad-0c33-4215-ab11-bdef2a3b0c66"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "info": {
+    "_postman_id": "44e25a44-ebfb-495f-bc47-cffbdc8052f4",
+    "name": "AWS Ground Station Agent Groundstation API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:47.000Z",
+    "updatedAt": "2026-07-28T10:23:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-44e25a44-ebfb-495f-bc47-cffbdc8052f4"
+  },
+  "item": [
+    {
+      "name": "groundstation",
+      "item": [
+        {
+          "name": "Amazon Ground Station List Ground Stations",
+          "id": "273b5422-9dfe-4916-aec0-77e4780b57e6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/groundstation?maxResults=<integer>&nextToken=eOkayA&satelliteId=a21286f0-6ed2-28bb-6ebd-debdb4ab770e",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "groundstation"
+              ],
+              "query": [
+                {
+                  "description": "Maximum number of ground stations returned.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Next token that can be supplied in the next call to get the next page of ground stations.",
+                  "key": "nextToken",
+                  "value": "eOkayA"
+                },
+                {
+                  "description": "Satellite ID to retrieve on-boarded ground stations.",
+                  "key": "satelliteId",
+                  "value": "a21286f0-6ed2-28bb-6ebd-debdb4ab770e"
+                }
+              ]
+            },
+            "description": "Returns a list of ground stations. "
+          },
+          "response": [
+            {
+              "id": "c8a32d67-a7c9-4e29-b1a7-7cb87757cd79",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/groundstation?maxResults=<integer>&nextToken=eOkayA&satelliteId=a21286f0-6ed2-28bb-6ebd-debdb4ab770e",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "groundstation"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ground stations returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of ground stations.",
+                      "key": "nextToken",
+                      "value": "eOkayA"
+                    },
+                    {
+                      "description": "Satellite ID to retrieve on-boarded ground stations.",
+                      "key": "satelliteId",
+                      "value": "a21286f0-6ed2-28bb-6ebd-debdb4ab770e"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"groundStationList\": [\n    {\n      \"groundStationId\": \"ZfuUt\",\n      \"groundStationName\": \"A1R:vEU85wp7V=4hg14:uwXzf7Q7 FOYpwqjHPhdnBylHqI8vhEmAj Ub KV3nWrtKTer.7pJydNsOMkiZE2e=YU6jgBXGykYK0kjZP KqW35P8RbKNpxUxF4SLF3SXhN6eUbmXUG_pRbLekBSNC7U_SgKxs4DIgkF-40ZQA-MHXxzn7t2WP6Raqf:47Ilb5I3 NOMKIcj12AAh3L8Xl4kghmTgAJMijK2\",\n      \"region\": \"MIqwwAyRp\"\n    },\n    {\n      \"groundStationId\": \"1S:_bRhPTK9Q3NcA8Ec mTSn7I8a3wh:T:-1Zlu22XAi:jthN5_I7Tap3PFDH8Xh0Tgj8 tH8wviGS-QWR0JWdkevAiIJEnqZ.m\",\n      \"groundStationName\": \"LqogDXPmvOz0tH6ww93FH.Y=0I9F_SjN=7r0SmrNubgVh4cKlSRXWdTDrIoyS2ONSKw-oLrvUTjG 54PmkrKPAAhOtsBds-OyDHgcrgaw742BuE_sCIbSYy-j:Fz\",\n      \"region\": \"9FPl1\"\n    }\n  ],\n  \"nextToken\": \"6666\"\n}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-c8a32d67-a7c9-4e29-b1a7-7cb87757cd79"
+            },
+            {
+              "id": "630bca0b-4d38-433e-a29b-bfbd1b361865",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/groundstation?maxResults=<integer>&nextToken=eOkayA&satelliteId=a21286f0-6ed2-28bb-6ebd-debdb4ab770e",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "groundstation"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ground stations returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of ground stations.",
+                      "key": "nextToken",
+                      "value": "eOkayA"
+                    },
+                    {
+                      "description": "Satellite ID to retrieve on-boarded ground stations.",
+                      "key": "satelliteId",
+                      "value": "a21286f0-6ed2-28bb-6ebd-debdb4ab770e"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-630bca0b-4d38-433e-a29b-bfbd1b361865"
+            },
+            {
+              "id": "f52e0f50-820d-4f1d-b626-a6613f65a990",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/groundstation?maxResults=<integer>&nextToken=eOkayA&satelliteId=a21286f0-6ed2-28bb-6ebd-debdb4ab770e",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "groundstation"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ground stations returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of ground stations.",
+                      "key": "nextToken",
+                      "value": "eOkayA"
+                    },
+                    {
+                      "description": "Satellite ID to retrieve on-boarded ground stations.",
+                      "key": "satelliteId",
+                      "value": "a21286f0-6ed2-28bb-6ebd-debdb4ab770e"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-f52e0f50-820d-4f1d-b626-a6613f65a990"
+            },
+            {
+              "id": "1eb83376-2008-4da1-976b-c5b2fd8b9ae4",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/groundstation?maxResults=<integer>&nextToken=eOkayA&satelliteId=a21286f0-6ed2-28bb-6ebd-debdb4ab770e",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "groundstation"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ground stations returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token that can be supplied in the next call to get the next page of ground stations.",
+                      "key": "nextToken",
+                      "value": "eOkayA"
+                    },
+                    {
+                      "description": "Satellite ID to retrieve on-boarded ground stations.",
+                      "key": "satelliteId",
+                      "value": "a21286f0-6ed2-28bb-6ebd-debdb4ab770e"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:47.000Z",
+              "updatedAt": "2026-07-28T10:23:47.000Z",
+              "uid": "35240-1eb83376-2008-4da1-976b-c5b2fd8b9ae4"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:47.000Z",
+          "updatedAt": "2026-07-28T10:23:47.000Z",
+          "uid": "35240-273b5422-9dfe-4916-aec0-77e4780b57e6"
+        }
+      ],
+      "id": "36d10ca2-3e5e-417a-96c9-895ad346ee52",
+      "createdAt": "2026-07-28T10:23:47.000Z",
+      "updatedAt": "2026-07-28T10:23:47.000Z",
+      "uid": "35240-36d10ca2-3e5e-417a-96c9-895ad346ee52"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

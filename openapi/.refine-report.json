@@ -1,0 +1,36 @@
+{
+  "provider": "amazon-ground-station",
+  "sources": [
+    "amazon-ground-station-agent-api-openapi.yml",
+    "amazon-ground-station-config-api-openapi.yml",
+    "amazon-ground-station-contact-api-openapi.yml",
+    "amazon-ground-station-contacts-api-openapi.yml",
+    "amazon-ground-station-dataflowendpointgroup-api-openapi.yml",
+    "amazon-ground-station-ephemerides-api-openapi.yml",
+    "amazon-ground-station-ephemeris-api-openapi.yml",
+    "amazon-ground-station-groundstation-api-openapi.yml",
+    "amazon-ground-station-minute-usage-api-openapi.yml",
+    "amazon-ground-station-missionprofile-api-openapi.yml",
+    "amazon-ground-station-satellite-api-openapi.yml",
+    "amazon-ground-station-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-ground-station-agent-api-openapi.yml",
+    "amazon-ground-station-config-api-openapi.yml",
+    "amazon-ground-station-contact-api-openapi.yml",
+    "amazon-ground-station-contacts-api-openapi.yml",
+    "amazon-ground-station-dataflowendpointgroup-api-openapi.yml",
+    "amazon-ground-station-ephemerides-api-openapi.yml",
+    "amazon-ground-station-ephemeris-api-openapi.yml",
+    "amazon-ground-station-groundstation-api-openapi.yml",
+    "amazon-ground-station-minute-usage-api-openapi.yml",
+    "amazon-ground-station-missionprofile-api-openapi.yml",
+    "amazon-ground-station-satellite-api-openapi.yml",
+    "amazon-ground-station-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

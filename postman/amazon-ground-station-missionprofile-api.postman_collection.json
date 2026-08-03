@@ -1,0 +1,2026 @@
+{
+  "info": {
+    "_postman_id": "47fdb83c-7d36-4d5e-903d-7a68bca4e80c",
+    "name": "AWS Ground Station Agent Missionprofile API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:49.000Z",
+    "updatedAt": "2026-07-28T10:23:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-47fdb83c-7d36-4d5e-903d-7a68bca4e80c"
+  },
+  "item": [
+    {
+      "name": "missionprofile",
+      "item": [
+        {
+          "name": "{missionProfileId}",
+          "item": [
+            {
+              "name": "Amazon Ground Station Delete Mission Profile",
+              "id": "061090b1-8aaf-498c-a960-d0a202b2dc9c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile",
+                    ":missionProfileId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0d8d5ff5-1125-4133-b69c-0d2489e68a9c",
+                      "key": "missionProfileId",
+                      "value": "db940bd6-e894-9c81-b253-9e97ff191cc4",
+                      "description": "(Required) UUID of a mission profile."
+                    }
+                  ]
+                },
+                "description": "Deletes a mission profile."
+              },
+              "response": [
+                {
+                  "id": "a5af01e3-932c-469a-ad00-1a68dbe3eea4",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"missionProfileId\": \"814927a6-efb5-8405-61f9-b0cfe81ed0f5\"\n}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-a5af01e3-932c-469a-ad00-1a68dbe3eea4"
+                },
+                {
+                  "id": "03bed660-748c-4dc9-b3bc-e721f9a75835",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-03bed660-748c-4dc9-b3bc-e721f9a75835"
+                },
+                {
+                  "id": "cb36181a-484d-4452-ad70-676790c9fd8d",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-cb36181a-484d-4452-ad70-676790c9fd8d"
+                },
+                {
+                  "id": "85055194-5a5f-47cc-a942-66ddd964f1c0",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-85055194-5a5f-47cc-a942-66ddd964f1c0"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-061090b1-8aaf-498c-a960-d0a202b2dc9c"
+            },
+            {
+              "name": "Amazon Ground Station Get Mission Profile",
+              "id": "43df202a-2d86-4fb3-9452-9136dd07140a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile",
+                    ":missionProfileId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "60eafb2e-3624-41e7-b629-fd6f9240b295",
+                      "key": "missionProfileId",
+                      "value": "db940bd6-e894-9c81-b253-9e97ff191cc4",
+                      "description": "(Required) UUID of a mission profile."
+                    }
+                  ]
+                },
+                "description": "Returns a mission profile."
+              },
+              "response": [
+                {
+                  "id": "ba72e263-d229-4727-a2ce-236340cb2cdb",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"missionProfileArn\": \"<string>\",\n  \"missionProfileId\": \"afcc3798-f105-7bcf-c7e9-1e35ec019516\",\n  \"name\": \"xR06p79iBBn65CTgShf6cr0H Lh l u\",\n  \"region\": \"mx5D4\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awsnLgpmVBDdebdypVt:kms:tk-t-vyroalmevasv-h-1:271306030170:alias/gptAukdU-q8gaNGgtyjAuo-4UXQmzlrzv8MrVfzpaUgYt_f32WWEyaKYnkGcB7mNmmgme/MzwX42/qoVsq5EahEeaOBwZ_jYHFkSiCsj38xCUkrGt_b6tlxqqnixxKiySI67cARdrEaLnUrdMgyz0_rg-69DYzNtEFzJFuyr8i\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"tags\": {\n    \"Excepteur_4a\": \"<string>\",\n    \"ut_bc5\": \"<string>\",\n    \"labore_2\": \"<string>\",\n    \"fugiat_b\": \"<string>\"\n  },\n  \"trackingConfigArn\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-ba72e263-d229-4727-a2ce-236340cb2cdb"
+                },
+                {
+                  "id": "c29a21f2-c179-4684-95d1-6558aaf4f5a0",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-c29a21f2-c179-4684-95d1-6558aaf4f5a0"
+                },
+                {
+                  "id": "ff7857c0-e2b0-4079-8f67-f9d49448bef2",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-ff7857c0-e2b0-4079-8f67-f9d49448bef2"
+                },
+                {
+                  "id": "ceae1eb4-b406-420f-abe7-e9724825eec9",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-ceae1eb4-b406-420f-abe7-e9724825eec9"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-43df202a-2d86-4fb3-9452-9136dd07140a"
+            },
+            {
+              "name": "Amazon Ground Station Update Mission Profile",
+              "id": "3a81e710-91cd-425a-b241-76ebb16b101b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"El7JZoog2i\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awslTihVsetrr:kms:kw-ldcufzbqera-4:121772434361:alias/_WWy7bFHK7fDhKsIyih7JlVOznVnhIKcS9stk3aiCNd6URnR7Db4QjhQRB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"trackingConfigArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile",
+                    ":missionProfileId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "cc12eaa6-d493-4f41-a476-5db7fae85d04",
+                      "key": "missionProfileId",
+                      "value": "db940bd6-e894-9c81-b253-9e97ff191cc4",
+                      "description": "(Required) UUID of a mission profile."
+                    }
+                  ]
+                },
+                "description": "<p>Updates a mission profile.</p> <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>"
+              },
+              "response": [
+                {
+                  "id": "803d7f7e-106d-4b4c-bff8-d7885e00d310",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"El7JZoog2i\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awslTihVsetrr:kms:kw-ldcufzbqera-4:121772434361:alias/_WWy7bFHK7fDhKsIyih7JlVOznVnhIKcS9stk3aiCNd6URnR7Db4QjhQRB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"trackingConfigArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"missionProfileId\": \"814927a6-efb5-8405-61f9-b0cfe81ed0f5\"\n}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-803d7f7e-106d-4b4c-bff8-d7885e00d310"
+                },
+                {
+                  "id": "36f40e19-b9b2-4cfd-a4c5-93afaa6cbadd",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"El7JZoog2i\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awslTihVsetrr:kms:kw-ldcufzbqera-4:121772434361:alias/_WWy7bFHK7fDhKsIyih7JlVOznVnhIKcS9stk3aiCNd6URnR7Db4QjhQRB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"trackingConfigArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-36f40e19-b9b2-4cfd-a4c5-93afaa6cbadd"
+                },
+                {
+                  "id": "2fe79df3-36f0-43d7-bbd5-65ab61bfeb26",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"El7JZoog2i\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awslTihVsetrr:kms:kw-ldcufzbqera-4:121772434361:alias/_WWy7bFHK7fDhKsIyih7JlVOznVnhIKcS9stk3aiCNd6URnR7Db4QjhQRB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"trackingConfigArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-2fe79df3-36f0-43d7-bbd5-65ab61bfeb26"
+                },
+                {
+                  "id": "14f6dd24-1f63-4c72-a5f4-f9a377251425",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"El7JZoog2i\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awslTihVsetrr:kms:kw-ldcufzbqera-4:121772434361:alias/_WWy7bFHK7fDhKsIyih7JlVOznVnhIKcS9stk3aiCNd6URnR7Db4QjhQRB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"trackingConfigArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/missionprofile/:missionProfileId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "missionprofile",
+                        ":missionProfileId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "missionProfileId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:50.000Z",
+                  "updatedAt": "2026-07-28T10:23:50.000Z",
+                  "uid": "35240-14f6dd24-1f63-4c72-a5f4-f9a377251425"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-3a81e710-91cd-425a-b241-76ebb16b101b"
+            }
+          ],
+          "id": "130f39c9-3783-4bd7-9374-4476058edd9e",
+          "createdAt": "2026-07-28T10:23:50.000Z",
+          "updatedAt": "2026-07-28T10:23:50.000Z",
+          "uid": "35240-130f39c9-3783-4bd7-9374-4476058edd9e"
+        },
+        {
+          "name": "Amazon Ground Station Create Mission Profile",
+          "id": "8f842804-ac74-4a14-9fea-5987c67a463b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"VFDmNBhsy8:oUsttd0swgvCUuwzDby5r105Bg6I7U0vJas czo_6x:ColYAd_byI3fRomCBG-EW_gcmVduX N1Pwf:ZYHmOyLEHMzLH7JjgJ27TAcnGAkE6gAKyrbXntNcAP5da6loK2qTVh:rY4u_b37BXE1oUMTgIX0r:VuXg9sgfXnL:B7CaOShskwGtpraIUocnyzXFrCTdh_610jHgOv7Li3pgHEu0GZV9F4Ju\",\n  \"trackingConfigArn\": \"<string>\",\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awsSoiAi:kms:sr-aniustaqs-reokfikkuxw-zdnapbwburd-0:086022344012:alias/W3e/0M0C2ysOUovSgGs/c5R14b:ALtm19:m8:l6zJ1T2N48qO5EH8D3TVcq6xxvkmw7I4JK64wJqDPucPok9Bt5P/wvWoEB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"tags\": {\n    \"velit_19d\": \"<string>\",\n    \"mollit_73\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/missionprofile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "missionprofile"
+              ]
+            },
+            "description": "<p>Creates a mission profile.</p> <p> <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>"
+          },
+          "response": [
+            {
+              "id": "0c7c93a7-72d1-49d8-a00c-c843259d6624",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"VFDmNBhsy8:oUsttd0swgvCUuwzDby5r105Bg6I7U0vJas czo_6x:ColYAd_byI3fRomCBG-EW_gcmVduX N1Pwf:ZYHmOyLEHMzLH7JjgJ27TAcnGAkE6gAKyrbXntNcAP5da6loK2qTVh:rY4u_b37BXE1oUMTgIX0r:VuXg9sgfXnL:B7CaOShskwGtpraIUocnyzXFrCTdh_610jHgOv7Li3pgHEu0GZV9F4Ju\",\n  \"trackingConfigArn\": \"<string>\",\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awsSoiAi:kms:sr-aniustaqs-reokfikkuxw-zdnapbwburd-0:086022344012:alias/W3e/0M0C2ysOUovSgGs/c5R14b:ALtm19:m8:l6zJ1T2N48qO5EH8D3TVcq6xxvkmw7I4JK64wJqDPucPok9Bt5P/wvWoEB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"tags\": {\n    \"velit_19d\": \"<string>\",\n    \"mollit_73\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"missionProfileId\": \"814927a6-efb5-8405-61f9-b0cfe81ed0f5\"\n}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-0c7c93a7-72d1-49d8-a00c-c843259d6624"
+            },
+            {
+              "id": "5779ffc8-1d7b-4488-b97b-2d03d5b2ec5b",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"VFDmNBhsy8:oUsttd0swgvCUuwzDby5r105Bg6I7U0vJas czo_6x:ColYAd_byI3fRomCBG-EW_gcmVduX N1Pwf:ZYHmOyLEHMzLH7JjgJ27TAcnGAkE6gAKyrbXntNcAP5da6loK2qTVh:rY4u_b37BXE1oUMTgIX0r:VuXg9sgfXnL:B7CaOShskwGtpraIUocnyzXFrCTdh_610jHgOv7Li3pgHEu0GZV9F4Ju\",\n  \"trackingConfigArn\": \"<string>\",\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awsSoiAi:kms:sr-aniustaqs-reokfikkuxw-zdnapbwburd-0:086022344012:alias/W3e/0M0C2ysOUovSgGs/c5R14b:ALtm19:m8:l6zJ1T2N48qO5EH8D3TVcq6xxvkmw7I4JK64wJqDPucPok9Bt5P/wvWoEB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"tags\": {\n    \"velit_19d\": \"<string>\",\n    \"mollit_73\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-5779ffc8-1d7b-4488-b97b-2d03d5b2ec5b"
+            },
+            {
+              "id": "a96a603a-393e-42c8-92ff-3357d1108997",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"VFDmNBhsy8:oUsttd0swgvCUuwzDby5r105Bg6I7U0vJas czo_6x:ColYAd_byI3fRomCBG-EW_gcmVduX N1Pwf:ZYHmOyLEHMzLH7JjgJ27TAcnGAkE6gAKyrbXntNcAP5da6loK2qTVh:rY4u_b37BXE1oUMTgIX0r:VuXg9sgfXnL:B7CaOShskwGtpraIUocnyzXFrCTdh_610jHgOv7Li3pgHEu0GZV9F4Ju\",\n  \"trackingConfigArn\": \"<string>\",\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awsSoiAi:kms:sr-aniustaqs-reokfikkuxw-zdnapbwburd-0:086022344012:alias/W3e/0M0C2ysOUovSgGs/c5R14b:ALtm19:m8:l6zJ1T2N48qO5EH8D3TVcq6xxvkmw7I4JK64wJqDPucPok9Bt5P/wvWoEB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"tags\": {\n    \"velit_19d\": \"<string>\",\n    \"mollit_73\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-a96a603a-393e-42c8-92ff-3357d1108997"
+            },
+            {
+              "id": "7ddda1ad-88da-4a6f-84d1-f55678703300",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataflowEdges\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"minimumViableContactDurationSeconds\": \"<integer>\",\n  \"name\": \"VFDmNBhsy8:oUsttd0swgvCUuwzDby5r105Bg6I7U0vJas czo_6x:ColYAd_byI3fRomCBG-EW_gcmVduX N1Pwf:ZYHmOyLEHMzLH7JjgJ27TAcnGAkE6gAKyrbXntNcAP5da6loK2qTVh:rY4u_b37BXE1oUMTgIX0r:VuXg9sgfXnL:B7CaOShskwGtpraIUocnyzXFrCTdh_610jHgOv7Li3pgHEu0GZV9F4Ju\",\n  \"trackingConfigArn\": \"<string>\",\n  \"contactPostPassDurationSeconds\": \"<integer>\",\n  \"contactPrePassDurationSeconds\": \"<integer>\",\n  \"streamsKmsKey\": {\n    \"kmsAliasArn\": \"arn:awsSoiAi:kms:sr-aniustaqs-reokfikkuxw-zdnapbwburd-0:086022344012:alias/W3e/0M0C2ysOUovSgGs/c5R14b:ALtm19:m8:l6zJ1T2N48qO5EH8D3TVcq6xxvkmw7I4JK64wJqDPucPok9Bt5P/wvWoEB\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"streamsKmsRole\": \"<string>\",\n  \"tags\": {\n    \"velit_19d\": \"<string>\",\n    \"mollit_73\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-7ddda1ad-88da-4a6f-84d1-f55678703300"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:50.000Z",
+          "updatedAt": "2026-07-28T10:23:50.000Z",
+          "uid": "35240-8f842804-ac74-4a14-9fea-5987c67a463b"
+        },
+        {
+          "name": "Amazon Ground Station List Mission Profiles",
+          "id": "a273ede8-6792-4e6a-baa7-bed0207f4bce",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/missionprofile?maxResults=<integer>&nextToken=Dkz",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "missionprofile"
+              ],
+              "query": [
+                {
+                  "description": "Maximum number of mission profiles returned.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.",
+                  "key": "nextToken",
+                  "value": "Dkz"
+                }
+              ]
+            },
+            "description": "Returns a list of mission profiles."
+          },
+          "response": [
+            {
+              "id": "cbfb8b10-b783-48f1-8d7d-3ce228b4a7e3",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile?maxResults=<integer>&nextToken=Dkz",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of mission profiles returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "Dkz"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"missionProfileList\": [\n    {\n      \"missionProfileArn\": \"<string>\",\n      \"missionProfileId\": \"b4653167-32c7-a178-7882-3943c199562c\",\n      \"name\": \"ZnsXN GjtH P1mnKoVUEDiMeQNxRJDeLXmq-gLw0r:GbCXFa-lVUqHPg7LgLBOqMb7p9b-7ZGpHt1EGag1POSkTsSUmKjYr7eG5UbKgMMNHLcDnTER6Dj-ATtK3qEa7eGhOv2abg2z3TorxNoSRRV-\",\n      \"region\": \"lUNVBI4ThC\"\n    },\n    {\n      \"missionProfileArn\": \"<string>\",\n      \"missionProfileId\": \"97c06cc6-9b58-28bd-9064-d04ffe5362ee\",\n      \"name\": \"IcCsEv9X9V5L 59iRlGvWY:arQ-a8Fj q6y3h0vjZL1C6PnhvyD0iNANj6qQpPA54BThjjck:uitxeOBaLyA OEE0w-o8PD 0B14h Yz5OdFEHcsZy-fwN\",\n      \"region\": \"b2AW\"\n    }\n  ],\n  \"nextToken\": \"rvrv\"\n}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-cbfb8b10-b783-48f1-8d7d-3ce228b4a7e3"
+            },
+            {
+              "id": "a2e87ab0-a849-4583-9638-683062c76300",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile?maxResults=<integer>&nextToken=Dkz",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of mission profiles returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "Dkz"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-a2e87ab0-a849-4583-9638-683062c76300"
+            },
+            {
+              "id": "33c3e72a-e280-4e54-aae3-992db897c282",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile?maxResults=<integer>&nextToken=Dkz",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of mission profiles returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "Dkz"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-33c3e72a-e280-4e54-aae3-992db897c282"
+            },
+            {
+              "id": "642e3c39-b55f-4444-b28b-ca1e94f9dc79",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/missionprofile?maxResults=<integer>&nextToken=Dkz",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "missionprofile"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of mission profiles returned.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.",
+                      "key": "nextToken",
+                      "value": "Dkz"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:50.000Z",
+              "updatedAt": "2026-07-28T10:23:50.000Z",
+              "uid": "35240-642e3c39-b55f-4444-b28b-ca1e94f9dc79"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:50.000Z",
+          "updatedAt": "2026-07-28T10:23:50.000Z",
+          "uid": "35240-a273ede8-6792-4e6a-baa7-bed0207f4bce"
+        }
+      ],
+      "id": "7fad7631-2663-4f0c-a022-5bf54bc0fbd5",
+      "createdAt": "2026-07-28T10:23:50.000Z",
+      "updatedAt": "2026-07-28T10:23:50.000Z",
+      "uid": "35240-7fad7631-2663-4f0c-a022-5bf54bc0fbd5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

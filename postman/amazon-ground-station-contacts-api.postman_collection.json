@@ -1,0 +1,516 @@
+{
+  "info": {
+    "_postman_id": "05e7aea1-fd84-4a8c-b400-de8b93d11a13",
+    "name": "AWS Ground Station Agent Contacts API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:42.000Z",
+    "updatedAt": "2026-07-28T10:23:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-05e7aea1-fd84-4a8c-b400-de8b93d11a13"
+  },
+  "item": [
+    {
+      "name": "contacts",
+      "item": [
+        {
+          "name": "Amazon Ground Station List Contacts",
+          "id": "6fa900a2-b8d6-4ca8-946d-8c40d4a2f681",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"COMPLETED\",\n    \"FAILED\",\n    \"COMPLETED\",\n    \"SCHEDULING\",\n    \"AWS_FAILED\",\n    \"FAILED\",\n    \"PREPASS\",\n    \"FAILED\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"PREPASS\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"POSTPASS\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"AVAILABLE\",\n    \"AVAILABLE\",\n    \"PREPASS\"\n  ],\n  \"groundStation\": \"vwGUj-2qB_UXkc=4g0G7=PtOITJ_YrMMoMwXFGQNmSt9RP32yRVddCyTm6-cq3-Crq3j7e94b:uJSFGtlJ0BQj-51Ds5B9BTBJ TPFkbjy6=FWab2CcBFxfm=saKHnZhO_2lY4xZEEFX1ILnyntFgI.upgm\",\n  \"maxResults\": \"<integer>\",\n  \"missionProfileArn\": \"<string>\",\n  \"nextToken\": \"GbGb\",\n  \"satelliteArn\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/contacts?maxResults=<string>&nextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contacts"
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "maxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "nextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "<p>Returns a list of contacts.</p> <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p>"
+          },
+          "response": [
+            {
+              "id": "9b767db1-c559-4f06-a00d-6e8d1653fdc8",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"COMPLETED\",\n    \"FAILED\",\n    \"COMPLETED\",\n    \"SCHEDULING\",\n    \"AWS_FAILED\",\n    \"FAILED\",\n    \"PREPASS\",\n    \"FAILED\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"PREPASS\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"POSTPASS\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"AVAILABLE\",\n    \"AVAILABLE\",\n    \"PREPASS\"\n  ],\n  \"groundStation\": \"vwGUj-2qB_UXkc=4g0G7=PtOITJ_YrMMoMwXFGQNmSt9RP32yRVddCyTm6-cq3-Crq3j7e94b:uJSFGtlJ0BQj-51Ds5B9BTBJ TPFkbjy6=FWab2CcBFxfm=saKHnZhO_2lY4xZEEFX1ILnyntFgI.upgm\",\n  \"maxResults\": \"<integer>\",\n  \"missionProfileArn\": \"<string>\",\n  \"nextToken\": \"GbGb\",\n  \"satelliteArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contacts?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contacts"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"contactList\": [\n    {\n      \"contactId\": \"638fcfd8-571a-50d0-2610-1c5aa0367554\",\n      \"contactStatus\": \"FAILED_TO_SCHEDULE\",\n      \"endTime\": \"<dateTime>\",\n      \"errorMessage\": \"<string>\",\n      \"groundStation\": \"<string>\",\n      \"maximumElevation\": {\n        \"unit\": \"RADIAN\",\n        \"value\": \"<double>\"\n      },\n      \"missionProfileArn\": \"<string>\",\n      \"postPassEndTime\": \"<dateTime>\",\n      \"prePassStartTime\": \"<dateTime>\",\n      \"region\": \"<string>\",\n      \"satelliteArn\": \"<string>\",\n      \"startTime\": \"<dateTime>\",\n      \"tags\": {\n        \"laborum_08b\": \"<string>\"\n      }\n    },\n    {\n      \"contactId\": \"cef83cc4-e15f-3a41-3080-ad2213735b32\",\n      \"contactStatus\": \"PREPASS\",\n      \"endTime\": \"<dateTime>\",\n      \"errorMessage\": \"<string>\",\n      \"groundStation\": \"<string>\",\n      \"maximumElevation\": {\n        \"unit\": \"DEGREE_ANGLE\",\n        \"value\": \"<double>\"\n      },\n      \"missionProfileArn\": \"<string>\",\n      \"postPassEndTime\": \"<dateTime>\",\n      \"prePassStartTime\": \"<dateTime>\",\n      \"region\": \"<string>\",\n      \"satelliteArn\": \"<string>\",\n      \"startTime\": \"<dateTime>\",\n      \"tags\": {\n        \"veniam0\": \"<string>\",\n        \"eu1_9\": \"<string>\",\n        \"labore_9da\": \"<string>\"\n      }\n    }\n  ],\n  \"nextToken\": \"Q6tE\"\n}",
+              "createdAt": "2026-07-28T10:23:43.000Z",
+              "updatedAt": "2026-07-28T10:23:43.000Z",
+              "uid": "35240-9b767db1-c559-4f06-a00d-6e8d1653fdc8"
+            },
+            {
+              "id": "f0846137-44b4-44c9-a3af-c48437aac644",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"COMPLETED\",\n    \"FAILED\",\n    \"COMPLETED\",\n    \"SCHEDULING\",\n    \"AWS_FAILED\",\n    \"FAILED\",\n    \"PREPASS\",\n    \"FAILED\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"PREPASS\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"POSTPASS\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"AVAILABLE\",\n    \"AVAILABLE\",\n    \"PREPASS\"\n  ],\n  \"groundStation\": \"vwGUj-2qB_UXkc=4g0G7=PtOITJ_YrMMoMwXFGQNmSt9RP32yRVddCyTm6-cq3-Crq3j7e94b:uJSFGtlJ0BQj-51Ds5B9BTBJ TPFkbjy6=FWab2CcBFxfm=saKHnZhO_2lY4xZEEFX1ILnyntFgI.upgm\",\n  \"maxResults\": \"<integer>\",\n  \"missionProfileArn\": \"<string>\",\n  \"nextToken\": \"GbGb\",\n  \"satelliteArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contacts?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contacts"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:43.000Z",
+              "updatedAt": "2026-07-28T10:23:43.000Z",
+              "uid": "35240-f0846137-44b4-44c9-a3af-c48437aac644"
+            },
+            {
+              "id": "cce9af39-5e2f-4165-9d56-c2157c640775",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"COMPLETED\",\n    \"FAILED\",\n    \"COMPLETED\",\n    \"SCHEDULING\",\n    \"AWS_FAILED\",\n    \"FAILED\",\n    \"PREPASS\",\n    \"FAILED\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"PREPASS\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"POSTPASS\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"AVAILABLE\",\n    \"AVAILABLE\",\n    \"PREPASS\"\n  ],\n  \"groundStation\": \"vwGUj-2qB_UXkc=4g0G7=PtOITJ_YrMMoMwXFGQNmSt9RP32yRVddCyTm6-cq3-Crq3j7e94b:uJSFGtlJ0BQj-51Ds5B9BTBJ TPFkbjy6=FWab2CcBFxfm=saKHnZhO_2lY4xZEEFX1ILnyntFgI.upgm\",\n  \"maxResults\": \"<integer>\",\n  \"missionProfileArn\": \"<string>\",\n  \"nextToken\": \"GbGb\",\n  \"satelliteArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contacts?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contacts"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:43.000Z",
+              "updatedAt": "2026-07-28T10:23:43.000Z",
+              "uid": "35240-cce9af39-5e2f-4165-9d56-c2157c640775"
+            },
+            {
+              "id": "ab26c53a-26e9-416b-acaa-23ea9fb6a5d5",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"COMPLETED\",\n    \"FAILED\",\n    \"COMPLETED\",\n    \"SCHEDULING\",\n    \"AWS_FAILED\",\n    \"FAILED\",\n    \"PREPASS\",\n    \"FAILED\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"PREPASS\",\n    \"SCHEDULED\",\n    \"SCHEDULED\",\n    \"POSTPASS\",\n    \"SCHEDULED\",\n    \"AWS_CANCELLED\",\n    \"AVAILABLE\",\n    \"AVAILABLE\",\n    \"PREPASS\"\n  ],\n  \"groundStation\": \"vwGUj-2qB_UXkc=4g0G7=PtOITJ_YrMMoMwXFGQNmSt9RP32yRVddCyTm6-cq3-Crq3j7e94b:uJSFGtlJ0BQj-51Ds5B9BTBJ TPFkbjy6=FWab2CcBFxfm=saKHnZhO_2lY4xZEEFX1ILnyntFgI.upgm\",\n  \"maxResults\": \"<integer>\",\n  \"missionProfileArn\": \"<string>\",\n  \"nextToken\": \"GbGb\",\n  \"satelliteArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contacts?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contacts"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:43.000Z",
+              "updatedAt": "2026-07-28T10:23:43.000Z",
+              "uid": "35240-ab26c53a-26e9-416b-acaa-23ea9fb6a5d5"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:43.000Z",
+          "updatedAt": "2026-07-28T10:23:43.000Z",
+          "uid": "35240-6fa900a2-b8d6-4ca8-946d-8c40d4a2f681"
+        }
+      ],
+      "id": "96cab50d-ef49-4f1c-ab95-66238bb01c63",
+      "createdAt": "2026-07-28T10:23:43.000Z",
+      "updatedAt": "2026-07-28T10:23:43.000Z",
+      "uid": "35240-96cab50d-ef49-4f1c-ab95-66238bb01c63"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

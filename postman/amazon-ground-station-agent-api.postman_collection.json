@@ -1,0 +1,1281 @@
+{
+  "info": {
+    "_postman_id": "ce4d73c9-8a19-41b4-ab72-dbecc497cc11",
+    "name": "AWS Ground Station Agent API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:36.000Z",
+    "updatedAt": "2026-07-28T10:23:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ce4d73c9-8a19-41b4-ab72-dbecc497cc11"
+  },
+  "item": [
+    {
+      "name": "agent",
+      "item": [
+        {
+          "name": "{agentId}",
+          "item": [
+            {
+              "name": "configuration",
+              "item": [
+                {
+                  "name": "Amazon Ground Station Get Agent Configuration",
+                  "id": "40e05b56-b478-42c3-a03c-c46c4bbd2622",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/agent/:agentId/configuration",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "agent",
+                        ":agentId",
+                        "configuration"
+                      ],
+                      "variable": [
+                        {
+                          "id": "6f7a5c1a-b2e5-4b27-abb1-67fa9e355634",
+                          "key": "agentId",
+                          "value": "adbc5a93-63ad-c08c-ee1d-a69ce538e693",
+                          "description": "(Required) UUID of agent to get configuration information for."
+                        }
+                      ]
+                    },
+                    "description": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Gets the latest configuration information for a registered agent.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "828fba96-3a0a-418c-972d-ef0e80fd41a9",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/agent/:agentId/configuration",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "agent",
+                            ":agentId",
+                            "configuration"
+                          ],
+                          "variable": [
+                            {
+                              "key": "agentId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"agentId\": \"449b2bb3-dde7-f7a2-0327-f55292baedb0\",\n  \"taskingDocument\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:23:36.000Z",
+                      "updatedAt": "2026-07-28T10:23:36.000Z",
+                      "uid": "35240-828fba96-3a0a-418c-972d-ef0e80fd41a9"
+                    },
+                    {
+                      "id": "0d5719b8-2b66-4e1b-9db0-bfa746850fe9",
+                      "name": "InvalidParameterException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/agent/:agentId/configuration",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "agent",
+                            ":agentId",
+                            "configuration"
+                          ],
+                          "variable": [
+                            {
+                              "key": "agentId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:36.000Z",
+                      "updatedAt": "2026-07-28T10:23:36.000Z",
+                      "uid": "35240-0d5719b8-2b66-4e1b-9db0-bfa746850fe9"
+                    },
+                    {
+                      "id": "fc77b818-4e52-4645-9bd2-016da5abd6af",
+                      "name": "DependencyException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/agent/:agentId/configuration",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "agent",
+                            ":agentId",
+                            "configuration"
+                          ],
+                          "variable": [
+                            {
+                              "key": "agentId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:36.000Z",
+                      "updatedAt": "2026-07-28T10:23:36.000Z",
+                      "uid": "35240-fc77b818-4e52-4645-9bd2-016da5abd6af"
+                    },
+                    {
+                      "id": "7e9f204d-930c-4911-824d-8df82faf15c1",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/agent/:agentId/configuration",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "agent",
+                            ":agentId",
+                            "configuration"
+                          ],
+                          "variable": [
+                            {
+                              "key": "agentId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:23:36.000Z",
+                      "updatedAt": "2026-07-28T10:23:36.000Z",
+                      "uid": "35240-7e9f204d-930c-4911-824d-8df82faf15c1"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:23:36.000Z",
+                  "updatedAt": "2026-07-28T10:23:36.000Z",
+                  "uid": "35240-40e05b56-b478-42c3-a03c-c46c4bbd2622"
+                }
+              ],
+              "id": "365c25a1-adc1-4ee3-953c-67e61c5c3ce1",
+              "createdAt": "2026-07-28T10:23:36.000Z",
+              "updatedAt": "2026-07-28T10:23:36.000Z",
+              "uid": "35240-365c25a1-adc1-4ee3-953c-67e61c5c3ce1"
+            },
+            {
+              "name": "Amazon Ground Station Update Agent Status",
+              "id": "57db5441-7485-46b7-b7f1-297693dd4695",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"qui_3\": \"<boolean>\"\n    },\n    \"status\": \"ACTIVE\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"tLKUQCEXgWvKFGOIosbkSaxy\",\n      \"dataflowId\": \"0991ca19-fb9d-782a-7ce7-ee6e4e1ae1aa\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"ZSKQzRtc5vBlXwJZGMLzpwNTL71bOymLsZoAVwV14yhG5sz46yJ61TDuEE3U\",\n      \"dataflowId\": \"71a31434-99b2-615f-7170-a378b994f222\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"OiMhLZ1UnXR4VgSA481Dd3WoxzzMcuQmBK\",\n      \"dataflowId\": \"e1907ba4-cabe-d260-ce2e-b84fa64dc2f3\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"F6uQWOMJp0or3Q\",\n      \"dataflowId\": \"eca6e851-123a-8d94-f2df-e9895d38d2b4\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"mLQ0C7yt6e4zwf5yyhE7trFYquXLyu2yN6pgV_DKOc_IAaNhpNcA4pYYAdt9IDPQ\",\n      \"dataflowId\": \"ed48979c-8049-5db0-a432-f5f686f192c8\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Xi4MfhSNn471WzoFSdV86PBk87eMgw2PzK5giyeQr_9zEl\",\n      \"dataflowId\": \"61f6b5ad-975f-c788-e722-c645bcdd240d\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"9htSX7bQFOpPtgb_gLaYpWqBTjxDVQ37jpnAPRgpTa58X_YAh7T4_VlESb\",\n      \"dataflowId\": \"bc1130de-477f-499c-10b7-748f9a9c9f03\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"kn8hdSw5GQdULy2opIAaAKkSCnFVnSk8KZ0t\",\n      \"dataflowId\": \"6dbc04fa-f0b2-3e25-d878-9e9dea6b1294\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"hJAoySp0gh_l4utYF0Ul8QHAaoji_5M31mQBrkBOn0VBGp1gDZneEdmmFgN4S6\",\n      \"dataflowId\": \"4c822a47-2bdd-09bf-98e9-8659e7093945\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"96wmnVnwB0FyvAngf6Txkq8LGztd8DRoOCnyzoOKu\",\n      \"dataflowId\": \"2978edc5-2be3-ffa4-fa8f-f4dc62b22fde\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Ll4dJ2WHTHbS2pb4Nc7Xs3fPynA3bv_UzEYb6vvAyY6RBvAhqM6Z4c5\",\n      \"dataflowId\": \"57b7a0cf-1e84-f404-c5e6-ed7fceab0f33\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"A\",\n      \"dataflowId\": \"d93caa21-788d-b757-c125-22898255dce2\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MZesC3lgNKraqk\",\n      \"dataflowId\": \"aa14ed8c-b8d4-3800-ab51-7e057bf0cc8a\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"e7Ntez7qYhVGyJciTw7JCtj\",\n      \"dataflowId\": \"1db48415-97ef-cf56-6628-e5582e555942\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"8NAW3FrQ_far2Vg8b\",\n      \"dataflowId\": \"a98e8da6-173a-42b5-d0a5-b721bea19a70\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"2bm1DnSc4pQpTxtiRhqyEgcgBinLa67\",\n      \"dataflowId\": \"93d6d447-a049-0ee8-2d1c-7f06c83cd4a6\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"16tlm52Xr7T14rHeOjNH_f2C2kMrI0fGce4X\",\n      \"dataflowId\": \"f27706a2-6df7-eb80-40d1-f057f7e2dfe2\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"K0l_RKC5McZyni3Wd15bJi6Qlg3Kaj7EdhnMCMy07xqAw03bxpU\",\n      \"dataflowId\": \"0307deaa-0c03-78ec-de41-98e2f2c4651b\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"By2cvmztBJ0jmXQzmmTE7sCLQH_PQth5QfmBx5RShQ6rl8pUp0lEp8fvAI7zPZ\",\n      \"dataflowId\": \"5eca264c-bbd3-07c1-b5d6-bfa8e546b882\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MibYLJenecg1DOk71arbi24JaZAcAFd_IPn\",\n      \"dataflowId\": \"04678519-a151-ca39-ce8e-f5d7311204e9\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"f9a11b75-b3a8-dfd3-4c03-1929bf73483b\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/agent/:agentId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "agent",
+                    ":agentId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "27fa0f57-8c4f-486d-86af-d27f87135969",
+                      "key": "agentId",
+                      "value": "adbc5a93-63ad-c08c-ee1d-a69ce538e693",
+                      "description": "(Required) UUID of agent to update."
+                    }
+                  ]
+                },
+                "description": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Update the status of the agent.</p>"
+              },
+              "response": [
+                {
+                  "id": "085b38bf-f607-49b4-a1e9-6bafce4855e2",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"qui_3\": \"<boolean>\"\n    },\n    \"status\": \"ACTIVE\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"tLKUQCEXgWvKFGOIosbkSaxy\",\n      \"dataflowId\": \"0991ca19-fb9d-782a-7ce7-ee6e4e1ae1aa\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"ZSKQzRtc5vBlXwJZGMLzpwNTL71bOymLsZoAVwV14yhG5sz46yJ61TDuEE3U\",\n      \"dataflowId\": \"71a31434-99b2-615f-7170-a378b994f222\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"OiMhLZ1UnXR4VgSA481Dd3WoxzzMcuQmBK\",\n      \"dataflowId\": \"e1907ba4-cabe-d260-ce2e-b84fa64dc2f3\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"F6uQWOMJp0or3Q\",\n      \"dataflowId\": \"eca6e851-123a-8d94-f2df-e9895d38d2b4\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"mLQ0C7yt6e4zwf5yyhE7trFYquXLyu2yN6pgV_DKOc_IAaNhpNcA4pYYAdt9IDPQ\",\n      \"dataflowId\": \"ed48979c-8049-5db0-a432-f5f686f192c8\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Xi4MfhSNn471WzoFSdV86PBk87eMgw2PzK5giyeQr_9zEl\",\n      \"dataflowId\": \"61f6b5ad-975f-c788-e722-c645bcdd240d\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"9htSX7bQFOpPtgb_gLaYpWqBTjxDVQ37jpnAPRgpTa58X_YAh7T4_VlESb\",\n      \"dataflowId\": \"bc1130de-477f-499c-10b7-748f9a9c9f03\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"kn8hdSw5GQdULy2opIAaAKkSCnFVnSk8KZ0t\",\n      \"dataflowId\": \"6dbc04fa-f0b2-3e25-d878-9e9dea6b1294\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"hJAoySp0gh_l4utYF0Ul8QHAaoji_5M31mQBrkBOn0VBGp1gDZneEdmmFgN4S6\",\n      \"dataflowId\": \"4c822a47-2bdd-09bf-98e9-8659e7093945\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"96wmnVnwB0FyvAngf6Txkq8LGztd8DRoOCnyzoOKu\",\n      \"dataflowId\": \"2978edc5-2be3-ffa4-fa8f-f4dc62b22fde\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Ll4dJ2WHTHbS2pb4Nc7Xs3fPynA3bv_UzEYb6vvAyY6RBvAhqM6Z4c5\",\n      \"dataflowId\": \"57b7a0cf-1e84-f404-c5e6-ed7fceab0f33\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"A\",\n      \"dataflowId\": \"d93caa21-788d-b757-c125-22898255dce2\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MZesC3lgNKraqk\",\n      \"dataflowId\": \"aa14ed8c-b8d4-3800-ab51-7e057bf0cc8a\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"e7Ntez7qYhVGyJciTw7JCtj\",\n      \"dataflowId\": \"1db48415-97ef-cf56-6628-e5582e555942\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"8NAW3FrQ_far2Vg8b\",\n      \"dataflowId\": \"a98e8da6-173a-42b5-d0a5-b721bea19a70\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"2bm1DnSc4pQpTxtiRhqyEgcgBinLa67\",\n      \"dataflowId\": \"93d6d447-a049-0ee8-2d1c-7f06c83cd4a6\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"16tlm52Xr7T14rHeOjNH_f2C2kMrI0fGce4X\",\n      \"dataflowId\": \"f27706a2-6df7-eb80-40d1-f057f7e2dfe2\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"K0l_RKC5McZyni3Wd15bJi6Qlg3Kaj7EdhnMCMy07xqAw03bxpU\",\n      \"dataflowId\": \"0307deaa-0c03-78ec-de41-98e2f2c4651b\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"By2cvmztBJ0jmXQzmmTE7sCLQH_PQth5QfmBx5RShQ6rl8pUp0lEp8fvAI7zPZ\",\n      \"dataflowId\": \"5eca264c-bbd3-07c1-b5d6-bfa8e546b882\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MibYLJenecg1DOk71arbi24JaZAcAFd_IPn\",\n      \"dataflowId\": \"04678519-a151-ca39-ce8e-f5d7311204e9\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"f9a11b75-b3a8-dfd3-4c03-1929bf73483b\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/agent/:agentId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "agent",
+                        ":agentId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "agentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"agentId\": \"31c75bd3-ec3e-c306-4a64-f32ea582e790\"\n}",
+                  "createdAt": "2026-07-28T10:23:36.000Z",
+                  "updatedAt": "2026-07-28T10:23:36.000Z",
+                  "uid": "35240-085b38bf-f607-49b4-a1e9-6bafce4855e2"
+                },
+                {
+                  "id": "a895c8ed-4c01-484e-8aa5-b0df9f748199",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"qui_3\": \"<boolean>\"\n    },\n    \"status\": \"ACTIVE\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"tLKUQCEXgWvKFGOIosbkSaxy\",\n      \"dataflowId\": \"0991ca19-fb9d-782a-7ce7-ee6e4e1ae1aa\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"ZSKQzRtc5vBlXwJZGMLzpwNTL71bOymLsZoAVwV14yhG5sz46yJ61TDuEE3U\",\n      \"dataflowId\": \"71a31434-99b2-615f-7170-a378b994f222\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"OiMhLZ1UnXR4VgSA481Dd3WoxzzMcuQmBK\",\n      \"dataflowId\": \"e1907ba4-cabe-d260-ce2e-b84fa64dc2f3\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"F6uQWOMJp0or3Q\",\n      \"dataflowId\": \"eca6e851-123a-8d94-f2df-e9895d38d2b4\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"mLQ0C7yt6e4zwf5yyhE7trFYquXLyu2yN6pgV_DKOc_IAaNhpNcA4pYYAdt9IDPQ\",\n      \"dataflowId\": \"ed48979c-8049-5db0-a432-f5f686f192c8\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Xi4MfhSNn471WzoFSdV86PBk87eMgw2PzK5giyeQr_9zEl\",\n      \"dataflowId\": \"61f6b5ad-975f-c788-e722-c645bcdd240d\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"9htSX7bQFOpPtgb_gLaYpWqBTjxDVQ37jpnAPRgpTa58X_YAh7T4_VlESb\",\n      \"dataflowId\": \"bc1130de-477f-499c-10b7-748f9a9c9f03\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"kn8hdSw5GQdULy2opIAaAKkSCnFVnSk8KZ0t\",\n      \"dataflowId\": \"6dbc04fa-f0b2-3e25-d878-9e9dea6b1294\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"hJAoySp0gh_l4utYF0Ul8QHAaoji_5M31mQBrkBOn0VBGp1gDZneEdmmFgN4S6\",\n      \"dataflowId\": \"4c822a47-2bdd-09bf-98e9-8659e7093945\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"96wmnVnwB0FyvAngf6Txkq8LGztd8DRoOCnyzoOKu\",\n      \"dataflowId\": \"2978edc5-2be3-ffa4-fa8f-f4dc62b22fde\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Ll4dJ2WHTHbS2pb4Nc7Xs3fPynA3bv_UzEYb6vvAyY6RBvAhqM6Z4c5\",\n      \"dataflowId\": \"57b7a0cf-1e84-f404-c5e6-ed7fceab0f33\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"A\",\n      \"dataflowId\": \"d93caa21-788d-b757-c125-22898255dce2\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MZesC3lgNKraqk\",\n      \"dataflowId\": \"aa14ed8c-b8d4-3800-ab51-7e057bf0cc8a\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"e7Ntez7qYhVGyJciTw7JCtj\",\n      \"dataflowId\": \"1db48415-97ef-cf56-6628-e5582e555942\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"8NAW3FrQ_far2Vg8b\",\n      \"dataflowId\": \"a98e8da6-173a-42b5-d0a5-b721bea19a70\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"2bm1DnSc4pQpTxtiRhqyEgcgBinLa67\",\n      \"dataflowId\": \"93d6d447-a049-0ee8-2d1c-7f06c83cd4a6\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"16tlm52Xr7T14rHeOjNH_f2C2kMrI0fGce4X\",\n      \"dataflowId\": \"f27706a2-6df7-eb80-40d1-f057f7e2dfe2\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"K0l_RKC5McZyni3Wd15bJi6Qlg3Kaj7EdhnMCMy07xqAw03bxpU\",\n      \"dataflowId\": \"0307deaa-0c03-78ec-de41-98e2f2c4651b\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"By2cvmztBJ0jmXQzmmTE7sCLQH_PQth5QfmBx5RShQ6rl8pUp0lEp8fvAI7zPZ\",\n      \"dataflowId\": \"5eca264c-bbd3-07c1-b5d6-bfa8e546b882\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MibYLJenecg1DOk71arbi24JaZAcAFd_IPn\",\n      \"dataflowId\": \"04678519-a151-ca39-ce8e-f5d7311204e9\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"f9a11b75-b3a8-dfd3-4c03-1929bf73483b\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/agent/:agentId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "agent",
+                        ":agentId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "agentId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:36.000Z",
+                  "updatedAt": "2026-07-28T10:23:36.000Z",
+                  "uid": "35240-a895c8ed-4c01-484e-8aa5-b0df9f748199"
+                },
+                {
+                  "id": "977b3d03-7b34-4fb0-b139-62e58c876aa6",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"qui_3\": \"<boolean>\"\n    },\n    \"status\": \"ACTIVE\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"tLKUQCEXgWvKFGOIosbkSaxy\",\n      \"dataflowId\": \"0991ca19-fb9d-782a-7ce7-ee6e4e1ae1aa\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"ZSKQzRtc5vBlXwJZGMLzpwNTL71bOymLsZoAVwV14yhG5sz46yJ61TDuEE3U\",\n      \"dataflowId\": \"71a31434-99b2-615f-7170-a378b994f222\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"OiMhLZ1UnXR4VgSA481Dd3WoxzzMcuQmBK\",\n      \"dataflowId\": \"e1907ba4-cabe-d260-ce2e-b84fa64dc2f3\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"F6uQWOMJp0or3Q\",\n      \"dataflowId\": \"eca6e851-123a-8d94-f2df-e9895d38d2b4\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"mLQ0C7yt6e4zwf5yyhE7trFYquXLyu2yN6pgV_DKOc_IAaNhpNcA4pYYAdt9IDPQ\",\n      \"dataflowId\": \"ed48979c-8049-5db0-a432-f5f686f192c8\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Xi4MfhSNn471WzoFSdV86PBk87eMgw2PzK5giyeQr_9zEl\",\n      \"dataflowId\": \"61f6b5ad-975f-c788-e722-c645bcdd240d\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"9htSX7bQFOpPtgb_gLaYpWqBTjxDVQ37jpnAPRgpTa58X_YAh7T4_VlESb\",\n      \"dataflowId\": \"bc1130de-477f-499c-10b7-748f9a9c9f03\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"kn8hdSw5GQdULy2opIAaAKkSCnFVnSk8KZ0t\",\n      \"dataflowId\": \"6dbc04fa-f0b2-3e25-d878-9e9dea6b1294\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"hJAoySp0gh_l4utYF0Ul8QHAaoji_5M31mQBrkBOn0VBGp1gDZneEdmmFgN4S6\",\n      \"dataflowId\": \"4c822a47-2bdd-09bf-98e9-8659e7093945\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"96wmnVnwB0FyvAngf6Txkq8LGztd8DRoOCnyzoOKu\",\n      \"dataflowId\": \"2978edc5-2be3-ffa4-fa8f-f4dc62b22fde\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Ll4dJ2WHTHbS2pb4Nc7Xs3fPynA3bv_UzEYb6vvAyY6RBvAhqM6Z4c5\",\n      \"dataflowId\": \"57b7a0cf-1e84-f404-c5e6-ed7fceab0f33\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"A\",\n      \"dataflowId\": \"d93caa21-788d-b757-c125-22898255dce2\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MZesC3lgNKraqk\",\n      \"dataflowId\": \"aa14ed8c-b8d4-3800-ab51-7e057bf0cc8a\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"e7Ntez7qYhVGyJciTw7JCtj\",\n      \"dataflowId\": \"1db48415-97ef-cf56-6628-e5582e555942\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"8NAW3FrQ_far2Vg8b\",\n      \"dataflowId\": \"a98e8da6-173a-42b5-d0a5-b721bea19a70\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"2bm1DnSc4pQpTxtiRhqyEgcgBinLa67\",\n      \"dataflowId\": \"93d6d447-a049-0ee8-2d1c-7f06c83cd4a6\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"16tlm52Xr7T14rHeOjNH_f2C2kMrI0fGce4X\",\n      \"dataflowId\": \"f27706a2-6df7-eb80-40d1-f057f7e2dfe2\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"K0l_RKC5McZyni3Wd15bJi6Qlg3Kaj7EdhnMCMy07xqAw03bxpU\",\n      \"dataflowId\": \"0307deaa-0c03-78ec-de41-98e2f2c4651b\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"By2cvmztBJ0jmXQzmmTE7sCLQH_PQth5QfmBx5RShQ6rl8pUp0lEp8fvAI7zPZ\",\n      \"dataflowId\": \"5eca264c-bbd3-07c1-b5d6-bfa8e546b882\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MibYLJenecg1DOk71arbi24JaZAcAFd_IPn\",\n      \"dataflowId\": \"04678519-a151-ca39-ce8e-f5d7311204e9\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"f9a11b75-b3a8-dfd3-4c03-1929bf73483b\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/agent/:agentId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "agent",
+                        ":agentId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "agentId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:36.000Z",
+                  "updatedAt": "2026-07-28T10:23:36.000Z",
+                  "uid": "35240-977b3d03-7b34-4fb0-b139-62e58c876aa6"
+                },
+                {
+                  "id": "5ab1213f-b2d9-4408-a4b6-676c578a4fb8",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"qui_3\": \"<boolean>\"\n    },\n    \"status\": \"ACTIVE\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"tLKUQCEXgWvKFGOIosbkSaxy\",\n      \"dataflowId\": \"0991ca19-fb9d-782a-7ce7-ee6e4e1ae1aa\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"ZSKQzRtc5vBlXwJZGMLzpwNTL71bOymLsZoAVwV14yhG5sz46yJ61TDuEE3U\",\n      \"dataflowId\": \"71a31434-99b2-615f-7170-a378b994f222\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"OiMhLZ1UnXR4VgSA481Dd3WoxzzMcuQmBK\",\n      \"dataflowId\": \"e1907ba4-cabe-d260-ce2e-b84fa64dc2f3\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"F6uQWOMJp0or3Q\",\n      \"dataflowId\": \"eca6e851-123a-8d94-f2df-e9895d38d2b4\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"mLQ0C7yt6e4zwf5yyhE7trFYquXLyu2yN6pgV_DKOc_IAaNhpNcA4pYYAdt9IDPQ\",\n      \"dataflowId\": \"ed48979c-8049-5db0-a432-f5f686f192c8\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Xi4MfhSNn471WzoFSdV86PBk87eMgw2PzK5giyeQr_9zEl\",\n      \"dataflowId\": \"61f6b5ad-975f-c788-e722-c645bcdd240d\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"9htSX7bQFOpPtgb_gLaYpWqBTjxDVQ37jpnAPRgpTa58X_YAh7T4_VlESb\",\n      \"dataflowId\": \"bc1130de-477f-499c-10b7-748f9a9c9f03\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"kn8hdSw5GQdULy2opIAaAKkSCnFVnSk8KZ0t\",\n      \"dataflowId\": \"6dbc04fa-f0b2-3e25-d878-9e9dea6b1294\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"hJAoySp0gh_l4utYF0Ul8QHAaoji_5M31mQBrkBOn0VBGp1gDZneEdmmFgN4S6\",\n      \"dataflowId\": \"4c822a47-2bdd-09bf-98e9-8659e7093945\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"96wmnVnwB0FyvAngf6Txkq8LGztd8DRoOCnyzoOKu\",\n      \"dataflowId\": \"2978edc5-2be3-ffa4-fa8f-f4dc62b22fde\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"Ll4dJ2WHTHbS2pb4Nc7Xs3fPynA3bv_UzEYb6vvAyY6RBvAhqM6Z4c5\",\n      \"dataflowId\": \"57b7a0cf-1e84-f404-c5e6-ed7fceab0f33\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"A\",\n      \"dataflowId\": \"d93caa21-788d-b757-c125-22898255dce2\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MZesC3lgNKraqk\",\n      \"dataflowId\": \"aa14ed8c-b8d4-3800-ab51-7e057bf0cc8a\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"e7Ntez7qYhVGyJciTw7JCtj\",\n      \"dataflowId\": \"1db48415-97ef-cf56-6628-e5582e555942\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"8NAW3FrQ_far2Vg8b\",\n      \"dataflowId\": \"a98e8da6-173a-42b5-d0a5-b721bea19a70\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"2bm1DnSc4pQpTxtiRhqyEgcgBinLa67\",\n      \"dataflowId\": \"93d6d447-a049-0ee8-2d1c-7f06c83cd4a6\",\n      \"status\": \"INACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"16tlm52Xr7T14rHeOjNH_f2C2kMrI0fGce4X\",\n      \"dataflowId\": \"f27706a2-6df7-eb80-40d1-f057f7e2dfe2\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"K0l_RKC5McZyni3Wd15bJi6Qlg3Kaj7EdhnMCMy07xqAw03bxpU\",\n      \"dataflowId\": \"0307deaa-0c03-78ec-de41-98e2f2c4651b\",\n      \"status\": \"ACTIVE\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"By2cvmztBJ0jmXQzmmTE7sCLQH_PQth5QfmBx5RShQ6rl8pUp0lEp8fvAI7zPZ\",\n      \"dataflowId\": \"5eca264c-bbd3-07c1-b5d6-bfa8e546b882\",\n      \"status\": \"FAILED\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"MibYLJenecg1DOk71arbi24JaZAcAFd_IPn\",\n      \"dataflowId\": \"04678519-a151-ca39-ce8e-f5d7311204e9\",\n      \"status\": \"SUCCESS\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"f9a11b75-b3a8-dfd3-4c03-1929bf73483b\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/agent/:agentId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "agent",
+                        ":agentId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "agentId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:36.000Z",
+                  "updatedAt": "2026-07-28T10:23:36.000Z",
+                  "uid": "35240-5ab1213f-b2d9-4408-a4b6-676c578a4fb8"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:36.000Z",
+              "updatedAt": "2026-07-28T10:23:36.000Z",
+              "uid": "35240-57db5441-7485-46b7-b7f1-297693dd4695"
+            }
+          ],
+          "id": "50222bfd-e5f8-48d2-9a73-7a4cb626a8ab",
+          "createdAt": "2026-07-28T10:23:36.000Z",
+          "updatedAt": "2026-07-28T10:23:36.000Z",
+          "uid": "35240-50222bfd-e5f8-48d2-9a73-7a4cb626a8ab"
+        },
+        {
+          "name": "Amazon Ground Station Register Agent",
+          "id": "035ed0ea-f266-41ce-ac0c-f9d1284ead05",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"0.0.0.0.0.0.0.8612571763.0.0\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"9O678SgEI6\",\n        \"versions\": [\n          \"0.99081.0.63056.0.6926037.52642.99398147.34.31622.0\"\n        ]\n      }\n    ],\n    \"instanceId\": \"e4z-m3ut9kbkunvm27tvt1m37nuq23h74p62vu1596qlf\",\n    \"instanceType\": \"di2lvjwjqm0zubt3n6dscwitu\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"151.31.57.274\"\n    ],\n    \"publicIpAddresses\": [\n      \"81.082.365.56\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/agent",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "agent"
+              ]
+            },
+            "description": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p> Registers a new agent with AWS Ground Station. </p>"
+          },
+          "response": [
+            {
+              "id": "344d2263-c9de-464c-a581-daba47145292",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"0.0.0.0.0.0.0.8612571763.0.0\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"9O678SgEI6\",\n        \"versions\": [\n          \"0.99081.0.63056.0.6926037.52642.99398147.34.31622.0\"\n        ]\n      }\n    ],\n    \"instanceId\": \"e4z-m3ut9kbkunvm27tvt1m37nuq23h74p62vu1596qlf\",\n    \"instanceType\": \"di2lvjwjqm0zubt3n6dscwitu\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"151.31.57.274\"\n    ],\n    \"publicIpAddresses\": [\n      \"81.082.365.56\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "agent"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"agentId\": \"955fd4c7-5f95-9fa2-fb2b-db4c5263e5e4\"\n}",
+              "createdAt": "2026-07-28T10:23:36.000Z",
+              "updatedAt": "2026-07-28T10:23:36.000Z",
+              "uid": "35240-344d2263-c9de-464c-a581-daba47145292"
+            },
+            {
+              "id": "d51c4ddd-bf75-4715-8762-f6309d3aaef8",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"0.0.0.0.0.0.0.8612571763.0.0\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"9O678SgEI6\",\n        \"versions\": [\n          \"0.99081.0.63056.0.6926037.52642.99398147.34.31622.0\"\n        ]\n      }\n    ],\n    \"instanceId\": \"e4z-m3ut9kbkunvm27tvt1m37nuq23h74p62vu1596qlf\",\n    \"instanceType\": \"di2lvjwjqm0zubt3n6dscwitu\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"151.31.57.274\"\n    ],\n    \"publicIpAddresses\": [\n      \"81.082.365.56\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "agent"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:36.000Z",
+              "updatedAt": "2026-07-28T10:23:36.000Z",
+              "uid": "35240-d51c4ddd-bf75-4715-8762-f6309d3aaef8"
+            },
+            {
+              "id": "2bf1d55b-327d-43cc-be64-2e7e7186c936",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"0.0.0.0.0.0.0.8612571763.0.0\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"9O678SgEI6\",\n        \"versions\": [\n          \"0.99081.0.63056.0.6926037.52642.99398147.34.31622.0\"\n        ]\n      }\n    ],\n    \"instanceId\": \"e4z-m3ut9kbkunvm27tvt1m37nuq23h74p62vu1596qlf\",\n    \"instanceType\": \"di2lvjwjqm0zubt3n6dscwitu\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"151.31.57.274\"\n    ],\n    \"publicIpAddresses\": [\n      \"81.082.365.56\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "agent"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:36.000Z",
+              "updatedAt": "2026-07-28T10:23:36.000Z",
+              "uid": "35240-2bf1d55b-327d-43cc-be64-2e7e7186c936"
+            },
+            {
+              "id": "1242195a-955c-4f7b-a075-354513e22853",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"0.0.0.0.0.0.0.8612571763.0.0\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"9O678SgEI6\",\n        \"versions\": [\n          \"0.99081.0.63056.0.6926037.52642.99398147.34.31622.0\"\n        ]\n      }\n    ],\n    \"instanceId\": \"e4z-m3ut9kbkunvm27tvt1m37nuq23h74p62vu1596qlf\",\n    \"instanceType\": \"di2lvjwjqm0zubt3n6dscwitu\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"151.31.57.274\"\n    ],\n    \"publicIpAddresses\": [\n      \"81.082.365.56\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/agent",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "agent"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:36.000Z",
+              "updatedAt": "2026-07-28T10:23:36.000Z",
+              "uid": "35240-1242195a-955c-4f7b-a075-354513e22853"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:36.000Z",
+          "updatedAt": "2026-07-28T10:23:36.000Z",
+          "uid": "35240-035ed0ea-f266-41ce-ac0c-f9d1284ead05"
+        }
+      ],
+      "id": "46d13217-56c7-43ba-92f5-34748691963a",
+      "createdAt": "2026-07-28T10:23:36.000Z",
+      "updatedAt": "2026-07-28T10:23:36.000Z",
+      "uid": "35240-46d13217-56c7-43ba-92f5-34748691963a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

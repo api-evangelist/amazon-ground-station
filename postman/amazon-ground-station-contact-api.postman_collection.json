@@ -1,0 +1,1197 @@
+{
+  "info": {
+    "_postman_id": "58bbf1bb-6b91-4bda-a22a-b25b0bf8600f",
+    "name": "AWS Ground Station Agent Contact API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:39.000Z",
+    "updatedAt": "2026-07-28T10:23:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-58bbf1bb-6b91-4bda-a22a-b25b0bf8600f"
+  },
+  "item": [
+    {
+      "name": "contact",
+      "item": [
+        {
+          "name": "{contactId}",
+          "item": [
+            {
+              "name": "Amazon Ground Station Cancel Contact",
+              "id": "38e73e90-0243-44bb-9f0e-da8c7309a641",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contact/:contactId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact",
+                    ":contactId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "1bf3eae6-c329-44b2-a963-28efd3168754",
+                      "key": "contactId",
+                      "value": "c301c72a-f3ae-c319-1375-8a00b086c64e",
+                      "description": "(Required) UUID of a contact."
+                    }
+                  ]
+                },
+                "description": "Cancels a contact with a specified contact ID."
+              },
+              "response": [
+                {
+                  "id": "dc1efdb8-4c75-421f-869d-4d5fae5719ed",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"contactId\": \"91079c32-984c-4955-2ddb-f608dfed460d\"\n}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-dc1efdb8-4c75-421f-869d-4d5fae5719ed"
+                },
+                {
+                  "id": "dd15c078-ddec-4a92-ba06-09f191f1be4a",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-dd15c078-ddec-4a92-ba06-09f191f1be4a"
+                },
+                {
+                  "id": "a02c671e-bfb9-45a3-a96b-322cf443214a",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-a02c671e-bfb9-45a3-a96b-322cf443214a"
+                },
+                {
+                  "id": "6f818ceb-970d-49b3-8a20-7fab2ff85e0f",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-6f818ceb-970d-49b3-8a20-7fab2ff85e0f"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:39.000Z",
+              "updatedAt": "2026-07-28T10:23:39.000Z",
+              "uid": "35240-38e73e90-0243-44bb-9f0e-da8c7309a641"
+            },
+            {
+              "name": "Amazon Ground Station Describe Contact",
+              "id": "523a02bf-4ef0-4b03-8cc0-ef3c5acf494e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/contact/:contactId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact",
+                    ":contactId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "e7ba1792-92e1-4d0f-9f85-73e4e4f5a036",
+                      "key": "contactId",
+                      "value": "c301c72a-f3ae-c319-1375-8a00b086c64e",
+                      "description": "(Required) UUID of a contact."
+                    }
+                  ]
+                },
+                "description": "Describes an existing contact."
+              },
+              "response": [
+                {
+                  "id": "771c6890-6cd4-4296-99ec-e23816c17612",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"contactId\": \"158d7278-6346-b0c2-9445-d4b153af6034\",\n  \"contactStatus\": \"AWS_FAILED\",\n  \"dataflowList\": [\n    {\n      \"destination\": {\n        \"configDetails\": {\n          \"antennaDemodDecodeDetails\": {\n            \"outputNode\": \"<string>\"\n          },\n          \"endpointDetails\": {\n            \"awsGroundStationAgentEndpoint\": {\n              \"egressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"<string>\",\n                  \"port\": \"<integer>\"\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"ingressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"782.97.5.313\",\n                  \"portRange\": {\n                    \"maximum\": \"<integer>\",\n                    \"minimum\": \"<integer>\"\n                  }\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"name\": \"9yhRf6WV1hzQKmqCrTtpIKh9TECbf-mA3MOAj3:-X73lwunPq8meUIMStEQjFddZMMoaiQ1_:jMTqmR-BVkoJ5cgp9JzWzW59F0p2yWphtoEiNyL8sUFZUPjT_FD1CHP\",\n              \"agentStatus\": \"SUCCESS\",\n              \"auditResults\": \"UNHEALTHY\"\n            },\n            \"endpoint\": {\n              \"address\": {\n                \"name\": \"<string>\",\n                \"port\": \"<integer>\"\n              },\n              \"mtu\": \"<integer>\",\n              \"name\": \"4-JYFaMmv:UJlAgEaNzHHZiTRUWuXtAiYJlM8 hdkRWRnDkzxh4-VZ8SC6TxYs0XoZW7k 9w-AYvkKBIv84UQyy:bmUUU5IeJR3GzAEq FR0g_VWob74YbGSdtZZxWZn8nfYBqLwMv1Zu9V6lozgEkqpRp6epNch629oC8D\",\n              \"status\": \"created\"\n            },\n            \"healthReasons\": [\n              \"HEALTHY\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"INITIALIZING_DATAPLANE\",\n              \"DATAPLANE_FAILURE\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"HEALTHY\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"INITIALIZING_DATAPLANE\",\n              \"NO_REGISTERED_AGENT\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"HEALTHY\",\n              \"INITIALIZING_DATAPLANE\",\n              \"HEALTHY\",\n              \"DATAPLANE_FAILURE\",\n              \"HEALTHY\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"HEALTHY\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\"\n            ],\n            \"healthStatus\": \"UNHEALTHY\",\n            \"securityDetails\": {\n              \"roleArn\": \"<string>\",\n              \"securityGroupIds\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"subnetIds\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          },\n          \"s3RecordingDetails\": {\n            \"bucketArn\": \"<string>\",\n            \"keyTemplate\": \"<string>\"\n          }\n        },\n        \"configId\": \"32fdb234-643c-435e-1dc4-74c7dbfbb876\",\n        \"configType\": \"tracking\",\n        \"dataflowDestinationRegion\": \"<string>\"\n      },\n      \"errorMessage\": \"<string>\",\n      \"source\": {\n        \"configDetails\": {\n          \"antennaDemodDecodeDetails\": {\n            \"outputNode\": \"<string>\"\n          },\n          \"endpointDetails\": {\n            \"awsGroundStationAgentEndpoint\": {\n              \"egressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"<string>\",\n                  \"port\": \"<integer>\"\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"ingressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"788.87.793.02\",\n                  \"portRange\": {\n                    \"maximum\": \"<integer>\",\n                    \"minimum\": \"<integer>\"\n                  }\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"name\": \"3olfO3-Ow4CEY2AmUH54A66ORrYLtQui8TuVjlIFUcslMRJrdXOTe\",\n              \"agentStatus\": \"FAILED\",\n              \"auditResults\": \"UNHEALTHY\"\n            },\n            \"endpoint\": {\n              \"address\": {\n                \"name\": \"<string>\",\n                \"port\": \"<integer>\"\n              },\n              \"mtu\": \"<integer>\",\n              \"name\": \"FGeVX3HbWFW4jD0lkLhKST4t0jMgxl:Z8DeOYT-:SUiP9myhIjgfA2M5Y9bGHBh7mJ1NTPcOBQQA9MbBi5bwTuY4mZ2vgJqakBeM3oadACK6Tm1:nu2svxJDMBoLQaOm4mzKVssSfmHDeWl2oEZ4W6QkrmIw:DVxaXAiZqlnmUbZ--lp_hqqc:t5E:rdixFKIjiXdQaE3V2Q6_4CmoE3vqz63V\",\n              \"status\": \"creating\"\n            },\n            \"healthReasons\": [\n              \"DATAPLANE_FAILURE\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"NO_REGISTERED_AGENT\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"HEALTHY\",\n              \"DATAPLANE_FAILURE\",\n              \"HEALTHY\",\n              \"HEALTHY\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"HEALTHY\",\n              \"HEALTHY\",\n              \"DATAPLANE_FAILURE\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"DATAPLANE_FAILURE\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"DATAPLANE_FAILURE\",\n              \"HEALTHY\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"HEALTHY\",\n              \"DATAPLANE_FAILURE\"\n            ],\n            \"healthStatus\": \"UNHEALTHY\",\n            \"securityDetails\": {\n              \"roleArn\": \"<string>\",\n              \"securityGroupIds\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"subnetIds\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          },\n          \"s3RecordingDetails\": {\n            \"bucketArn\": \"<string>\",\n            \"keyTemplate\": \"<string>\"\n          }\n        },\n        \"configId\": \"<string>\",\n        \"configType\": \"uplink-echo\",\n        \"dataflowSourceRegion\": \"<string>\"\n      }\n    },\n    {\n      \"destination\": {\n        \"configDetails\": {\n          \"antennaDemodDecodeDetails\": {\n            \"outputNode\": \"<string>\"\n          },\n          \"endpointDetails\": {\n            \"awsGroundStationAgentEndpoint\": {\n              \"egressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"<string>\",\n                  \"port\": \"<integer>\"\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"ingressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"248.80.9.2\",\n                  \"portRange\": {\n                    \"maximum\": \"<integer>\",\n                    \"minimum\": \"<integer>\"\n                  }\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"name\": \"odXTdcHUL12ZZxD0qVD7xSgFZzg9kEBgDzuN1Ir0RhhOSWDfTJslMeh:r_x2XFsrg10UfuXA4Tew_Gt0Wc43j7KXHBpXS_jMxvtYLopH0GoVDDqS77HnrGPUYx9 BugN -IcOng 0nCOKj9Y_9\",\n              \"agentStatus\": \"ACTIVE\",\n              \"auditResults\": \"HEALTHY\"\n            },\n            \"endpoint\": {\n              \"address\": {\n                \"name\": \"<string>\",\n                \"port\": \"<integer>\"\n              },\n              \"mtu\": \"<integer>\",\n              \"name\": \"ZBrsrd6nmI3FGa 0VSmp0B Jr-s0L3i6K7L8qDUAe41bVBRvom:kNWff1ynpcff3P8YJLChZzljzzd1sEClCYMm G6Kr41e JuoUgje7EtHLh5Ye7cIdXd\",\n              \"status\": \"deleted\"\n            },\n            \"healthReasons\": [\n              \"HEALTHY\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"NO_REGISTERED_AGENT\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"HEALTHY\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"INITIALIZING_DATAPLANE\",\n              \"DATAPLANE_FAILURE\",\n              \"DATAPLANE_FAILURE\",\n              \"DATAPLANE_FAILURE\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"HEALTHY\",\n              \"NO_REGISTERED_AGENT\",\n              \"HEALTHY\",\n              \"HEALTHY\",\n              \"INITIALIZING_DATAPLANE\"\n            ],\n            \"healthStatus\": \"UNHEALTHY\",\n            \"securityDetails\": {\n              \"roleArn\": \"<string>\",\n              \"securityGroupIds\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"subnetIds\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          },\n          \"s3RecordingDetails\": {\n            \"bucketArn\": \"<string>\",\n            \"keyTemplate\": \"<string>\"\n          }\n        },\n        \"configId\": \"1a6d0e02-45b2-b19c-3237-14f05b2be097\",\n        \"configType\": \"antenna-downlink\",\n        \"dataflowDestinationRegion\": \"<string>\"\n      },\n      \"errorMessage\": \"<string>\",\n      \"source\": {\n        \"configDetails\": {\n          \"antennaDemodDecodeDetails\": {\n            \"outputNode\": \"<string>\"\n          },\n          \"endpointDetails\": {\n            \"awsGroundStationAgentEndpoint\": {\n              \"egressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"<string>\",\n                  \"port\": \"<integer>\"\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"ingressAddress\": {\n                \"socketAddress\": {\n                  \"name\": \"418.086.95.1\",\n                  \"portRange\": {\n                    \"maximum\": \"<integer>\",\n                    \"minimum\": \"<integer>\"\n                  }\n                },\n                \"mtu\": \"<integer>\"\n              },\n              \"name\": \"dMa9xvdUwhwGA3s_x-cuKFbjGAhSI1QjlX1KxQlE5y3GxV-IwDrTgH:YS:VVpDDJs7CbbX_d7FucBBX7f B5AYaGkg6XA\",\n              \"agentStatus\": \"ACTIVE\",\n              \"auditResults\": \"HEALTHY\"\n            },\n            \"endpoint\": {\n              \"address\": {\n                \"name\": \"<string>\",\n                \"port\": \"<integer>\"\n              },\n              \"mtu\": \"<integer>\",\n              \"name\": \"KMNFsUjlNd8nxUedne:pEO3SEDWoGd08suCFEhSHP6c5\",\n              \"status\": \"deleting\"\n            },\n            \"healthReasons\": [\n              \"DATAPLANE_FAILURE\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"NO_REGISTERED_AGENT\",\n              \"NO_REGISTERED_AGENT\",\n              \"INITIALIZING_DATAPLANE\",\n              \"NO_REGISTERED_AGENT\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"INITIALIZING_DATAPLANE\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"NO_REGISTERED_AGENT\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"INVALID_IP_OWNERSHIP\",\n              \"DATAPLANE_FAILURE\",\n              \"UNVERIFIED_IP_OWNERSHIP\",\n              \"DATAPLANE_FAILURE\",\n              \"NOT_AUTHORIZED_TO_CREATE_SLR\",\n              \"NO_REGISTERED_AGENT\"\n            ],\n            \"healthStatus\": \"HEALTHY\",\n            \"securityDetails\": {\n              \"roleArn\": \"<string>\",\n              \"securityGroupIds\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"subnetIds\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          },\n          \"s3RecordingDetails\": {\n            \"bucketArn\": \"<string>\",\n            \"keyTemplate\": \"<string>\"\n          }\n        },\n        \"configId\": \"<string>\",\n        \"configType\": \"antenna-downlink\",\n        \"dataflowSourceRegion\": \"<string>\"\n      }\n    }\n  ],\n  \"endTime\": \"<dateTime>\",\n  \"errorMessage\": \"<string>\",\n  \"groundStation\": \"<string>\",\n  \"maximumElevation\": {\n    \"unit\": \"DEGREE_ANGLE\",\n    \"value\": \"<double>\"\n  },\n  \"missionProfileArn\": \"<string>\",\n  \"postPassEndTime\": \"<dateTime>\",\n  \"prePassStartTime\": \"<dateTime>\",\n  \"region\": \"<string>\",\n  \"satelliteArn\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"tags\": {\n    \"autef\": \"<string>\",\n    \"irure157\": \"<string>\",\n    \"occaecat_0\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-771c6890-6cd4-4296-99ec-e23816c17612"
+                },
+                {
+                  "id": "96736e27-42c8-4c8d-ada2-34b8f5ac4da3",
+                  "name": "InvalidParameterException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-96736e27-42c8-4c8d-ada2-34b8f5ac4da3"
+                },
+                {
+                  "id": "a6e7dfd4-3e42-474d-94ab-5c691373c413",
+                  "name": "DependencyException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-a6e7dfd4-3e42-474d-94ab-5c691373c413"
+                },
+                {
+                  "id": "8b057eff-82ae-450d-8345-ee062fcb471c",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact/:contactId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact",
+                        ":contactId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "contactId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:23:39.000Z",
+                  "updatedAt": "2026-07-28T10:23:39.000Z",
+                  "uid": "35240-8b057eff-82ae-450d-8345-ee062fcb471c"
+                }
+              ],
+              "createdAt": "2026-07-28T10:23:39.000Z",
+              "updatedAt": "2026-07-28T10:23:39.000Z",
+              "uid": "35240-523a02bf-4ef0-4b03-8cc0-ef3c5acf494e"
+            }
+          ],
+          "id": "414fbbc5-2424-444e-9819-93461730b40a",
+          "createdAt": "2026-07-28T10:23:39.000Z",
+          "updatedAt": "2026-07-28T10:23:39.000Z",
+          "uid": "35240-414fbbc5-2424-444e-9819-93461730b40a"
+        },
+        {
+          "name": "Amazon Ground Station Reserve Contact",
+          "id": "dc7b805c-c3dc-46ec-9fc7-c251ce9370d8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"groundStation\": \"Hx0BoseuPqv:LeVUOopakJm  B=YlwX6BJLBVol9BQ W7OgpXyLXTj:cGXnYsfv7fMIAuMhHrcAacFmJG2QQ9Wm_EyIf6FpQw-QG_ps:ZA0L.TYUZ1zj\",\n  \"missionProfileArn\": \"<string>\",\n  \"satelliteArn\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"tags\": {\n    \"et75\": \"<string>\",\n    \"cupidatatec\": \"<string>\",\n    \"consectetur_3a3\": \"<string>\",\n    \"deserunt_40\": \"<string>\",\n    \"officia3_6\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/contact",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contact"
+              ]
+            },
+            "description": "Reserves a contact using specified parameters."
+          },
+          "response": [
+            {
+              "id": "9bf8bf70-f84c-4534-b266-ad02fa9b1401",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"groundStation\": \"Hx0BoseuPqv:LeVUOopakJm  B=YlwX6BJLBVol9BQ W7OgpXyLXTj:cGXnYsfv7fMIAuMhHrcAacFmJG2QQ9Wm_EyIf6FpQw-QG_ps:ZA0L.TYUZ1zj\",\n  \"missionProfileArn\": \"<string>\",\n  \"satelliteArn\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"tags\": {\n    \"et75\": \"<string>\",\n    \"cupidatatec\": \"<string>\",\n    \"consectetur_3a3\": \"<string>\",\n    \"deserunt_40\": \"<string>\",\n    \"officia3_6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contact",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"contactId\": \"91079c32-984c-4955-2ddb-f608dfed460d\"\n}",
+              "createdAt": "2026-07-28T10:23:39.000Z",
+              "updatedAt": "2026-07-28T10:23:39.000Z",
+              "uid": "35240-9bf8bf70-f84c-4534-b266-ad02fa9b1401"
+            },
+            {
+              "id": "c39e95ad-0133-4308-8abf-52c37dc940d6",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"groundStation\": \"Hx0BoseuPqv:LeVUOopakJm  B=YlwX6BJLBVol9BQ W7OgpXyLXTj:cGXnYsfv7fMIAuMhHrcAacFmJG2QQ9Wm_EyIf6FpQw-QG_ps:ZA0L.TYUZ1zj\",\n  \"missionProfileArn\": \"<string>\",\n  \"satelliteArn\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"tags\": {\n    \"et75\": \"<string>\",\n    \"cupidatatec\": \"<string>\",\n    \"consectetur_3a3\": \"<string>\",\n    \"deserunt_40\": \"<string>\",\n    \"officia3_6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contact",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:39.000Z",
+              "updatedAt": "2026-07-28T10:23:39.000Z",
+              "uid": "35240-c39e95ad-0133-4308-8abf-52c37dc940d6"
+            },
+            {
+              "id": "03ba9535-c406-44ad-a6d3-250c1cc8d3b5",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"groundStation\": \"Hx0BoseuPqv:LeVUOopakJm  B=YlwX6BJLBVol9BQ W7OgpXyLXTj:cGXnYsfv7fMIAuMhHrcAacFmJG2QQ9Wm_EyIf6FpQw-QG_ps:ZA0L.TYUZ1zj\",\n  \"missionProfileArn\": \"<string>\",\n  \"satelliteArn\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"tags\": {\n    \"et75\": \"<string>\",\n    \"cupidatatec\": \"<string>\",\n    \"consectetur_3a3\": \"<string>\",\n    \"deserunt_40\": \"<string>\",\n    \"officia3_6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contact",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:39.000Z",
+              "updatedAt": "2026-07-28T10:23:39.000Z",
+              "uid": "35240-03ba9535-c406-44ad-a6d3-250c1cc8d3b5"
+            },
+            {
+              "id": "66c6486d-c05a-4ca9-81f1-8b382d241780",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"groundStation\": \"Hx0BoseuPqv:LeVUOopakJm  B=YlwX6BJLBVol9BQ W7OgpXyLXTj:cGXnYsfv7fMIAuMhHrcAacFmJG2QQ9Wm_EyIf6FpQw-QG_ps:ZA0L.TYUZ1zj\",\n  \"missionProfileArn\": \"<string>\",\n  \"satelliteArn\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"tags\": {\n    \"et75\": \"<string>\",\n    \"cupidatatec\": \"<string>\",\n    \"consectetur_3a3\": \"<string>\",\n    \"deserunt_40\": \"<string>\",\n    \"officia3_6\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contact",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:39.000Z",
+              "updatedAt": "2026-07-28T10:23:39.000Z",
+              "uid": "35240-66c6486d-c05a-4ca9-81f1-8b382d241780"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:39.000Z",
+          "updatedAt": "2026-07-28T10:23:39.000Z",
+          "uid": "35240-dc7b805c-c3dc-46ec-9fc7-c251ce9370d8"
+        }
+      ],
+      "id": "813d72f1-708d-4b7c-bc62-38e64e3d76cd",
+      "createdAt": "2026-07-28T10:23:39.000Z",
+      "updatedAt": "2026-07-28T10:23:39.000Z",
+      "uid": "35240-813d72f1-708d-4b7c-bc62-38e64e3d76cd"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}

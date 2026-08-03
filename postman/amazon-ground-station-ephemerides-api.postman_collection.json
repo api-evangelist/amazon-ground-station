@@ -1,0 +1,516 @@
+{
+  "info": {
+    "_postman_id": "c1540cf9-5505-44e4-b9be-513011909881",
+    "name": "AWS Ground Station Agent Ephemerides API",
+    "description": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:23:45.000Z",
+    "updatedAt": "2026-07-28T10:23:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c1540cf9-5505-44e4-b9be-513011909881"
+  },
+  "item": [
+    {
+      "name": "ephemerides",
+      "item": [
+        {
+          "name": "Amazon Ground Station List Ephemerides",
+          "id": "4f97007a-d649-4ee9-ba46-bc394970a261",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"satelliteId\": \"dc46d403-1cd3-3b93-4b17-3b670eb06ac7\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"DISABLED\",\n    \"DISABLED\",\n    \"EXPIRED\",\n    \"DISABLED\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ERROR\",\n    \"EXPIRED\",\n    \"ERROR\",\n    \"INVALID\",\n    \"DISABLED\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ephemerides?maxResults=<integer>&nextToken=9b938MJo",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ephemerides"
+              ],
+              "query": [
+                {
+                  "description": "Maximum number of ephemerides to return.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Pagination token.",
+                  "key": "nextToken",
+                  "value": "9b938MJo"
+                }
+              ]
+            },
+            "description": "List existing ephemerides."
+          },
+          "response": [
+            {
+              "id": "f1b2bcf0-8f2b-4a94-986c-12d01760b270",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"satelliteId\": \"dc46d403-1cd3-3b93-4b17-3b670eb06ac7\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"DISABLED\",\n    \"DISABLED\",\n    \"EXPIRED\",\n    \"DISABLED\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ERROR\",\n    \"EXPIRED\",\n    \"ERROR\",\n    \"INVALID\",\n    \"DISABLED\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemerides?maxResults=<integer>&nextToken=9b938MJo",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemerides"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ephemerides to return.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Pagination token.",
+                      "key": "nextToken",
+                      "value": "9b938MJo"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ephemerides\": [\n    {\n      \"creationTime\": \"<dateTime>\",\n      \"enabled\": \"<boolean>\",\n      \"ephemerisId\": \"c843e495-fdd5-7b7e-f26a-4b676aa39156\",\n      \"name\": \"T0R7C9mpwnnoUnqZmEM iGDfnXYdAhEkPG_P2e-K_M-Swex0gWRxC0HO3dWDtD_m3OAX89aQPjNxR1Xa 73x56ROUl31a:66BS_2AMRTvI-z7d:D6zDy\",\n      \"priority\": \"<integer>\",\n      \"sourceS3Object\": {\n        \"bucket\": \"uc63rcbo4wrjgx9.nyf6-u-tfw18svrkzmrhgzg\",\n        \"key\": \"gza2GVUpvEH/BMO.JOrmKNhv(pS.5O3tq'wKKioRMliq-YwLGU6F)vWr/yd.!2eUqGKZyyRa_!ctJX'qd2qQj-qe!.DR)I!5AcqgT8b(-88QSUMkQ9JAwXW.vunlq(nojt47V(iSpc/l!wGEZtRculHH'VhA19RY7xl07joPJQJXZsNRv-EiXcTn/T!LcyAECujN41XrX8Dk8bfft72ZyAy(apOgK!GNBT.vPED'SDNeR-fc(LoF91b-0ACtI*yo\",\n        \"version\": \"\u2006bX\\\\\\r$\u1680?#fum\u00a0?lCU23/OPwsS!L\\u000b\u180e\\f*z{z\ufeffH|\u2001:d(~$g)][YF\u2029E11HKd~|Phf\ufeffH.2(9ngD\u2007Jc47aNyF\u2004J_ISr9KP -G:[*5;mw$u$t\\f<.uC\\t~ZDE\u2028 q`t[IVujDn0k\\\"r\u2005K>VpbP\u20296\u3000H\u2002\u2007\u2002N\u2009Fac/\u00a0V\u3000,\\r?<[\u00a0@A,=u\u2002R#V\u2007\u202fB\u202f90\u205f\\\\BXW<c\\nX\\u000bu3_6/6$j\u2008*\u2004eaEAj\\\\1}7\u2001\\\";\u2007Vx\u00a0)\\t^ W-r\u180e2.\u2006^;SK4U\u2007OFr\\f2\u2005v,W\u200aj\u2000k\u1680 :Rdy\\t\ufeff\u2003(\u20055SD#\u2008\"\n      },\n      \"status\": \"INVALID\"\n    }\n  ],\n  \"nextToken\": \"9Ux-lje.Sd\"\n}",
+              "createdAt": "2026-07-28T10:23:46.000Z",
+              "updatedAt": "2026-07-28T10:23:46.000Z",
+              "uid": "35240-f1b2bcf0-8f2b-4a94-986c-12d01760b270"
+            },
+            {
+              "id": "ce921d37-ac72-4e0f-b052-c4ae592102b6",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"satelliteId\": \"dc46d403-1cd3-3b93-4b17-3b670eb06ac7\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"DISABLED\",\n    \"DISABLED\",\n    \"EXPIRED\",\n    \"DISABLED\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ERROR\",\n    \"EXPIRED\",\n    \"ERROR\",\n    \"INVALID\",\n    \"DISABLED\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemerides?maxResults=<integer>&nextToken=9b938MJo",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemerides"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ephemerides to return.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Pagination token.",
+                      "key": "nextToken",
+                      "value": "9b938MJo"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:46.000Z",
+              "updatedAt": "2026-07-28T10:23:46.000Z",
+              "uid": "35240-ce921d37-ac72-4e0f-b052-c4ae592102b6"
+            },
+            {
+              "id": "9ecf3c36-5727-4ed4-b4a0-3b60a1f4c159",
+              "name": "DependencyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"satelliteId\": \"dc46d403-1cd3-3b93-4b17-3b670eb06ac7\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"DISABLED\",\n    \"DISABLED\",\n    \"EXPIRED\",\n    \"DISABLED\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ERROR\",\n    \"EXPIRED\",\n    \"ERROR\",\n    \"INVALID\",\n    \"DISABLED\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemerides?maxResults=<integer>&nextToken=9b938MJo",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemerides"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ephemerides to return.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Pagination token.",
+                      "key": "nextToken",
+                      "value": "9b938MJo"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:46.000Z",
+              "updatedAt": "2026-07-28T10:23:46.000Z",
+              "uid": "35240-9ecf3c36-5727-4ed4-b4a0-3b60a1f4c159"
+            },
+            {
+              "id": "0e6da327-62f3-4b3a-8db3-d1dd04575e93",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"endTime\": \"<dateTime>\",\n  \"satelliteId\": \"dc46d403-1cd3-3b93-4b17-3b670eb06ac7\",\n  \"startTime\": \"<dateTime>\",\n  \"statusList\": [\n    \"DISABLED\",\n    \"DISABLED\",\n    \"EXPIRED\",\n    \"DISABLED\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"VALIDATING\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ENABLED\",\n    \"ENABLED\",\n    \"INVALID\",\n    \"ERROR\",\n    \"EXPIRED\",\n    \"ERROR\",\n    \"INVALID\",\n    \"DISABLED\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ephemerides?maxResults=<integer>&nextToken=9b938MJo",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ephemerides"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of ephemerides to return.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Pagination token.",
+                      "key": "nextToken",
+                      "value": "9b938MJo"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:23:46.000Z",
+              "updatedAt": "2026-07-28T10:23:46.000Z",
+              "uid": "35240-0e6da327-62f3-4b3a-8db3-d1dd04575e93"
+            }
+          ],
+          "createdAt": "2026-07-28T10:23:46.000Z",
+          "updatedAt": "2026-07-28T10:23:46.000Z",
+          "uid": "35240-4f97007a-d649-4ee9-ba46-bc394970a261"
+        }
+      ],
+      "id": "0907f3c1-2a12-4d6a-a617-dc5274b9dc80",
+      "createdAt": "2026-07-28T10:23:46.000Z",
+      "updatedAt": "2026-07-28T10:23:46.000Z",
+      "uid": "35240-0907f3c1-2a12-4d6a-a617-dc5274b9dc80"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://groundstation.{{region}}.amazonaws.com"
+    }
+  ]
+}
