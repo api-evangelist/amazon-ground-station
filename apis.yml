@@ -50,12 +50,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-config-api
   name: Amazon Ground Station Config API
   description: The Config API from Amazon Ground Station — 2 operation(s) for config.
@@ -78,12 +74,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-contact-api
   name: Amazon Ground Station Contact API
   description: The Contact API from Amazon Ground Station — 2 operation(s) for contact.
@@ -106,12 +98,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-contacts-api
   name: Amazon Ground Station Contacts API
   description: The Contacts API from Amazon Ground Station — 1 operation(s) for contacts.
@@ -134,12 +122,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-dataflowendpointgroup-api
   name: Amazon Ground Station DataflowEndpointGroup API
   description: >-
@@ -163,12 +147,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-ephemerides-api
   name: Amazon Ground Station Ephemerides API
   description: The Ephemerides API from Amazon Ground Station — 1 operation(s) for ephemerides.
@@ -191,12 +171,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-ephemeris-api
   name: Amazon Ground Station Ephemeris API
   description: The Ephemeris API from Amazon Ground Station — 2 operation(s) for ephemeris.
@@ -219,12 +195,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-groundstation-api
   name: Amazon Ground Station Groundstation API
   description: The Groundstation API from Amazon Ground Station — 1 operation(s) for groundstation.
@@ -247,12 +219,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-minute-usage-api
   name: Amazon Ground Station Minute Usage API
   description: The Minute Usage API from Amazon Ground Station — 1 operation(s) for minute usage.
@@ -275,12 +243,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-missionprofile-api
   name: Amazon Ground Station Missionprofile API
   description: The Missionprofile API from Amazon Ground Station — 2 operation(s) for missionprofile.
@@ -303,12 +267,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-satellite-api
   name: Amazon Ground Station Satellite API
   description: The Satellite API from Amazon Ground Station — 2 operation(s) for satellite.
@@ -331,12 +291,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 - aid: amazon-ground-station:amazon-ground-station-tags-api
   name: Amazon Ground Station Tags API
   description: The Tags API from Amazon Ground Station — 2 operation(s) for tags.
@@ -359,12 +315,8 @@ apis:
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONSchema
-    url: json-schema/ground-station-contact-schema.json
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-ground-station.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-ground-station/overview
