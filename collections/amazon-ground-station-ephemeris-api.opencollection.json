@@ -1,0 +1,222 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Ground Station Agent Ephemeris API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ephemeris",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Ground Station Create Ephemeris",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://groundstation.{region}.amazonaws.com/ephemeris",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an Ephemeris with the specified <code>EphemerisData</code>."
+        },
+        {
+          "info": {
+            "name": "Amazon Ground Station Describe Ephemeris",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://groundstation.{region}.amazonaws.com/ephemeris/:ephemerisId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ephemerisId",
+                "value": "",
+                "type": "path",
+                "description": "The AWS Ground Station ephemeris ID."
+              }
+            ]
+          },
+          "docs": "Describes an existing ephemeris."
+        },
+        {
+          "info": {
+            "name": "Amazon Ground Station Update Ephemeris",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://groundstation.{region}.amazonaws.com/ephemeris/:ephemerisId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ephemerisId",
+                "value": "",
+                "type": "path",
+                "description": "The AWS Ground Station ephemeris ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing ephemeris"
+        },
+        {
+          "info": {
+            "name": "Amazon Ground Station Delete Ephemeris",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://groundstation.{region}.amazonaws.com/ephemeris/:ephemerisId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ephemerisId",
+                "value": "",
+                "type": "path",
+                "description": "The AWS Ground Station ephemeris ID."
+              }
+            ]
+          },
+          "docs": "Deletes an ephemeris"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

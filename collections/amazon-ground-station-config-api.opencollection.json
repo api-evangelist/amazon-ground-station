@@ -1,0 +1,295 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Ground Station Agent Config API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Config",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Ground Station List Configs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://groundstation.{region}.amazonaws.com/config",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of <code>Configs</code> returned."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results."
+              }
+            ]
+          },
+          "docs": "Returns a list of <code>Config</code> objects."
+        },
+        {
+          "info": {
+            "name": "Amazon Ground Station Create Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://groundstation.{region}.amazonaws.com/config",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a <code>Config</code> with the specified <code>configData</code> parameters.</p> <p>Only one type of <code>configData</code> can be specified.</p>"
+        },
+        {
+          "info": {
+            "name": "Amazon Ground Station Get Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://groundstation.{region}.amazonaws.com/config/:configType/:configId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "configId",
+                "value": "",
+                "type": "path",
+                "description": "UUID of a <code>Config</code>."
+              },
+              {
+                "name": "configType",
+                "value": "",
+                "type": "path",
+                "description": "Type of a <code>Config</code>."
+              }
+            ]
+          },
+          "docs": "<p>Returns <code>Config</code> information.</p> <p>Only one <code>Config</code> response can be returned.</p>"
+        },
+        {
+          "info": {
+            "name": "Amazon Ground Station Update Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://groundstation.{region}.amazonaws.com/config/:configType/:configId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "configId",
+                "value": "",
+                "type": "path",
+                "description": "UUID of a <code>Config</code>."
+              },
+              {
+                "name": "configType",
+                "value": "",
+                "type": "path",
+                "description": "Type of a <code>Config</code>."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Updates the <code>Config</code> used when scheduling contacts.</p> <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>"
+        },
+        {
+          "info": {
+            "name": "Amazon Ground Station Delete Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://groundstation.{region}.amazonaws.com/config/:configType/:configId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "configId",
+                "value": "",
+                "type": "path",
+                "description": "UUID of a <code>Config</code>."
+              },
+              {
+                "name": "configType",
+                "value": "",
+                "type": "path",
+                "description": "Type of a <code>Config</code>."
+              }
+            ]
+          },
+          "docs": "Deletes a <code>Config</code>."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

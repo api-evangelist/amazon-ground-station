@@ -1,0 +1,1580 @@
+{
+  "item": [
+    {
+      "id": "3829e96a-a784-4dbd-a7cc-4909b58d0717",
+      "name": "Agent",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9d85fde5-6553-4b76-9102-d5c63a1d8662",
+          "name": "Amazon Ground Station Get Agent Configuration",
+          "request": {
+            "name": "Amazon Ground Station Get Agent Configuration",
+            "description": {
+              "content": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Gets the latest configuration information for a registered agent.</p>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "agent",
+                ":agentId",
+                "configuration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) UUID of agent to get configuration information for."
+                },
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a14819c-bb78-4b47-9d30-d58724fe235a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId",
+                    "configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to get configuration information for."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13483132-a502-4035-aebc-fc6c73513223",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId",
+                    "configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to get configuration information for."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a13045ce-bec3-492f-b015-b98065f31365",
+              "name": "DependencyException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId",
+                    "configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to get configuration information for."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ed017a49-9028-4eda-a498-42627ed516f7",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId",
+                    "configuration"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to get configuration information for."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ebe791ef-2aa1-41b2-9e64-bec3b824ff41",
+          "name": "Amazon Ground Station Register Agent",
+          "request": {
+            "name": "Amazon Ground Station Register Agent",
+            "description": {
+              "content": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p> Registers a new agent with AWS Ground Station. </p>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "agent"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"<string>\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"<string>\",\n        \"versions\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    ],\n    \"instanceId\": \"<string>\",\n    \"instanceType\": \"<string>\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"<string>\"\n    ],\n    \"publicIpAddresses\": [\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2a0a4390-4c76-44c0-b31e-800df211c26f",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"<string>\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"<string>\",\n        \"versions\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    ],\n    \"instanceId\": \"<string>\",\n    \"instanceType\": \"<string>\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"<string>\"\n    ],\n    \"publicIpAddresses\": [\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4ecb4aa-d126-4bab-9aca-5f62ef1c3a91",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"<string>\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"<string>\",\n        \"versions\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    ],\n    \"instanceId\": \"<string>\",\n    \"instanceType\": \"<string>\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"<string>\"\n    ],\n    \"publicIpAddresses\": [\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de33101d-bd96-4c59-83ba-39ed74360a16",
+              "name": "DependencyException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"<string>\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"<string>\",\n        \"versions\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    ],\n    \"instanceId\": \"<string>\",\n    \"instanceType\": \"<string>\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"<string>\"\n    ],\n    \"publicIpAddresses\": [\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52d6da32-2d0b-4689-9007-714fd8097e7d",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agentDetails\": {\n    \"agentCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"agentVersion\": \"<string>\",\n    \"componentVersions\": [\n      {\n        \"componentType\": \"<string>\",\n        \"versions\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      }\n    ],\n    \"instanceId\": \"<string>\",\n    \"instanceType\": \"<string>\",\n    \"reservedCpuCores\": [\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"discoveryData\": {\n    \"capabilityArns\": [\n      \"<string>\"\n    ],\n    \"privateIpAddresses\": [\n      \"<string>\"\n    ],\n    \"publicIpAddresses\": [\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "952570a5-9a10-4178-9ea2-00e38b3af15b",
+          "name": "Amazon Ground Station Update Agent Status",
+          "request": {
+            "name": "Amazon Ground Station Update Agent Status",
+            "description": {
+              "content": "<note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Update the status of the agent.</p>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "agent",
+                ":agentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) UUID of agent to update."
+                },
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"key_0\": \"<boolean>\",\n      \"key_1\": \"<boolean>\",\n      \"key_2\": \"<boolean>\"\n    },\n    \"status\": \"<string>\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23cd6fd3-e72d-4cc6-bb1b-d821617331fe",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"key_0\": \"<boolean>\",\n      \"key_1\": \"<boolean>\"\n    },\n    \"status\": \"<string>\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3290075-743d-45bf-a7ac-f8977425a1de",
+              "name": "InvalidParameterException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"key_0\": \"<boolean>\",\n      \"key_1\": \"<boolean>\"\n    },\n    \"status\": \"<string>\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "579ac896-f239-4042-a923-a5ae1a4d7344",
+              "name": "DependencyException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"key_0\": \"<boolean>\",\n      \"key_1\": \"<boolean>\"\n    },\n    \"status\": \"<string>\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02cb869e-210c-456c-8ef3-ff5f9ff578ce",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent",
+                    ":agentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) UUID of agent to update."
+                    },
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateStatus\": {\n    \"signatureMap\": {\n      \"key_0\": \"<boolean>\",\n      \"key_1\": \"<boolean>\"\n    },\n    \"status\": \"<string>\"\n  },\n  \"componentStatuses\": [\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    },\n    {\n      \"capabilityArn\": \"<string>\",\n      \"componentType\": \"<string>\",\n      \"dataflowId\": \"<string>\",\n      \"status\": \"<string>\",\n      \"bytesReceived\": \"<integer>\",\n      \"bytesSent\": \"<integer>\",\n      \"packetsDropped\": \"<integer>\"\n    }\n  ],\n  \"taskId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contactId\": \"abc-123\",\n  \"contactStatus\": \"COMPLETED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://groundstation.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c3b34505-08e5-4cd7-bb2d-d6d45ef755de",
+    "name": "AWS Ground Station Agent API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
