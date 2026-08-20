@@ -34,6 +34,8 @@ apis:
   humanURL: https://aws.amazon.com/ground-station/
   baseURL: https://groundstation.amazonaws.com
   tags:
+  - Agents
+  tags_raw:
   - Agent
   properties:
   - type: OpenAPI
@@ -203,6 +205,8 @@ apis:
   humanURL: https://aws.amazon.com/ground-station/
   baseURL: https://groundstation.amazonaws.com
   tags:
+  - Ground Station
+  tags_raw:
   - Groundstation
   properties:
   - type: OpenAPI
