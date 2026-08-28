@@ -3,6 +3,18 @@ name: Amazon Ground Station
 description: AWS Ground Station is a fully managed service that lets you control satellite communications, process satellite
   data, and scale your satellite operations without having to worry about building or managing your own ground station infrastructure.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
