@@ -217,7 +217,7 @@ apis:
   humanURL: https://aws.amazon.com/ground-station/
   baseURL: https://groundstation.amazonaws.com
   tags:
-  - Ground Station
+  - Groundstation
   tags_raw:
   - Groundstation
   properties:
