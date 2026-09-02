@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Ground Station Agent Contacts API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
@@ -248,51 +248,12 @@ paths:
       tags:
       - Contacts
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ResourceNotFoundException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
     Timestamp:
       type: string
       format: date-time
@@ -300,12 +261,39 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/ContactData'
+    String:
+      type: string
+    DependencyException: {}
     AngleUnits:
       type: string
       enum:
       - DEGREE_ANGLE
       - RADIAN
-    InvalidParameterException: {}
+    MissionProfileArn:
+      type: string
+    ResourceNotFoundException: {}
+    Elevation:
+      type: object
+      required:
+      - unit
+      - value
+      properties:
+        unit:
+          allOf:
+          - $ref: '#/components/schemas/AngleUnits'
+          - description: Elevation angle units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Elevation angle value.
+      description: Elevation angle of the satellite in the sky during a contact.
+    satelliteArn:
+      type: string
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
     ContactData:
       type: object
       properties:
@@ -362,34 +350,14 @@ components:
           - $ref: '#/components/schemas/TagsMap'
           - description: Tags assigned to a contact.
       description: Data describing a contact.
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    Elevation:
+    TagsMap:
       type: object
-      required:
-      - unit
-      - value
-      properties:
-        unit:
-          allOf:
-          - $ref: '#/components/schemas/AngleUnits'
-          - description: Elevation angle units.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: Elevation angle value.
-      description: Elevation angle of the satellite in the sky during a contact.
+      additionalProperties:
+        $ref: '#/components/schemas/String'
     Double:
       type: number
       format: double
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
+    InvalidParameterException: {}
     ListContactsResponse:
       type: object
       properties:
@@ -402,15 +370,6 @@ components:
           - $ref: '#/components/schemas/PaginationToken'
           - description: Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.
       description: <p/>
-    DependencyException: {}
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    String:
-      type: string
-    MissionProfileArn:
-      type: string
     ContactStatus:
       type: string
       enum:
@@ -427,8 +386,49 @@ components:
       - PREPASS
       - SCHEDULED
       - SCHEDULING
-    satelliteArn:
-      type: string
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

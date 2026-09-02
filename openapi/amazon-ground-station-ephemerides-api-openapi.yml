@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Ground Station Agent Ephemerides API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
@@ -236,61 +236,21 @@ paths:
       tags:
       - Ephemerides
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    EphemeridesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EphemerisItem'
-      minItems: 1
-      maxItems: 500
-    ResourceNotFoundException: {}
-    Timestamp:
+    PaginationToken:
       type: string
-      format: date-time
-    InvalidParameterException: {}
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    EphemerisStatus:
+      type: string
+      enum:
+      - VALIDATING
+      - INVALID
+      - ERROR
+      - ENABLED
+      - DISABLED
+      - EXPIRED
     ListEphemeridesResponse:
       type: object
       properties:
@@ -302,53 +262,9 @@ components:
           allOf:
           - $ref: '#/components/schemas/PaginationToken'
           - description: Pagination token.
-    S3ObjectKey:
+    Timestamp:
       type: string
-      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
-      minLength: 1
-      maxLength: 1024
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
-    S3Object:
-      type: object
-      properties:
-        bucket:
-          allOf:
-          - $ref: '#/components/schemas/S3BucketName'
-          - description: An Amazon S3 Bucket name.
-        key:
-          allOf:
-          - $ref: '#/components/schemas/S3ObjectKey'
-          - description: An Amazon S3 key for the ephemeris.
-        version:
-          allOf:
-          - $ref: '#/components/schemas/S3VersionId'
-          - description: For versioned S3 objects, the version to use for the ephemeris.
-      description: Object stored in S3 containing ephemeris data.
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    Boolean:
-      type: boolean
-    S3BucketName:
-      type: string
-      pattern: ^[a-z0-9.-]{3,63}$
-      minLength: 3
-      maxLength: 63
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    EphemerisPriority:
-      type: integer
-      minimum: 0
-      maximum: 99999
+      format: date-time
     EphemerisItem:
       type: object
       properties:
@@ -381,21 +297,105 @@ components:
           - $ref: '#/components/schemas/EphemerisStatus'
           - description: The status of the ephemeris.
       description: Ephemeris item.
-    DependencyException: {}
-    EphemerisStatus:
-      type: string
-      enum:
-      - VALIDATING
-      - INVALID
-      - ERROR
-      - ENABLED
-      - DISABLED
-      - EXPIRED
     S3VersionId:
       type: string
       pattern: ^[\s\S]{1,1024}$
       minLength: 1
       maxLength: 1024
+    DependencyException: {}
+    S3Object:
+      type: object
+      properties:
+        bucket:
+          allOf:
+          - $ref: '#/components/schemas/S3BucketName'
+          - description: An Amazon S3 Bucket name.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/S3ObjectKey'
+          - description: An Amazon S3 key for the ephemeris.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/S3VersionId'
+          - description: For versioned S3 objects, the version to use for the ephemeris.
+      description: Object stored in S3 containing ephemeris data.
+    S3BucketName:
+      type: string
+      pattern: ^[a-z0-9.-]{3,63}$
+      minLength: 3
+      maxLength: 63
+    ResourceNotFoundException: {}
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    Boolean:
+      type: boolean
+    EphemerisPriority:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    EphemeridesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EphemerisItem'
+      minItems: 1
+      maxItems: 500
+    InvalidParameterException: {}
+    S3ObjectKey:
+      type: string
+      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

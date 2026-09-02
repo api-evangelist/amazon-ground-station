@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Ground Station Agent Missionprofile API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
@@ -608,137 +608,40 @@ paths:
       tags:
       - Missionprofile
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ResourceNotFoundException: {}
-    ListMissionProfilesResponse:
-      type: object
-      properties:
-        missionProfileList:
-          allOf:
-          - $ref: '#/components/schemas/MissionProfileList'
-          - description: List of mission profiles.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
-      description: <p/>
-    MissionProfileList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MissionProfileListItem'
-    InvalidParameterException: {}
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
-    RoleArn:
-      type: string
     PaginationToken:
       type: string
       pattern: ^[A-Za-z0-9-/+_.=]+$
       minLength: 3
       maxLength: 1000
-    Uuid:
+    KmsKey:
+      type: object
+      properties:
+        kmsAliasArn:
+          allOf:
+          - $ref: '#/components/schemas/KeyAliasArn'
+          - description: KMS Alias Arn.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/KeyArn'
+          - description: KMS Key Arn.
+      description: AWS Key Management Service (KMS) Key.
+    AWSRegion:
       type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      pattern: ^[\w-]+$
       minLength: 1
       maxLength: 128
-    KeyAliasArn:
+    String:
       type: string
-      pattern: ^arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((alias/[a-zA-Z0-9:/_-]{1,256}))$
-      minLength: 1
-      maxLength: 512
-    DataflowEdge:
+    MissionProfileList:
       type: array
       items:
-        $ref: '#/components/schemas/ConfigArn'
-      minItems: 2
-      maxItems: 2
+        $ref: '#/components/schemas/MissionProfileListItem'
     PositiveDurationInSeconds:
       type: integer
       minimum: 1
       maximum: 21600
-    MissionProfileIdResponse:
-      type: object
-      properties:
-        missionProfileId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a mission profile.
-      description: <p/>
     DependencyException: {}
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    MissionProfileListItem:
-      type: object
-      properties:
-        missionProfileArn:
-          allOf:
-          - $ref: '#/components/schemas/MissionProfileArn'
-          - description: ARN of a mission profile.
-        missionProfileId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a mission profile.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/SafeName'
-          - description: Name of a mission profile.
-        region:
-          allOf:
-          - $ref: '#/components/schemas/AWSRegion'
-          - description: Region of a mission profile.
-      description: Item in a list of mission profiles.
-    String:
-      type: string
-    KeyArn:
-      type: string
     GetMissionProfileResponse:
       type: object
       properties:
@@ -791,37 +694,134 @@ components:
           - $ref: '#/components/schemas/ConfigArn'
           - description: ARN of a tracking <code>Config</code>.
       description: <p/>
-    KmsKey:
+    MissionProfileListItem:
       type: object
       properties:
-        kmsAliasArn:
+        missionProfileArn:
           allOf:
-          - $ref: '#/components/schemas/KeyAliasArn'
-          - description: KMS Alias Arn.
-        kmsKeyArn:
+          - $ref: '#/components/schemas/MissionProfileArn'
+          - description: ARN of a mission profile.
+        missionProfileId:
           allOf:
-          - $ref: '#/components/schemas/KeyArn'
-          - description: KMS Key Arn.
-      description: AWS Key Management Service (KMS) Key.
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a mission profile.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name of a mission profile.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/AWSRegion'
+          - description: Region of a mission profile.
+      description: Item in a list of mission profiles.
+    DurationInSeconds:
+      type: integer
+      minimum: 0
+      maximum: 21600
     MissionProfileArn:
       type: string
+    KeyArn:
+      type: string
+    DataflowEdge:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConfigArn'
+      minItems: 2
+      maxItems: 2
+    ResourceNotFoundException: {}
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
     ConfigArn:
       type: string
-    AWSRegion:
+    Uuid:
       type: string
-      pattern: ^[\w-]+$
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
       minLength: 1
       maxLength: 128
+    MissionProfileIdResponse:
+      type: object
+      properties:
+        missionProfileId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a mission profile.
+      description: <p/>
     DataflowEdgeList:
       type: array
       items:
         $ref: '#/components/schemas/DataflowEdge'
       minItems: 0
       maxItems: 500
-    DurationInSeconds:
-      type: integer
-      minimum: 0
-      maximum: 21600
+    RoleArn:
+      type: string
+    ListMissionProfilesResponse:
+      type: object
+      properties:
+        missionProfileList:
+          allOf:
+          - $ref: '#/components/schemas/MissionProfileList'
+          - description: List of mission profiles.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
+      description: <p/>
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    InvalidParameterException: {}
+    KeyAliasArn:
+      type: string
+      pattern: ^arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((alias/[a-zA-Z0-9:/_-]{1,256}))$
+      minLength: 1
+      maxLength: 512
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

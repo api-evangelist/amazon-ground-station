@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Ground Station Agent Satellite API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
@@ -285,84 +285,15 @@ paths:
       tags:
       - Satellite
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ResourceNotFoundException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
     Timestamp:
       type: string
       format: date-time
-    SatelliteListItem:
-      type: object
-      properties:
-        currentEphemeris:
-          allOf:
-          - $ref: '#/components/schemas/EphemerisMetaData'
-          - description: The current ephemeris being used to compute the trajectory of the satellite.
-        groundStations:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationIdList'
-          - description: A list of ground stations to which the satellite is on-boarded.
-        noradSatelliteID:
-          allOf:
-          - $ref: '#/components/schemas/noradSatelliteID'
-          - description: NORAD satellite ID number.
-        satelliteArn:
-          allOf:
-          - $ref: '#/components/schemas/satelliteArn'
-          - description: ARN of a satellite.
-        satelliteId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a satellite.
-      description: Item in a list of satellites.
-    EphemerisSource:
-      type: string
-      enum:
-      - CUSTOMER_PROVIDED
-      - SPACE_TRACK
-    InvalidParameterException: {}
     GetSatelliteResponse:
       type: object
       properties:
@@ -387,48 +318,64 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: <p/>
-    SafeName:
+    GroundStationName:
       type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
+    EphemerisSource:
+      type: string
+      enum:
+      - CUSTOMER_PROVIDED
+      - SPACE_TRACK
+    noradSatelliteID:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    DependencyException: {}
+    SatelliteListItem:
+      type: object
+      properties:
+        currentEphemeris:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisMetaData'
+          - description: The current ephemeris being used to compute the trajectory of the satellite.
+        groundStations:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationIdList'
+          - description: A list of ground stations to which the satellite is on-boarded.
+        noradSatelliteID:
+          allOf:
+          - $ref: '#/components/schemas/noradSatelliteID'
+          - description: NORAD satellite ID number.
+        satelliteArn:
+          allOf:
+          - $ref: '#/components/schemas/satelliteArn'
+          - description: ARN of a satellite.
+        satelliteId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a satellite.
+      description: Item in a list of satellites.
     GroundStationIdList:
       type: array
       items:
         $ref: '#/components/schemas/GroundStationName'
       minItems: 0
       maxItems: 500
-    PaginationToken:
+    ResourceNotFoundException: {}
+    SafeName:
       type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    noradSatelliteID:
-      type: integer
-      minimum: 0
-      maximum: 99999
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    satelliteArn:
+      type: string
     Uuid:
       type: string
       pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
       minLength: 1
       maxLength: 128
-    SatelliteList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SatelliteListItem'
-    DependencyException: {}
-    ListSatellitesResponse:
-      type: object
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token that can be supplied in the next call to get the next page of satellites.
-        satellites:
-          allOf:
-          - $ref: '#/components/schemas/SatelliteList'
-          - description: List of satellites.
-      description: <p/>
     EphemerisMetaData:
       type: object
       required:
@@ -451,13 +398,66 @@ components:
           - $ref: '#/components/schemas/EphemerisSource'
           - description: The <code>EphemerisSource</code> that generated a given ephemeris.
       description: Metadata describing a particular ephemeris.
-    GroundStationName:
-      type: string
-      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
-      minLength: 4
-      maxLength: 500
-    satelliteArn:
-      type: string
+    InvalidParameterException: {}
+    ListSatellitesResponse:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token that can be supplied in the next call to get the next page of satellites.
+        satellites:
+          allOf:
+          - $ref: '#/components/schemas/SatelliteList'
+          - description: List of satellites.
+      description: <p/>
+    SatelliteList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SatelliteListItem'
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
