@@ -1,7 +1,8 @@
 aid: amazon-ground-station
 name: Amazon Ground Station
-description: AWS Ground Station is a fully managed service that lets you control satellite communications, process satellite
-  data, and scale your satellite operations without having to worry about building or managing your own ground station infrastructure.
+description: AWS Ground Station is a fully managed service that lets you control satellite communications,
+  process satellite data, and scale your satellite operations without having to worry about building or
+  managing your own ground station infrastructure.
 type: Index
 deliveryModel:
   model: saas
@@ -38,7 +39,7 @@ tags:
 - Space Technology
 url: https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-ground-station:amazon-ground-station-agent-api
@@ -141,8 +142,7 @@ apis:
     url: json-ld/amazon-ground-station-context.jsonld
 - aid: amazon-ground-station:amazon-ground-station-dataflowendpointgroup-api
   name: Amazon Ground Station DataflowEndpointGroup API
-  description: >-
-    The DataflowEndpointGroup API from Amazon Ground Station — 2 operation(s) for dataflowendpointgroup.
+  description: The DataflowEndpointGroup API from Amazon Ground Station — 2 operation(s) for dataflowendpointgroup.
   humanURL: https://aws.amazon.com/ground-station/
   baseURL: https://groundstation.amazonaws.com
   tags:
@@ -335,6 +335,8 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
 common:
+- type: Website
+  url: https://amazon.com
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-ground-station/overview
 - type: AgenticAccess
@@ -376,22 +378,28 @@ common:
 - type: Features
   data:
   - name: Managed Ground Station Infrastructure
-    description: AWS manages a global network of antennas so you do not need to build or operate your own ground station infrastructure.
+    description: AWS manages a global network of antennas so you do not need to build or operate your
+      own ground station infrastructure.
   - name: Satellite Contact Scheduling
-    description: Schedule satellite contacts through a simple API, selecting the satellite, time window, and ground station
-      location.
+    description: Schedule satellite contacts through a simple API, selecting the satellite, time window,
+      and ground station location.
   - name: Global Antenna Network
-    description: Access AWS ground station antennas deployed at strategic worldwide locations for maximum satellite coverage.
+    description: Access AWS ground station antennas deployed at strategic worldwide locations for maximum
+      satellite coverage.
   - name: Data Downlink and Processing
-    description: Receive satellite data directly into AWS cloud services for processing, storage, and analysis.
+    description: Receive satellite data directly into AWS cloud services for processing, storage, and
+      analysis.
   - name: Mission Profile Configuration
-    description: Configure mission profiles specifying dataflow endpoints, antenna frequencies, and processing parameters.
+    description: Configure mission profiles specifying dataflow endpoints, antenna frequencies, and processing
+      parameters.
   - name: Integration with AWS Services
-    description: Stream satellite data directly into Amazon S3, Kinesis, EC2, and other AWS services for processing.
+    description: Stream satellite data directly into Amazon S3, Kinesis, EC2, and other AWS services for
+      processing.
 - type: UseCases
   data:
   - name: Earth Observation
-    description: Collect and process satellite imagery for environmental monitoring, agriculture, and urban planning.
+    description: Collect and process satellite imagery for environmental monitoring, agriculture, and
+      urban planning.
   - name: Weather Forecasting
     description: Receive data from weather satellites for meteorological analysis and forecasting.
   - name: Maritime Tracking
