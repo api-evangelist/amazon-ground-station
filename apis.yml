@@ -140,30 +140,6 @@ apis:
     url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
   - type: JSONLD
     url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-dataflowendpointgroup-api
-  name: Amazon Ground Station DataflowEndpointGroup API
-  description: The DataflowEndpointGroup API from Amazon Ground Station — 2 operation(s) for dataflowendpointgroup.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - DataflowEndpointGroup
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-dataflowendpointgroup-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
 - aid: amazon-ground-station:amazon-ground-station-ephemerides-api
   name: Amazon Ground Station Ephemerides API
   description: The Ephemerides API from Amazon Ground Station — 1 operation(s) for ephemerides.
@@ -320,6 +296,32 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-ground-station-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+- aid: amazon-ground-station:amazon-ground-station-dataflow-endpoint-group-api
+  name: Amazon Ground Station Dataflow Endpoint Group API
+  description: >-
+    The Dataflow Endpoint Group API from Amazon Ground Station — 2 operation(s) for dataflow endpoint
+    group.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Dataflow Endpoint Group
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-dataflow-endpoint-group-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
   - type: GettingStarted
