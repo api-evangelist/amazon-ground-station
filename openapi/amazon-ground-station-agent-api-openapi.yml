@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-05-23
   x-release: v4
   title: AWS Ground Station Agent API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: GetAgentConfiguration
-      description: <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Gets the latest configuration information for a registered agent.</p>
+      description: 'For use by AWS Ground Station Agent and shouldn''t be called directly.
+
+
+        Gets the latest configuration information for a registered agent.'
       responses:
         '200':
           description: Success
@@ -206,7 +210,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: RegisterAgent
-      description: <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p> Registers a new agent with AWS Ground Station. </p>
+      description: 'For use by AWS Ground Station Agent and shouldn''t be called directly.
+
+
+        Registers a new agent with AWS Ground Station.'
       responses:
         '200':
           description: Success
@@ -332,7 +339,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     put:
       operationId: UpdateAgentStatus
-      description: <note> <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> </note> <p>Update the status of the agent.</p>
+      description: 'For use by AWS Ground Station Agent and shouldn''t be called directly.
+
+
+        Update the status of the agent.'
       responses:
         '200':
           description: Success
@@ -439,7 +449,61 @@ paths:
       tags:
       - Agent
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    GetAgentConfigurationResponse:
+      type: object
+      properties:
+        agentId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of agent.
+        taskingDocument:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Tasking document for agent.
     ComponentStatusData:
       type: object
       required:
@@ -477,81 +541,24 @@ components:
           - $ref: '#/components/schemas/AgentStatus'
           - description: Component status.
       description: Data on the status of agent components.
-    InstanceId:
-      type: string
-      pattern: ^[a-z0-9-]{10,64}$
-      minLength: 10
-      maxLength: 64
-    VersionString:
-      type: string
-      pattern: ^(0|[1-9]\d*)(\.(0|[1-9]\d*))*$
-      minLength: 1
-      maxLength: 64
-    CapabilityArnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CapabilityArn'
-      minItems: 1
-      maxItems: 20
-    ComponentTypeString:
-      type: string
-      pattern: ^[a-zA-Z0-9_]{1,64}$
-    IpAddressList:
-      type: array
-      items:
-        $ref: '#/components/schemas/IpV4Address'
-      minItems: 1
-      maxItems: 20
-    InstanceType:
-      type: string
-      pattern: ^[a-z0-9.-]{1,64}$
-      minLength: 1
-      maxLength: 64
-    String:
-      type: string
-    AgentStatus:
-      type: string
-      enum:
-      - SUCCESS
-      - FAILED
-      - ACTIVE
-      - INACTIVE
-    DependencyException: {}
     VersionStringList:
       type: array
       items:
         $ref: '#/components/schemas/VersionString'
       minItems: 1
       maxItems: 20
-    Integer:
-      type: integer
-    AgentCpuCoresList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Integer'
-      minItems: 0
-      maxItems: 256
-    ResourceNotFoundException: {}
-    Boolean:
-      type: boolean
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    RegisterAgentResponse:
-      type: object
-      properties:
-        agentId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of registered agent.
-    SignatureMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/Boolean'
     Long:
       type: integer
+    IpV4Address:
+      type: string
+      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+      minLength: 7
+      maxLength: 16
+    InstanceType:
+      type: string
+      pattern: ^[a-z0-9.-]{1,64}$
+      minLength: 1
+      maxLength: 64
     UpdateAgentStatusResponse:
       type: object
       required:
@@ -561,15 +568,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of updated agent.
-    InvalidParameterException: {}
-    ComponentVersionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ComponentVersion'
-      minItems: 1
-      maxItems: 20
-    CapabilityArn:
-      type: string
+    Integer:
+      type: integer
     ComponentVersion:
       type: object
       required:
@@ -585,65 +585,75 @@ components:
           - $ref: '#/components/schemas/VersionStringList'
           - description: List of versions.
       description: Version information for agent components.
-    GetAgentConfigurationResponse:
+    Boolean:
+      type: boolean
+    InvalidParameterException: {}
+    String:
+      type: string
+    ResourceNotFoundException: {}
+    RegisterAgentResponse:
       type: object
       properties:
         agentId:
           allOf:
           - $ref: '#/components/schemas/Uuid'
-          - description: UUID of agent.
-        taskingDocument:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Tasking document for agent.
-    IpV4Address:
+          - description: UUID of registered agent.
+    CapabilityArn:
       type: string
-      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
-      minLength: 7
-      maxLength: 16
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
+    AgentStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - FAILED
+      - ACTIVE
+      - INACTIVE
+    VersionString:
+      type: string
+      pattern: ^(0|[1-9]\d*)(\.(0|[1-9]\d*))*$
+      minLength: 1
+      maxLength: 64
+    SignatureMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Boolean'
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    CapabilityArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CapabilityArn'
+      minItems: 1
+      maxItems: 20
+    ComponentVersionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ComponentVersion'
+      minItems: 1
+      maxItems: 20
+    AgentCpuCoresList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Integer'
+      minItems: 0
+      maxItems: 256
+    DependencyException: {}
+    ComponentTypeString:
+      type: string
+      pattern: ^[a-zA-Z0-9_]{1,64}$
+    InstanceId:
+      type: string
+      pattern: ^[a-z0-9-]{10,64}$
+      minLength: 10
+      maxLength: 64
+    IpAddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IpV4Address'
+      minItems: 1
+      maxItems: 20
   securitySchemes:
     hmac:
       type: apiKey

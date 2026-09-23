@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-05-23
   x-release: v4
-  title: AWS Ground Station Agent Dataflow Endpoint Group API
+  title: AWS Ground Station Dataflow Endpoint Group API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: DataflowEndpointGroup
+- name: Dataflow Endpoint Group
 paths:
   /dataflowEndpointGroup:
     parameters:
@@ -125,7 +126,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateDataflowEndpointGroup
-      description: <p>Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code> objects.</p> <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code> to specify which endpoints to use during a contact.</p> <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in the same group.</p>
+      description: 'Creates a DataflowEndpoint group containing the specified list of DataflowEndpoint objects.
+
+
+        The name field in each endpoint is used in your mission profile DataflowEndpointConfig to specify which endpoints to use during a contact.
+
+
+        When a contact uses multiple DataflowEndpointConfig objects, each Config must match a DataflowEndpoint in the same group.'
       responses:
         '200':
           description: Success
@@ -216,10 +223,10 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - DataflowEndpointGroup
+      - Dataflow Endpoint Group
     get:
       operationId: ListDataflowEndpointGroups
-      description: Returns a list of <code>DataflowEndpoint</code> groups.
+      description: Returns a list of DataflowEndpoint groups.
       responses:
         '200':
           description: Success
@@ -296,7 +303,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - DataflowEndpointGroup
+      - Dataflow Endpoint Group
   /dataflowEndpointGroup/{dataflowEndpointGroupId}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -377,7 +384,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - DataflowEndpointGroup
+      - Dataflow Endpoint Group
     get:
       operationId: GetDataflowEndpointGroup
       description: Returns the dataflow endpoint group.
@@ -449,78 +456,57 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - DataflowEndpointGroup
+      - Dataflow Endpoint Group
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ListDataflowEndpointGroupsResponse:
-      type: object
-      properties:
-        dataflowEndpointGroupList:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpointGroupList'
-          - description: A list of dataflow endpoint groups.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
-      description: <p/>
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    DataflowEndpointGroupDurationInSeconds:
-      type: integer
-      minimum: 120
-      maximum: 480
-    DataflowEndpointMtuInteger:
-      type: integer
-      minimum: 1400
-      maximum: 1500
-    String:
-      type: string
-    AgentStatus:
+    CapabilityHealth:
       type: string
       enum:
-      - SUCCESS
-      - FAILED
-      - ACTIVE
-      - INACTIVE
-    DataflowEndpointGroupArn:
-      type: string
-    RangedConnectionDetailsMtuInteger:
-      type: integer
-      minimum: 1400
-      maximum: 1500
-    AuditResults:
-      type: string
-      enum:
-      - HEALTHY
       - UNHEALTHY
-    SubnetList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    SecurityDetails:
-      type: object
-      required:
-      - roleArn
-      - securityGroupIds
-      - subnetIds
-      properties:
-        roleArn:
-          allOf:
-          - $ref: '#/components/schemas/RoleArn'
-          - description: 'ARN to a role needed for connecting streams to your instances. '
-        securityGroupIds:
-          allOf:
-          - $ref: '#/components/schemas/SecurityGroupIdList'
-          - description: The security groups to attach to the elastic network interfaces.
-        subnetIds:
-          allOf:
-          - $ref: '#/components/schemas/SubnetList'
-          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
-      description: Information about endpoints.
+      - HEALTHY
     ConnectionDetails:
       type: object
       required:
@@ -535,128 +521,6 @@ components:
           - $ref: '#/components/schemas/SocketAddress'
           - description: A socket address.
       description: Egress address of AgentEndpoint with an optional mtu.
-    DataflowEndpoint:
-      type: object
-      properties:
-        address:
-          allOf:
-          - $ref: '#/components/schemas/SocketAddress'
-          - description: Socket address of a dataflow endpoint.
-        mtu:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpointMtuInteger'
-          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/SafeName'
-          - description: Name of a dataflow endpoint.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/EndpointStatus'
-          - description: Status of a dataflow endpoint.
-      description: Information about a dataflow endpoint.
-    DependencyException: {}
-    DataflowEndpointGroupList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataflowEndpointListItem'
-    CapabilityHealth:
-      type: string
-      enum:
-      - UNHEALTHY
-      - HEALTHY
-    IntegerRange:
-      type: object
-      required:
-      - maximum
-      - minimum
-      properties:
-        maximum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: A maximum value.
-        minimum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: A minimum value.
-      description: An integer range that has a minimum and maximum value.
-    DataflowEndpointGroupIdResponse:
-      type: object
-      properties:
-        dataflowEndpointGroupId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a dataflow endpoint group.
-      description: <p/>
-    Integer:
-      type: integer
-    RangedConnectionDetails:
-      type: object
-      required:
-      - socketAddress
-      properties:
-        mtu:
-          allOf:
-          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
-          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
-        socketAddress:
-          allOf:
-          - $ref: '#/components/schemas/RangedSocketAddress'
-          - description: A ranged socket address.
-      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
-    GetDataflowEndpointGroupResponse:
-      type: object
-      properties:
-        contactPostPassDurationSeconds:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpointGroupDurationInSeconds'
-          - description: Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.
-        contactPrePassDurationSeconds:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpointGroupDurationInSeconds'
-          - description: Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.
-        dataflowEndpointGroupArn:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpointGroupArn'
-          - description: ARN of a dataflow endpoint group.
-        dataflowEndpointGroupId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a dataflow endpoint group.
-        endpointsDetails:
-          allOf:
-          - $ref: '#/components/schemas/EndpointDetailsList'
-          - description: Details of a dataflow endpoint.
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagsMap'
-          - description: Tags assigned to a dataflow endpoint group.
-      description: <p/>
-    ResourceNotFoundException: {}
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
-    EndpointStatus:
-      type: string
-      enum:
-      - created
-      - creating
-      - deleted
-      - deleting
-      - failed
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    EndpointDetailsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EndpointDetails'
-      minItems: 0
-      maxItems: 500
     DataflowEndpointListItem:
       type: object
       properties:
@@ -669,68 +533,29 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a dataflow endpoint group.
       description: Item in a list of <code>DataflowEndpoint</code> groups.
-    SocketAddress:
-      type: object
-      required:
-      - name
-      - port
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Name of a socket address.
-        port:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: Port of a socket address.
-      description: Information about the socket address.
-    RoleArn:
+    IpV4Address:
       type: string
-    CapabilityHealthReason:
-      type: string
-      enum:
-      - NO_REGISTERED_AGENT
-      - INVALID_IP_OWNERSHIP
-      - NOT_AUTHORIZED_TO_CREATE_SLR
-      - UNVERIFIED_IP_OWNERSHIP
-      - INITIALIZING_DATAPLANE
-      - DATAPLANE_FAILURE
-      - HEALTHY
-    EndpointDetails:
-      type: object
-      properties:
-        awsGroundStationAgentEndpoint:
-          allOf:
-          - $ref: '#/components/schemas/AwsGroundStationAgentEndpoint'
-          - description: An agent endpoint.
-        endpoint:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpoint'
-          - description: A dataflow endpoint.
-        healthReasons:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityHealthReasonList'
-          - description: Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
-        healthStatus:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityHealth'
-          - description: A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
-        securityDetails:
-          allOf:
-          - $ref: '#/components/schemas/SecurityDetails'
-          - description: Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.
-      description: Information about the endpoint details.
-    CapabilityHealthReasonList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CapabilityHealthReason'
-      minItems: 0
-      maxItems: 500
+      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+      minLength: 7
+      maxLength: 16
+    Integer:
+      type: integer
+    DataflowEndpointMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
     TagsMap:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/String'
-    InvalidParameterException: {}
+    SubnetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    DataflowEndpointGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataflowEndpointListItem'
     AwsGroundStationAgentEndpoint:
       type: object
       required:
@@ -759,15 +584,212 @@ components:
           - $ref: '#/components/schemas/SafeName'
           - description: Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.
       description: Information about AwsGroundStationAgentEndpoint.
+    RangedConnectionDetailsMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    InvalidParameterException: {}
+    ListDataflowEndpointGroupsResponse:
+      type: object
+      properties:
+        dataflowEndpointGroupList:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupList'
+          - description: A list of dataflow endpoint groups.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
+      description: <p/>
+    SocketAddress:
+      type: object
+      required:
+      - name
+      - port
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a socket address.
+        port:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Port of a socket address.
+      description: Information about the socket address.
     SecurityGroupIdList:
       type: array
       items:
         $ref: '#/components/schemas/String'
-    IpV4Address:
+    String:
       type: string
-      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
-      minLength: 7
-      maxLength: 16
+    ResourceNotFoundException: {}
+    DataflowEndpointGroupArn:
+      type: string
+    DataflowEndpoint:
+      type: object
+      properties:
+        address:
+          allOf:
+          - $ref: '#/components/schemas/SocketAddress'
+          - description: Socket address of a dataflow endpoint.
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name of a dataflow endpoint.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/EndpointStatus'
+          - description: Status of a dataflow endpoint.
+      description: Information about a dataflow endpoint.
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    DataflowEndpointGroupIdResponse:
+      type: object
+      properties:
+        dataflowEndpointGroupId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a dataflow endpoint group.
+      description: <p/>
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    CapabilityHealthReason:
+      type: string
+      enum:
+      - NO_REGISTERED_AGENT
+      - INVALID_IP_OWNERSHIP
+      - NOT_AUTHORIZED_TO_CREATE_SLR
+      - UNVERIFIED_IP_OWNERSHIP
+      - INITIALIZING_DATAPLANE
+      - DATAPLANE_FAILURE
+      - HEALTHY
+    DataflowEndpointGroupDurationInSeconds:
+      type: integer
+      minimum: 120
+      maximum: 480
+    EndpointDetailsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EndpointDetails'
+      minItems: 0
+      maxItems: 500
+    AgentStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - FAILED
+      - ACTIVE
+      - INACTIVE
+    CapabilityHealthReasonList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CapabilityHealthReason'
+      minItems: 0
+      maxItems: 500
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    SecurityDetails:
+      type: object
+      required:
+      - roleArn
+      - securityGroupIds
+      - subnetIds
+      properties:
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: 'ARN to a role needed for connecting streams to your instances. '
+        securityGroupIds:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: The security groups to attach to the elastic network interfaces.
+        subnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetList'
+          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
+      description: Information about endpoints.
+    EndpointStatus:
+      type: string
+      enum:
+      - created
+      - creating
+      - deleted
+      - deleting
+      - failed
+    RoleArn:
+      type: string
+    RangedConnectionDetails:
+      type: object
+      required:
+      - socketAddress
+      properties:
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        socketAddress:
+          allOf:
+          - $ref: '#/components/schemas/RangedSocketAddress'
+          - description: A ranged socket address.
+      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
+    AuditResults:
+      type: string
+      enum:
+      - HEALTHY
+      - UNHEALTHY
+    EndpointDetails:
+      type: object
+      properties:
+        awsGroundStationAgentEndpoint:
+          allOf:
+          - $ref: '#/components/schemas/AwsGroundStationAgentEndpoint'
+          - description: An agent endpoint.
+        endpoint:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpoint'
+          - description: A dataflow endpoint.
+        healthReasons:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealthReasonList'
+          - description: Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        healthStatus:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealth'
+          - description: A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        securityDetails:
+          allOf:
+          - $ref: '#/components/schemas/SecurityDetails'
+          - description: Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.
+      description: Information about the endpoint details.
+    IntegerRange:
+      type: object
+      required:
+      - maximum
+      - minimum
+      properties:
+        maximum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A maximum value.
+        minimum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A minimum value.
+      description: An integer range that has a minimum and maximum value.
+    DependencyException: {}
     RangedSocketAddress:
       type: object
       required:
@@ -783,49 +805,34 @@ components:
           - $ref: '#/components/schemas/IntegerRange'
           - description: Port range of a socket address.
       description: A socket address with a port range.
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
+    GetDataflowEndpointGroupResponse:
+      type: object
+      properties:
+        contactPostPassDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupDurationInSeconds'
+          - description: Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.
+        contactPrePassDurationSeconds:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupDurationInSeconds'
+          - description: Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.
+        dataflowEndpointGroupArn:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointGroupArn'
+          - description: ARN of a dataflow endpoint group.
+        dataflowEndpointGroupId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a dataflow endpoint group.
+        endpointsDetails:
+          allOf:
+          - $ref: '#/components/schemas/EndpointDetailsList'
+          - description: Details of a dataflow endpoint.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: Tags assigned to a dataflow endpoint group.
+      description: <p/>
   securitySchemes:
     hmac:
       type: apiKey

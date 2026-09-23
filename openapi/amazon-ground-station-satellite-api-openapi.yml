@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-05-23
   x-release: v4
-  title: AWS Ground Station Agent Satellite API
+  title: AWS Ground Station Satellite API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -285,12 +286,152 @@ paths:
       tags:
       - Satellite
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    noradSatelliteID:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    GroundStationIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroundStationName'
+      minItems: 0
+      maxItems: 500
+    ListSatellitesResponse:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token that can be supplied in the next call to get the next page of satellites.
+        satellites:
+          allOf:
+          - $ref: '#/components/schemas/SatelliteList'
+          - description: List of satellites.
+      description: <p/>
+    SatelliteListItem:
+      type: object
+      properties:
+        currentEphemeris:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisMetaData'
+          - description: The current ephemeris being used to compute the trajectory of the satellite.
+        groundStations:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationIdList'
+          - description: A list of ground stations to which the satellite is on-boarded.
+        noradSatelliteID:
+          allOf:
+          - $ref: '#/components/schemas/noradSatelliteID'
+          - description: NORAD satellite ID number.
+        satelliteArn:
+          allOf:
+          - $ref: '#/components/schemas/satelliteArn'
+          - description: ARN of a satellite.
+        satelliteId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a satellite.
+      description: Item in a list of satellites.
+    InvalidParameterException: {}
+    ResourceNotFoundException: {}
+    GroundStationName:
+      type: string
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
     PaginationToken:
       type: string
       pattern: ^[A-Za-z0-9-/+_.=]+$
       minLength: 3
       maxLength: 1000
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    EphemerisMetaData:
+      type: object
+      required:
+      - source
+      properties:
+        ephemerisId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: <p>UUID of a customer-provided ephemeris.</p> <p>This field is not populated for default ephemerides from Space Track.</p>
+        epoch:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: <p>The epoch of a default, ephemeris from Space Track in UTC.</p> <p>This field is not populated for customer-provided ephemerides.</p>
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p> <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
+        source:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisSource'
+          - description: The <code>EphemerisSource</code> that generated a given ephemeris.
+      description: Metadata describing a particular ephemeris.
+    EphemerisSource:
+      type: string
+      enum:
+      - CUSTOMER_PROVIDED
+      - SPACE_TRACK
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    SatelliteList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SatelliteListItem'
+    satelliteArn:
+      type: string
+    DependencyException: {}
     Timestamp:
       type: string
       format: date-time
@@ -318,146 +459,6 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: <p/>
-    GroundStationName:
-      type: string
-      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
-      minLength: 4
-      maxLength: 500
-    EphemerisSource:
-      type: string
-      enum:
-      - CUSTOMER_PROVIDED
-      - SPACE_TRACK
-    noradSatelliteID:
-      type: integer
-      minimum: 0
-      maximum: 99999
-    DependencyException: {}
-    SatelliteListItem:
-      type: object
-      properties:
-        currentEphemeris:
-          allOf:
-          - $ref: '#/components/schemas/EphemerisMetaData'
-          - description: The current ephemeris being used to compute the trajectory of the satellite.
-        groundStations:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationIdList'
-          - description: A list of ground stations to which the satellite is on-boarded.
-        noradSatelliteID:
-          allOf:
-          - $ref: '#/components/schemas/noradSatelliteID'
-          - description: NORAD satellite ID number.
-        satelliteArn:
-          allOf:
-          - $ref: '#/components/schemas/satelliteArn'
-          - description: ARN of a satellite.
-        satelliteId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a satellite.
-      description: Item in a list of satellites.
-    GroundStationIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GroundStationName'
-      minItems: 0
-      maxItems: 500
-    ResourceNotFoundException: {}
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
-    satelliteArn:
-      type: string
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    EphemerisMetaData:
-      type: object
-      required:
-      - source
-      properties:
-        ephemerisId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: <p>UUID of a customer-provided ephemeris.</p> <p>This field is not populated for default ephemerides from Space Track.</p>
-        epoch:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: <p>The epoch of a default, ephemeris from Space Track in UTC.</p> <p>This field is not populated for customer-provided ephemerides.</p>
-        name:
-          allOf:
-          - $ref: '#/components/schemas/SafeName'
-          - description: <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p> <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
-        source:
-          allOf:
-          - $ref: '#/components/schemas/EphemerisSource'
-          - description: The <code>EphemerisSource</code> that generated a given ephemeris.
-      description: Metadata describing a particular ephemeris.
-    InvalidParameterException: {}
-    ListSatellitesResponse:
-      type: object
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token that can be supplied in the next call to get the next page of satellites.
-        satellites:
-          allOf:
-          - $ref: '#/components/schemas/SatelliteList'
-          - description: List of satellites.
-      description: <p/>
-    SatelliteList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SatelliteListItem'
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-05-23
   x-release: v4
-  title: AWS Ground Station Agent Tags API
+  title: AWS Ground Station Tags API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -374,30 +375,6 @@ paths:
       - Tags
 components:
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -410,6 +387,30 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
@@ -417,23 +418,20 @@ components:
         type: string
       required: false
   schemas:
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
     UnboundedString:
       type: string
       pattern: ^[\s\S]+$
       minLength: 1
-    ResourceNotFoundException: {}
-    InvalidParameterException: {}
-    DependencyException: {}
-    String:
-      type: string
-    UntagResourceResponse:
-      type: object
-      properties: {}
-      description: <p/>
     TagResourceResponse:
       type: object
       properties: {}
       description: <p/>
+    DependencyException: {}
+    InvalidParameterException: {}
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -442,10 +440,13 @@ components:
           - $ref: '#/components/schemas/TagsMap'
           - description: Tags assigned to a resource.
       description: <p/>
-    TagsMap:
+    String:
+      type: string
+    UntagResourceResponse:
       type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
+      properties: {}
+      description: <p/>
+    ResourceNotFoundException: {}
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-05-23
   x-release: v4
-  title: AWS Ground Station Agent Contacts API
+  title: AWS Ground Station Contacts API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListContacts
-      description: <p>Returns a list of contacts.</p> <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p>
+      description: 'Returns a list of contacts.
+
+
+        If statusList contains AVAILABLE, the request must include groundStation, missionprofileArn, and satelliteArn.'
       responses:
         '200':
           description: Success
@@ -249,29 +253,6 @@ paths:
       - Contacts
 components:
   schemas:
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    Timestamp:
-      type: string
-      format: date-time
-    ContactList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ContactData'
-    String:
-      type: string
-    DependencyException: {}
-    AngleUnits:
-      type: string
-      enum:
-      - DEGREE_ANGLE
-      - RADIAN
-    MissionProfileArn:
-      type: string
-    ResourceNotFoundException: {}
     Elevation:
       type: object
       required:
@@ -287,13 +268,6 @@ components:
           - $ref: '#/components/schemas/Double'
           - description: Elevation angle value.
       description: Elevation angle of the satellite in the sky during a contact.
-    satelliteArn:
-      type: string
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
     ContactData:
       type: object
       properties:
@@ -350,14 +324,14 @@ components:
           - $ref: '#/components/schemas/TagsMap'
           - description: Tags assigned to a contact.
       description: Data describing a contact.
+    ContactList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ContactData'
     TagsMap:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/String'
-    Double:
-      type: number
-      format: double
-    InvalidParameterException: {}
     ListContactsResponse:
       type: object
       properties:
@@ -370,6 +344,36 @@ components:
           - $ref: '#/components/schemas/PaginationToken'
           - description: Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.
       description: <p/>
+    InvalidParameterException: {}
+    AngleUnits:
+      type: string
+      enum:
+      - DEGREE_ANGLE
+      - RADIAN
+    String:
+      type: string
+    ResourceNotFoundException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    Double:
+      type: number
+      format: double
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    MissionProfileArn:
+      type: string
+    satelliteArn:
+      type: string
+    DependencyException: {}
+    Timestamp:
+      type: string
+      format: date-time
     ContactStatus:
       type: string
       enum:
@@ -387,32 +391,14 @@ components:
       - SCHEDULED
       - SCHEDULING
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -425,6 +411,24 @@ components:
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

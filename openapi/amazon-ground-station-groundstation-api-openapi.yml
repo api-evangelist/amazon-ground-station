@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-05-23
   x-release: v4
-  title: AWS Ground Station Agent Groundstation API
+  title: AWS Ground Station Groundstation API
   description: Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed service that enables you to control satellite communications, downlink and process satellite data, and scale your satellite operations efficiently and cost-effectively without having to build or manage your own ground station infrastructure.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/groundstation-2019-05-23.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListGroundStations
-      description: 'Returns a list of ground stations. '
+      description: Returns a list of ground stations.
       responses:
         '200':
           description: Success
@@ -213,55 +214,34 @@ paths:
       tags:
       - Groundstation
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    GroundStationName:
+      type: string
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
     PaginationToken:
       type: string
       pattern: ^[A-Za-z0-9-/+_.=]+$
       minLength: 3
       maxLength: 1000
+    AWSRegion:
+      type: string
+      pattern: ^[\w-]+$
+      minLength: 1
+      maxLength: 128
+    ListGroundStationsResponse:
+      type: object
+      properties:
+        groundStationList:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationList'
+          - description: List of ground stations.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token that can be supplied in the next call to get the next page of ground stations.
+      description: <p/>
     GroundStationData:
       type: object
       properties:
@@ -282,31 +262,52 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/GroundStationData'
-    GroundStationName:
-      type: string
-      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
-      minLength: 4
-      maxLength: 500
-    ResourceNotFoundException: {}
     DependencyException: {}
     InvalidParameterException: {}
-    AWSRegion:
-      type: string
-      pattern: ^[\w-]+$
-      minLength: 1
-      maxLength: 128
-    ListGroundStationsResponse:
-      type: object
-      properties:
-        groundStationList:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationList'
-          - description: List of ground stations.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token that can be supplied in the next call to get the next page of ground stations.
-      description: <p/>
+    ResourceNotFoundException: {}
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
