@@ -253,6 +253,45 @@ paths:
       - Contacts
 components:
   schemas:
+    MissionProfileArn:
+      type: string
+    ContactStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - AWS_CANCELLED
+      - AWS_FAILED
+      - CANCELLED
+      - CANCELLING
+      - COMPLETED
+      - FAILED
+      - FAILED_TO_SCHEDULE
+      - PASS
+      - POSTPASS
+      - PREPASS
+      - SCHEDULED
+      - SCHEDULING
+    String:
+      type: string
+    AngleUnits:
+      type: string
+      enum:
+      - DEGREE_ANGLE
+      - RADIAN
+    ListContactsResponse:
+      type: object
+      properties:
+        contactList:
+          allOf:
+          - $ref: '#/components/schemas/ContactList'
+          - description: List of contacts.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.
+      description: <p/>
+    satelliteArn:
+      type: string
     Elevation:
       type: object
       required:
@@ -268,6 +307,12 @@ components:
           - $ref: '#/components/schemas/Double'
           - description: Elevation angle value.
       description: Elevation angle of the satellite in the sky during a contact.
+    Timestamp:
+      type: string
+      format: date-time
+    Double:
+      type: number
+      format: double
     ContactData:
       type: object
       properties:
@@ -328,71 +373,38 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/ContactData'
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    ListContactsResponse:
-      type: object
-      properties:
-        contactList:
-          allOf:
-          - $ref: '#/components/schemas/ContactList'
-          - description: List of contacts.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.
-      description: <p/>
-    InvalidParameterException: {}
-    AngleUnits:
+    DependencyException: {}
+    Uuid:
       type: string
-      enum:
-      - DEGREE_ANGLE
-      - RADIAN
-    String:
-      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
     ResourceNotFoundException: {}
     PaginationToken:
       type: string
       pattern: ^[A-Za-z0-9-/+_.=]+$
       minLength: 3
       maxLength: 1000
-    Double:
-      type: number
-      format: double
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    MissionProfileArn:
-      type: string
-    satelliteArn:
-      type: string
-    DependencyException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    ContactStatus:
-      type: string
-      enum:
-      - AVAILABLE
-      - AWS_CANCELLED
-      - AWS_FAILED
-      - CANCELLED
-      - CANCELLING
-      - COMPLETED
-      - FAILED
-      - FAILED_TO_SCHEDULE
-      - PASS
-      - POSTPASS
-      - PREPASS
-      - SCHEDULED
-      - SCHEDULING
+    InvalidParameterException: {}
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
   parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -403,20 +415,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

@@ -37,6 +37,7 @@ tags:
 - IoT
 - Satellite Communications
 - Space Technology
+- Satellite
 url: https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-09-16'
@@ -338,7 +339,7 @@ apis:
     url: json-ld/amazon-ground-station-context.jsonld
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/ground-station/
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-ground-station/overview
 - type: AgenticAccess
@@ -437,5 +438,5 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product

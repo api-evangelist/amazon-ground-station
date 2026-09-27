@@ -237,55 +237,27 @@ paths:
       tags:
       - Ephemerides
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    S3VersionId:
-      type: string
-      pattern: ^[\s\S]{1,1024}$
-      minLength: 1
-      maxLength: 1024
+    EphemerisPriority:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    S3Object:
+      type: object
+      properties:
+        bucket:
+          allOf:
+          - $ref: '#/components/schemas/S3BucketName'
+          - description: An Amazon S3 Bucket name.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/S3ObjectKey'
+          - description: An Amazon S3 key for the ephemeris.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/S3VersionId'
+          - description: For versioned S3 objects, the version to use for the ephemeris.
+      description: Object stored in S3 containing ephemeris data.
     ListEphemeridesResponse:
       type: object
       properties:
@@ -297,6 +269,14 @@ components:
           allOf:
           - $ref: '#/components/schemas/PaginationToken'
           - description: Pagination token.
+    S3ObjectKey:
+      type: string
+      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+    Timestamp:
+      type: string
+      format: date-time
     EphemerisItem:
       type: object
       properties:
@@ -337,49 +317,28 @@ components:
         $ref: '#/components/schemas/EphemerisItem'
       minItems: 1
       maxItems: 500
-    InvalidParameterException: {}
-    S3ObjectKey:
+    S3VersionId:
       type: string
-      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
+      pattern: ^[\s\S]{1,1024}$
       minLength: 1
       maxLength: 1024
+    DependencyException: {}
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
     ResourceNotFoundException: {}
     PaginationToken:
       type: string
       pattern: ^[A-Za-z0-9-/+_.=]+$
       minLength: 3
       maxLength: 1000
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
-    S3Object:
-      type: object
-      properties:
-        bucket:
-          allOf:
-          - $ref: '#/components/schemas/S3BucketName'
-          - description: An Amazon S3 Bucket name.
-        key:
-          allOf:
-          - $ref: '#/components/schemas/S3ObjectKey'
-          - description: An Amazon S3 key for the ephemeris.
-        version:
-          allOf:
-          - $ref: '#/components/schemas/S3VersionId'
-          - description: For versioned S3 objects, the version to use for the ephemeris.
-      description: Object stored in S3 containing ephemeris data.
-    S3BucketName:
-      type: string
-      pattern: ^[a-z0-9.-]{3,63}$
-      minLength: 3
-      maxLength: 63
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
     EphemerisStatus:
       type: string
       enum:
@@ -389,14 +348,55 @@ components:
       - ENABLED
       - DISABLED
       - EXPIRED
-    DependencyException: {}
-    Timestamp:
+    InvalidParameterException: {}
+    S3BucketName:
       type: string
-      format: date-time
-    EphemerisPriority:
-      type: integer
-      minimum: 0
-      maximum: 99999
+      pattern: ^[a-z0-9.-]{3,63}$
+      minLength: 3
+      maxLength: 63
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

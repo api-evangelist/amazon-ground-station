@@ -286,60 +286,7 @@ paths:
       tags:
       - Satellite
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    noradSatelliteID:
-      type: integer
-      minimum: 0
-      maximum: 99999
-    GroundStationIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GroundStationName'
-      minItems: 0
-      maxItems: 500
     ListSatellitesResponse:
       type: object
       properties:
@@ -352,6 +299,8 @@ components:
           - $ref: '#/components/schemas/SatelliteList'
           - description: List of satellites.
       description: <p/>
+    satelliteArn:
+      type: string
     SatelliteListItem:
       type: object
       properties:
@@ -376,23 +325,6 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: Item in a list of satellites.
-    InvalidParameterException: {}
-    ResourceNotFoundException: {}
-    GroundStationName:
-      type: string
-      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
-      minLength: 4
-      maxLength: 500
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
     EphemerisMetaData:
       type: object
       required:
@@ -415,26 +347,14 @@ components:
           - $ref: '#/components/schemas/EphemerisSource'
           - description: The <code>EphemerisSource</code> that generated a given ephemeris.
       description: Metadata describing a particular ephemeris.
+    Timestamp:
+      type: string
+      format: date-time
     EphemerisSource:
       type: string
       enum:
       - CUSTOMER_PROVIDED
       - SPACE_TRACK
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    SatelliteList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SatelliteListItem'
-    satelliteArn:
-      type: string
-    DependencyException: {}
-    Timestamp:
-      type: string
-      format: date-time
     GetSatelliteResponse:
       type: object
       properties:
@@ -459,6 +379,86 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: <p/>
+    SatelliteList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SatelliteListItem'
+    noradSatelliteID:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    DependencyException: {}
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    GroundStationIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroundStationName'
+      minItems: 0
+      maxItems: 500
+    ResourceNotFoundException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    InvalidParameterException: {}
+    GroundStationName:
+      type: string
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

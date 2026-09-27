@@ -215,16 +215,22 @@ paths:
       - Groundstation
 components:
   schemas:
-    GroundStationName:
-      type: string
-      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
-      minLength: 4
-      maxLength: 500
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
+    GroundStationData:
+      type: object
+      properties:
+        groundStationId:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationName'
+          - description: UUID of a ground station.
+        groundStationName:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationName'
+          - description: Name of a ground station.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/AWSRegion'
+          - description: Ground station Region.
+      description: Information about the ground station data.
     AWSRegion:
       type: string
       pattern: ^[\w-]+$
@@ -242,44 +248,26 @@ components:
           - $ref: '#/components/schemas/PaginationToken'
           - description: Next token that can be supplied in the next call to get the next page of ground stations.
       description: <p/>
-    GroundStationData:
-      type: object
-      properties:
-        groundStationId:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationName'
-          - description: UUID of a ground station.
-        groundStationName:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationName'
-          - description: Name of a ground station.
-        region:
-          allOf:
-          - $ref: '#/components/schemas/AWSRegion'
-          - description: Ground station Region.
-      description: Information about the ground station data.
+    ResourceNotFoundException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
     GroundStationList:
       type: array
       items:
         $ref: '#/components/schemas/GroundStationData'
-    DependencyException: {}
     InvalidParameterException: {}
-    ResourceNotFoundException: {}
+    DependencyException: {}
+    GroundStationName:
+      type: string
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -290,8 +278,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -302,8 +302,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

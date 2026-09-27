@@ -616,49 +616,9 @@ paths:
       - Missionprofile
 components:
   schemas:
-    PositiveDurationInSeconds:
-      type: integer
-      minimum: 1
-      maximum: 21600
-    MissionProfileList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MissionProfileListItem'
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    MissionProfileIdResponse:
-      type: object
-      properties:
-        missionProfileId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a mission profile.
-      description: <p/>
-    DurationInSeconds:
-      type: integer
-      minimum: 0
-      maximum: 21600
-    KmsKey:
-      type: object
-      properties:
-        kmsAliasArn:
-          allOf:
-          - $ref: '#/components/schemas/KeyAliasArn'
-          - description: KMS Alias Arn.
-        kmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/KeyArn'
-          - description: KMS Key Arn.
-      description: AWS Key Management Service (KMS) Key.
-    AWSRegion:
+    MissionProfileArn:
       type: string
-      pattern: ^[\w-]+$
-      minLength: 1
-      maxLength: 128
-    InvalidParameterException: {}
-    ConfigArn:
+    String:
       type: string
     GetMissionProfileResponse:
       type: object
@@ -712,36 +672,6 @@ components:
           - $ref: '#/components/schemas/ConfigArn'
           - description: ARN of a tracking <code>Config</code>.
       description: <p/>
-    String:
-      type: string
-    DataflowEdge:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConfigArn'
-      minItems: 2
-      maxItems: 2
-    ResourceNotFoundException: {}
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
-    KeyAliasArn:
-      type: string
-      pattern: ^arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((alias/[a-zA-Z0-9:/_-]{1,256}))$
-      minLength: 1
-      maxLength: 512
-    DataflowEdgeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataflowEdge'
-      minItems: 0
-      maxItems: 500
     MissionProfileListItem:
       type: object
       properties:
@@ -762,17 +692,48 @@ components:
           - $ref: '#/components/schemas/AWSRegion'
           - description: Region of a mission profile.
       description: Item in a list of mission profiles.
+    KeyArn:
+      type: string
+    AWSRegion:
+      type: string
+      pattern: ^[\w-]+$
+      minLength: 1
+      maxLength: 128
+    DataflowEdgeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataflowEdge'
+      minItems: 0
+      maxItems: 500
+    ConfigArn:
+      type: string
+    DependencyException: {}
+    MissionProfileList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MissionProfileListItem'
     Uuid:
       type: string
       pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
       minLength: 1
       maxLength: 128
-    RoleArn:
+    KmsKey:
+      type: object
+      properties:
+        kmsAliasArn:
+          allOf:
+          - $ref: '#/components/schemas/KeyAliasArn'
+          - description: KMS Alias Arn.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/KeyArn'
+          - description: KMS Key Arn.
+      description: AWS Key Management Service (KMS) Key.
+    SafeName:
       type: string
-    MissionProfileArn:
-      type: string
-    KeyArn:
-      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
     ListMissionProfilesResponse:
       type: object
       properties:
@@ -785,10 +746,61 @@ components:
           - $ref: '#/components/schemas/PaginationToken'
           - description: Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
       description: <p/>
-    DependencyException: {}
+    PositiveDurationInSeconds:
+      type: integer
+      minimum: 1
+      maximum: 21600
+    KeyAliasArn:
+      type: string
+      pattern: ^arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((alias/[a-zA-Z0-9:/_-]{1,256}))$
+      minLength: 1
+      maxLength: 512
+    ResourceNotFoundException: {}
+    DataflowEdge:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConfigArn'
+      minItems: 2
+      maxItems: 2
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    InvalidParameterException: {}
+    MissionProfileIdResponse:
+      type: object
+      properties:
+        missionProfileId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a mission profile.
+      description: <p/>
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    DurationInSeconds:
+      type: integer
+      minimum: 0
+      maximum: 21600
+    RoleArn:
+      type: string
   parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -799,20 +811,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
