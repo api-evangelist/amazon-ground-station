@@ -253,8 +253,6 @@ paths:
       - Contacts
 components:
   schemas:
-    MissionProfileArn:
-      type: string
     ContactStatus:
       type: string
       enum:
@@ -271,26 +269,13 @@ components:
       - PREPASS
       - SCHEDULED
       - SCHEDULING
-    String:
+    DependencyException: {}
+    PaginationToken:
       type: string
-    AngleUnits:
-      type: string
-      enum:
-      - DEGREE_ANGLE
-      - RADIAN
-    ListContactsResponse:
-      type: object
-      properties:
-        contactList:
-          allOf:
-          - $ref: '#/components/schemas/ContactList'
-          - description: List of contacts.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.
-      description: <p/>
-    satelliteArn:
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    MissionProfileArn:
       type: string
     Elevation:
       type: object
@@ -307,12 +292,36 @@ components:
           - $ref: '#/components/schemas/Double'
           - description: Elevation angle value.
       description: Elevation angle of the satellite in the sky during a contact.
-    Timestamp:
-      type: string
-      format: date-time
+    ContactList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ContactData'
     Double:
       type: number
       format: double
+    InvalidParameterException: {}
+    ListContactsResponse:
+      type: object
+      properties:
+        contactList:
+          allOf:
+          - $ref: '#/components/schemas/ContactList'
+          - description: List of contacts.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.
+      description: <p/>
+    ResourceNotFoundException: {}
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
     ContactData:
       type: object
       properties:
@@ -369,46 +378,19 @@ components:
           - $ref: '#/components/schemas/TagsMap'
           - description: Tags assigned to a contact.
       description: Data describing a contact.
-    ContactList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ContactData'
-    DependencyException: {}
-    Uuid:
+    Timestamp:
       type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    ResourceNotFoundException: {}
-    PaginationToken:
+      format: date-time
+    String:
       type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    InvalidParameterException: {}
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
+    AngleUnits:
+      type: string
+      enum:
+      - DEGREE_ANGLE
+      - RADIAN
+    satelliteArn:
+      type: string
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -421,14 +403,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

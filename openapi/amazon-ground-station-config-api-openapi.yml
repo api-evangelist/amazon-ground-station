@@ -659,111 +659,30 @@ paths:
       - Config
 components:
   schemas:
-    Polarization:
-      type: string
-      enum:
-      - LEFT_HAND
-      - NONE
-      - RIGHT_HAND
-    ConfigTypeData:
-      type: object
-      properties:
-        antennaDownlinkConfig:
-          allOf:
-          - $ref: '#/components/schemas/AntennaDownlinkConfig'
-          - description: Information about how AWS Ground Station should configure an antenna for downlink during a contact.
-        antennaDownlinkDemodDecodeConfig:
-          allOf:
-          - $ref: '#/components/schemas/AntennaDownlinkDemodDecodeConfig'
-          - description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
-        antennaUplinkConfig:
-          allOf:
-          - $ref: '#/components/schemas/AntennaUplinkConfig'
-          - description: Information about how AWS Ground Station should conﬁgure an antenna for uplink during a contact.
-        dataflowEndpointConfig:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpointConfig'
-          - description: Information about the dataflow endpoint <code>Config</code>.
-        s3RecordingConfig:
-          allOf:
-          - $ref: '#/components/schemas/S3RecordingConfig'
-          - description: Information about an S3 recording <code>Config</code>.
-        trackingConfig:
-          allOf:
-          - $ref: '#/components/schemas/TrackingConfig'
-          - description: 'Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. '
-        uplinkEchoConfig:
-          allOf:
-          - $ref: '#/components/schemas/UplinkEchoConfig'
-          - description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
-      description: <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
-    ResourceLimitExceededException: {}
-    AntennaDownlinkDemodDecodeConfig:
-      type: object
-      required:
-      - decodeConfig
-      - demodulationConfig
-      - spectrumConfig
-      properties:
-        decodeConfig:
-          allOf:
-          - $ref: '#/components/schemas/DecodeConfig'
-          - description: Information about the decode <code>Config</code>.
-        demodulationConfig:
-          allOf:
-          - $ref: '#/components/schemas/DemodulationConfig'
-          - description: Information about the demodulation <code>Config</code>.
-        spectrumConfig:
-          allOf:
-          - $ref: '#/components/schemas/SpectrumConfig'
-          - description: Information about the spectral <code>Config</code>.
-      description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
-    FrequencyBandwidth:
-      type: object
-      required:
-      - units
-      - value
-      properties:
-        units:
-          allOf:
-          - $ref: '#/components/schemas/BandwidthUnits'
-          - description: Frequency bandwidth units.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>
-      description: 'Object that describes the frequency bandwidth. '
-    TrackingConfig:
-      type: object
-      required:
-      - autotrack
-      properties:
-        autotrack:
-          allOf:
-          - $ref: '#/components/schemas/Criticality'
-          - description: Current setting for autotrack.
-      description: Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.
-    ConfigList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConfigListItem'
     S3KeyPrefix:
       type: string
       pattern: ^([a-zA-Z0-9_\-=/]|\{satellite_id\}|\{config\-name}|\{s3\-config-id}|\{year\}|\{month\}|\{day\}){1,900}$
       minLength: 1
       maxLength: 900
-    String:
-      type: string
-    DemodulationConfig:
+    SpectrumConfig:
       type: object
       required:
-      - unvalidatedJSON
+      - bandwidth
+      - centerFrequency
       properties:
-        unvalidatedJSON:
+        bandwidth:
           allOf:
-          - $ref: '#/components/schemas/JsonString'
-          - description: Unvalidated JSON of a demodulation <code>Config</code>.
-      description: Information about the demodulation <code>Config</code>.
+          - $ref: '#/components/schemas/FrequencyBandwidth'
+          - description: <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>
+        centerFrequency:
+          allOf:
+          - $ref: '#/components/schemas/Frequency'
+          - description: Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
+        polarization:
+          allOf:
+          - $ref: '#/components/schemas/Polarization'
+          - description: Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.
+      description: Object that describes a spectral <code>Config</code>.
     GetConfigResponse:
       type: object
       required:
@@ -797,26 +716,143 @@ components:
           - $ref: '#/components/schemas/TagsMap'
           - description: Tags assigned to a <code>Config</code>.
       description: <p/>
+    UplinkSpectrumConfig:
+      type: object
+      required:
+      - centerFrequency
+      properties:
+        centerFrequency:
+          allOf:
+          - $ref: '#/components/schemas/Frequency'
+          - description: Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
+        polarization:
+          allOf:
+          - $ref: '#/components/schemas/Polarization'
+          - description: Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.
+      description: Information about the uplink spectral <code>Config</code>.
+    DecodeConfig:
+      type: object
+      required:
+      - unvalidatedJSON
+      properties:
+        unvalidatedJSON:
+          allOf:
+          - $ref: '#/components/schemas/JsonString'
+          - description: Unvalidated JSON of a decode <code>Config</code>.
+      description: Information about the decode <code>Config</code>.
+    DependencyException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    FrequencyBandwidth:
+      type: object
+      required:
+      - units
+      - value
+      properties:
+        units:
+          allOf:
+          - $ref: '#/components/schemas/BandwidthUnits'
+          - description: Frequency bandwidth units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>
+      description: 'Object that describes the frequency bandwidth. '
     JsonString:
       type: string
       pattern: ^[{}\[\]:.,"0-9A-z\-_\s]{2,8192}$
       minLength: 2
       maxLength: 8192
-    UplinkEchoConfig:
+    ConfigIdResponse:
       type: object
-      required:
-      - antennaUplinkConfigArn
-      - enabled
       properties:
-        antennaUplinkConfigArn:
+        configArn:
           allOf:
           - $ref: '#/components/schemas/ConfigArn'
-          - description: ARN of an uplink <code>Config</code>.
-        enabled:
+          - description: ARN of a <code>Config</code>.
+        configId:
           allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Whether or not an uplink <code>Config</code> is enabled.
-      description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+          - $ref: '#/components/schemas/String'
+          - description: UUID of a <code>Config</code>.
+        configType:
+          allOf:
+          - $ref: '#/components/schemas/ConfigCapabilityType'
+          - description: Type of a <code>Config</code>.
+      description: <p/>
+    BucketArn:
+      type: string
+    Polarization:
+      type: string
+      enum:
+      - LEFT_HAND
+      - NONE
+      - RIGHT_HAND
+    FrequencyUnits:
+      type: string
+      enum:
+      - GHz
+      - MHz
+      - kHz
+    ConfigList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConfigListItem'
+    Double:
+      type: number
+      format: double
+    ConfigCapabilityType:
+      type: string
+      enum:
+      - antenna-downlink
+      - antenna-downlink-demod-decode
+      - antenna-uplink
+      - dataflow-endpoint
+      - tracking
+      - uplink-echo
+      - s3-recording
+    InvalidParameterException: {}
+    Frequency:
+      type: object
+      required:
+      - units
+      - value
+      properties:
+        units:
+          allOf:
+          - $ref: '#/components/schemas/FrequencyUnits'
+          - description: Frequency units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
+      description: Object that describes the frequency.
+    DataflowEndpointConfig:
+      type: object
+      required:
+      - dataflowEndpointName
+      properties:
+        dataflowEndpointName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a dataflow endpoint.
+        dataflowEndpointRegion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Region of a dataflow endpoint.
+      description: Information about the dataflow endpoint <code>Config</code>.
+    Criticality:
+      type: string
+      enum:
+      - PREFERRED
+      - REMOVED
+      - REQUIRED
+    EirpUnits:
+      type: string
+      enum:
+      - dBW
     S3RecordingConfig:
       type: object
       required:
@@ -836,50 +872,11 @@ components:
           - $ref: '#/components/schemas/RoleArn'
           - description: ARN of the role Ground Station assumes to write data to the bucket.
       description: Information about an S3 recording <code>Config</code>.
-    DataflowEndpointConfig:
+    ResourceNotFoundException: {}
+    TagsMap:
       type: object
-      required:
-      - dataflowEndpointName
-      properties:
-        dataflowEndpointName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Name of a dataflow endpoint.
-        dataflowEndpointRegion:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Region of a dataflow endpoint.
-      description: Information about the dataflow endpoint <code>Config</code>.
-    BandwidthUnits:
-      type: string
-      enum:
-      - GHz
-      - MHz
-      - kHz
-    Double:
-      type: number
-      format: double
-    Eirp:
-      type: object
-      required:
-      - units
-      - value
-      properties:
-        units:
-          allOf:
-          - $ref: '#/components/schemas/EirpUnits'
-          - description: Units of an EIRP.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.
-      description: Object that represents EIRP.
-    Boolean:
-      type: boolean
-    EirpUnits:
-      type: string
-      enum:
-      - dBW
+      additionalProperties:
+        $ref: '#/components/schemas/String'
     AntennaDownlinkConfig:
       type: object
       required:
@@ -890,20 +887,57 @@ components:
           - $ref: '#/components/schemas/SpectrumConfig'
           - description: Object that describes a spectral <code>Config</code>.
       description: Information about how AWS Ground Station should configure an antenna for downlink during a contact.
-    UplinkSpectrumConfig:
+    AntennaDownlinkDemodDecodeConfig:
       type: object
       required:
-      - centerFrequency
+      - decodeConfig
+      - demodulationConfig
+      - spectrumConfig
       properties:
-        centerFrequency:
+        decodeConfig:
           allOf:
-          - $ref: '#/components/schemas/Frequency'
-          - description: Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
-        polarization:
+          - $ref: '#/components/schemas/DecodeConfig'
+          - description: Information about the decode <code>Config</code>.
+        demodulationConfig:
           allOf:
-          - $ref: '#/components/schemas/Polarization'
-          - description: Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.
-      description: Information about the uplink spectral <code>Config</code>.
+          - $ref: '#/components/schemas/DemodulationConfig'
+          - description: Information about the demodulation <code>Config</code>.
+        spectrumConfig:
+          allOf:
+          - $ref: '#/components/schemas/SpectrumConfig'
+          - description: Information about the spectral <code>Config</code>.
+      description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
+    UplinkEchoConfig:
+      type: object
+      required:
+      - antennaUplinkConfigArn
+      - enabled
+      properties:
+        antennaUplinkConfigArn:
+          allOf:
+          - $ref: '#/components/schemas/ConfigArn'
+          - description: ARN of an uplink <code>Config</code>.
+        enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Whether or not an uplink <code>Config</code> is enabled.
+      description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+    TrackingConfig:
+      type: object
+      required:
+      - autotrack
+      properties:
+        autotrack:
+          allOf:
+          - $ref: '#/components/schemas/Criticality'
+          - description: Current setting for autotrack.
+      description: Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.
+    BandwidthUnits:
+      type: string
+      enum:
+      - GHz
+      - MHz
+      - kHz
     ConfigListItem:
       type: object
       properties:
@@ -924,14 +958,65 @@ components:
           - $ref: '#/components/schemas/String'
           - description: Name of a <code>Config</code>.
       description: An item in a list of <code>Config</code> objects.
-    ConfigArn:
+    DemodulationConfig:
+      type: object
+      required:
+      - unvalidatedJSON
+      properties:
+        unvalidatedJSON:
+          allOf:
+          - $ref: '#/components/schemas/JsonString'
+          - description: Unvalidated JSON of a demodulation <code>Config</code>.
+      description: Information about the demodulation <code>Config</code>.
+    ConfigTypeData:
+      type: object
+      properties:
+        antennaDownlinkConfig:
+          allOf:
+          - $ref: '#/components/schemas/AntennaDownlinkConfig'
+          - description: Information about how AWS Ground Station should configure an antenna for downlink during a contact.
+        antennaDownlinkDemodDecodeConfig:
+          allOf:
+          - $ref: '#/components/schemas/AntennaDownlinkDemodDecodeConfig'
+          - description: Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact.
+        antennaUplinkConfig:
+          allOf:
+          - $ref: '#/components/schemas/AntennaUplinkConfig'
+          - description: Information about how AWS Ground Station should conﬁgure an antenna for uplink during a contact.
+        dataflowEndpointConfig:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointConfig'
+          - description: Information about the dataflow endpoint <code>Config</code>.
+        s3RecordingConfig:
+          allOf:
+          - $ref: '#/components/schemas/S3RecordingConfig'
+          - description: Information about an S3 recording <code>Config</code>.
+        trackingConfig:
+          allOf:
+          - $ref: '#/components/schemas/TrackingConfig'
+          - description: 'Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. '
+        uplinkEchoConfig:
+          allOf:
+          - $ref: '#/components/schemas/UplinkEchoConfig'
+          - description: <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
+      description: <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
+    Eirp:
+      type: object
+      required:
+      - units
+      - value
+      properties:
+        units:
+          allOf:
+          - $ref: '#/components/schemas/EirpUnits'
+          - description: Units of an EIRP.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.
+      description: Object that represents EIRP.
+    RoleArn:
       type: string
-    Criticality:
-      type: string
-      enum:
-      - PREFERRED
-      - REMOVED
-      - REQUIRED
     AntennaUplinkConfig:
       type: object
       required:
@@ -951,98 +1036,13 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Whether or not uplink transmit is disabled.
       description: Information about the uplink <code>Config</code> of an antenna.
-    DependencyException: {}
-    Frequency:
-      type: object
-      required:
-      - units
-      - value
-      properties:
-        units:
-          allOf:
-          - $ref: '#/components/schemas/FrequencyUnits'
-          - description: Frequency units.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
-      description: Object that describes the frequency.
-    ResourceNotFoundException: {}
-    PaginationToken:
+    String:
       type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    ConfigIdResponse:
-      type: object
-      properties:
-        configArn:
-          allOf:
-          - $ref: '#/components/schemas/ConfigArn'
-          - description: ARN of a <code>Config</code>.
-        configId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: UUID of a <code>Config</code>.
-        configType:
-          allOf:
-          - $ref: '#/components/schemas/ConfigCapabilityType'
-          - description: Type of a <code>Config</code>.
-      description: <p/>
-    ConfigCapabilityType:
+    Boolean:
+      type: boolean
+    ConfigArn:
       type: string
-      enum:
-      - antenna-downlink
-      - antenna-downlink-demod-decode
-      - antenna-uplink
-      - dataflow-endpoint
-      - tracking
-      - uplink-echo
-      - s3-recording
-    InvalidParameterException: {}
-    DecodeConfig:
-      type: object
-      required:
-      - unvalidatedJSON
-      properties:
-        unvalidatedJSON:
-          allOf:
-          - $ref: '#/components/schemas/JsonString'
-          - description: Unvalidated JSON of a decode <code>Config</code>.
-      description: Information about the decode <code>Config</code>.
-    FrequencyUnits:
-      type: string
-      enum:
-      - GHz
-      - MHz
-      - kHz
-    BucketArn:
-      type: string
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    SpectrumConfig:
-      type: object
-      required:
-      - bandwidth
-      - centerFrequency
-      properties:
-        bandwidth:
-          allOf:
-          - $ref: '#/components/schemas/FrequencyBandwidth'
-          - description: <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p> <ul> <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li> <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li> <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li> </ul>
-        centerFrequency:
-          allOf:
-          - $ref: '#/components/schemas/Frequency'
-          - description: Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
-        polarization:
-          allOf:
-          - $ref: '#/components/schemas/Polarization'
-          - description: Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.
-      description: Object that describes a spectral <code>Config</code>.
-    RoleArn:
-      type: string
+    ResourceLimitExceededException: {}
     ListConfigsResponse:
       type: object
       properties:
@@ -1056,24 +1056,6 @@ components:
           - description: Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.
       description: <p/>
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -1086,14 +1068,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

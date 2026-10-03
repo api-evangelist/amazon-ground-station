@@ -287,20 +287,12 @@ paths:
       - Satellite
 components:
   schemas:
-    ListSatellitesResponse:
-      type: object
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token that can be supplied in the next call to get the next page of satellites.
-        satellites:
-          allOf:
-          - $ref: '#/components/schemas/SatelliteList'
-          - description: List of satellites.
-      description: <p/>
-    satelliteArn:
+    DependencyException: {}
+    PaginationToken:
       type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
     SatelliteListItem:
       type: object
       properties:
@@ -325,36 +317,6 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: Item in a list of satellites.
-    EphemerisMetaData:
-      type: object
-      required:
-      - source
-      properties:
-        ephemerisId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: <p>UUID of a customer-provided ephemeris.</p> <p>This field is not populated for default ephemerides from Space Track.</p>
-        epoch:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: <p>The epoch of a default, ephemeris from Space Track in UTC.</p> <p>This field is not populated for customer-provided ephemerides.</p>
-        name:
-          allOf:
-          - $ref: '#/components/schemas/SafeName'
-          - description: <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p> <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
-        source:
-          allOf:
-          - $ref: '#/components/schemas/EphemerisSource'
-          - description: The <code>EphemerisSource</code> that generated a given ephemeris.
-      description: Metadata describing a particular ephemeris.
-    Timestamp:
-      type: string
-      format: date-time
-    EphemerisSource:
-      type: string
-      enum:
-      - CUSTOMER_PROVIDED
-      - SPACE_TRACK
     GetSatelliteResponse:
       type: object
       properties:
@@ -379,62 +341,82 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: <p/>
-    SatelliteList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SatelliteListItem'
-    noradSatelliteID:
-      type: integer
-      minimum: 0
-      maximum: 99999
-    DependencyException: {}
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
     GroundStationIdList:
       type: array
       items:
         $ref: '#/components/schemas/GroundStationName'
       minItems: 0
       maxItems: 500
-    ResourceNotFoundException: {}
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    InvalidParameterException: {}
     GroundStationName:
       type: string
       pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
       minLength: 4
       maxLength: 500
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    EphemerisMetaData:
+      type: object
+      required:
+      - source
+      properties:
+        ephemerisId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: <p>UUID of a customer-provided ephemeris.</p> <p>This field is not populated for default ephemerides from Space Track.</p>
+        epoch:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: <p>The epoch of a default, ephemeris from Space Track in UTC.</p> <p>This field is not populated for customer-provided ephemerides.</p>
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p> <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
+        source:
+          allOf:
+          - $ref: '#/components/schemas/EphemerisSource'
+          - description: The <code>EphemerisSource</code> that generated a given ephemeris.
+      description: Metadata describing a particular ephemeris.
+    InvalidParameterException: {}
+    noradSatelliteID:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    SatelliteList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SatelliteListItem'
+    ResourceNotFoundException: {}
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    Timestamp:
+      type: string
+      format: date-time
+    EphemerisSource:
+      type: string
+      enum:
+      - CUSTOMER_PROVIDED
+      - SPACE_TRACK
+    ListSatellitesResponse:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token that can be supplied in the next call to get the next page of satellites.
+        satellites:
+          allOf:
+          - $ref: '#/components/schemas/SatelliteList'
+          - description: List of satellites.
+      description: <p/>
+    satelliteArn:
+      type: string
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -447,14 +429,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

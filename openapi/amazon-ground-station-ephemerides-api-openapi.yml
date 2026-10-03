@@ -238,10 +238,17 @@ paths:
       - Ephemerides
 components:
   schemas:
-    EphemerisPriority:
-      type: integer
-      minimum: 0
-      maximum: 99999
+    S3VersionId:
+      type: string
+      pattern: ^[\s\S]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+    DependencyException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
     S3Object:
       type: object
       properties:
@@ -258,25 +265,12 @@ components:
           - $ref: '#/components/schemas/S3VersionId'
           - description: For versioned S3 objects, the version to use for the ephemeris.
       description: Object stored in S3 containing ephemeris data.
-    ListEphemeridesResponse:
-      type: object
-      properties:
-        ephemerides:
-          allOf:
-          - $ref: '#/components/schemas/EphemeridesList'
-          - description: List of ephemerides.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Pagination token.
-    S3ObjectKey:
+    SafeName:
       type: string
-      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
       minLength: 1
-      maxLength: 1024
-    Timestamp:
-      type: string
-      format: date-time
+      maxLength: 256
+    InvalidParameterException: {}
     EphemerisItem:
       type: object
       properties:
@@ -309,36 +303,7 @@ components:
           - $ref: '#/components/schemas/EphemerisStatus'
           - description: The status of the ephemeris.
       description: Ephemeris item.
-    Boolean:
-      type: boolean
-    EphemeridesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EphemerisItem'
-      minItems: 1
-      maxItems: 500
-    S3VersionId:
-      type: string
-      pattern: ^[\s\S]{1,1024}$
-      minLength: 1
-      maxLength: 1024
-    DependencyException: {}
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
     ResourceNotFoundException: {}
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
     EphemerisStatus:
       type: string
       enum:
@@ -348,31 +313,48 @@ components:
       - ENABLED
       - DISABLED
       - EXPIRED
-    InvalidParameterException: {}
+    EphemeridesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EphemerisItem'
+      minItems: 1
+      maxItems: 500
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    EphemerisPriority:
+      type: integer
+      minimum: 0
+      maximum: 99999
     S3BucketName:
       type: string
       pattern: ^[a-z0-9.-]{3,63}$
       minLength: 3
       maxLength: 63
+    Timestamp:
+      type: string
+      format: date-time
+    Boolean:
+      type: boolean
+    ListEphemeridesResponse:
+      type: object
+      properties:
+        ephemerides:
+          allOf:
+          - $ref: '#/components/schemas/EphemeridesList'
+          - description: List of ephemerides.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Pagination token.
+    S3ObjectKey:
+      type: string
+      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
+      minLength: 1
+      maxLength: 1024
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -385,14 +367,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

@@ -209,6 +209,11 @@ paths:
       - Minute Usage
 components:
   schemas:
+    ResourceNotFoundException: {}
+    DependencyException: {}
+    Boolean:
+      type: boolean
+    InvalidParameterException: {}
     GetMinuteUsageResponse:
       type: object
       properties:
@@ -233,40 +238,17 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: Upcoming minutes scheduled for an account, specific to the month being requested.
       description: <p/>
-    ResourceNotFoundException: {}
-    InvalidParameterException: {}
-    DependencyException: {}
     Integer:
       type: integer
-    Boolean:
-      type: boolean
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -277,8 +259,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
