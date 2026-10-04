@@ -214,60 +214,9 @@ paths:
       tags:
       - Groundstation
 components:
-  schemas:
-    GroundStationName:
-      type: string
-      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
-      minLength: 4
-      maxLength: 500
-    ResourceNotFoundException: {}
-    GroundStationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GroundStationData'
-    DependencyException: {}
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    InvalidParameterException: {}
-    AWSRegion:
-      type: string
-      pattern: ^[\w-]+$
-      minLength: 1
-      maxLength: 128
-    GroundStationData:
-      type: object
-      properties:
-        groundStationId:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationName'
-          - description: UUID of a ground station.
-        groundStationName:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationName'
-          - description: Name of a ground station.
-        region:
-          allOf:
-          - $ref: '#/components/schemas/AWSRegion'
-          - description: Ground station Region.
-      description: Information about the ground station data.
-    ListGroundStationsResponse:
-      type: object
-      properties:
-        groundStationList:
-          allOf:
-          - $ref: '#/components/schemas/GroundStationList'
-          - description: List of ground stations.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token that can be supplied in the next call to get the next page of ground stations.
-      description: <p/>
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -278,20 +227,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -308,6 +251,63 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    DependencyException: {}
+    ListGroundStationsResponse:
+      type: object
+      properties:
+        groundStationList:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationList'
+          - description: List of ground stations.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token that can be supplied in the next call to get the next page of ground stations.
+      description: <p/>
+    AWSRegion:
+      type: string
+      pattern: ^[\w-]+$
+      minLength: 1
+      maxLength: 128
+    InvalidParameterException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
+    GroundStationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroundStationData'
+    GroundStationName:
+      type: string
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
+    GroundStationData:
+      type: object
+      properties:
+        groundStationId:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationName'
+          - description: UUID of a ground station.
+        groundStationName:
+          allOf:
+          - $ref: '#/components/schemas/GroundStationName'
+          - description: Name of a ground station.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/AWSRegion'
+          - description: Ground station Region.
+      description: Information about the ground station data.
+    ResourceNotFoundException: {}
   securitySchemes:
     hmac:
       type: apiKey

@@ -238,17 +238,17 @@ paths:
       - Ephemerides
 components:
   schemas:
-    S3VersionId:
-      type: string
-      pattern: ^[\s\S]{1,1024}$
-      minLength: 1
-      maxLength: 1024
     DependencyException: {}
+    EphemerisPriority:
+      type: integer
+      minimum: 0
+      maximum: 99999
     PaginationToken:
       type: string
       pattern: ^[A-Za-z0-9-/+_.=]+$
       minLength: 3
       maxLength: 1000
+    ResourceNotFoundException: {}
     S3Object:
       type: object
       properties:
@@ -265,12 +265,51 @@ components:
           - $ref: '#/components/schemas/S3VersionId'
           - description: For versioned S3 objects, the version to use for the ephemeris.
       description: Object stored in S3 containing ephemeris data.
+    S3BucketName:
+      type: string
+      pattern: ^[a-z0-9.-]{3,63}$
+      minLength: 3
+      maxLength: 63
+    S3VersionId:
+      type: string
+      pattern: ^[\s\S]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
     SafeName:
       type: string
       pattern: ^[ a-zA-Z0-9_:-]{1,256}$
       minLength: 1
       maxLength: 256
-    InvalidParameterException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    ListEphemeridesResponse:
+      type: object
+      properties:
+        ephemerides:
+          allOf:
+          - $ref: '#/components/schemas/EphemeridesList'
+          - description: List of ephemerides.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Pagination token.
+    S3ObjectKey:
+      type: string
+      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
+      minLength: 1
+      maxLength: 1024
+    EphemeridesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EphemerisItem'
+      minItems: 1
+      maxItems: 500
     EphemerisItem:
       type: object
       properties:
@@ -303,7 +342,9 @@ components:
           - $ref: '#/components/schemas/EphemerisStatus'
           - description: The status of the ephemeris.
       description: Ephemeris item.
-    ResourceNotFoundException: {}
+    InvalidParameterException: {}
+    Boolean:
+      type: boolean
     EphemerisStatus:
       type: string
       enum:
@@ -313,56 +354,9 @@ components:
       - ENABLED
       - DISABLED
       - EXPIRED
-    EphemeridesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EphemerisItem'
-      minItems: 1
-      maxItems: 500
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    EphemerisPriority:
-      type: integer
-      minimum: 0
-      maximum: 99999
-    S3BucketName:
-      type: string
-      pattern: ^[a-z0-9.-]{3,63}$
-      minLength: 3
-      maxLength: 63
-    Timestamp:
-      type: string
-      format: date-time
-    Boolean:
-      type: boolean
-    ListEphemeridesResponse:
-      type: object
-      properties:
-        ephemerides:
-          allOf:
-          - $ref: '#/components/schemas/EphemeridesList'
-          - description: List of ephemerides.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Pagination token.
-    S3ObjectKey:
-      type: string
-      pattern: ^[a-zA-Z0-9!*'\)\(./_-]{1,1024}$
-      minLength: 1
-      maxLength: 1024
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -373,20 +367,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

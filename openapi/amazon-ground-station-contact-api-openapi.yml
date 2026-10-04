@@ -380,51 +380,100 @@ paths:
       - Contact
 components:
   schemas:
-    RangedConnectionDetailsMtuInteger:
-      type: integer
-      minimum: 1400
-      maximum: 1500
-    SocketAddress:
-      type: object
-      required:
-      - name
-      - port
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Name of a socket address.
-        port:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: Port of a socket address.
-      description: Information about the socket address.
     AngleUnits:
       type: string
       enum:
       - DEGREE_ANGLE
       - RADIAN
-    DependencyException: {}
-    DataflowEndpoint:
+    ContactIdResponse:
       type: object
       properties:
-        address:
+        contactId:
           allOf:
-          - $ref: '#/components/schemas/SocketAddress'
-          - description: Socket address of a dataflow endpoint.
-        mtu:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID of a contact.
+      description: <p/>
+    IntegerRange:
+      type: object
+      required:
+      - maximum
+      - minimum
+      properties:
+        maximum:
           allOf:
-          - $ref: '#/components/schemas/DataflowEndpointMtuInteger'
-          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
-        name:
+          - $ref: '#/components/schemas/Integer'
+          - description: A maximum value.
+        minimum:
           allOf:
-          - $ref: '#/components/schemas/SafeName'
-          - description: Name of a dataflow endpoint.
-        status:
+          - $ref: '#/components/schemas/Integer'
+          - description: A minimum value.
+      description: An integer range that has a minimum and maximum value.
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    DependencyException: {}
+    satelliteArn:
+      type: string
+    EndpointStatus:
+      type: string
+      enum:
+      - created
+      - creating
+      - deleted
+      - deleting
+      - failed
+    DataflowList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataflowDetail'
+    S3RecordingDetails:
+      type: object
+      properties:
+        bucketArn:
           allOf:
-          - $ref: '#/components/schemas/EndpointStatus'
-          - description: Status of a dataflow endpoint.
-      description: Information about a dataflow endpoint.
+          - $ref: '#/components/schemas/BucketArn'
+          - description: ARN of the bucket used.
+        keyTemplate:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Key template used for the S3 Recording Configuration
+      description: Details about an S3 recording <code>Config</code> used in a contact.
+    AgentStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - FAILED
+      - ACTIVE
+      - INACTIVE
+    Elevation:
+      type: object
+      required:
+      - unit
+      - value
+      properties:
+        unit:
+          allOf:
+          - $ref: '#/components/schemas/AngleUnits'
+          - description: Elevation angle units.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: Elevation angle value.
+      description: Elevation angle of the satellite in the sky during a contact.
+    DataflowDetail:
+      type: object
+      properties:
+        destination:
+          $ref: '#/components/schemas/Destination'
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Error message for a dataflow.
+        source:
+          $ref: '#/components/schemas/Source'
+      description: Information about a dataflow edge used in a contact.
+    ResourceNotFoundException: {}
     Source:
       type: object
       properties:
@@ -445,256 +494,23 @@ components:
           - $ref: '#/components/schemas/String'
           - description: Region of a dataflow source.
       description: Dataflow details for the source side.
-    MissionProfileArn:
-      type: string
-    EndpointStatus:
-      type: string
-      enum:
-      - created
-      - creating
-      - deleted
-      - deleting
-      - failed
-    Elevation:
-      type: object
-      required:
-      - unit
-      - value
-      properties:
-        unit:
-          allOf:
-          - $ref: '#/components/schemas/AngleUnits'
-          - description: Elevation angle units.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: Elevation angle value.
-      description: Elevation angle of the satellite in the sky during a contact.
-    Integer:
-      type: integer
-    RangedConnectionDetails:
-      type: object
-      required:
-      - socketAddress
-      properties:
-        mtu:
-          allOf:
-          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
-          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
-        socketAddress:
-          allOf:
-          - $ref: '#/components/schemas/RangedSocketAddress'
-          - description: A ranged socket address.
-      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
-    SecurityDetails:
-      type: object
-      required:
-      - roleArn
-      - securityGroupIds
-      - subnetIds
-      properties:
-        roleArn:
-          allOf:
-          - $ref: '#/components/schemas/RoleArn'
-          - description: 'ARN to a role needed for connecting streams to your instances. '
-        securityGroupIds:
-          allOf:
-          - $ref: '#/components/schemas/SecurityGroupIdList'
-          - description: The security groups to attach to the elastic network interfaces.
-        subnetIds:
-          allOf:
-          - $ref: '#/components/schemas/SubnetList'
-          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
-      description: Information about endpoints.
-    IntegerRange:
-      type: object
-      required:
-      - maximum
-      - minimum
-      properties:
-        maximum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: A maximum value.
-        minimum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: A minimum value.
-      description: An integer range that has a minimum and maximum value.
-    CapabilityHealthReason:
-      type: string
-      enum:
-      - NO_REGISTERED_AGENT
-      - INVALID_IP_OWNERSHIP
-      - NOT_AUTHORIZED_TO_CREATE_SLR
-      - UNVERIFIED_IP_OWNERSHIP
-      - INITIALIZING_DATAPLANE
-      - DATAPLANE_FAILURE
-      - HEALTHY
     BucketArn:
       type: string
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
-    Double:
-      type: number
-      format: double
-    ConfigCapabilityType:
-      type: string
-      enum:
-      - antenna-downlink
-      - antenna-downlink-demod-decode
-      - antenna-uplink
-      - dataflow-endpoint
-      - tracking
-      - uplink-echo
-      - s3-recording
-    Destination:
-      type: object
-      properties:
-        configDetails:
-          allOf:
-          - $ref: '#/components/schemas/ConfigDetails'
-          - description: Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
-        configId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a <code>Config</code>.
-        configType:
-          allOf:
-          - $ref: '#/components/schemas/ConfigCapabilityType'
-          - description: Type of a <code>Config</code>.
-        dataflowDestinationRegion:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Region of a dataflow destination.
-      description: Dataflow details for the destination side.
-    InvalidParameterException: {}
-    DataflowDetail:
-      type: object
-      properties:
-        destination:
-          $ref: '#/components/schemas/Destination'
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Error message for a dataflow.
-        source:
-          $ref: '#/components/schemas/Source'
-      description: Information about a dataflow edge used in a contact.
-    SubnetList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    SecurityGroupIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ResourceNotFoundException: {}
-    CapabilityHealth:
-      type: string
-      enum:
-      - UNHEALTHY
-      - HEALTHY
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    DataflowEndpointMtuInteger:
-      type: integer
-      minimum: 1400
-      maximum: 1500
-    AntennaDemodDecodeDetails:
-      type: object
-      properties:
-        outputNode:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Name of an antenna demod decode output node used in a contact.
-      description: Details about an antenna demod decode <code>Config</code> used in a contact.
-    RangedSocketAddress:
+    SocketAddress:
       type: object
       required:
       - name
-      - portRange
+      - port
       properties:
         name:
           allOf:
-          - $ref: '#/components/schemas/IpV4Address'
-          - description: IPv4 socket address.
-        portRange:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a socket address.
+        port:
           allOf:
-          - $ref: '#/components/schemas/IntegerRange'
-          - description: Port range of a socket address.
-      description: A socket address with a port range.
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    AuditResults:
-      type: string
-      enum:
-      - HEALTHY
-      - UNHEALTHY
-    EndpointDetails:
-      type: object
-      properties:
-        awsGroundStationAgentEndpoint:
-          allOf:
-          - $ref: '#/components/schemas/AwsGroundStationAgentEndpoint'
-          - description: An agent endpoint.
-        endpoint:
-          allOf:
-          - $ref: '#/components/schemas/DataflowEndpoint'
-          - description: A dataflow endpoint.
-        healthReasons:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityHealthReasonList'
-          - description: Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
-        healthStatus:
-          allOf:
-          - $ref: '#/components/schemas/CapabilityHealth'
-          - description: A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
-        securityDetails:
-          allOf:
-          - $ref: '#/components/schemas/SecurityDetails'
-          - description: Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.
-      description: Information about the endpoint details.
-    RoleArn:
-      type: string
-    Timestamp:
-      type: string
-      format: date-time
-    IpV4Address:
-      type: string
-      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
-      minLength: 7
-      maxLength: 16
-    ConfigDetails:
-      type: object
-      properties:
-        antennaDemodDecodeDetails:
-          allOf:
-          - $ref: '#/components/schemas/AntennaDemodDecodeDetails'
-          - description: Details for antenna demod decode <code>Config</code> in a contact.
-        endpointDetails:
-          $ref: '#/components/schemas/EndpointDetails'
-        s3RecordingDetails:
-          allOf:
-          - $ref: '#/components/schemas/S3RecordingDetails'
-          - description: Details for an S3 recording <code>Config</code> in a contact.
-      description: Details for certain <code>Config</code> object types in a contact.
-    String:
-      type: string
-    CapabilityHealthReasonList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CapabilityHealthReason'
-      minItems: 0
-      maxItems: 500
+          - $ref: '#/components/schemas/Integer'
+          - description: Port of a socket address.
+      description: Information about the socket address.
     AwsGroundStationAgentEndpoint:
       type: object
       required:
@@ -723,6 +539,38 @@ components:
           - $ref: '#/components/schemas/SafeName'
           - description: Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.
       description: Information about AwsGroundStationAgentEndpoint.
+    RangedConnectionDetailsMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    DataflowEndpointMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    RoleArn:
+      type: string
+    MissionProfileArn:
+      type: string
+    SecurityDetails:
+      type: object
+      required:
+      - roleArn
+      - securityGroupIds
+      - subnetIds
+      properties:
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: 'ARN to a role needed for connecting streams to your instances. '
+        securityGroupIds:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: The security groups to attach to the elastic network interfaces.
+        subnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetList'
+          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
+      description: Information about endpoints.
     ConnectionDetails:
       type: object
       required:
@@ -737,13 +585,78 @@ components:
           - $ref: '#/components/schemas/SocketAddress'
           - description: A socket address.
       description: Egress address of AgentEndpoint with an optional mtu.
-    AgentStatus:
+    CapabilityHealthReasonList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CapabilityHealthReason'
+      minItems: 0
+      maxItems: 500
+    SecurityGroupIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    CapabilityHealth:
       type: string
       enum:
-      - SUCCESS
+      - UNHEALTHY
+      - HEALTHY
+    SubnetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    ConfigCapabilityType:
+      type: string
+      enum:
+      - antenna-downlink
+      - antenna-downlink-demod-decode
+      - antenna-uplink
+      - dataflow-endpoint
+      - tracking
+      - uplink-echo
+      - s3-recording
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
+    RangedSocketAddress:
+      type: object
+      required:
+      - name
+      - portRange
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/IpV4Address'
+          - description: IPv4 socket address.
+        portRange:
+          allOf:
+          - $ref: '#/components/schemas/IntegerRange'
+          - description: Port range of a socket address.
+      description: A socket address with a port range.
+    ContactStatus:
+      type: string
+      enum:
+      - AVAILABLE
+      - AWS_CANCELLED
+      - AWS_FAILED
+      - CANCELLED
+      - CANCELLING
+      - COMPLETED
       - FAILED
-      - ACTIVE
-      - INACTIVE
+      - FAILED_TO_SCHEDULE
+      - PASS
+      - POSTPASS
+      - PREPASS
+      - SCHEDULED
+      - SCHEDULING
+    Integer:
+      type: integer
     DescribeContactResponse:
       type: object
       properties:
@@ -804,57 +717,138 @@ components:
           - $ref: '#/components/schemas/TagsMap'
           - description: Tags assigned to a contact.
       description: <p/>
-    ContactIdResponse:
+    IpV4Address:
+      type: string
+      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+      minLength: 7
+      maxLength: 16
+    Timestamp:
+      type: string
+      format: date-time
+    String:
+      type: string
+    Destination:
       type: object
       properties:
-        contactId:
+        configDetails:
+          allOf:
+          - $ref: '#/components/schemas/ConfigDetails'
+          - description: Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+        configId:
           allOf:
           - $ref: '#/components/schemas/Uuid'
-          - description: UUID of a contact.
-      description: <p/>
-    S3RecordingDetails:
-      type: object
-      properties:
-        bucketArn:
+          - description: UUID of a <code>Config</code>.
+        configType:
           allOf:
-          - $ref: '#/components/schemas/BucketArn'
-          - description: ARN of the bucket used.
-        keyTemplate:
+          - $ref: '#/components/schemas/ConfigCapabilityType'
+          - description: Type of a <code>Config</code>.
+        dataflowDestinationRegion:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: Key template used for the S3 Recording Configuration
-      description: Details about an S3 recording <code>Config</code> used in a contact.
-    ContactStatus:
+          - description: Region of a dataflow destination.
+      description: Dataflow details for the destination side.
+    AuditResults:
       type: string
       enum:
-      - AVAILABLE
-      - AWS_CANCELLED
-      - AWS_FAILED
-      - CANCELLED
-      - CANCELLING
-      - COMPLETED
-      - FAILED
-      - FAILED_TO_SCHEDULE
-      - PASS
-      - POSTPASS
-      - PREPASS
-      - SCHEDULED
-      - SCHEDULING
-    satelliteArn:
+      - HEALTHY
+      - UNHEALTHY
+    RangedConnectionDetails:
+      type: object
+      required:
+      - socketAddress
+      properties:
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        socketAddress:
+          allOf:
+          - $ref: '#/components/schemas/RangedSocketAddress'
+          - description: A ranged socket address.
+      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
+    AntennaDemodDecodeDetails:
+      type: object
+      properties:
+        outputNode:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of an antenna demod decode output node used in a contact.
+      description: Details about an antenna demod decode <code>Config</code> used in a contact.
+    ConfigDetails:
+      type: object
+      properties:
+        antennaDemodDecodeDetails:
+          allOf:
+          - $ref: '#/components/schemas/AntennaDemodDecodeDetails'
+          - description: Details for antenna demod decode <code>Config</code> in a contact.
+        endpointDetails:
+          $ref: '#/components/schemas/EndpointDetails'
+        s3RecordingDetails:
+          allOf:
+          - $ref: '#/components/schemas/S3RecordingDetails'
+          - description: Details for an S3 recording <code>Config</code> in a contact.
+      description: Details for certain <code>Config</code> object types in a contact.
+    Double:
+      type: number
+      format: double
+    InvalidParameterException: {}
+    CapabilityHealthReason:
       type: string
-    DataflowList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataflowDetail'
+      enum:
+      - NO_REGISTERED_AGENT
+      - INVALID_IP_OWNERSHIP
+      - NOT_AUTHORIZED_TO_CREATE_SLR
+      - UNVERIFIED_IP_OWNERSHIP
+      - INITIALIZING_DATAPLANE
+      - DATAPLANE_FAILURE
+      - HEALTHY
+    DataflowEndpoint:
+      type: object
+      properties:
+        address:
+          allOf:
+          - $ref: '#/components/schemas/SocketAddress'
+          - description: Socket address of a dataflow endpoint.
+        mtu:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpointMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/SafeName'
+          - description: Name of a dataflow endpoint.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/EndpointStatus'
+          - description: Status of a dataflow endpoint.
+      description: Information about a dataflow endpoint.
+    EndpointDetails:
+      type: object
+      properties:
+        awsGroundStationAgentEndpoint:
+          allOf:
+          - $ref: '#/components/schemas/AwsGroundStationAgentEndpoint'
+          - description: An agent endpoint.
+        endpoint:
+          allOf:
+          - $ref: '#/components/schemas/DataflowEndpoint'
+          - description: A dataflow endpoint.
+        healthReasons:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealthReasonList'
+          - description: Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        healthStatus:
+          allOf:
+          - $ref: '#/components/schemas/CapabilityHealth'
+          - description: A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        securityDetails:
+          allOf:
+          - $ref: '#/components/schemas/SecurityDetails'
+          - description: Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.
+      description: Information about the endpoint details.
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -865,20 +859,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
