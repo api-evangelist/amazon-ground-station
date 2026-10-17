@@ -459,43 +459,10 @@ paths:
       - Dataflow Endpoint Group
 components:
   schemas:
-    IntegerRange:
-      type: object
-      required:
-      - maximum
-      - minimum
-      properties:
-        maximum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: A maximum value.
-        minimum:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: A minimum value.
-      description: An integer range that has a minimum and maximum value.
-    TagsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/String'
-    DependencyException: {}
-    EndpointStatus:
-      type: string
-      enum:
-      - created
-      - creating
-      - deleted
-      - deleting
-      - failed
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    DataflowEndpointGroupList:
+    SecurityGroupIdList:
       type: array
       items:
-        $ref: '#/components/schemas/DataflowEndpointListItem'
+        $ref: '#/components/schemas/String'
     DataflowEndpointGroupIdResponse:
       type: object
       properties:
@@ -504,39 +471,6 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a dataflow endpoint group.
       description: <p/>
-    EndpointDetailsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EndpointDetails'
-      minItems: 0
-      maxItems: 500
-    AgentStatus:
-      type: string
-      enum:
-      - SUCCESS
-      - FAILED
-      - ACTIVE
-      - INACTIVE
-    ResourceNotFoundException: {}
-    DataflowEndpointGroupDurationInSeconds:
-      type: integer
-      minimum: 120
-      maximum: 480
-    SocketAddress:
-      type: object
-      required:
-      - name
-      - port
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Name of a socket address.
-        port:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: Port of a socket address.
-      description: Information about the socket address.
     AwsGroundStationAgentEndpoint:
       type: object
       required:
@@ -565,36 +499,25 @@ components:
           - $ref: '#/components/schemas/SafeName'
           - description: Name string associated with AgentEndpoint. Used as a human-readable identifier for AgentEndpoint.
       description: Information about AwsGroundStationAgentEndpoint.
-    RangedConnectionDetailsMtuInteger:
-      type: integer
-      minimum: 1400
-      maximum: 1500
-    DataflowEndpointMtuInteger:
-      type: integer
-      minimum: 1400
-      maximum: 1500
-    RoleArn:
-      type: string
-    SecurityDetails:
+    RangedConnectionDetails:
       type: object
       required:
-      - roleArn
-      - securityGroupIds
-      - subnetIds
+      - socketAddress
       properties:
-        roleArn:
+        mtu:
           allOf:
-          - $ref: '#/components/schemas/RoleArn'
-          - description: 'ARN to a role needed for connecting streams to your instances. '
-        securityGroupIds:
+          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
+          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+        socketAddress:
           allOf:
-          - $ref: '#/components/schemas/SecurityGroupIdList'
-          - description: The security groups to attach to the elastic network interfaces.
-        subnetIds:
-          allOf:
-          - $ref: '#/components/schemas/SubnetList'
-          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
-      description: Information about endpoints.
+          - $ref: '#/components/schemas/RangedSocketAddress'
+          - description: A ranged socket address.
+      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
+    IpV4Address:
+      type: string
+      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+      minLength: 7
+      maxLength: 16
     ConnectionDetails:
       type: object
       required:
@@ -609,16 +532,11 @@ components:
           - $ref: '#/components/schemas/SocketAddress'
           - description: A socket address.
       description: Egress address of AgentEndpoint with an optional mtu.
-    CapabilityHealthReasonList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CapabilityHealthReason'
-      minItems: 0
-      maxItems: 500
-    SecurityGroupIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
     ListDataflowEndpointGroupsResponse:
       type: object
       properties:
@@ -631,25 +549,10 @@ components:
           - $ref: '#/components/schemas/PaginationToken'
           - description: Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
       description: <p/>
-    CapabilityHealth:
-      type: string
-      enum:
-      - UNHEALTHY
-      - HEALTHY
-    SubnetList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
-    SafeName:
-      type: string
-      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
-      minLength: 1
-      maxLength: 256
+    RangedConnectionDetailsMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
     RangedSocketAddress:
       type: object
       required:
@@ -665,34 +568,6 @@ components:
           - $ref: '#/components/schemas/IntegerRange'
           - description: Port range of a socket address.
       description: A socket address with a port range.
-    Integer:
-      type: integer
-    IpV4Address:
-      type: string
-      pattern: ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
-      minLength: 7
-      maxLength: 16
-    String:
-      type: string
-    AuditResults:
-      type: string
-      enum:
-      - HEALTHY
-      - UNHEALTHY
-    RangedConnectionDetails:
-      type: object
-      required:
-      - socketAddress
-      properties:
-        mtu:
-          allOf:
-          - $ref: '#/components/schemas/RangedConnectionDetailsMtuInteger'
-          - description: Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
-        socketAddress:
-          allOf:
-          - $ref: '#/components/schemas/RangedSocketAddress'
-          - description: A ranged socket address.
-      description: Ingress address of AgentEndpoint with a port range and an optional mtu.
     GetDataflowEndpointGroupResponse:
       type: object
       properties:
@@ -721,7 +596,79 @@ components:
           - $ref: '#/components/schemas/TagsMap'
           - description: Tags assigned to a dataflow endpoint group.
       description: <p/>
+    EndpointDetailsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EndpointDetails'
+      minItems: 0
+      maxItems: 500
+    TagsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/String'
+    Integer:
+      type: integer
+    DataflowEndpointMtuInteger:
+      type: integer
+      minimum: 1400
+      maximum: 1500
+    IntegerRange:
+      type: object
+      required:
+      - maximum
+      - minimum
+      properties:
+        maximum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A maximum value.
+        minimum:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: A minimum value.
+      description: An integer range that has a minimum and maximum value.
+    DataflowEndpointGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataflowEndpointListItem'
+    DataflowEndpointGroupDurationInSeconds:
+      type: integer
+      minimum: 120
+      maximum: 480
+    RoleArn:
+      type: string
+    SafeName:
+      type: string
+      pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+      minLength: 1
+      maxLength: 256
     InvalidParameterException: {}
+    SecurityDetails:
+      type: object
+      required:
+      - roleArn
+      - securityGroupIds
+      - subnetIds
+      properties:
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: 'ARN to a role needed for connecting streams to your instances. '
+        securityGroupIds:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: The security groups to attach to the elastic network interfaces.
+        subnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetList'
+          - description: A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.
+      description: Information about endpoints.
+    CapabilityHealth:
+      type: string
+      enum:
+      - UNHEALTHY
+      - HEALTHY
+    ResourceNotFoundException: {}
     DataflowEndpointListItem:
       type: object
       properties:
@@ -734,18 +681,18 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a dataflow endpoint group.
       description: Item in a list of <code>DataflowEndpoint</code> groups.
-    CapabilityHealthReason:
+    AgentStatus:
       type: string
       enum:
-      - NO_REGISTERED_AGENT
-      - INVALID_IP_OWNERSHIP
-      - NOT_AUTHORIZED_TO_CREATE_SLR
-      - UNVERIFIED_IP_OWNERSHIP
-      - INITIALIZING_DATAPLANE
-      - DATAPLANE_FAILURE
-      - HEALTHY
-    DataflowEndpointGroupArn:
+      - SUCCESS
+      - FAILED
+      - ACTIVE
+      - INACTIVE
+    Uuid:
       type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
     DataflowEndpoint:
       type: object
       properties:
@@ -766,6 +713,24 @@ components:
           - $ref: '#/components/schemas/EndpointStatus'
           - description: Status of a dataflow endpoint.
       description: Information about a dataflow endpoint.
+    CapabilityHealthReason:
+      type: string
+      enum:
+      - NO_REGISTERED_AGENT
+      - INVALID_IP_OWNERSHIP
+      - NOT_AUTHORIZED_TO_CREATE_SLR
+      - UNVERIFIED_IP_OWNERSHIP
+      - INITIALIZING_DATAPLANE
+      - DATAPLANE_FAILURE
+      - HEALTHY
+    String:
+      type: string
+    CapabilityHealthReasonList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CapabilityHealthReason'
+      minItems: 0
+      maxItems: 500
     EndpointDetails:
       type: object
       properties:
@@ -790,15 +755,44 @@ components:
           - $ref: '#/components/schemas/SecurityDetails'
           - description: Endpoint security details including a list of subnets, a list of security groups and a role to connect streams to instances.
       description: Information about the endpoint details.
+    DependencyException: {}
+    SubnetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    SocketAddress:
+      type: object
+      required:
+      - name
+      - port
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Name of a socket address.
+        port:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: Port of a socket address.
+      description: Information about the socket address.
+    DataflowEndpointGroupArn:
+      type: string
+    EndpointStatus:
+      type: string
+      enum:
+      - created
+      - creating
+      - deleted
+      - deleting
+      - failed
+    AuditResults:
+      type: string
+      enum:
+      - HEALTHY
+      - UNHEALTHY
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -809,14 +803,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -827,8 +815,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

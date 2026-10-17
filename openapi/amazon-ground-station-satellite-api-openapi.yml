@@ -309,7 +309,11 @@ components:
           - $ref: '#/components/schemas/EphemerisSource'
           - description: The <code>EphemerisSource</code> that generated a given ephemeris.
       description: Metadata describing a particular ephemeris.
-    DependencyException: {}
+    PaginationToken:
+      type: string
+      pattern: ^[A-Za-z0-9-/+_.=]+$
+      minLength: 3
+      maxLength: 1000
     GetSatelliteResponse:
       type: object
       properties:
@@ -334,40 +338,6 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: <p/>
-    satelliteArn:
-      type: string
-    PaginationToken:
-      type: string
-      pattern: ^[A-Za-z0-9-/+_.=]+$
-      minLength: 3
-      maxLength: 1000
-    EphemerisSource:
-      type: string
-      enum:
-      - CUSTOMER_PROVIDED
-      - SPACE_TRACK
-    ResourceNotFoundException: {}
-    ListSatellitesResponse:
-      type: object
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: Next token that can be supplied in the next call to get the next page of satellites.
-        satellites:
-          allOf:
-          - $ref: '#/components/schemas/SatelliteList'
-          - description: List of satellites.
-      description: <p/>
-    GroundStationName:
-      type: string
-      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
-      minLength: 4
-      maxLength: 500
-    noradSatelliteID:
-      type: integer
-      minimum: 0
-      maximum: 99999
     SatelliteListItem:
       type: object
       properties:
@@ -392,39 +362,63 @@ components:
           - $ref: '#/components/schemas/Uuid'
           - description: UUID of a satellite.
       description: Item in a list of satellites.
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-      minLength: 1
-      maxLength: 128
+    ListSatellitesResponse:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: Next token that can be supplied in the next call to get the next page of satellites.
+        satellites:
+          allOf:
+          - $ref: '#/components/schemas/SatelliteList'
+          - description: List of satellites.
+      description: <p/>
     SafeName:
       type: string
       pattern: ^[ a-zA-Z0-9_:-]{1,256}$
       minLength: 1
       maxLength: 256
+    InvalidParameterException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    ResourceNotFoundException: {}
     SatelliteList:
       type: array
       items:
         $ref: '#/components/schemas/SatelliteListItem'
-    Timestamp:
+    Uuid:
       type: string
-      format: date-time
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      minLength: 1
+      maxLength: 128
+    GroundStationName:
+      type: string
+      pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
+      minLength: 4
+      maxLength: 500
+    DependencyException: {}
+    satelliteArn:
+      type: string
     GroundStationIdList:
       type: array
       items:
         $ref: '#/components/schemas/GroundStationName'
       minItems: 0
       maxItems: 500
-    InvalidParameterException: {}
+    noradSatelliteID:
+      type: integer
+      minimum: 0
+      maximum: 99999
+    EphemerisSource:
+      type: string
+      enum:
+      - CUSTOMER_PROVIDED
+      - SPACE_TRACK
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -435,14 +429,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -453,8 +441,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
