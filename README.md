@@ -1,4 +1,4 @@
-# Amazon Ground Station (amazon-ground-station)
+# Amazon Ground Station
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,129 +66,271 @@
 
 AWS Ground Station is a fully managed service that lets you control satellite communications, process satellite data, and scale your satellite operations without having to worry about building or managing your own ground station infrastructure.
 
-**URL:** [https://aws.amazon.com/ground-station/](https://aws.amazon.com/ground-station/)
+**Areas:** AWS · Data Processing · IoT · Satellite Communications · Space Technology · Satellite
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon Ground Station on APIs.io
 
-## Tags:
+Everything profiled for Amazon Ground Station is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-ground-station/](https://apis.io/providers/amazon-ground-station/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Data Processing, IoT, Satellite Communications, Space Technology
+### APIs (14)
 
-## Timestamps
+- [Amazon Ground Station Agent API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-agent-api/) — The Agent API from Amazon Ground Station — 3 operation(s) for agent.
+- [Amazon Ground Station Config API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-config-api/) — The Config API from Amazon Ground Station — 2 operation(s) for config.
+- [Amazon Ground Station Contact API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-contact-api/) — The Contact API from Amazon Ground Station — 2 operation(s) for contact.
+- [Amazon Ground Station Contacts API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-contacts-api/) — The Contacts API from Amazon Ground Station — 1 operation(s) for contacts.
+- [Amazon Ground Station Ephemerides API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-ephemerides-api/) — The Ephemerides API from Amazon Ground Station — 1 operation(s) for ephemerides.
+- [Amazon Ground Station Ephemeris API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-ephemeris-api/) — The Ephemeris API from Amazon Ground Station — 2 operation(s) for ephemeris.
+- [Amazon Ground Station Groundstation API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-groundstation-api/) — The Groundstation API from Amazon Ground Station — 1 operation(s) for groundstation.
+- [Amazon Ground Station Minute Usage API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-minute-usage-api/) — The Minute Usage API from Amazon Ground Station — 1 operation(s) for minute usage.
+- [Amazon Ground Station Missionprofile API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-missionprofile-api/) — The Missionprofile API from Amazon Ground Station — 2 operation(s) for missionprofile.
+- [Amazon Ground Station Satellite API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-satellite-api/) — The Satellite API from Amazon Ground Station — 2 operation(s) for satellite.
+- [Amazon Ground Station Tags API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-tags-api/) — The Tags API from Amazon Ground Station — 2 operation(s) for tags.
+- [Amazon Ground Station Dataflow Endpoint Group API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-dataflow-endpoint-group-api/) — The Dataflow Endpoint Group API from Amazon Ground Station — 2 operation(s) for dataflow endpoint group.
+- [Amazon Ground Station Ground Station Operations API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-operations-api/) — The Ground Station Operations API from Amazon Ground Station — 5 operation(s) for ground station operations.
+- [Amazon Ground Station Ground Station Versions API](https://apis.io/apis/amazon-ground-station/amazon-ground-station-versions-api/) — The Ground Station Versions API from Amazon Ground Station — 2 operation(s) for ground station versions.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AWS Ground Station API
-The AWS Ground Station API provides programmatic access to manage satellite contacts, mission profiles, configs, ground stations, and dataflow endpoint groups for satellite communications and data processing.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/ground-station/](https://aws.amazon.com/ground-station/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Ground Station Agentic Access](https://apis.io/agentic-access/amazon-ground-station/amazon-ground-station-agentic-access/)
 
- - Data Processing, Satellite Communications, Space Technology
+#### JSON Schema (203)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html)
-- [OpenAPI](openapi/amazon-ground-station-openapi.yaml)
-- [GettingStarted](https://aws.amazon.com/ground-station/getting-started/)
-- [Pricing](https://aws.amazon.com/ground-station/pricing/)
-- [FAQ](https://aws.amazon.com/ground-station/faqs/)
-- [APIReference](https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html)
-- [JSONSchema](json-schema/ground-station-contact-schema.json)
-- [JSONLD](json-ld/amazon-ground-station-context.jsonld)
+- [AgentCpuCoresList](https://apis.io/schemas/amazon-ground-station/ground-station-agent-cpu-cores-list/)
+- [AgentDetails](https://apis.io/schemas/amazon-ground-station/ground-station-agent-details/)
+- [AgentStatus](https://apis.io/schemas/amazon-ground-station/ground-station-agent-status/)
+- [AggregateStatus](https://apis.io/schemas/amazon-ground-station/ground-station-aggregate-status/)
+- [AngleUnits](https://apis.io/schemas/amazon-ground-station/ground-station-angle-units/)
+- [AntennaDemodDecodeDetails](https://apis.io/schemas/amazon-ground-station/ground-station-antenna-demod-decode-details/)
+- [AntennaDownlinkConfig](https://apis.io/schemas/amazon-ground-station/ground-station-antenna-downlink-config/)
+- [AntennaDownlinkDemodDecodeConfig](https://apis.io/schemas/amazon-ground-station/ground-station-antenna-downlink-demod-decode-config/)
+- [AntennaUplinkConfig](https://apis.io/schemas/amazon-ground-station/ground-station-antenna-uplink-config/)
+- [AnyArn](https://apis.io/schemas/amazon-ground-station/ground-station-any-arn/)
+- [AuditResults](https://apis.io/schemas/amazon-ground-station/ground-station-audit-results/)
+- [AwsGroundStationAgentEndpoint](https://apis.io/schemas/amazon-ground-station/ground-station-aws-ground-station-agent-endpoint/)
+- [AWSRegion](https://apis.io/schemas/amazon-ground-station/ground-station-aws-region/)
+- [BandwidthUnits](https://apis.io/schemas/amazon-ground-station/ground-station-bandwidth-units/)
+- [Boolean](https://apis.io/schemas/amazon-ground-station/ground-station-boolean/)
+- [BucketArn](https://apis.io/schemas/amazon-ground-station/ground-station-bucket-arn/)
+- [CancelContactRequest](https://apis.io/schemas/amazon-ground-station/ground-station-cancel-contact-request/)
+- [CapabilityArn](https://apis.io/schemas/amazon-ground-station/ground-station-capability-arn/)
+- [CapabilityArnList](https://apis.io/schemas/amazon-ground-station/ground-station-capability-arn-list/)
+- [CapabilityHealth](https://apis.io/schemas/amazon-ground-station/ground-station-capability-health/)
+- [CapabilityHealthReason](https://apis.io/schemas/amazon-ground-station/ground-station-capability-health-reason/)
+- [CapabilityHealthReasonList](https://apis.io/schemas/amazon-ground-station/ground-station-capability-health-reason-list/)
+- [ComponentStatusData](https://apis.io/schemas/amazon-ground-station/ground-station-component-status-data/)
+- [ComponentStatusList](https://apis.io/schemas/amazon-ground-station/ground-station-component-status-list/)
+- [ComponentTypeString](https://apis.io/schemas/amazon-ground-station/ground-station-component-type-string/)
+- …and 178 more published on APIs.io
 
-## Common Properties
+#### JSON Structure (203)
 
-- [Portal](https://aws.amazon.com/ground-station/)
+Data models expressed in JSON Structure.
+
+- [Ground Station Agent Cpu Cores List Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-agent-cpu-cores-list-structure/)
+- [Ground Station Agent Details Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-agent-details-structure/)
+- [Ground Station Agent Status Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-agent-status-structure/)
+- [Ground Station Aggregate Status Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-aggregate-status-structure/)
+- [Ground Station Angle Units Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-angle-units-structure/)
+- [Ground Station Antenna Demod Decode Details Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-antenna-demod-decode-details-structure/)
+- [Ground Station Antenna Downlink Config Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-antenna-downlink-config-structure/)
+- [Ground Station Antenna Downlink Demod Decode Config Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-antenna-downlink-demod-decode-config-structure/)
+- [Ground Station Antenna Uplink Config Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-antenna-uplink-config-structure/)
+- [Ground Station Any Arn Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-any-arn-structure/)
+- [Ground Station Audit Results Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-audit-results-structure/)
+- [Ground Station Aws Ground Station Agent Endpoint Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-aws-ground-station-agent-endpoint-structure/)
+- [Ground Station Aws Region Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-aws-region-structure/)
+- [Ground Station Bandwidth Units Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-bandwidth-units-structure/)
+- [Ground Station Boolean Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-boolean-structure/)
+- [Ground Station Bucket Arn Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-bucket-arn-structure/)
+- [Ground Station Cancel Contact Request Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-cancel-contact-request-structure/)
+- [Ground Station Capability Arn List Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-capability-arn-list-structure/)
+- [Ground Station Capability Arn Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-capability-arn-structure/)
+- [Ground Station Capability Health Reason List Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-capability-health-reason-list-structure/)
+- [Ground Station Capability Health Reason Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-capability-health-reason-structure/)
+- [Ground Station Capability Health Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-capability-health-structure/)
+- [Ground Station Component Status Data Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-component-status-data-structure/)
+- [Ground Station Component Status List Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-component-status-list-structure/)
+- [Ground Station Component Type String Structure](https://apis.io/json-structure/amazon-ground-station/ground-station-component-type-string-structure/)
+- …and 178 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Ground Station Context](https://apis.io/jsonld/amazon-ground-station/amazon-ground-station-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Ground Station Vocabulary](https://apis.io/vocabularies/amazon-ground-station/amazon-ground-station-vocabulary/)
+
+#### Examples (113)
+
+Example requests and responses.
+
+- [Ground Station Agent Details Example](https://apis.io/examples/amazon-ground-station/ground-station-agent-details-example/)
+- [Ground Station Aggregate Status Example](https://apis.io/examples/amazon-ground-station/ground-station-aggregate-status-example/)
+- [Ground Station Antenna Demod Decode Details Example](https://apis.io/examples/amazon-ground-station/ground-station-antenna-demod-decode-details-example/)
+- [Ground Station Antenna Downlink Config Example](https://apis.io/examples/amazon-ground-station/ground-station-antenna-downlink-config-example/)
+- [Ground Station Antenna Downlink Demod Decode Config Example](https://apis.io/examples/amazon-ground-station/ground-station-antenna-downlink-demod-decode-config-example/)
+- [Ground Station Antenna Uplink Config Example](https://apis.io/examples/amazon-ground-station/ground-station-antenna-uplink-config-example/)
+- [Ground Station Aws Ground Station Agent Endpoint Example](https://apis.io/examples/amazon-ground-station/ground-station-aws-ground-station-agent-endpoint-example/)
+- [Ground Station Cancel Contact Request Example](https://apis.io/examples/amazon-ground-station/ground-station-cancel-contact-request-example/)
+- [Ground Station Component Status Data Example](https://apis.io/examples/amazon-ground-station/ground-station-component-status-data-example/)
+- [Ground Station Component Version Example](https://apis.io/examples/amazon-ground-station/ground-station-component-version-example/)
+- [Ground Station Config Details Example](https://apis.io/examples/amazon-ground-station/ground-station-config-details-example/)
+- [Ground Station Config Id Response Example](https://apis.io/examples/amazon-ground-station/ground-station-config-id-response-example/)
+- [Ground Station Config List Item Example](https://apis.io/examples/amazon-ground-station/ground-station-config-list-item-example/)
+- [Ground Station Config Type Data Example](https://apis.io/examples/amazon-ground-station/ground-station-config-type-data-example/)
+- [Ground Station Connection Details Example](https://apis.io/examples/amazon-ground-station/ground-station-connection-details-example/)
+- [Ground Station Contact Data Example](https://apis.io/examples/amazon-ground-station/ground-station-contact-data-example/)
+- [Ground Station Contact Id Response Example](https://apis.io/examples/amazon-ground-station/ground-station-contact-id-response-example/)
+- [Ground Station Create Config Request Example](https://apis.io/examples/amazon-ground-station/ground-station-create-config-request-example/)
+- [Ground Station Create Dataflow Endpoint Group Request Example](https://apis.io/examples/amazon-ground-station/ground-station-create-dataflow-endpoint-group-request-example/)
+- [Ground Station Create Ephemeris Request Example](https://apis.io/examples/amazon-ground-station/ground-station-create-ephemeris-request-example/)
+- [Ground Station Create Mission Profile Request Example](https://apis.io/examples/amazon-ground-station/ground-station-create-mission-profile-request-example/)
+- [Ground Station Dataflow Detail Example](https://apis.io/examples/amazon-ground-station/ground-station-dataflow-detail-example/)
+- [Ground Station Dataflow Endpoint Config Example](https://apis.io/examples/amazon-ground-station/ground-station-dataflow-endpoint-config-example/)
+- [Ground Station Dataflow Endpoint Example](https://apis.io/examples/amazon-ground-station/ground-station-dataflow-endpoint-example/)
+- [Ground Station Dataflow Endpoint Group Id Response Example](https://apis.io/examples/amazon-ground-station/ground-station-dataflow-endpoint-group-id-response-example/)
+- …and 88 more published on APIs.io
+
+#### Collections (24)
+
+Postman and Open Collection request collections.
+
+- [AWS Ground Station Agent API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-agent-api/)
+- [AWS Ground Station Agent Config API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-config-api/)
+- [AWS Ground Station Agent Contact API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-contact-api/)
+- [AWS Ground Station Agent Contacts API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-contacts-api/)
+- [AWS Ground Station Agent DataflowEndpointGroup API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-dataflowendpointgroup-api/)
+- [AWS Ground Station Agent Ephemerides API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-ephemerides-api/)
+- [AWS Ground Station Agent Ephemeris API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-ephemeris-api/)
+- [AWS Ground Station Agent Groundstation API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-groundstation-api/)
+- [AWS Ground Station Agent Minute Usage API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-minute-usage-api/)
+- [AWS Ground Station Agent Missionprofile API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-missionprofile-api/)
+- [AWS Ground Station Agent Satellite API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-satellite-api/)
+- [AWS Ground Station Agent Tags API](https://apis.io/collections/amazon-ground-station/open-amazon-ground-station-tags-api/)
+- [AWS Ground Station Agent API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-agent-api/)
+- [AWS Ground Station Agent Config API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-config-api/)
+- [AWS Ground Station Agent Contact API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-contact-api/)
+- [AWS Ground Station Agent Contacts API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-contacts-api/)
+- [AWS Ground Station Agent DataflowEndpointGroup API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-dataflowendpointgroup-api/)
+- [AWS Ground Station Agent Ephemerides API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-ephemerides-api/)
+- [AWS Ground Station Agent Ephemeris API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-ephemeris-api/)
+- [AWS Ground Station Agent Groundstation API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-groundstation-api/)
+- [AWS Ground Station Agent Minute Usage API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-minute-usage-api/)
+- [AWS Ground Station Agent Missionprofile API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-missionprofile-api/)
+- [AWS Ground Station Agent Satellite API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-satellite-api/)
+- [AWS Ground Station Agent Tags API](https://apis.io/collections/amazon-ground-station/postman-amazon-ground-station-tags-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Ground Station — jsonschema rules](https://apis.io/rules/amazon-ground-station/amazon-ground-station-jsonschema-spectral-rules/)
+- [Amazon Ground Station API Rules](https://apis.io/rules/amazon-ground-station/amazon-ground-station-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Ground Station Authentication](https://apis.io/security/amazon-ground-station/amazon-ground-station-authentication/)
+- [Amazon Ground Station Domain Security](https://apis.io/security/amazon-ground-station/amazon-ground-station-domain-security/)
+- [Amazon Ground Station Trust Center](https://apis.io/security/amazon-ground-station/amazon-ground-station-trust-center/)
+- [Amazon Ground Station Vulnerability Disclosure](https://apis.io/security/amazon-ground-station/amazon-ground-station-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Ground Station Plans Pricing](https://apis.io/plans/amazon-ground-station/amazon-ground-station-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Ground Station Rate Limits](https://apis.io/rate-limits/amazon-ground-station/amazon-ground-station-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Ground Station Finops](https://apis.io/finops/amazon-ground-station/amazon-ground-station-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/ground-station/)
 - [Documentation](https://docs.aws.amazon.com/ground-station/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/publicsector/tag/aws-ground-station/)
-- [GitHubOrganization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/groundstation/)
-- [SignUp](https://portal.aws.amazon.com/billing/signup)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Managed Ground Station Infrastructure | AWS manages a global network of antennas so you do not need to build or operate your own. |
-| Satellite Contact Scheduling | Schedule satellite contacts through a simple API. |
-| Global Antenna Network | Access antennas at strategic worldwide locations for maximum satellite coverage. |
-| Data Downlink and Processing | Receive satellite data directly into AWS cloud services. |
-| Mission Profile Configuration | Configure mission profiles specifying dataflow and processing parameters. |
-| Integration with AWS Services | Stream satellite data into S3, Kinesis, EC2, and other AWS services. |
+**Kin Score 58.5** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 65.4 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 65.5 |
+| Access clarity | 60.5 |
 
-| Name | Description |
-|------|-------------|
-| Earth Observation | Collect and process satellite imagery for environmental monitoring. |
-| Weather Forecasting | Receive data from weather satellites for meteorological analysis. |
-| Maritime Tracking | Track ship positions using satellite AIS data. |
-| Communications Relay | Use geostationary satellites for communications relay. |
-| Scientific Research | Support space-based scientific missions with managed data collection. |
+**Agent readiness 31.9** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| Amazon S3 | Store downlinked satellite data directly in S3. |
-| Amazon Kinesis | Stream real-time satellite data for immediate processing. |
-| Amazon EC2 | Process satellite data on EC2 instances co-located with endpoints. |
-| Amazon SageMaker | Apply machine learning to satellite imagery and telemetry data. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-ground-station/](https://apis.io/providers/amazon-ground-station/).
 
-### OpenAPI
+## How this profile is made
 
-- [Amazon Ground Station OpenAPI](openapi/amazon-ground-station-openapi.yaml)
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-### JSON Schema
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Ground Station: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-203 schema files in [json-schema/](json-schema/)
+## Open an issue
 
-### JSON Structure
-
-203 structure files in [json-structure/](json-structure/)
-
-### JSON-LD
-
-- [Amazon Ground Station Context](json-ld/amazon-ground-station-context.jsonld)
-
-### Examples
-
-203 example files in [examples/](examples/)
-
-## Capabilities
-
-### Shared Per-API Definitions
-
-- [Amazon Ground Station](capabilities/shared/amazon-ground-station.yaml) — 10 operations for satellite contact and mission management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon Ground Station Satellite Operations](capabilities/amazon-ground-station-satellite-operations.yaml) | Amazon Ground Station | 10 | Satellite Operator, Mission Control Engineer |
-
-## Vocabulary
-
-- [Amazon Ground Station Vocabulary](vocabulary/amazon-ground-station-vocabulary.yaml) — Unified taxonomy mapping 6 resources, 7 actions, 1 workflow, and 2 personas
-
-## Rules
-
-- [Amazon Ground Station Spectral Rules](rules/amazon-ground-station-spectral-rules.yml) — 8 rules enforcing Amazon Ground Station API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-ground-station/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
