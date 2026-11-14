@@ -1,9 +1,12 @@
 aid: amazon-ground-station
+
 name: Amazon Ground Station
-description: AWS Ground Station is a fully managed service that lets you control satellite communications,
-  process satellite data, and scale your satellite operations without having to worry about building or
-  managing your own ground station infrastructure.
+
+description: AWS Ground Station is a fully managed service that lets you control satellite communications, process satellite data, and scale your
+  satellite operations without having to worry about building or managing your own ground station infrastructure.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -16,6 +19,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: enterprise
   onboarding: unknown
@@ -23,13 +27,15 @@ accessModel:
   try_now: false
   public: false
   label: Enterprise
-  confidence: low
+  confidence: medium
   source:
   - authentication
+  - rate-limits
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-ground-station.png
+
 tags:
 - Amazon Web Services
 - Data Processing
@@ -44,328 +50,68 @@ tags_raw:
 - Satellite Communications
 - Space Technology
 - Satellite
+
 url: https://raw.githubusercontent.com/api-evangelist/amazon-ground-station/refs/heads/main/apis.yml
+
 created: '2026-03-16'
+
 modified: '2026-09-16'
+
 specificationVersion: '0.23'
-apis:
-- aid: amazon-ground-station:amazon-ground-station-agent-api
-  name: Amazon Ground Station Agent API
-  description: The Agent API from Amazon Ground Station — 3 operation(s) for agent.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Agents
-  tags_raw:
-  - Agent
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-agent-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-config-api
-  name: Amazon Ground Station Config API
-  description: The Config API from Amazon Ground Station — 2 operation(s) for config.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Config
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-config-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-contact-api
-  name: Amazon Ground Station Contact API
-  description: The Contact API from Amazon Ground Station — 2 operation(s) for contact.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Contact
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-contact-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-contacts-api
-  name: Amazon Ground Station Contacts API
-  description: The Contacts API from Amazon Ground Station — 1 operation(s) for contacts.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Contacts
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-contacts-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-ephemerides-api
-  name: Amazon Ground Station Ephemerides API
-  description: The Ephemerides API from Amazon Ground Station — 1 operation(s) for ephemerides.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Ephemerides
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-ephemerides-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-ephemeris-api
-  name: Amazon Ground Station Ephemeris API
-  description: The Ephemeris API from Amazon Ground Station — 2 operation(s) for ephemeris.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Ephemeris
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-ephemeris-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-groundstation-api
-  name: Amazon Ground Station Groundstation API
-  description: The Groundstation API from Amazon Ground Station — 1 operation(s) for groundstation.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Ground Station
-  tags_raw:
-  - Groundstation
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-groundstation-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-minute-usage-api
-  name: Amazon Ground Station Minute Usage API
-  description: The Minute Usage API from Amazon Ground Station — 1 operation(s) for minute usage.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Minute Usage
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-minute-usage-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-missionprofile-api
-  name: Amazon Ground Station Missionprofile API
-  description: The Missionprofile API from Amazon Ground Station — 2 operation(s) for missionprofile.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Missionprofile
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-missionprofile-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-satellite-api
-  name: Amazon Ground Station Satellite API
-  description: The Satellite API from Amazon Ground Station — 2 operation(s) for satellite.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Satellite
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-satellite-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-tags-api
-  name: Amazon Ground Station Tags API
-  description: The Tags API from Amazon Ground Station — 2 operation(s) for tags.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-tags-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
-- aid: amazon-ground-station:amazon-ground-station-operations-api
-  name: Amazon Ground Station Ground Station Operations API
-  description: >-
-    The Ground Station Operations API from Amazon Ground Station — 5 operation(s) for ground station operations.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Ground Station Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-operations-api-openapi.yml
-- aid: amazon-ground-station:amazon-ground-station-versions-api
-  name: Amazon Ground Station Ground Station Versions API
-  description: >-
-    The Ground Station Versions API from Amazon Ground Station — 2 operation(s) for ground station versions.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Ground Station Versions
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-versions-api-openapi.yml
-- aid: amazon-ground-station:amazon-ground-station-dataflow-endpoint-group-api
-  name: Amazon Ground Station Dataflow Endpoint Group API
-  description: >-
-    The Dataflow Endpoint Group API from Amazon Ground Station — 2 operation(s) for dataflow endpoint
-    group.
-  humanURL: https://aws.amazon.com/ground-station/
-  baseURL: https://groundstation.amazonaws.com
-  tags:
-  - Dataflow Endpoint Group
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-ground-station-dataflow-endpoint-group-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/ground-station/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/ground-station/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/ground-station/faqs/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
-  - type: Authentication
-    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-  - type: JSONLD
-    url: json-ld/amazon-ground-station-context.jsonld
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Spectral
+  url: rules/amazon-ground-station-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-ground-station-rules.yml
+- type: Spectral
+  url: rules/amazon-ground-station-jsonschema-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-ground-station-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-ground-station-data-model.yml
+- type: CLI
+  url: cli/amazon-ground-station-cli.yml
+- type: ChangeLog
+  url: changelog/amazon-ground-station-changelog.yml
+- type: Idempotency
+  url: conventions/amazon-ground-station-conventions.yml
+- type: Conventions
+  url: conventions/amazon-ground-station-conventions.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: Lifecycle
+  url: lifecycle/amazon-ground-station-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-ground-station-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-ground-station-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-ground-station-llms.txt
+- type: SecurityTxt
+  url: well-known/amazon-ground-station-security.txt
+- type: WellKnown
+  url: well-known/amazon-ground-station-well-known.yml
+- type: Hosts
+  url: hosts/amazon-ground-station-hosts.yml
+- type: Vendors
+  url: vendors/amazon-ground-station-vendors.yml
+- type: SDKs
+  url: packages/amazon-ground-station-packages.yml
+- type: Packages
+  url: packages/amazon-ground-station-packages.yml
+- type: SignUp
+  url: https://signin.aws.amazon.com/signup?request_type=builderId
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
 - type: Plans
   url: plans/amazon-ground-station-plans-pricing.yml
 - type: RateLimits
@@ -415,28 +161,21 @@ common:
 - type: Features
   data:
   - name: Managed Ground Station Infrastructure
-    description: AWS manages a global network of antennas so you do not need to build or operate your
-      own ground station infrastructure.
+    description: AWS manages a global network of antennas so you do not need to build or operate your own ground station infrastructure.
   - name: Satellite Contact Scheduling
-    description: Schedule satellite contacts through a simple API, selecting the satellite, time window,
-      and ground station location.
+    description: Schedule satellite contacts through a simple API, selecting the satellite, time window, and ground station location.
   - name: Global Antenna Network
-    description: Access AWS ground station antennas deployed at strategic worldwide locations for maximum
-      satellite coverage.
+    description: Access AWS ground station antennas deployed at strategic worldwide locations for maximum satellite coverage.
   - name: Data Downlink and Processing
-    description: Receive satellite data directly into AWS cloud services for processing, storage, and
-      analysis.
+    description: Receive satellite data directly into AWS cloud services for processing, storage, and analysis.
   - name: Mission Profile Configuration
-    description: Configure mission profiles specifying dataflow endpoints, antenna frequencies, and processing
-      parameters.
+    description: Configure mission profiles specifying dataflow endpoints, antenna frequencies, and processing parameters.
   - name: Integration with AWS Services
-    description: Stream satellite data directly into Amazon S3, Kinesis, EC2, and other AWS services for
-      processing.
+    description: Stream satellite data directly into Amazon S3, Kinesis, EC2, and other AWS services for processing.
 - type: UseCases
   data:
   - name: Earth Observation
-    description: Collect and process satellite imagery for environmental monitoring, agriculture, and
-      urban planning.
+    description: Collect and process satellite imagery for environmental monitoring, agriculture, and urban planning.
   - name: Weather Forecasting
     description: Receive data from weather satellites for meteorological analysis and forecasting.
   - name: Maritime Tracking
@@ -459,6 +198,450 @@ common:
     description: Apply machine learning to satellite imagery and telemetry data.
 - type: Integrations
   url: https://aws.amazon.com/marketplace/
+- type: UsageTerms
+  url: terms/amazon-ground-station-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-ground-station-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-ground-station-compliance.yml
+- type: Eligibility
+  url: eligibility/amazon-ground-station-eligibility.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-ground-station-ai-preferences.yml
+
+apis:
+- aid: amazon-ground-station:amazon-ground-station-agent-api
+  name: Amazon Ground Station Agent API
+  description: The Agent API from Amazon Ground Station — 3 operation(s) for agent.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Agents
+  tags_raw:
+  - Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-agent-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-update-agent-status-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-register-agent-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-update-agent-status-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-register-agent-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-config-api
+  name: Amazon Ground Station Config API
+  description: The Config API from Amazon Ground Station — 2 operation(s) for config.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Config
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-config-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-config-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-update-config-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-config-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-delete-config-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-config-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-configs-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-contact-api
+  name: Amazon Ground Station Contact API
+  description: The Contact API from Amazon Ground Station — 2 operation(s) for contact.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Contact
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-contact-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-describe-contact-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-contacts-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-reserve-contact-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-contacts-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-contact-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-cancel-contact-request-schema.json
+- aid: amazon-ground-station:amazon-ground-station-contacts-api
+  name: Amazon Ground Station Contacts API
+  description: The Contacts API from Amazon Ground Station — 1 operation(s) for contacts.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-contacts-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-contacts-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-ephemerides-api
+  name: Amazon Ground Station Ephemerides API
+  description: The Ephemerides API from Amazon Ground Station — 1 operation(s) for ephemerides.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Ephemerides
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-ephemerides-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-ephemerides-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-ephemerides-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-ephemeris-api
+  name: Amazon Ground Station Ephemeris API
+  description: The Ephemeris API from Amazon Ground Station — 2 operation(s) for ephemeris.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Ephemeris
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-ephemeris-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-describe-ephemeris-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-create-ephemeris-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-update-ephemeris-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-delete-ephemeris-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-describe-ephemeris-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-ephemeris-id-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-groundstation-api
+  name: Amazon Ground Station Groundstation API
+  description: The Groundstation API from Amazon Ground Station — 1 operation(s) for groundstation.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Ground Station
+  tags_raw:
+  - Groundstation
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-groundstation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-ground-stations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-ground-stations-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-minute-usage-api
+  name: Amazon Ground Station Minute Usage API
+  description: The Minute Usage API from Amazon Ground Station — 1 operation(s) for minute usage.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Minute Usage
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-minute-usage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-minute-usage-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-minute-usage-request-schema.json
+- aid: amazon-ground-station:amazon-ground-station-missionprofile-api
+  name: Amazon Ground Station Missionprofile API
+  description: The Missionprofile API from Amazon Ground Station — 2 operation(s) for missionprofile.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Missionprofile
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-missionprofile-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-mission-profile-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-create-mission-profile-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-update-mission-profile-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-mission-profiles-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-mission-profiles-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-delete-mission-profile-request-schema.json
+- aid: amazon-ground-station:amazon-ground-station-satellite-api
+  name: Amazon Ground Station Satellite API
+  description: The Satellite API from Amazon Ground Station — 2 operation(s) for satellite.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Satellite
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-satellite-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-satellite-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-satellites-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-satellites-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-satellite-request-schema.json
+- aid: amazon-ground-station:amazon-ground-station-tags-api
+  name: Amazon Ground Station Tags API
+  description: The Tags API from Amazon Ground Station — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-tag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-untag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-tags-for-resource-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-tags-for-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-tag-resource-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-untag-resource-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-operations-api
+  name: Amazon Ground Station Ground Station Operations API
+  description: >-
+    The Ground Station Operations API from Amazon Ground Station — 5 operation(s) for ground station operations.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Ground Station Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-create-dataflow-endpoint-group-v2-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-ground-station-reservations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-ground-station-reservations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-antennas-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-agent-task-response-url-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-antennas-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-versions-api
+  name: Amazon Ground Station Ground Station Versions API
+  description: >-
+    The Ground Station Versions API from Amazon Ground Station — 2 operation(s) for ground station versions.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Ground Station Versions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-versions-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-describe-contact-version-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-update-contact-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-contact-versions-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-contact-versions-response-schema.json
+- aid: amazon-ground-station:amazon-ground-station-dataflow-endpoint-group-api
+  name: Amazon Ground Station Dataflow Endpoint Group API
+  description: >-
+    The Dataflow Endpoint Group API from Amazon Ground Station — 2 operation(s) for dataflow endpoint
+    group.
+  humanURL: https://aws.amazon.com/ground-station/
+  baseURL: https://groundstation.amazonaws.com
+  tags:
+  - Dataflow Endpoint Group
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-ground-station-dataflow-endpoint-group-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/ground-station/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/ground-station/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/ground-station/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/ground-station/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+  - type: JSONLD
+    url: json-ld/amazon-ground-station-context.jsonld
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-get-dataflow-endpoint-group-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-ground-station-list-dataflow-endpoint-groups-response-schema.json
 integrations:
 - name: Sign in
 - name: Agent Mode
@@ -469,8 +652,12 @@ integrations:
 - name: Become a Channel Partner
 - name: Sell in AWS Marketplace
 - name: Manage Your Account
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 4
+  pass: local-v6

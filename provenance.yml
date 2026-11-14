@@ -5,8 +5,23 @@ artifacts:
   agentic-access/amazon-ground-station-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-ground-station-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-ground-station-authentication.yml:
     method: derived
+    evidence: declared in the artifact
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  changelog/amazon-ground-station-changelog.yml:
+    method: searched
+    evidence: declared in the artifact
+  cli/amazon-ground-station-cli.yml:
+    method: searched
     evidence: declared in the artifact
   collections/amazon-ground-station-agent-api.opencollection.json:
     method: derived
@@ -80,6 +95,24 @@ artifacts:
   collections/amazon-ground-station-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-ground-station-tags-api
+  compliance/amazon-ground-station-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-ground-station-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-ground-station-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-ground-station-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-ground-station-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-ground-station-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/ground-station-agent-cpu-cores-list-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -695,6 +728,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-ground-station-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -702,6 +738,186 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-ld/amazon-ground-station-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-cancel-contact-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-config-id-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-contact-id-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-create-dataflow-endpoint-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-create-dataflow-endpoint-group-v2-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-create-ephemeris-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-create-mission-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-delete-config-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-delete-dataflow-endpoint-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-delete-ephemeris-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-delete-mission-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-describe-contact-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-describe-contact-version-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-describe-ephemeris-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-describe-ephemeris-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-ephemeris-id-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-agent-task-response-url-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-config-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-config-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-dataflow-endpoint-group-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-dataflow-endpoint-group-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-minute-usage-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-minute-usage-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-mission-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-satellite-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-get-satellite-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-antennas-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-antennas-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-configs-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-contact-versions-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-contact-versions-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-contacts-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-contacts-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-dataflow-endpoint-groups-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-dataflow-endpoint-groups-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-ephemerides-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-ephemerides-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-ground-station-reservations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-ground-station-reservations-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-ground-stations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-ground-stations-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-mission-profiles-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-mission-profiles-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-satellites-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-satellites-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-tags-for-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-list-tags-for-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-register-agent-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-register-agent-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-reserve-contact-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-tag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-tag-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-untag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-untag-resource-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-update-agent-status-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-update-agent-status-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-update-config-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-update-contact-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-update-ephemeris-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-ground-station-update-mission-profile-request-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/ground-station-agent-cpu-cores-list-schema.json:
@@ -1925,7 +2141,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -1994,52 +2210,69 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-ground-station-openapi.yaml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-ground-station-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-ground-station-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-ground-station-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-ground-station-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-ground-station-agent-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-config-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-contact-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-contacts-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-dataflow-endpoint-group-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-ephemerides-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-ephemeris-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-groundstation-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/amazon-ground-station-minute-usage-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/amazon-ground-station-missionprofile-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-operations-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-ground-station-satellite-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-tags-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-ground-station-versions-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  packages/amazon-ground-station-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-ground-station-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-ground-station-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -2079,10 +2312,16 @@ artifacts:
   postman/amazon-ground-station-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-ground-station-tags-api
+  privacy/amazon-ground-station-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-ground-station-rate-limits.yml:
-    method: generated
+    method: searched
     evidence: declared in the artifact
   rules/amazon-ground-station-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-ground-station-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-ground-station-spectral-rules.yml:
@@ -2098,8 +2337,27 @@ artifacts:
     method: searched
     evidence: declared in the artifact
   smithy/groundstation-2019-05-23.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/groundstation/service/2019-05-23/groundstation-2019-05-23.json
+      (sha256 157922b9d0c8, fetched 2026-11-11T21:10:08+00:00)
+  terms/amazon-ground-station-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-ground-station-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-ground-station-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-ground-station-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-ground-station-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-ground-station-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-ground-station-well-known.yml:
     method: unknown
     evidence: no authorship recorded
